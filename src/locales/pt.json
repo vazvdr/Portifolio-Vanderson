@@ -75,6 +75,11 @@
     "emailplaceholder": "Digite seu email",
     "messagelabel": "Mensagem",
     "messageplaceholder": "Escreva sua mensagem aqui",
-    "submitbutton": "Enviar"
+    "submitbutton": "Enviar",
+    "successMessage": "Email enviado com sucesso!",
+    "errorMessage": "Erro ao enviar o email.",
+    "connectionError": "Erro de conexão com o servidor.",
+    "closeButton": "Fechar"
   }
+  
 }

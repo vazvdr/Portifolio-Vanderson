@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [alertMessage, setAlertMessage] = useState(null); // Para controlar o conteúdo do alerta
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,31 +14,52 @@ const Contact = () => {
     const message = e.target.message.value;
 
     try {
-      const response = await fetch("https://nodemailer-backend-vanderson.vercel.app/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
+      const response = await fetch(
+        "https://nodemailer-backend-vanderson.vercel.app/api/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, message }),
+        }
+      );
 
       if (response.ok) {
-        alert("Email enviado com sucesso!");
+        setAlertMessage(t("contato.successMessage"));
         e.target.reset();
       } else {
-        alert("Erro ao enviar o email.");
+        setAlertMessage(t("contato.errorMessage"));
       }
     } catch (error) {
       console.error(error);
-      alert("Erro de conexão com o servidor.");
+      setAlertMessage(t("contato.connectionError"));
     }
   };
 
+  const closeAlert = () => setAlertMessage(null); // Fechar o alerta
+
   return (
     <section className="flex flex-col items-center justify-center mt-[5%]">
+
+{alertMessage && (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+    <div className="bg-black text-white p-6 rounded-lg shadow-lg text-center space-y-4 max-w-xs">
+      <p>{alertMessage}</p>
+      <button
+        onClick={closeAlert}
+        className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none"
+      >
+        {t("contato.closeButton")}
+      </button>
+    </div>
+  </div>
+)}
+
+
       <div
         id="contato"
-        className="formulario w-[90%] h-[450px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[3%]"
+        className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[3%]"
       >
         <h2
           className="text-3xl font-bold text-center mb-3"
@@ -62,7 +84,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium mb-2 formulario">
+            <label htmlFor="email" className="block text-sm font-medium mb-2">
               {t("contato.emaillabel")}
             </label>
             <input
@@ -94,7 +116,7 @@ const Contact = () => {
           <div className="mt-2">
             <button
               type="submit"
-              className="w-full py-3 px-6 rounded-lg bg-transparent border border-purple-800 font-bold hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="formulario w-full py-3 px-6 rounded-lg bg-transparent border border-purple-800 font-bold hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               {t("contato.submitbutton")}
             </button>

@@ -9,7 +9,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -173,7 +173,7 @@ const Header = () => {
                 <li>
                   <button href="#contato"
                     className="font-semibold py-1 px-3 border border-black rounded-[10px] 
-                    transform hover:scale-110 hover:bg-black hover:text-white 
+                    transform hover:scale-110 
                     transition-all duration-500 ease-in-out" onClick={(e) => handleLinkClick(e, "#contato")}>
                     {t("header.menu.contact")}
                   </button>
@@ -334,7 +334,7 @@ const Header = () => {
             <li>
               <button
                 href="#contato"
-                className="font-semibold py-2 px-2 border border-black rounded-[10px] 
+                className="contact-button font-semibold py-2 px-2 border border-black rounded-[10px] 
     transform hover:scale-110 transition-all duration-500 ease-in-out text-md"
                 onClick={(e) => {
                   e.preventDefault();

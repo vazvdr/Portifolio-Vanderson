@@ -75,7 +75,11 @@
     "emailplaceholder": "Enter your email",
     "messagelabel": "Message",
     "messageplaceholder": "Write your message here",
-    "submitbutton": "Send"
+    "submitbutton": "Send",
+    "successMessage": "Email sent successfully!",
+    "errorMessage": "Error sending the email.",
+    "connectionError": "Server connection error.",
+    "closeButton": "Close"
+    
   }
-  
 }

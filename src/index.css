@@ -7,6 +7,11 @@
   --background-color: #ffffff;
   --background-color-card: rgb(51, 46, 46);
   --border-color: rgb(184, 38, 179) 3px solid;
+  /* borda para o form */
+  --gradient-start: #6b21a8; /* Purple 800 */
+  --gradient-middle: #3b82f6; /* Blue 500 */
+  --gradient-end: #6b21a8; /* Purple 800 */
+  /* borda para o form */ 
   --text-color: #333333;
   --header-line-gradient: linear-gradient(to right, #e2e8f0, #718096);
   /* Light Mode */
@@ -28,6 +33,11 @@
   /* Cinza Escuro */
   --background-color-card: rgb(32, 26, 26);
   --border-color: rgb(86, 7, 120) 3px solid;
+  /* borda para o form */
+  --gradient-start: #6b21a8; /* Purple 800 */
+  --gradient-middle: #3b82f6; /* Blue 500 */
+  --gradient-end: #6b21a8; /* Purple 800 */
+  /* borda para o form */ 
   --text-color: #f9fafb;
   /* Texto Claro */
   --header-line-gradient: linear-gradient(to right, #000000, #2d3748);
@@ -99,6 +109,11 @@ body {
   background: var(--header-line-gradient);
 }
 
+.contact-button{
+  background-color: var(--menu-btn-bg);
+  color: var(--secondary-color);
+}
+
 .buttons-sobre {
   background-color: var(--menu-btn-bg);
   color: var(--secondary-color);
@@ -144,6 +159,7 @@ body {
 
 .formulario {
   background-color: var(--background-color-card);
+  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
   color: white;
 }
 
