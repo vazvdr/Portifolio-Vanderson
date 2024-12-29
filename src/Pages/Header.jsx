@@ -9,7 +9,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const menuRef = useRef(null);
 
   const toggleMenu = () => {
@@ -63,9 +63,9 @@ const Header = () => {
     setIsOpen(false);
   };
 
+  
   const toggleTheme = () => {
-    setDarkMode(darkMode);
-    document.documentElement.classList.toggle("dark", darkMode);
+    setDarkMode((prev) => !prev);
   };
 
   return (
