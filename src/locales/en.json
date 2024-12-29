@@ -1,0 +1,81 @@
+{
+  "header": {
+    "developer": "FullStack Developer",
+    "menu": {
+      "about": "About Me",
+      "experiences": "Experiences",
+      "technologies": "Technologies",
+      "projects": "Projects",
+      "contact": "Contact"
+    },
+    "scrollToTop": "Top"
+  },
+  "sobre": {
+    "heading": {
+      "greeting": "Hi, I'm",
+      "name": "Vanderson,",
+      "role": "FullStack Developer."
+    },
+    "description": "I am passionate about the world of the internet and technology and I use my creativity to create intelligent, functional and value-adding websites.",
+    "button": "Resume",
+    "linkedin": "LinkedIn Profile",
+    "github": "GitHub Profile",
+    "projects": "See my projects"
+  },
+  "experiencias": {
+    "titulo": "Experiences",
+    "card1": {
+      "titulo": "Frontend Developer",
+      "subtitulo": "System Factory · Freelance",
+      "periodo": "Nov 2024 - present",
+      "descricao": "Frontend development for various companies and clients using tools like React, Tailwind CSS, HTML, CSS, Javascript, Git, and Github."
+    },
+    "card2": {
+      "titulo": "FullStack Developer",
+      "subtitulo": "Freelancer · Freelance",
+      "periodo": "Aug 2023 - present",
+      "descricao": "Software development for companies through university extension projects and personal projects using tools like:"
+    }
+  },
+  "tecnologias": {
+    "title": "My Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "My Projects",
+    "techs": "Techs used:",
+    "barbabrutal": {
+      "title": "Barbabrutal",
+      "subtitle": "Barbershop appointments made easy.",
+      "description": "A system for scheduling barbershop services, with features like professional registration, scheduling selection, and online payment."
+    },
+    "gamerstore": {
+      "title": "GamerStore",
+      "subtitle": "Online store for gamer products.",
+      "description": "An online store for gamers, integrating listing and purchasing of popular products."
+    },
+    "weather": {
+      "title": "Weather Project",
+      "subtitle": "Current weather conditions in any city worldwide.",
+      "description": "This project consumes the Open Weather API to display current weather conditions. The site automatically changes to Snow Mode, Cloud Mode, or Summer Mode based on the searched city's temperature."
+    },
+    "movies": {
+      "title": "Movie Finder",
+      "subtitle": "Discover movies in theaters and save your favorites.",
+      "description": "This project uses TheMovieDB API to list trending movies and allows users to search the catalog. Features include saving to favorites and watching trailers on YouTube."
+    }
+  },
+  "contato": {
+    "title": "Contact",
+    "namelabel": "Name",
+    "nameplaceholder": "Enter your name",
+    "emaillabel": "Email",
+    "emailplaceholder": "Enter your email",
+    "messagelabel": "Message",
+    "messageplaceholder": "Write your message here",
+    "submitbutton": "Send"
+  }
+  
+}

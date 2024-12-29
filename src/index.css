@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Light Mode */
+:root {
+  --background-color: #ffffff;
+  --background-color-card: rgb(51, 46, 46);
+  --border-color: rgb(184, 38, 179) 3px solid;
+  --text-color: #333333;
+  --header-line-gradient: linear-gradient(to right, #e2e8f0, #718096);
+  /* Light Mode */
+  --primary-color: #6b21a8;
+  /* Roxo Tailwind */
+  --secondary-color: #e2e8f0;
+  /* Cinza Claro */
+  --hover-color: #9333ea;
+  /* Roxo Mais Intenso */
+  --menu-btn-bg: #222;
+  /* Fundo do botão no Light Mode */ 
+  --box-shadow-light: 0px 4px 10px rgba(30, 19, 19, 0.1);
+  --text-primary: white;
+}
+
+/* Dark Mode */
+.dark {
+  --background-color: #222;
+  /* Cinza Escuro */
+  --background-color-card: rgb(32, 26, 26);
+  --border-color: rgb(86, 7, 120) 3px solid;
+  --text-color: #f9fafb;
+  /* Texto Claro */
+  --header-line-gradient: linear-gradient(to right, #000000, #2d3748);
+  /* Dark Mode */
+  --primary-color: #9333ea;
+  /* Roxo Mais Intenso */
+  --secondary-color: #222;
+  /* Cinza Médio */
+  --hover-color: #d946ef;
+  /* Rosa-Choque */
+ 
+  --menu-btn-bg: #fff;
+  /* Fundo do botão no Dark Mode */
+  --menu-btn-line: #9333ea;
+  /* Cor das linhas no Dark Mode */
+  --text-color-menu: white;
+  /* Texto no modo dark */
+ 
+  --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  --text-primary: #e0e0e0;
+}
+
+/* Aplicação global */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* Evita barras de rolagem indesejadas */
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  right: 14px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+
+}
+
+/* Classe para o botão */
+.menu-button {
+  color: var(--text-color);
+  width: 2.5rem;
+  /* Tamanho fixo: 40px */
+  height: 2.5rem;
+  /* Tamanho fixo: 40px */
+  font-size: 1.8rem;
+  /* Tamanho grande da fonte */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: background-color 0.8s ease;
+}
+
+.menu-button span {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: var(--menu-btn-line);
+  transition: background-color 0.3s ease;
+}
+
+.menu-hamburguer {
+  background-color: var(--background-color);
+  color: var(--text-color-menu);
+}
+
+.header-line {
+  background: var(--header-line-gradient);
+}
+
+.buttons-sobre {
+  background-color: var(--menu-btn-bg);
+  color: var(--secondary-color);
+  border-color: var(--border-color);
+}
+
+.card {
+  background-color: var(--background-color-card);
+  color: var(--text-primary);
+  border: var(--border-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.875rem;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.card img {
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  max-width: 100%;
+}
+
+.card .tech-stack img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.stack {
+  background-color: var(--background-color-card);
+  border: var(--border-color);
+}
+
+.formulario {
+  background-color: var(--background-color-card);
+  color: white;
+}
+
+/* Animações Slide */
+.animate-slide-in-right {
+  animation: slideInRight 1.5s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1.5s ease-out;
+}
+
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animações Slide */
+.animate-slide-right {
+  animation: slideInRight 1.5s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 1.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@font-face {
+  font-family: "DoctorGlitch";
+  src: url("/src/assets/doctor-glitch.otf") format("opentype");
+}
+
+@layer base {
+  :root {
+
+    --background: 0 0% 100%;
+
+    --foreground: 224 71.4% 4.1%;
+
+    --card: 0 0% 100%;
+
+    --card-foreground: 224 71.4% 4.1%;
+
+    --popover: 0 0% 100%;
+
+    --popover-foreground: 224 71.4% 4.1%;
+
+    --primary: 220.9 39.3% 11%;
+
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 220 14.3% 95.9%;
+
+    --secondary-foreground: 220.9 39.3% 11%;
+
+    --muted: 220 14.3% 95.9%;
+
+    --muted-foreground: 220 8.9% 46.1%;
+
+    --accent: 220 14.3% 95.9%;
+
+    --accent-foreground: 220.9 39.3% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 220 13% 91%;
+
+    --input: 220 13% 91%;
+
+    --ring: 224 71.4% 4.1%;
+
+    --chart-1: 12 76% 61%;
+
+    --chart-2: 173 58% 39%;
+
+    --chart-3: 197 37% 24%;
+
+    --chart-4: 43 74% 66%;
+
+    --chart-5: 27 87% 67%;
+
+    --radius: 0.5rem
+  }
+
+  .dark {
+
+    --background: 224 71.4% 4.1%;
+
+    --foreground: 210 20% 98%;
+
+    --card: 224 71.4% 4.1%;
+
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 20% 98%;
+
+    --primary-foreground: 220.9 39.3% 11%;
+
+    --secondary: 215 27.9% 16.9%;
+
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+
+    --input: 215 27.9% 16.9%;
+
+    --ring: 216 12.2% 83.9%;
+
+    --chart-1: 220 70% 50%;
+
+    --chart-2: 160 60% 45%;
+
+    --chart-3: 30 80% 55%;
+
+    --chart-4: 280 65% 60%;
+
+    --chart-5: 340 75% 55%
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

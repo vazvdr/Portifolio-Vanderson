@@ -1,0 +1,80 @@
+{
+  "header": {
+    "developer": "Desenvolvedor FullStack",
+    "menu": {
+      "about": "Sobre",
+      "experiences": "Experiências",
+      "technologies": "Tecnologias",
+      "projects": "Projetos",
+      "contact": "Contato"
+    },
+    "scrollToTop": "Topo"
+  },
+  "sobre": {
+    "heading": {
+      "greeting": "Oi, eu sou o",
+      "name": "Vanderson,",
+      "role": "FullStack Developer."
+    },
+    "description": "Sou apaixonado pelo universo da internet e tecnologia e por usar minha criatividade para criar sites inteligentes, funcionais e que agregam valor.",
+    "button": "Currículo",
+    "linkedin": "Perfil no LinkedIn",
+    "github": "Perfil no GitHub",
+    "projects": "Veja meus Projetos"
+  },
+  "experiencias": {
+    "titulo": "Experiências",
+    "card1": {
+      "titulo": "Desenvolvedor de Frontend",
+      "subtitulo": "Fábrica de Sistemas · Freelance",
+      "periodo": "Nov de 2024 - o momento",
+      "descricao": "Desenvolvimento Frontend para diversas empresas e clientes que buscam nossos serviços com ferramentas como React, Tailwind CSS, HTML, CSS, Javascript, Git e Github."
+    },
+    "card2": {
+      "titulo": "Desenvolvedor FullStack",
+      "subtitulo": "Freelancer · Freelance",
+      "periodo": "Ago de 2023 - o momento",
+      "descricao": "Desenvolvimento de software para empresas por meio de projetos de extensão da faculdade e projetos pessoais usando ferramentas como:"
+    }
+  },
+  "tecnologias": {
+    "title": "Minhas Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "tools": "Ferramentas"
+  },
+  "projects": {
+    "title": "Meus Projetos",
+    "techs": "Techs usadas:",
+    "barbabrutal": {
+      "title": "Barbabrutal",
+      "subtitle": "Agendamentos para barbearias feitos com facilidade.",
+      "description": "Sistema para agendamento de serviços de barbearia, com funcionalidades como cadastro de profissionais, escolha de horários."
+    },
+    "gamerstore": {
+      "title": "GamerStore",
+      "subtitle": "Loja virtual para produtos gamers.",
+      "description": "Uma loja virtual feita para gamers, com integração para listar e comprar os produtos mais populares."
+    },
+    "weather": {
+      "title": "Weather Project",
+      "subtitle": "Condição do clima atual em qualquer cidade do mundo.",
+      "description": "Este projeto consome a API Open Weather para exibir a condição climática atual. O site muda de tema automaticamente para Snow Mode, Cloud Mode ou Summer Mode com base na temperatura da cidade pesquisada."
+    },
+    "movies": {
+      "title": "Buscador de Filmes",
+      "subtitle": "Descubra filmes em cartaz e salve seus favoritos.",
+      "description": "Este projeto consome a API TheMovieDB para listar os principais filmes em cartaz e permite que o usuário busque qualquer filme do catálogo. Inclui funcionalidades como salvar nos favoritos e assistir ao trailer no YouTube."
+    }
+  },
+  "contato": {
+    "title": "Contato",
+    "namelabel": "Nome",
+    "nameplaceholder": "Digite seu nome",
+    "emaillabel": "Email",
+    "emailplaceholder": "Digite seu email",
+    "messagelabel": "Mensagem",
+    "messageplaceholder": "Escreva sua mensagem aqui",
+    "submitbutton": "Enviar"
+  }
+}
