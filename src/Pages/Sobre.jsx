@@ -111,7 +111,7 @@ const Sobre = () => {
             />
             <div className="mt-5 flex items-center justify-center md:justify-start space-x-1">
               <a
-                href="/path-to-curriculo.pdf"
+                href="/src/assets/Curriculo-Atualizado.pdf"
                 download
                 className="buttons-sobre py-1 px-2 rounded-md font-semibold 
                 shadow-lg hover:bg-purple-800 hover:text-white transition-all 
