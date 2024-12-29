@@ -111,7 +111,7 @@ const Sobre = () => {
             />
             <div className="mt-5 flex items-center justify-center md:justify-start space-x-1">
               <a
-                href="/src/assets/Curriculo-Atualizado.pdf"
+                href="/Curriculo-Atualizado.pdf"
                 download
                 className="buttons-sobre py-1 px-2 rounded-md font-semibold 
                 shadow-lg hover:bg-purple-800 hover:text-white transition-all 
@@ -200,7 +200,7 @@ const Sobre = () => {
           <FaArrowDown size={20} />
         </a>
         <a
-          href="/path-to-curriculo.pdf"
+          href="/Curriculo-Atualizado.pdf"
           download
           className="buttons-sobre h-9 py-1 px-4 rounded-md font-semibold 
     shadow-lg hover:bg-purple-800 transition-all 
