@@ -64,8 +64,8 @@ const Header = () => {
   };
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", !darkMode);
+    setDarkMode(darkMode);
+    document.documentElement.classList.toggle("dark", darkMode);
   };
 
   return (
