@@ -9,8 +9,19 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Verificar a preferência inicial do tema
+    const storedPreference = localStorage.getItem("theme");
+    if (storedPreference) return storedPreference === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
   const menuRef = useRef(null);
+
+  useEffect(() => {
+    // Aplicar o tema com base no estado atual
+    document.documentElement.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -64,8 +75,7 @@ const Header = () => {
   };
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", !darkMode);
+    setDarkMode((prev) => !prev);
   };
 
   return (
