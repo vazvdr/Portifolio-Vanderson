@@ -118,7 +118,7 @@ const Projetos = () => {
                     >
                         <div className="absolute top-4 right-4">
                             <a
-                                href=""
+                                href="https://game-nest.vercel.app/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="block text-blue-500 hover:text-blue-700 underline mb-2"
