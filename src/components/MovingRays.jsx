@@ -53,14 +53,14 @@ const MovingRays = () => {
       ];
       this.color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
 
-      this.movementX = this.generateDecimalBetween(-10, 10); // Velocidade horizontal ainda maior
-      this.movementY = this.generateDecimalBetween(-10, 10); // Velocidade vertical ainda maior
+      this.movementX = this.generateDecimalBetween(-5, 5); // Velocidade horizontal aumentada
+      this.movementY = this.generateDecimalBetween(-5, 5); // Velocidade vertical aumentada
 
       this.zigzagPattern = this.createZigzagPattern();
     }
 
     createZigzagPattern() {
-      const segments = Math.floor(this.generateDecimalBetween(5, 10));
+      const segments = Math.floor(this.generateDecimalBetween(5, 10)); // Mais segmentos para aumentar detalhes do ziguezague
       const pattern = [];
       let startX = this.x1;
       let startY = this.y1;
@@ -68,8 +68,8 @@ const MovingRays = () => {
       const deltaY = (this.y2 - this.y1) / segments;
 
       for (let i = 0; i <= segments; i++) {
-        const offsetX = this.generateDecimalBetween(-30, 30);
-        const offsetY = this.generateDecimalBetween(-30, 30);
+        const offsetX = this.generateDecimalBetween(-30, 30); // Maior deslocamento horizontal
+        const offsetY = this.generateDecimalBetween(-30, 30); // Maior deslocamento vertical
         const point = {
           x: startX + deltaX * i + offsetX,
           y: startY + deltaY * i + offsetY,
