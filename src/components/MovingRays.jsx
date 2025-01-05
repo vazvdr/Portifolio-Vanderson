@@ -55,6 +55,29 @@ const MovingRays = () => {
 
       this.movementX = this.generateDecimalBetween(-2, 2);
       this.movementY = this.generateDecimalBetween(-2, 2);
+
+      // Padrão de ziguezague
+      this.zigzagPattern = this.createZigzagPattern();
+    }
+
+    createZigzagPattern() {
+      const segments = Math.floor(this.generateDecimalBetween(3, 7)); // Número de segmentos do "trovão"
+      const pattern = [];
+      let startX = this.x1;
+      let startY = this.y1;
+      const deltaX = (this.x2 - this.x1) / segments;
+      const deltaY = (this.y2 - this.y1) / segments;
+
+      for (let i = 0; i <= segments; i++) {
+        const offsetX = this.generateDecimalBetween(-10, 10); // Deslocamento horizontal
+        const offsetY = this.generateDecimalBetween(-10, 10); // Deslocamento vertical
+        const point = {
+          x: startX + deltaX * i + offsetX,
+          y: startY + deltaY * i + offsetY,
+        };
+        pattern.push(point);
+      }
+      return pattern;
     }
 
     resize() {
@@ -84,7 +107,6 @@ const MovingRays = () => {
       this.canvas.style.height = `${this.canvas.parentNode.clientHeight}px`;
       this.ctx.scale(this.dpr, this.dpr);
 
-      // Redimensiona os raios existentes
       this.rays.forEach((ray) => ray.resize());
     }
 
@@ -102,6 +124,12 @@ const MovingRays = () => {
         ray.update();
         this.ctx.beginPath();
         this.ctx.moveTo(ray.x1, ray.y1);
+
+        // Desenhar ziguezague
+        ray.zigzagPattern.forEach((point) => {
+          this.ctx.lineTo(point.x, point.y);
+        });
+
         this.ctx.lineTo(ray.x2, ray.y2);
         this.ctx.lineWidth = ray.lineWidth;
         this.ctx.strokeStyle = ray.color;
