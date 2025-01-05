@@ -83,7 +83,7 @@ const Header = () => {
             {/* Botão de alternar tema */}
             <button
               onClick={toggleTheme}
-              className="w-8 h-8 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-3" // Distância de 4px
+              className="w-6 h-6 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-2 mt-2" // Distância de 4px
             >
               {darkMode ? (
                 <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
@@ -93,7 +93,7 @@ const Header = () => {
             </button>
 
             {/* Botões de bandeiras */}
-            <div className="flex flex-col items-center space-y-2 mr-1 ml-1">
+            <div className="flex flex-row items-center space-x-2 mt-2">
               <button
                 onClick={() => changeLanguage("pt")}
                 className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
@@ -129,9 +129,9 @@ const Header = () => {
           {isOpen && (
             <nav
               ref={menuRef}
-              className="border border-gray-600 menu-hamburguer absolute top-[70px] 
-              right-0 w-1/2 h-auto max-h-[300px] flex flex-col items-center 
-              py-4 z-50 shadow-lg md:hidden transition-all duration-500 ease-in-out overflow-y-auto"
+              className={`menu-hamburguer absolute top-[70px] right-0 w-[100%] h-auto max-h-[300px]
+    flex flex-col items-center py-4 mb-4 z-50 shadow-lg border border-gray-600 
+    md:hidden overflow-y-auto animate-slideInDown`}
             >
               <ul className="flex flex-col space-y-4">
                 <li>
@@ -171,10 +171,12 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <button href="#contato"
+                  <button
+                    href="#contato"
                     className="font-semibold py-1 px-3 border border-black rounded-[10px] 
-                    transform hover:scale-110 
-                    transition-all duration-500 ease-in-out" onClick={(e) => handleLinkClick(e, "#contato")}>
+          transform hover:scale-110 transition-all duration-500 ease-in-out"
+                    onClick={(e) => handleLinkClick(e, "#contato")}
+                  >
                     {t("header.menu.contact")}
                   </button>
                 </li>
