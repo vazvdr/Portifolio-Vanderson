@@ -42,42 +42,21 @@ const MovingRays = () => {
       this.y1 = this.generateDecimalBetween(0, this.canvasHeight);
       this.x2 = this.generateDecimalBetween(0, this.canvasWidth);
       this.y2 = this.generateDecimalBetween(0, this.canvasHeight);
-      this.lineWidth = this.generateDecimalBetween(1, 4);
+      
+      // Aumentei o tamanho dos quadrados aqui
+      this.size = this.generateDecimalBetween(20, 25); // Novo tamanho do quadrado
 
       const colorOptions = [
         `rgba(0, 0, 0, ${Math.random().toFixed(2)})`, // Preto
-        `rgba(200, 0, 200, ${Math.random().toFixed(2)})`, // Lilás
         `rgba(${Math.floor(this.generateDecimalBetween(200, 255))}, ${Math.floor(
           this.generateDecimalBetween(200, 255)
         )}, ${Math.floor(this.generateDecimalBetween(200, 255))}, ${Math.random().toFixed(2)})`, // Branco com variações
       ];
       this.color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
 
-      this.movementX = this.generateDecimalBetween(-2, 2);
-      this.movementY = this.generateDecimalBetween(-2, 2);
-
-      // Padrão de ziguezague
-      this.zigzagPattern = this.createZigzagPattern();
-    }
-
-    createZigzagPattern() {
-      const segments = Math.floor(this.generateDecimalBetween(3, 7)); // Número de segmentos do "trovão"
-      const pattern = [];
-      let startX = this.x1;
-      let startY = this.y1;
-      const deltaX = (this.x2 - this.x1) / segments;
-      const deltaY = (this.y2 - this.y1) / segments;
-
-      for (let i = 0; i <= segments; i++) {
-        const offsetX = this.generateDecimalBetween(-10, 10); // Deslocamento horizontal
-        const offsetY = this.generateDecimalBetween(-10, 10); // Deslocamento vertical
-        const point = {
-          x: startX + deltaX * i + offsetX,
-          y: startY + deltaY * i + offsetY,
-        };
-        pattern.push(point);
-      }
-      return pattern;
+      // Aumentei a velocidade para valores entre -4 e 4
+      this.movementX = this.generateDecimalBetween(-4, 4);
+      this.movementY = this.generateDecimalBetween(-4, 4);
     }
 
     resize() {
@@ -111,7 +90,7 @@ const MovingRays = () => {
     }
 
     generateRays() {
-      const numberOfRays = 70;
+      const numberOfRays = 300; // A quantidade de quadrados permanece a mesma
       for (let i = 0; i < numberOfRays; i++) {
         const ray = new Ray(this.canvas);
         this.rays.push(ray);
@@ -122,18 +101,10 @@ const MovingRays = () => {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       this.rays.forEach((ray) => {
         ray.update();
-        this.ctx.beginPath();
-        this.ctx.moveTo(ray.x1, ray.y1);
+        this.ctx.fillStyle = ray.color;
 
-        // Desenhar ziguezague
-        ray.zigzagPattern.forEach((point) => {
-          this.ctx.lineTo(point.x, point.y);
-        });
-
-        this.ctx.lineTo(ray.x2, ray.y2);
-        this.ctx.lineWidth = ray.lineWidth;
-        this.ctx.strokeStyle = ray.color;
-        this.ctx.stroke();
+        // Desenhar quadrado com o novo tamanho
+        this.ctx.fillRect(ray.x1, ray.y1, ray.size, ray.size);
       });
       requestAnimationFrame(this.animate.bind(this));
     }

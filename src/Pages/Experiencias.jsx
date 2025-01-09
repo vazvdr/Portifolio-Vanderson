@@ -27,7 +27,7 @@ const Experiencias = () => {
 
   return (
     <section id="experiencias" className="py-10 relative">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-10">
         <h1
           className={`text-3xl font-bold text-center mb-8 mt-10 ${
             animate ? "animate-slide-in-right" : "opacity-0"

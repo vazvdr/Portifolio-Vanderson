@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { motion, useAnimation } from "framer-motion";
 
 const Contact = () => {
   const { t } = useTranslation();
   const [alertMessage, setAlertMessage] = useState(null); // Para controlar o conteúdo do alerta
+  const controls = useAnimation(); // Controles de animação
+  const sectionRef = useRef(null); // Ref para o contêiner do formulário
 
+  // Função de envio do formulário
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -39,27 +43,53 @@ const Contact = () => {
 
   const closeAlert = () => setAlertMessage(null); // Fechar o alerta
 
+  // useEffect para monitorar a visibilidade da seção
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({ opacity: 1, scale: 1, transition: { duration: 1 } });
+        } else {
+          controls.start({ opacity: 0, scale: 0.5 }); // Se sair da tela, voltar para o estado inicial
+        }
+      },
+      { threshold: 0.5 } // Executa a animação quando 50% do elemento está visível
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current); // Limpar a observação quando o componente for desmontado
+      }
+    };
+  }, [controls]);
+
   return (
     <section className="flex flex-col items-center justify-center mt-[5%]">
+      {alertMessage && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
+          <div className="bg-black text-white p-6 rounded-lg shadow-lg text-center space-y-4 max-w-xs">
+            <p>{alertMessage}</p>
+            <button
+              onClick={closeAlert}
+              className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none"
+            >
+              {t("contato.closeButton")}
+            </button>
+          </div>
+        </div>
+      )}
 
-{alertMessage && (
-  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
-    <div className="bg-black text-white p-6 rounded-lg shadow-lg text-center space-y-4 max-w-xs">
-      <p>{alertMessage}</p>
-      <button
-        onClick={closeAlert}
-        className="bg-purple-800 text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none"
-      >
-        {t("contato.closeButton")}
-      </button>
-    </div>
-  </div>
-)}
-
-
-      <div
+      {/* Contêiner do formulário com ref */}
+      <motion.div
+        ref={sectionRef}
         id="contato"
-        className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[3%]"
+        className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[3%] border border-purple-800"
+        animate={controls} // Associando os controles de animação
+        initial={{ opacity: 0, scale: 0.5 }} // Começa invisível e menor
       >
         <h2
           className="text-3xl font-bold text-center mb-3"
@@ -122,7 +152,7 @@ const Contact = () => {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
 
       <div className="w-full h-0.5 bg-gradient-to-r from-purple-800 via-blue-500 to-purple-800 my-1 "></div>
       <footer className="w-full py-1 pt-2 flex flex-col items-center justify-center">
