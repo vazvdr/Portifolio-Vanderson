@@ -1,5 +1,5 @@
 import React from "react";
-import Foto from "../assets/Foto1.jpg";
+import Foto from "../assets/Foto.jpg";
 import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
 import { SiCredly } from "react-icons/si";
 import { useTranslation } from "react-i18next";

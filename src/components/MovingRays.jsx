@@ -42,19 +42,12 @@ const MovingRays = () => {
       this.y1 = this.generateDecimalBetween(0, this.canvasHeight);
       this.x2 = this.generateDecimalBetween(0, this.canvasWidth);
       this.y2 = this.generateDecimalBetween(0, this.canvasHeight);
-      
-      // Aumentei o tamanho dos quadrados aqui
-      this.size = this.generateDecimalBetween(20, 25); // Novo tamanho do quadrado
 
-      const colorOptions = [
-        `rgba(0, 0, 0, ${Math.random().toFixed(2)})`, // Preto
-        `rgba(${Math.floor(this.generateDecimalBetween(200, 255))}, ${Math.floor(
-          this.generateDecimalBetween(200, 255)
-        )}, ${Math.floor(this.generateDecimalBetween(200, 255))}, ${Math.random().toFixed(2)})`, // Branco com variações
-      ];
-      this.color = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+      this.size = this.generateDecimalBetween(20, 25);
 
-      // Aumentei a velocidade para valores entre -4 e 4
+      const grayValue = Math.floor(this.generateDecimalBetween(0, 50));
+      this.color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${Math.random().toFixed(2)})`;
+
       this.movementX = this.generateDecimalBetween(-4, 4);
       this.movementY = this.generateDecimalBetween(-4, 4);
     }
@@ -90,7 +83,7 @@ const MovingRays = () => {
     }
 
     generateRays() {
-      const numberOfRays = 300; // A quantidade de quadrados permanece a mesma
+      const numberOfRays = 300;
       for (let i = 0; i < numberOfRays; i++) {
         const ray = new Ray(this.canvas);
         this.rays.push(ray);
