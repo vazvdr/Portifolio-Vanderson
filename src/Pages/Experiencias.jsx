@@ -54,18 +54,23 @@ const Experiencias = () => {
             <div className="flex flex-wrap gap-4 mt-4">
               {/* Imagens */}
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/452228/html-5.svg"
                 alt="HTML"
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/349330/css3.svg"
                 alt="CSS"
                 className="w-10 h-10"
               />
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
                 alt="JavaScript"
+                className="w-10 h-10"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
                 className="w-10 h-10"
               />
               <img
@@ -84,12 +89,12 @@ const Experiencias = () => {
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/373624/git2.svg"
                 alt="Git"
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/475654/github-color.svg"
                 alt="GitHub"
                 className="w-10 h-10"
               />
@@ -111,18 +116,23 @@ const Experiencias = () => {
             <div className="flex flex-wrap gap-4 mt-4">
               {/* Imagens */}
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/452228/html-5.svg"
                 alt="HTML"
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/349330/css3.svg"
                 alt="CSS"
                 className="w-10 h-10"
               />
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
                 alt="JavaScript"
+                className="w-10 h-10"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                alt="TypeScript"
                 className="w-10 h-10"
               />
               <img
@@ -186,12 +196,12 @@ const Experiencias = () => {
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/373624/git2.svg"
                 alt="Git"
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/475654/github-color.svg"
                 alt="GitHub"
                 className="w-10 h-10"
               />

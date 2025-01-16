@@ -1,12 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useTheme } from "../ThemeProvider";
 
 const MovingRays = () => {
   const canvasRef = useRef(null);
   const [isRendered, setIsRendered] = useState(false);
+  const { isDarkMode } = useTheme(); // Acessa o estado do tema
 
   class Ray {
-    constructor(parentNode) {
+    constructor(parentNode, isDarkMode) {
       this.parentNode = parentNode;
+      this.isDarkMode = isDarkMode;
       this.getCanvasSize();
       this.randomize();
     }
@@ -45,7 +48,10 @@ const MovingRays = () => {
 
       this.size = this.generateDecimalBetween(20, 25);
 
-      const grayValue = Math.floor(this.generateDecimalBetween(0, 255));
+      const grayMin = this.isDarkMode ? 10 : 25;
+      const grayMax = this.isDarkMode ? 10 : 25;
+
+      const grayValue = Math.floor(this.generateDecimalBetween(grayMin, grayMax));
       this.color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${Math.random().toFixed(2)})`;
 
       this.movementX = this.generateDecimalBetween(-4, 4);
@@ -59,11 +65,12 @@ const MovingRays = () => {
   }
 
   class Background {
-    constructor(selector) {
+    constructor(selector, isDarkMode) {
       this.canvas = document.getElementById(selector);
       this.ctx = this.canvas.getContext("2d");
       this.dpr = window.devicePixelRatio;
       this.rays = [];
+      this.isDarkMode = isDarkMode;
     }
 
     start() {
@@ -85,7 +92,7 @@ const MovingRays = () => {
     generateRays() {
       const numberOfRays = 300;
       for (let i = 0; i < numberOfRays; i++) {
-        const ray = new Ray(this.canvas);
+        const ray = new Ray(this.canvas, this.isDarkMode);
         this.rays.push(ray);
       }
     }
@@ -96,7 +103,6 @@ const MovingRays = () => {
         ray.update();
         this.ctx.fillStyle = ray.color;
 
-        // Desenhar quadrado com o novo tamanho
         this.ctx.fillRect(ray.x1, ray.y1, ray.size, ray.size);
       });
       requestAnimationFrame(this.animate.bind(this));
@@ -106,7 +112,7 @@ const MovingRays = () => {
   useEffect(() => {
     if (isRendered) {
       const canvas = canvasRef.current;
-      const heroParticles = new Background(canvas.id);
+      const heroParticles = new Background(canvas.id, isDarkMode);
 
       heroParticles.start();
 
@@ -120,7 +126,7 @@ const MovingRays = () => {
         window.removeEventListener("resize", handleResize);
       };
     }
-  }, [isRendered]);
+  }, [isRendered, isDarkMode]);
 
   useEffect(() => {
     setIsRendered(true);

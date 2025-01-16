@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { ArrowUpCircle } from 'react-feather';
+import  BurguerMenu from "../components/BurguerMenu"
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -63,25 +64,25 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", !darkMode);
-    // Salva a preferência no localStorage
-    localStorage.setItem("theme", !darkMode ? "dark" : "light");
-  };
-
   useEffect(() => {
-    // Verifica a preferência salva no localStorage ao carregar a página
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
+    // Define o tema inicial como dark mode ao carregar a página
+    setDarkMode(true);
+    document.documentElement.classList.add("dark");
   }, []);
-
+  
+  const toggleTheme = () => {
+    // Alterna entre os temas dark e light
+    setDarkMode(prevState => {
+      const newMode = !prevState;
+      if (newMode) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+      return newMode;
+    });
+  };
+  
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-md flex justify-between items-center">
@@ -97,20 +98,20 @@ const Header = () => {
             {/* Botão de alternar tema */}
             <button
               onClick={toggleTheme}
-              className="w-6 h-6 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-2 mt-2" // Distância de 4px
+              className="w-10 h-10 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-4 mt-1" // Distância de 4px
             >
               {darkMode ? (
-                <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
+                <FaSun className="text-yellow-400 w-8 h-8 transform hover:scale-110" />
               ) : (
-                <FaMoon className="text-black w-6 h-6 transform hover:scale-110" />
+                <FaMoon className="text-black w-8 h-8 transform hover:scale-110" />
               )}
             </button>
 
             {/* Botões de bandeiras */}
-            <div className="flex flex-row items-center space-x-2 mt-2">
+            <div className="flex flex-row items-center space-x-4 mt-1">
               <button
                 onClick={() => changeLanguage("pt")}
-                className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
+                className="w-8 h-8 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
                   code="BR"
@@ -120,7 +121,7 @@ const Header = () => {
               </button>
               <button
                 onClick={() => changeLanguage("en")}
-                className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
+                className="w-8 h-8 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
                   code="US"
@@ -131,12 +132,11 @@ const Header = () => {
             </div>
 
             {/* Botão do menu hambúrguer */}
-            <button
-              className="menu-button mr-3 ml-3"
+            <BurguerMenu
+              className="menu-button ml-3"
               onClick={toggleMenu}
-            >
-              {isOpen ? '✖' : '☰'}
-            </button>
+            />
+            
           </div>
 
           {/* Menu aberto para telas menores */}
@@ -187,7 +187,7 @@ const Header = () => {
                 <li>
                   <button
                     href="#contato"
-                    className="font-semibold py-1 px-3 border border-black rounded-[10px] 
+                    className="contact-button font-semibold py-1 px-3 border border-black rounded-[10px] 
           transform hover:scale-110 transition-all duration-500 ease-in-out"
                     onClick={(e) => handleLinkClick(e, "#contato")}
                   >

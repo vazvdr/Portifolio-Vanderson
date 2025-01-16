@@ -11,7 +11,6 @@ function App() {
     return (
         <div style={{ position: "relative", overflow: "hidden", minHeight: "100vh" }}>
             <MovingRays/>
-
             <div style={{ position: "relative", zIndex: 1 }}>
                 <Header />
                 <Sobre />
