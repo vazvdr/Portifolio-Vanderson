@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { ArrowUpCircle } from 'react-feather';
-import  BurguerMenu from "../components/BurguerMenu"
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -98,20 +97,20 @@ const Header = () => {
             {/* Botão de alternar tema */}
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-4 mt-1" // Distância de 4px
+              className="w-6 h-6 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-2 mt-2" // Distância de 4px
             >
               {darkMode ? (
-                <FaSun className="text-yellow-400 w-8 h-8 transform hover:scale-110" />
+                <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
               ) : (
-                <FaMoon className="text-black w-8 h-8 transform hover:scale-110" />
+                <FaMoon className="text-black w-6 h-6 transform hover:scale-110" />
               )}
             </button>
 
             {/* Botões de bandeiras */}
-            <div className="flex flex-row items-center space-x-4 mt-1">
+            <div className="flex flex-row items-center space-x-2 mt-2">
               <button
                 onClick={() => changeLanguage("pt")}
-                className="w-8 h-8 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
+                className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
                   code="BR"
@@ -121,7 +120,7 @@ const Header = () => {
               </button>
               <button
                 onClick={() => changeLanguage("en")}
-                className="w-8 h-8 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
+                className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
                   code="US"
@@ -132,11 +131,12 @@ const Header = () => {
             </div>
 
             {/* Botão do menu hambúrguer */}
-            <BurguerMenu
+            <button
               className="menu-button ml-3"
               onClick={toggleMenu}
-            />
-            
+            >
+              {isOpen ? '✖' : '☰'}
+            </button>
           </div>
 
           {/* Menu aberto para telas menores */}
