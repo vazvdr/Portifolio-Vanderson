@@ -68,7 +68,7 @@ const Header = () => {
     setDarkMode(true);
     document.documentElement.classList.add("dark");
   }, []);
-  
+
   const toggleTheme = () => {
     // Alterna entre os temas dark e light
     setDarkMode(prevState => {
@@ -81,7 +81,7 @@ const Header = () => {
       return newMode;
     });
   };
-  
+
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-md flex justify-between items-center">
@@ -97,7 +97,7 @@ const Header = () => {
             {/* Botão de alternar tema */}
             <button
               onClick={toggleTheme}
-              className="w-6 h-6 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-2 mt-2" // Distância de 4px
+              className="w-6 h-6 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-4 mt-2" // Distância de 4px
             >
               {darkMode ? (
                 <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
@@ -107,7 +107,7 @@ const Header = () => {
             </button>
 
             {/* Botões de bandeiras */}
-            <div className="flex flex-row items-center space-x-2 mt-2">
+            <div className="flex flex-row items-center space-x-4 mt-2">
               <button
                 onClick={() => changeLanguage("pt")}
                 className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
@@ -132,20 +132,19 @@ const Header = () => {
 
             {/* Botão do menu hambúrguer */}
             <button
-              className="menu-button ml-3"
+              className="menu-button mr-4 ml-3"
               onClick={toggleMenu}
             >
               {isOpen ? '✖' : '☰'}
             </button>
-          </div>
 
-          {/* Menu aberto para telas menores */}
-          {isOpen && (
-            <nav
+            {/* Menu aberto para telas menores */}
+            <div
               ref={menuRef}
-              className={`menu-hamburguer absolute top-[70px] right-0 w-[100%] h-auto max-h-[300px]
-    flex flex-col items-center py-4 mb-4 z-50 shadow-lg border border-gray-600 
-    md:hidden overflow-y-auto animate-slideInDown`}
+              className={`menu-hamburguer absolute top-[70px] right-0 w-[100%] max-h-[300px]
+  flex flex-col items-center py-4 mb-4 z-50 shadow-lg border-b border-gray-600 
+  md:hidden overflow-hidden transition-all duration-1000 ease-in-out ${isOpen ? "h-auto opacity-100" : "h-0 opacity-0"
+                }`}
             >
               <ul className="flex flex-col space-y-4">
                 <li>
@@ -188,18 +187,19 @@ const Header = () => {
                   <button
                     href="#contato"
                     className="contact-button font-semibold py-1 px-3 border border-black rounded-[10px] 
-          transform hover:scale-110 transition-all duration-500 ease-in-out"
+        transform hover:scale-110 transition-all duration-500 ease-in-out"
                     onClick={(e) => handleLinkClick(e, "#contato")}
                   >
                     {t("header.menu.contact")}
                   </button>
                 </li>
               </ul>
-            </nav>
-          )}
+            </div>
+          </div>
         </div>
 
         {/* Menu para telas medias */}
+
         <nav className="hidden md:flex items-center space-x-6 mr-[1%] animate-fadeInLeft delay-150 sm:hidden lg:hidden">
           <ul className="flex items-center space-x-3 "> {/* Ajustando o espaçamento entre os botões de idioma e os itens do menu */}
 
