@@ -66,7 +66,21 @@ const Header = () => {
   const toggleTheme = () => {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle("dark", !darkMode);
+    // Salva a preferência no localStorage
+    localStorage.setItem("theme", !darkMode ? "dark" : "light");
   };
+
+  useEffect(() => {
+    // Verifica a preferência salva no localStorage ao carregar a página
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   return (
     <>

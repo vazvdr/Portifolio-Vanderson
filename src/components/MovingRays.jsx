@@ -45,7 +45,7 @@ const MovingRays = () => {
 
       this.size = this.generateDecimalBetween(20, 25);
 
-      const grayValue = Math.floor(this.generateDecimalBetween(0, 50));
+      const grayValue = Math.floor(this.generateDecimalBetween(0, 255));
       this.color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${Math.random().toFixed(2)})`;
 
       this.movementX = this.generateDecimalBetween(-4, 4);
