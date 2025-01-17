@@ -87,7 +87,7 @@ const Tecnologias = () => {
               : "animate-carousel"
           }`}
           style={{
-            animationDuration: carouselSpeed === "fast" ? "3s" : "7s",
+            animationDuration: carouselSpeed === "fast" ? "7s" : "15s",
             animationIterationCount: "infinite",
             whiteSpace: "nowrap", // Garante que os ícones fiquem em linha
           }}
