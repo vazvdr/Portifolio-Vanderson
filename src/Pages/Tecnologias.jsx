@@ -1,9 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import { ArrowLeftCircle, ArrowRightCircle } from "react-feather";
 
 const Tecnologias = () => {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
+  const [carouselSpeed, setCarouselSpeed] = useState("normal");
 
   const icons = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
@@ -21,11 +23,10 @@ const Tecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
     "https://www.svgrepo.com/show/439231/mongodb.svg",
     "https://www.svgrepo.com/show/354200/postgresql.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg", 
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg",
     "https://www.svgrepo.com/show/373624/git2.svg",
     "https://www.svgrepo.com/show/475654/github-color.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-    
   ];
 
   useEffect(() => {
@@ -52,6 +53,25 @@ const Tecnologias = () => {
     };
   }, []);
 
+  const handleScroll = (direction) => {
+    const track = document.getElementById("carousel-track");
+    const scrollAmount = 100;
+    if (direction === "left") {
+      track.scrollLeft -= scrollAmount;
+    } else {
+      track.scrollLeft += scrollAmount;
+    }
+  };
+
+  const handleFastScroll = (direction) => {
+    setCarouselSpeed("very-fast");
+    handleScroll(direction);
+
+    setTimeout(() => {
+      setCarouselSpeed("normal");
+    }, 1000);
+  };
+
   return (
     <section
       id="tecnologias"
@@ -64,23 +84,66 @@ const Tecnologias = () => {
         {t("tecnologias.title")}
       </h1>
       <div
-        id="stack-icons"
-        className={`stack relative w-[80%] h-[360px] md:h-[290px] lg:h-[350px] xl:h-[500px] lg:w-[62%]
-        flex justify-center items-center gap-6 flex-wrap
-        transition-all duration-500 transform
-        ${isVisible ? "opacity-100 scale-100" : "opacity-0 scale-10"}`}
+        id="carousel-container"
+        className="bg-gradient-to-r from-black  via-purple-900 to-black border-t border-b border-purple-800 relative w-[98%] h-[150px] lg:h-[200px] overflow-hidden"
+        style={{ margin: "0 10%" }}
       >
-        {icons.map((icon, index) => (
-          <img
-            key={index}
-            src={icon}
-            alt={`Icon ${index}`}
-            className="w-[50px] md:w-[70px] lg:w-[90px] xl:w-[100px] 
-            animate-shake"
-          />
-        ))}
-        
-        
+        <div
+          id="carousel-track"
+          className={`flex items-center gap-6 mt-10 w-max ${carouselSpeed === "very-fast"
+              ? "animate-carousel-very-fast"
+              : carouselSpeed === "fast"
+                ? "animate-carousel-fast"
+                : "animate-carousel"
+            }`}
+          style={{
+            animationDuration:
+              carouselSpeed === "very-fast"
+                ? "2s"
+                : carouselSpeed === "fast"
+                  ? "7s"
+                  : "15s",
+            animationIterationCount: "infinite",
+            whiteSpace: "nowrap", // Garante que os ícones fiquem em linha
+          }}
+        >
+          {icons.map((icon, index) => (
+            <img
+              key={index}
+              src={icon}
+              alt={`Icon ${index}`}
+              className="w-[70px] md:w-[70px] lg:w-[90px] xl:w-[100px]"
+              style={{ flexShrink: 0 }}
+            />
+          ))}
+          {icons.map((icon, index) => (
+            <img
+              key={`clone-${index}`}
+              src={icon}
+              alt={`Icon Clone ${index}`}
+              className="w-[50px] md:w-[70px] lg:w-[90px] xl:w-[100px]"
+              style={{ flexShrink: 0 }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center mt-3 gap-4">
+        <button
+          className="bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
+          onMouseEnter={() => setCarouselSpeed("fast")}
+          onMouseLeave={() => setCarouselSpeed("normal")}
+          onClick={() => handleFastScroll("left")}
+        >
+          <ArrowLeftCircle size="100%" />
+        </button>
+        <button
+          className="bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
+          onMouseEnter={() => setCarouselSpeed("fast")}
+          onMouseLeave={() => setCarouselSpeed("normal")}
+          onClick={() => handleFastScroll("right")}
+        >
+          <ArrowRightCircle size="100%" />
+        </button>
       </div>
     </section>
   );

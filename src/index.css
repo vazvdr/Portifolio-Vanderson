@@ -172,6 +172,41 @@ body {
   animation: slideInLeft 1.5s ease-out;
 }
 
+@keyframes carouselScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes carouselScrollFast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+#carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+#carousel-track {
+  display: flex;
+  width: 200%; /* Espaço para o loop contínuo */
+}
+
+.animate-carousel {
+  animation: carouselScroll 15s linear infinite;
+}
+
+.animate-carousel-fast {
+  animation: carouselScrollFast 7s linear infinite;
+}
 
 @keyframes slideInRight {
   from {

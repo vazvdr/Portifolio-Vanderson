@@ -48,8 +48,8 @@ const MovingRays = () => {
 
       this.size = this.generateDecimalBetween(20, 25);
 
-      const grayMin = this.isDarkMode ? 10 : 25;
-      const grayMax = this.isDarkMode ? 10 : 25;
+      const grayMin = this.isDarkMode ? 10 : 50;
+      const grayMax = this.isDarkMode ? 10 : 50;
 
       const grayValue = Math.floor(this.generateDecimalBetween(grayMin, grayMax));
       this.color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${Math.random().toFixed(2)})`;
