@@ -200,12 +200,33 @@ body {
   width: 200%; /* Espaço para o loop contínuo */
 }
 
-.animate-carousel {
-  animation: carouselScroll 15s linear infinite;
+
+@keyframes carousel {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 
-.animate-carousel-fast {
-  animation: carouselScrollFast 7s linear infinite;
+@keyframes wiggle {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s infinite ease-in-out;
 }
 
 @keyframes slideInRight {

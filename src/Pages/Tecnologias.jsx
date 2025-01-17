@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowLeftCircle, ArrowRightCircle } from "react-feather";
 
 const Tecnologias = () => {
   const { t } = useTranslation();
-  const [isVisible, setIsVisible] = useState(false);
-  const [carouselSpeed, setCarouselSpeed] = useState("normal");
-
+  const [currentStage, setCurrentStage] = useState(0);
+  const [iconsPerStage, setIconsPerStage] = useState(4); // Quantidade padrão
   const icons = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
     "https://www.svgrepo.com/show/349330/css3.svg",
@@ -15,11 +14,12 @@ const Tecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    "https://www.svgrepo.com/show/354512/vercel.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg",
-    "https://www.svgrepo.com/show/452075/node-js.svg",
+    "https://www.svgrepo.com/show/439238/nodejs.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
     "https://www.svgrepo.com/show/439231/mongodb.svg",
     "https://www.svgrepo.com/show/354200/postgresql.svg",
@@ -29,48 +29,39 @@ const Tecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
   ];
 
+  const totalStages = Math.ceil(icons.length / iconsPerStage);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          } else {
-            setIsVisible(false);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const target = document.querySelector("#stack-icons");
-    if (target) {
-      observer.observe(target);
-    }
-
-    return () => {
-      if (target) observer.unobserve(target);
+    const updateIconsPerStage = () => {
+      if (window.innerWidth < 768) {
+        setIconsPerStage(4); // Telas pequenas
+      } else if (window.innerWidth < 1024) {
+        setIconsPerStage(5); // Telas médias
+      } else {
+        setIconsPerStage(10); // Telas grandes
+      }
     };
+
+    updateIconsPerStage();
+    window.addEventListener("resize", updateIconsPerStage);
+
+    return () => window.removeEventListener("resize", updateIconsPerStage);
   }, []);
 
-  const handleScroll = (direction) => {
-    const track = document.getElementById("carousel-track");
-    const scrollAmount = 100;
-    if (direction === "left") {
-      track.scrollLeft -= scrollAmount;
-    } else {
-      track.scrollLeft += scrollAmount;
+  const handleNextStage = () => {
+    if (currentStage < totalStages - 1) {
+      setCurrentStage(currentStage + 1);
     }
   };
 
-  const handleFastScroll = (direction) => {
-    setCarouselSpeed("very-fast");
-    handleScroll(direction);
-
-    setTimeout(() => {
-      setCarouselSpeed("normal");
-    }, 1000);
+  const handlePrevStage = () => {
+    if (currentStage > 0) {
+      setCurrentStage(currentStage - 1);
+    }
   };
+
+  const startIndex = currentStage * iconsPerStage;
+  const displayedIcons = icons.slice(startIndex, startIndex + iconsPerStage);
 
   return (
     <section
@@ -85,65 +76,61 @@ const Tecnologias = () => {
       </h1>
       <div
         id="carousel-container"
-        className="bg-gradient-to-r from-black  via-purple-900 to-black border-t border-b border-purple-800 relative w-[98%] h-[150px] lg:h-[200px] overflow-hidden"
+        className="bg-gradient-to-r from-black via-purple-900 to-black border-t border-b border-purple-800 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center"
         style={{ margin: "0 10%" }}
       >
         <div
           id="carousel-track"
-          className={`flex items-center gap-6 mt-10 w-max ${carouselSpeed === "very-fast"
-              ? "animate-carousel-very-fast"
-              : carouselSpeed === "fast"
-                ? "animate-carousel-fast"
-                : "animate-carousel"
-            }`}
+          className="flex items-center gap-6"
           style={{
-            animationDuration:
-              carouselSpeed === "very-fast"
-                ? "2s"
-                : carouselSpeed === "fast"
-                  ? "7s"
-                  : "15s",
-            animationIterationCount: "infinite",
-            whiteSpace: "nowrap", // Garante que os ícones fiquem em linha
+            justifyContent: "center",
           }}
         >
-          {icons.map((icon, index) => (
+          {displayedIcons.map((icon, index) => (
             <img
               key={index}
               src={icon}
               alt={`Icon ${index}`}
-              className="w-[70px] md:w-[70px] lg:w-[90px] xl:w-[100px]"
-              style={{ flexShrink: 0 }}
-            />
-          ))}
-          {icons.map((icon, index) => (
-            <img
-              key={`clone-${index}`}
-              src={icon}
-              alt={`Icon Clone ${index}`}
-              className="w-[50px] md:w-[70px] lg:w-[90px] xl:w-[100px]"
+              className="w-[60px] md:w-[65px] lg:w-[75px] xl:w-[85px] 
+              transition-transform duration-300 hover:scale-125 hover:animate-none animate-wiggle"
               style={{ flexShrink: 0 }}
             />
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-3 gap-4">
-        <button
-          className="bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
-          onMouseEnter={() => setCarouselSpeed("fast")}
-          onMouseLeave={() => setCarouselSpeed("normal")}
-          onClick={() => handleFastScroll("left")}
-        >
-          <ArrowLeftCircle size="100%" />
-        </button>
-        <button
-          className="bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
-          onMouseEnter={() => setCarouselSpeed("fast")}
-          onMouseLeave={() => setCarouselSpeed("normal")}
-          onClick={() => handleFastScroll("right")}
-        >
-          <ArrowRightCircle size="100%" />
-        </button>
+      <div className="flex flex-col items-center mt-4">
+        {/* Pontinhos Indicadores */}
+        <div className="flex gap-2 mb-3">
+          {Array.from({ length: totalStages }).map((_, index) => (
+            <span
+              key={index}
+              className={`w-3 h-3 rounded-full ${
+                index === currentStage ? "bg-purple-700" : "bg-gray-400"
+              } transition-all`}
+            ></span>
+          ))}
+        </div>
+        {/* Botões de Navegação */}
+        <div className="flex justify-center mt-1 gap-4">
+          <button
+            disabled={currentStage === 0}
+            className={`bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
+              currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            onClick={handlePrevStage}
+          >
+            <ArrowLeftCircle size="100%" />
+          </button>
+          <button
+            disabled={currentStage === totalStages - 1}
+            className={`bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
+              currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            onClick={handleNextStage}
+          >
+            <ArrowRightCircle size="100%" />
+          </button>
+        </div>
       </div>
     </section>
   );
