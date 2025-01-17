@@ -63,6 +63,15 @@ const Tecnologias = () => {
     }
   };
 
+  const handleFastScroll = (direction) => {
+    setCarouselSpeed("very-fast");
+    handleScroll(direction);
+
+    setTimeout(() => {
+      setCarouselSpeed("normal");
+    }, 1000);
+  };
+
   return (
     <section
       id="tecnologias"
@@ -81,13 +90,19 @@ const Tecnologias = () => {
       >
         <div
           id="carousel-track"
-          className={`flex items-center gap-6 mt-10 w-max ${
-            carouselSpeed === "fast"
-              ? "animate-carousel-fast"
-              : "animate-carousel"
-          }`}
+          className={`flex items-center gap-6 mt-10 w-max ${carouselSpeed === "very-fast"
+              ? "animate-carousel-very-fast"
+              : carouselSpeed === "fast"
+                ? "animate-carousel-fast"
+                : "animate-carousel"
+            }`}
           style={{
-            animationDuration: carouselSpeed === "fast" ? "7s" : "15s",
+            animationDuration:
+              carouselSpeed === "very-fast"
+                ? "2s"
+                : carouselSpeed === "fast"
+                  ? "7s"
+                  : "15s",
             animationIterationCount: "infinite",
             whiteSpace: "nowrap", // Garante que os ícones fiquem em linha
           }}
@@ -117,7 +132,7 @@ const Tecnologias = () => {
           className="bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
           onMouseEnter={() => setCarouselSpeed("fast")}
           onMouseLeave={() => setCarouselSpeed("normal")}
-          onClick={() => handleScroll("left")}
+          onClick={() => handleFastScroll("left")}
         >
           <ArrowLeftCircle size="100%" />
         </button>
@@ -125,7 +140,7 @@ const Tecnologias = () => {
           className="bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
           onMouseEnter={() => setCarouselSpeed("fast")}
           onMouseLeave={() => setCarouselSpeed("normal")}
-          onClick={() => handleScroll("right")}
+          onClick={() => handleFastScroll("right")}
         >
           <ArrowRightCircle size="100%" />
         </button>

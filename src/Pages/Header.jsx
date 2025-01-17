@@ -63,24 +63,24 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    // Define o tema inicial como dark mode ao carregar a página
-    setDarkMode(true);
-    document.documentElement.classList.add("dark");
-  }, []);
-
   const toggleTheme = () => {
-    // Alterna entre os temas dark e light
-    setDarkMode(prevState => {
-      const newMode = !prevState;
-      if (newMode) {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-      return newMode;
-    });
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark", !darkMode);
+    // Salva a preferência no localStorage
+    localStorage.setItem("theme", !darkMode ? "dark" : "light");
   };
+
+  useEffect(() => {
+    // Verifica a preferência salva no localStorage ao carregar a página
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else {
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
 
   return (
     <>
