@@ -101,12 +101,12 @@ const Sobre = () => {
           </div>
           <div
             className={`relative w-[65%] mt-[22%] ml-[5%] mr-[2%] mt-[15%] opacity-0 animate-fade-in-left 
-  sm:w-[50%] sm:mt-[20%] sm:mr-[1%] sm:mb-[4%] 
+  sm:w-[50%] sm:mt-[20%] sm:mr-[5%] sm:mb-[4%] 
   ${animate ? "animate-slide-in-right opacity-100" : ""}`}
           >
             {/* Contêiner de sombreamento */}
             <div
-              className="h-[42%] sm:h-[100%] absolute inset-0 transform scale-105 bg-gradient-to-r from-gray-800 to-black to-transparent 
+              className="h-[40%] w-[150%] sm:h-[350%] absolute inset-0 transform scale-105 bg-gradient-to-r from-black to-orange-700 to-transparent 
     rounded-md blur-md -z-10"
             ></div>
             {/* Imagem */}
