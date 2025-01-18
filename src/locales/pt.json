@@ -25,10 +25,10 @@
   "experiencias": {
     "titulo": "Experiências",
     "card1": {
-      "titulo": "Desenvolvedor de Frontend",
+      "titulo": "Desenvolvedor Frontend",
       "subtitulo": "Fábrica de Sistemas · Freelance",
       "periodo": "Nov de 2024 - o momento",
-      "descricao": "Desenvolvimento Frontend para diversas empresas e clientes que buscam nossos serviços com ferramentas como React, Tailwind CSS, HTML, CSS, Javascript, Git e Github."
+      "descricao": "Desenvolvimento Frontend principalmente criando sites portifólios integrado com api para envio de emails e mensagens de whatsapp para diversas empresas e clientes que buscam nossos serviços com ferramentas como React, Tailwind CSS, HTML, CSS, Javascript, Git e Github."
     },
     "card2": {
       "titulo": "Desenvolvedor FullStack",
@@ -49,7 +49,7 @@
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Agendamentos para barbearias feitos com facilidade.",
-      "description": "Sistema para agendamento de serviços de barbearia, com funcionalidades como cadastro de profissionais, escolha de horários."
+      "description": "Sistema de agendamento de barbearia que permite ao usuário fazer e gerenciar seus agendamentos após efetuar login, esse sistema possui  API REST, banco de dados e criptografia"
     },
     "gamerstore": {
       "title": "GamerStore",

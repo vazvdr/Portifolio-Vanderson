@@ -171,7 +171,7 @@ const Experiencias = () => {
                 className="w-10 h-10"
               />
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
+                src="https://www.svgrepo.com/show/439238/nodejs.svg"
                 alt="Node.js"
                 className="w-10 h-10"
               />

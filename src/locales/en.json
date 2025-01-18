@@ -28,7 +28,7 @@
       "titulo": "Frontend Developer",
       "subtitulo": "System Factory · Freelance",
       "periodo": "Nov 2024 - present",
-      "descricao": "Frontend development for various companies and clients using tools like React, Tailwind CSS, HTML, CSS, Javascript, Git, and Github."
+      "descricao": "Frontend development mainly creating portfolio websites integrated with API for sending emails and WhatsApp messages to various companies and clients who seek our services with tools such as React, Tailwind CSS, HTML, CSS, Javascript, Git and Github."
     },
     "card2": {
       "titulo": "FullStack Developer",
@@ -49,7 +49,7 @@
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Barbershop appointments made easy.",
-      "description": "A system for scheduling barbershop services, with features like professional registration, scheduling selection, and online payment."
+      "description": "A barbershop scheduling system that allows the user to make and manage their appointments after logging in, this system has REST API, database and encryption"
     },
     "gamerstore": {
       "title": "GamerStore",

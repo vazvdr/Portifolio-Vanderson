@@ -76,7 +76,7 @@ const Tecnologias = () => {
       </h1>
       <div
         id="carousel-container"
-        className="bg-gradient-to-r from-black via-fuchsia-800 to-black border-t border-b border-purple-800 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center"
+        className="bg-gradient-to-r from-black via-fuchsia-900 to-black border-t border-b border-purple-800 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center"
         style={{ margin: "0 10%" }}
       >
         <div
