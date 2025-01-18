@@ -106,7 +106,7 @@ const Sobre = () => {
           >
             {/* Contêiner de sombreamento */}
             <div
-              className="h-[40%] w-[150%] sm:h-[350%] absolute inset-0 transform scale-105 bg-gradient-to-r from-black to-orange-700 to-transparent 
+              className="h-[40%] w-[150%] sm:h-[78%] absolute inset-0 transform scale-105 bg-gradient-to-r from-black to-orange-700 to-transparent 
     rounded-md blur-md -z-10"
             ></div>
             {/* Imagem */}
