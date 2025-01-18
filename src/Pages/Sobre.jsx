@@ -71,7 +71,7 @@ const Sobre = () => {
           <div
             className={`mt-[22%] w-[40%] ml-[2%] animate-fade-in-right
             sm:w-[50%] sm:mt-[15%] sm:mb-[4%] sm:ml-[10%] ${animate ? "animate-slide-in-left" : "opacity-0"
-          }`}
+              }`}
           >
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
@@ -100,14 +100,20 @@ const Sobre = () => {
             </div>
           </div>
           <div
-            className={`w-[65%] mt-[22%] ml-[5%] mr-[2%] mt-[15%] opacity-0 animate-fade-in-left 
-            sm:w-[50%] sm:mt-[20%] sm:mr-[1%] sm:mb-[4%] 
-            ${animate ? "animate-slide-in-right opacity-100" : ""}`}
+            className={`relative w-[65%] mt-[22%] ml-[5%] mr-[2%] mt-[15%] opacity-0 animate-fade-in-left 
+  sm:w-[50%] sm:mt-[20%] sm:mr-[1%] sm:mb-[4%] 
+  ${animate ? "animate-slide-in-right opacity-100" : ""}`}
           >
+            {/* Contêiner de sombreamento */}
+            <div
+              className="h-[42%] sm:h-[100%] absolute inset-0 transform scale-105 bg-gradient-to-br from-black to-gray-500 to-transparent 
+    rounded-md blur-md -z-10"
+            ></div>
+            {/* Imagem */}
             <img
               src={Foto}
               alt="Vanderson"
-              className="w-full object-cover rounded-md shadow-lg"
+              className="w-full object-cover rounded-md"
             />
             <div className="mt-5 flex items-center justify-center md:justify-start space-x-1">
               <a
@@ -174,10 +180,14 @@ const Sobre = () => {
           <div
             id="foto-container"
             className={`w-[38%] mt-[15%] ml-[5%] mr-[10%] opacity-0 
-            lg:w-[30%] lg:mt-[7%] lg:ml-[5%] transition-opacity duration-1000 
+            lg:w-[27%] lg:mt-[8%] lg:ml-[5%] transition-opacity duration-1000 
             ${isVisible ? "opacity-100 scale-100" : "scale-90"
               }`}
           >
+            <div
+              className="absolute inset-0 z-0 rounded-md bg-gradient-to-r from-black to-gray-500 transform scale-105 blur-md
+              md:h-[75%] lg:h-[100%]"
+            ></div>
             <img
               src={Foto}
               alt="Vanderson"
@@ -188,6 +198,7 @@ const Sobre = () => {
         </div>
       </div>
       <div className="hidden sm:hidden md:flex mt-[5%] ml-[25%] space-x-4
+      md:mt-[2%] md:ml-[20%] 
       lg:mt-[1%] lg:ml-[20%] lg:w-[50%]">
         <a
           href="#projetos"
