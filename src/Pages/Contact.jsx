@@ -84,10 +84,10 @@ const Contact = () => {
       )}
 
       {/* Contêiner do formulário com ref */}
+      <div id="contato" className="w-[100%] justify-items-center">
         <motion.div
           ref={sectionRef}
-          id="contato"
-          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[3%] border border-purple-800"
+          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[6%] mt-[6%] border border-purple-800"
           animate={controls} // Associando os controles de animação
           initial={{ opacity: 0, scale: 0.5 }} // Começa invisível e menor
         >
@@ -153,53 +153,54 @@ const Contact = () => {
             </div>
           </form>
         </motion.div>
+      </div>
 
-        <div className="w-full h-0.5 bg-gradient-to-r from-purple-800 via-blue-500 to-purple-800 my-1 "></div>
-        <footer className="w-full py-1 pt-2 flex flex-col items-center justify-center">
-          <p className="text-center mb-2">
-            Copyright © 2024 by Vanderson. All rights reserved.
-          </p>
-          <div className="relative flex space-x-4 mb-[1%]">
-            <div className="group relative">
-              <a
-                href="https://www.linkedin.com/in/vanderson-de-azevedo/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedin className="text-xl" />
-              </a>
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                LinkedIn
-              </span>
-            </div>
-
-            <div className="group relative">
-              <a
-                href="https://github.com/vazvdr"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="text-xl" />
-              </a>
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                GitHub
-              </span>
-            </div>
-
-            <div className="group relative">
-              <a
-                href="https://wa.me/5521967441433"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaWhatsapp className="text-xl" />
-              </a>
-              <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-                WhatsApp
-              </span>
-            </div>
+      <div className="w-full h-0.5 bg-gradient-to-r from-purple-800 via-blue-500 to-purple-800 my-1 "></div>
+      <footer className="w-full py-1 pt-2 flex flex-col items-center justify-center">
+        <p className="text-center mb-2">
+          Copyright © 2024 by Vanderson. All rights reserved.
+        </p>
+        <div className="relative flex space-x-4 mb-[1%]">
+          <div className="group relative">
+            <a
+              href="https://www.linkedin.com/in/vanderson-de-azevedo/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin className="text-xl" />
+            </a>
+            <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+              LinkedIn
+            </span>
           </div>
-        </footer>
+
+          <div className="group relative">
+            <a
+              href="https://github.com/vazvdr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub className="text-xl" />
+            </a>
+            <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+              GitHub
+            </span>
+          </div>
+
+          <div className="group relative">
+            <a
+              href="https://wa.me/5521967441433"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp className="text-xl" />
+            </a>
+            <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
+              WhatsApp
+            </span>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 };
