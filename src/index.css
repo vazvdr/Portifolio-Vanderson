@@ -13,7 +13,7 @@
   --gradient-end: #6b21a8; /* Purple 800 */
   /* borda para o form */ 
   --text-color: #333333;
-  --header-line-gradient: linear-gradient(to right, #e2e8f0, #718096);
+  --header-line-gradient: linear-gradient(to right, #4c0b61, #84236f, #000000);
   /* Light Mode */
   --primary-color: #6b21a8;
   /* Roxo Tailwind */
@@ -40,7 +40,7 @@
   /* borda para o form */ 
   --text-color: #f9fafb;
   /* Texto Claro */
-  --header-line-gradient: linear-gradient(to right, #000000, #2d3748);
+  --header-line-gradient: linear-gradient(to right, #4f0d65, #696bd3, #77479e);
   /* Dark Mode */
   --primary-color: #9333ea;
   /* Roxo Mais Intenso */
