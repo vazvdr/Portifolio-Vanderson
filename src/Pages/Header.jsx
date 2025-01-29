@@ -88,7 +88,7 @@ const Header = () => {
         <div className="absolute inset-x-0 bottom-0 h-[2px] header-line"></div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
-            <SiAlienware color="purple" size={50} className=" transform hover:scale-110" />
+            <SiAlienware color="green" size={50} className=" transform hover:scale-110" />
             <span className="w-[30px] h-38 font-bold text-lg  text-center" style={{ fontFamily: "DoctorGlitch" }}>
               {t("header.developer")}
             </span>

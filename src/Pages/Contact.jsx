@@ -87,7 +87,7 @@ const Contact = () => {
       <div id="contato" className="w-[100%] justify-items-center">
         <motion.div
           ref={sectionRef}
-          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[6%] mt-[6%] border border-purple-800"
+          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[2.5%] mt-[6%] border border-purple-800"
           animate={controls} // Associando os controles de animação
           initial={{ opacity: 0, scale: 0.5 }} // Começa invisível e menor
         >
