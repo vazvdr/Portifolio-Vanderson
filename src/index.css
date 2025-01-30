@@ -126,7 +126,7 @@ body {
   border: var(--border-color);
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
-  padding: 0.1rem;
+  padding: 1.0rem;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 0.875rem;
 }

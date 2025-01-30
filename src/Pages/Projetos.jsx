@@ -84,24 +84,26 @@ const Projetos = () => {
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projects.map((project, index) => (
-                        <div key={index} className={`relative card border-2 border-purple-900 shadow-lg rounded-lg overflow-hidden transition-transform transform hover: hover:shadow-2xl ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}`}>
-                            <div className="absolute top-3 right-4 flex gap-3">
+                        <div key={index} className={`relative card border-2 border-purple-900 shadow-lg rounded-lg overflow-hidden transition-transform transform hover:shadow-2xl ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}`}>
+                            <div className="absolute top-3 right-4 flex gap-4">
                                 <a href={project.repo} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub size={26} className="hover:scale-110"/>
+                                    <FaGithub size={26} className="hover:scale-110" title="GitHub"/>
                                 </a>
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" >
-                                    <FaExternalLinkAlt size={25} className="hover:scale-110" />
+                                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                    <FaExternalLinkAlt size={25} className="hover:scale-110" title="Ver Projeto"/>
                                 </a>
                             </div>
-                            <div className="p-6 flex flex-col items-center text-center">
-                                <h2 className="text-2xl font-bold mb-2">{project.title}</h2>
-                                <p className="text-sm mb-4">{t(project.subtitleKey)}</p>
-                                <img src={project.image} alt={project.title} className="rounded-lg shadow-md w-full h-48 object-cover mb-4" />
-                                <p className="">{t(project.descriptionKey)}</p>
+                            <div className="p-6 flex flex-col text-left">
+                                <h2 className="text-2xl font-bold mb-2 absolute top-3 left-4">{project.title}</h2>
+                                <div className="flex justify-center w-full">
+                                    <p className="text-sm mb-4 text-center mt-4">{t(project.subtitleKey)}</p>
+                                </div>
+                                <img src={project.image} alt={project.title} className="rounded-lg shadow-md w-full h-48 object-cover mb-4 transition-transform transform hover:scale-110" />
+                                <p className="text-left">{t(project.descriptionKey)}</p>
                                 <h3 className="text-lg font-semibold mt-4">Techs usadas:</h3>
                                 <div className="flex flex-wrap justify-center gap-4 mt-2">
                                     {project.techs.map((tech, idx) => (
-                                        <img key={idx} src={techIcons[tech]} alt={tech} className="w-10 h-10" />
+                                        <img key={idx} src={techIcons[tech]} alt={tech} className="w-10 h-10 transition-transform transform hover:scale-110" />
                                     ))}
                                 </div>
                             </div>
