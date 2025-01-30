@@ -126,13 +126,9 @@ body {
   border: var(--border-color);
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 0.1rem;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 0.875rem;
-}
-
-.card:hover {
-  transform: translateY(-0.5rem);
 }
 
 .card h2 {
@@ -285,6 +281,22 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+@keyframes pulse-custom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-custom {
+  animation: pulse-custom 1.5s infinite;
 }
 
 @font-face {

@@ -88,7 +88,7 @@ const Header = () => {
         <div className="absolute inset-x-0 bottom-0 h-[2px] header-line"></div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
-            <SiAlienware color="green" size={50} className=" transform hover:scale-110" />
+            <SiAlienware color="purple" size={50} className=" transform hover:scale-110" />
             <span className="w-[30px] h-38 font-bold text-lg  text-center" style={{ fontFamily: "DoctorGlitch" }}>
               {t("header.developer")}
             </span>
@@ -263,23 +263,22 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <button href="#contato" className="font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 
-                transition-all duration-500 ease-in-out"onClick={(e) => handleLinkClick(e, "#contato")}>
+              <button href="#contato" className="contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 
+                transition-all duration-500 ease-in-out animate-pulse-custom"onClick={(e) => handleLinkClick(e, "#contato")}>
 
                 {t("header.menu.contact")}
               </button>
             </li>
           </ul>
 
-          {/* Botão de alternar tema, posicionado 4px da margem direita */}
           <button
             onClick={toggleTheme}
-            className="w-8 h-8 shadow-lg transition duration-1000 flex items-center rounded-full"  // 4px de margem da direita
+            className="w-8 h-8 shadow-lg transition duration-1000 flex items-center rounded-full"
           >
             {darkMode ? (
-              <FaSun className="text-yellow-400 w-5 h-5 transform hover:scale-110" /> // Sol para o Light Mode
+              <FaSun className="text-yellow-400 w-5 h-5 transform hover:scale-110" />
             ) : (
-              <FaMoon className="text-blue-600 w-5 h-5 transform hover:scale-110" /> // Lua para o Dark Mode
+              <FaMoon className="text-blue-600 w-5 h-5 transform hover:scale-110" />
             )}
           </button>
         </nav>
@@ -351,7 +350,7 @@ const Header = () => {
               <button
                 href="#contato"
                 className="contact-button font-semibold py-2 px-2 border border-black rounded-[10px] 
-    transform hover:scale-110 transition-all duration-500 ease-in-out text-md"
+    transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-purple-700 animate-pulse-custom"
                 onClick={(e) => {
                   e.preventDefault();
                   handleLinkClick(e, "#contato");

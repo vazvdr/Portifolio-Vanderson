@@ -1,9 +1,9 @@
 import React from "react";
 import Foto from "../assets/Foto.jpg";
 import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
-import { SiCredly } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const Sobre = () => {
   const { t } = useTranslation();
@@ -15,12 +15,12 @@ const Sobre = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true); // Ativa a animação quando visível
+          setAnimate(true);
         } else {
-          setAnimate(false); // Desativa quando sai da viewport
+          setAnimate(false);
         }
       },
-      { threshold: 0.3 } // 30% da seção visível para ativar a animação
+      { threshold: 0.3 }
     );
 
     const section = document.getElementById("sobre-mim");
@@ -42,7 +42,7 @@ const Sobre = () => {
           }
         });
       },
-      { threshold: 0.1 } // A animação será acionada quando 50% da div estiver visível
+      { threshold: 0.1 }
     );
 
     const target = document.querySelector("#foto-container");
@@ -69,7 +69,7 @@ const Sobre = () => {
       <div className="md:hidden ld:hidden relative z-10 flex flex-col items-center md:items-start">
         <div className="flex flex-colum max-w-[100%]">
           <div
-            className={`mt-[22%] w-[40%] ml-[2%] animate-fade-in-right
+            className={`mt-[17%] w-[45%] ml-[2%] animate-fade-in-right
             sm:w-[50%] sm:mt-[15%] sm:mb-[4%] sm:ml-[10%] ${animate ? "animate-slide-in-left" : "opacity-0"
               }`}
           >
@@ -77,11 +77,23 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-orange-600 hover:text-purple-600 hover:translate-x-1 transition-all duration-300">
+              <span className="text-orange-600 hover:text-red-600 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
-              {t("sobre.heading.role")}
+              <div className="relative min-h-[80px] sm:min-h-[80px]">
+                <span>
+                  <Typewriter
+                    words={["FullStack Developer"]}
+                    loop={0}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={20}
+                    deleteSpeed={20}
+                    delaySpeed={1000}
+                  />
+                </span>
+              </div>
             </h1>
             <p className="text-base sm:text-lg leading-snug">
               {t("sobre.description")}
@@ -89,9 +101,10 @@ const Sobre = () => {
             <div className="mt-4 flex">
               <a
                 href="#projetos"
-                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-purple-800 
+                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-orange-500 
                 flex items-center space-x-2 
-                transition-all transform hover:scale-105 whitespace-nowrap"
+                transition-all transform hover:scale-105 
+                whitespace-nowrap animate-pulse-custom"
                 onClick={(e) => handleLinkClick(e, "#projetos")}
               >
                 <span>{t("sobre.projects")}</span>
@@ -100,7 +113,7 @@ const Sobre = () => {
             </div>
           </div>
           <div
-            className={`relative w-[65%] mt-[22%] ml-[5%] mr-[2%] mt-[15%] opacity-0 animate-fade-in-left 
+            className={`relative w-[55%] mt-[22%] ml-[5%] mr-[5%] mt-[15%] opacity-0 animate-fade-in-left 
   sm:w-[50%] sm:mt-[20%] sm:mr-[5%] sm:mb-[4%] 
   ${animate ? "animate-slide-in-right opacity-100" : ""}`}
           >
@@ -135,7 +148,7 @@ const Sobre = () => {
                 <span className="sr-only">{t("sobre.linkedin")}</span>
               </a>
               <a
-                href="https://wa.me/5521967441433"
+                href="https://wa.me/5521967441433?text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20pelo%20link%20portf%C3%B3lio%20do%20Vanderson!"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -173,7 +186,19 @@ const Sobre = () => {
                 {t("sobre.heading.name")}
               </span>
               <br />
-              {t("sobre.heading.role")}
+              <div className="relative md:min-h-[90px] lg:min-h-[60px]">
+                <span>
+                  <Typewriter
+                    words={["FullStack Developer"]}
+                    loop={0}
+                    cursor
+                    cursorStyle="_"
+                    typeSpeed={20}
+                    deleteSpeed={20}
+                    delaySpeed={1000}
+                  />
+                </span>
+              </div>
             </h1>
             <p className="text-base sm:text-lg leading-snug">{t("sobre.description")}</p>
           </div>
@@ -202,9 +227,10 @@ const Sobre = () => {
       lg:mt-[1%] lg:ml-[20%] lg:w-[50%]">
         <a
           href="#projetos"
-          className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md hover:bg-purple-800 
-    flex items-center space-x-2 
-    transition-all transform hover:scale-105 whitespace-nowrap"
+          className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md 
+  hover:bg-orange-500 flex items-center space-x-2 
+  transition-all transform hover:scale-105 whitespace-nowrap 
+  animate-pulse-custom"
           onClick={(e) => handleLinkClick(e, "#projetos")}
         >
           <span>{t("sobre.projects")}</span>
@@ -214,7 +240,7 @@ const Sobre = () => {
           href="/Curriculo-Atualizado.pdf"
           download
           className="buttons-sobre h-9 py-1 px-4 rounded-md font-semibold 
-    shadow-lg hover:bg-purple-800 transition-all 
+    shadow-lg hover:bg-purple-800 hover:text-white transition-all 
     transform hover:scale-110 flex items-center"
         >
           {t("sobre.button")}
@@ -239,19 +265,10 @@ const Sobre = () => {
           href="https://github.com/vazvdr"
           target="_blank"
           rel="noopener noreferrer"
-          className="h-10 flex items-center justify-center hover:text-gray-500 transition-all transform hover:scale-110"
+          className="h-10 flex items-center justify-center transition-all transform hover:scale-110"
         >
           <FaGithub size={30} />
           <span className="sr-only">{t("sobre.github")}</span>
-        </a>
-        <a
-          href="https://www.credly.com/users/vanderson-de-azevedo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="h-10 flex items-center justify-center hover:text-orange-500 transition-all transform hover:scale-110"
-        >
-          <SiCredly size={32} />
-          <span className="sr-only">{t("sobre.credly")}</span>
         </a>
       </div>
     </section >

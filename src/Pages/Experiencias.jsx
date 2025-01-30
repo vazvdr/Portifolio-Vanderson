@@ -9,12 +9,12 @@ const Experiencias = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true); // Ativa a animação quando visível
+          setAnimate(true); 
         } else {
-          setAnimate(false); // Desativa quando sai da viewport
+          setAnimate(false);
         }
       },
-      { threshold: 0.3 } // 30% da seção visível para ativar a animação
+      { threshold: 0.3 }
     );
 
     const section = document.getElementById("experiencias");
