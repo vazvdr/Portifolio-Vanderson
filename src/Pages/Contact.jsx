@@ -5,11 +5,10 @@ import { motion, useAnimation } from "framer-motion";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [alertMessage, setAlertMessage] = useState(null); // Para controlar o conteúdo do alerta
-  const controls = useAnimation(); // Controles de animação
-  const sectionRef = useRef(null); // Ref para o contêiner do formulário
+  const [alertMessage, setAlertMessage] = useState(null); 
+  const controls = useAnimation(); 
+  const sectionRef = useRef(null);
 
-  // Função de envio do formulário
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,7 +40,7 @@ const Contact = () => {
     }
   };
 
-  const closeAlert = () => setAlertMessage(null); // Fechar o alerta
+  const closeAlert = () => setAlertMessage(null);
 
   // useEffect para monitorar a visibilidade da seção
   useEffect(() => {
@@ -50,10 +49,10 @@ const Contact = () => {
         if (entry.isIntersecting) {
           controls.start({ opacity: 1, scale: 1, transition: { duration: 1 } });
         } else {
-          controls.start({ opacity: 0, scale: 0.5 }); // Se sair da tela, voltar para o estado inicial
+          controls.start({ opacity: 0, scale: 0.5 });
         }
       },
-      { threshold: 0.5 } // Executa a animação quando 50% do elemento está visível
+      { threshold: 0.2 }
     );
 
     if (sectionRef.current) {
@@ -62,13 +61,13 @@ const Contact = () => {
 
     return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current); // Limpar a observação quando o componente for desmontado
+        observer.unobserve(sectionRef.current);
       }
     };
   }, [controls]);
 
   return (
-    <section className="flex flex-col items-center justify-center mt-[5%]">
+    <section className="flex flex-col items-center justify-center mt-[1.5%]">
       {alertMessage && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
           <div className="bg-black text-white p-6 rounded-lg shadow-lg text-center space-y-4 max-w-xs">
@@ -87,8 +86,10 @@ const Contact = () => {
       <div id="contato" className="w-[100%] justify-items-center">
         <motion.div
           ref={sectionRef}
-          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] p-8 rounded-lg shadow-lg mb-[2.5%] mt-[6%] border border-purple-800"
-          animate={controls} // Associando os controles de animação
+          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] 
+          p-8 rounded-lg shadow-lg 
+          mb-[10%] mt-[6%] border border-purple-800"
+          animate={controls} 
           initial={{ opacity: 0, scale: 0.5 }} // Começa invisível e menor
         >
           <h2
@@ -155,7 +156,7 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      <div className="w-full h-0.5 bg-gradient-to-r from-purple-800 via-blue-500 to-purple-800 my-1 "></div>
+      <div className="w-full h-0.5 bg-gradient-to-r from-purple-800 via-blue-500 to-purple-800 my-4 "></div>
       <footer className="w-full py-1 pt-2 flex flex-col items-center justify-center">
         <p className="text-center mb-2">
           Copyright © 2024 by Vanderson. All rights reserved.
@@ -167,7 +168,7 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin className="text-xl" />
+              <FaLinkedin className="text-xl"/>
             </a>
             <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
               LinkedIn

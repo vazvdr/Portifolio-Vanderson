@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const Experiencias = () => {
   const { t } = useTranslation();
@@ -9,7 +10,7 @@ const Experiencias = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true); 
+          setAnimate(true);
         } else {
           setAnimate(false);
         }
@@ -29,9 +30,8 @@ const Experiencias = () => {
     <section id="experiencias" className="py-10 relative">
       <div className="max-w-4xl mx-auto px-10">
         <h1
-          className={`text-3xl font-bold text-center mb-8 mt-10 ${
-            animate ? "animate-slide-in-right" : "opacity-0"
-          }`}
+          className={`text-3xl font-bold text-center mb-8 mt-10 ${animate ? "animate-slide-in-right" : "opacity-0"
+            }`}
           style={{ fontFamily: "DoctorGlitch" }}
         >
           {t("experiencias.titulo")}
@@ -41,10 +41,12 @@ const Experiencias = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Card 1 */}
           <div
-            className={`card rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:-translate-y-2 ${
-              animate ? "animate-slide-in-left" : "opacity-0"
-            }`}
+            className={`card rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate ? "animate-slide-in-left" : "opacity-0"
+              }`}
           >
+            <a href="https://01bit.tech/" target="_blank" rel="noopener noreferrer">
+              <FaExternalLinkAlt size={25} className="hover:scale-110 absolute top-4 right-4" title="Ver Projeto" />
+            </a>
             <h2 className="text-xl sm:text-2xl font-bold">
               {t("experiencias.card1.titulo")}
             </h2>
@@ -103,9 +105,8 @@ const Experiencias = () => {
 
           {/* Card 2 */}
           <div
-            className={`card rounded-lg shadow-md dark:shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-2 ${
-              animate ? "animate-slide-in-right" : "opacity-0"
-            }`}
+            className={`card rounded-lg shadow-md dark:shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate ? "animate-slide-in-right" : "opacity-0"
+              }`}
           >
             <h2 className="text-xl sm:text-2xl font-bold">
               {t("experiencias.card2.titulo")}

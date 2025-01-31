@@ -94,7 +94,7 @@ const Projetos = () => {
                                 </a>
                             </div>
                             <div className="p-6 flex flex-col text-left">
-                                <h2 className="text-2xl font-bold mb-2 absolute top-3 left-4">{project.title}</h2>
+                                <h2 className="text-2xl font-bold mb-2 absolute top-3 left-4 transition-transform transform hover:scale-110">{project.title}</h2>
                                 <div className="flex justify-center w-full">
                                     <p className="text-sm mb-4 text-center mt-4">{t(project.subtitleKey)}</p>
                                 </div>
