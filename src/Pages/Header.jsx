@@ -63,6 +63,40 @@ const Header = () => {
     setIsOpen(false);
   };
 
+  const sections = ["#sobre-mim", "#experiencias", "#tecnologias", "#projetos", "#contato"];
+  const [selectedSection, setSelectedSection] = useState(null);
+
+  // Função para tratar clique no menu
+  const handleLinkClickSelect = (e, section) => {
+    e.preventDefault();
+    setSelectedSection(section);
+    document.querySelector(section)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // Função para monitorar o scroll e atualizar o item selecionado
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = null;
+
+      sections.forEach((section) => {
+        const element = document.querySelector(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = section;
+          }
+        }
+      });
+
+      if (currentSection) {
+        setSelectedSection(currentSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const toggleTheme = () => {
     setDarkMode(!darkMode);
     document.documentElement.classList.toggle("dark", !darkMode);
@@ -142,16 +176,17 @@ const Header = () => {
             <div
               ref={menuRef}
               className={`menu-hamburguer absolute top-[70px] right-0 w-[100%] max-h-[300px]
-  flex flex-col items-center py-4 mb-4 z-50 shadow-lg border-b border-gray-600 
-  md:hidden overflow-hidden transition-all duration-1000 ease-in-out ${isOpen ? "h-auto opacity-100" : "h-0 opacity-0"
+    flex flex-col items-center py-4 mb-4 z-50 shadow-lg border-b border-gray-600 
+    md:hidden overflow-hidden transition-all duration-1000 ease-in-out ${isOpen ? "h-auto opacity-100" : "h-0 opacity-0"
                 }`}
             >
               <ul className="flex flex-col space-y-4">
                 <li>
                   <a
                     href="#sobre-mim"
-                    className="hover:text-purple-800 hover:underline font-semibold"
-                    onClick={(e) => handleLinkClick(e, "#sobre-mim")}
+                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
+            ${selectedSection === "#sobre-mim" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    onClick={(e) => handleLinkClickSelect(e, "#sobre-mim")}
                   >
                     {t("header.menu.about")}
                   </a>
@@ -159,8 +194,9 @@ const Header = () => {
                 <li>
                   <a
                     href="#experiencias"
-                    className="hover:text-purple-800 hover:underline font-semibold"
-                    onClick={(e) => handleLinkClick(e, "#experiencias")}
+                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
+            ${selectedSection === "#experiencias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    onClick={(e) => handleLinkClickSelect(e, "#experiencias")}
                   >
                     {t("header.menu.experiences")}
                   </a>
@@ -168,8 +204,9 @@ const Header = () => {
                 <li>
                   <a
                     href="#tecnologias"
-                    className="hover:text-purple-800 hover:underline font-semibold"
-                    onClick={(e) => handleLinkClick(e, "#tecnologias")}
+                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
+            ${selectedSection === "#tecnologias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    onClick={(e) => handleLinkClickSelect(e, "#tecnologias")}
                   >
                     {t("header.menu.technologies")}
                   </a>
@@ -177,8 +214,9 @@ const Header = () => {
                 <li>
                   <a
                     href="#projetos"
-                    className="hover:text-purple-800 hover:underline font-semibold"
-                    onClick={(e) => handleLinkClick(e, "#projetos")}
+                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
+            ${selectedSection === "#projetos" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    onClick={(e) => handleLinkClickSelect(e, "#projetos")}
                   >
                     {t("header.menu.projects")}
                   </a>
@@ -186,9 +224,10 @@ const Header = () => {
                 <li>
                   <button
                     href="#contato"
-                    className="contact-button font-semibold py-1 px-3 border border-black rounded-[10px] 
-        transform hover:scale-110 transition-all duration-500 ease-in-out"
-                    onClick={(e) => handleLinkClick(e, "#contato")}
+                    className={`contact-button font-semibold py-1 px-3 border border-black rounded-[10px] 
+          transform hover:scale-110 transition-all duration-500 ease-in-out 
+          ${selectedSection === "#contato" ? "border-purple-700" : ""}`}
+                    onClick={(e) => handleLinkClickSelect(e, "#contato")}
                   >
                     {t("header.menu.contact")}
                   </button>
@@ -199,38 +238,29 @@ const Header = () => {
         </div>
 
         {/* Menu para telas medias */}
-
         <nav className="hidden md:flex items-center space-x-6 mr-[1%] animate-fadeInLeft delay-150 sm:hidden lg:hidden">
-          <ul className="flex items-center space-x-3 "> {/* Ajustando o espaçamento entre os botões de idioma e os itens do menu */}
-
+          <ul className="flex items-center space-x-3">
             {/* Botões de idioma */}
             <button
               onClick={() => changeLanguage("pt")}
-              className=" w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
+              className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
             >
-              <Flag
-                code="BR"
-                alt="Bandeira do Brasil"
-                className="w-full h-full object-cover rounded-full"
-              />
+              <Flag code="BR" alt="Bandeira do Brasil" className="w-full h-full object-cover rounded-full" />
             </button>
             <button
               onClick={() => changeLanguage("en")}
               className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
             >
-              <Flag
-                code="US"
-                alt="Bandeira dos EUA"
-                className="w-full h-full object-cover rounded-full"
-              />
+              <Flag code="US" alt="Bandeira dos EUA" className="w-full h-full object-cover rounded-full" />
             </button>
 
             {/* Itens do menu */}
             <li>
               <a
                 href="#sobre-mim"
-                className="hover:text-purple-700 font-semibold whitespace-nowrap"
-                onClick={(e) => handleLinkClick(e, "#sobre-mim")}
+                className={`hover:text-purple-700 font-semibold whitespace-nowrap transition-all duration-300 
+            ${selectedSection === "#sobre-mim" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                onClick={(e) => handleLinkClickSelect(e, "#sobre-mim")}
               >
                 {t("header.menu.about")}
               </a>
@@ -238,8 +268,9 @@ const Header = () => {
             <li>
               <a
                 href="#experiencias"
-                className="hover:text-purple-700 font-semibold"
-                onClick={(e) => handleLinkClick(e, "#experiencias")}
+                className={`hover:text-purple-700 font-semibold transition-all duration-300 
+            ${selectedSection === "#experiencias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                onClick={(e) => handleLinkClickSelect(e, "#experiencias")}
               >
                 {t("header.menu.experiences")}
               </a>
@@ -247,8 +278,9 @@ const Header = () => {
             <li>
               <a
                 href="#tecnologias"
-                className="hover:text-purple-700 font-semibold"
-                onClick={(e) => handleLinkClick(e, "#tecnologias")}
+                className={`hover:text-purple-700 font-semibold transition-all duration-300 
+            ${selectedSection === "#tecnologias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                onClick={(e) => handleLinkClickSelect(e, "#tecnologias")}
               >
                 {t("header.menu.technologies")}
               </a>
@@ -256,21 +288,27 @@ const Header = () => {
             <li>
               <a
                 href="#projetos"
-                className="hover:text-purple-700 font-semibold"
-                onClick={(e) => handleLinkClick(e, "#projetos")}
+                className={`hover:text-purple-700 font-semibold transition-all duration-300 
+            ${selectedSection === "#projetos" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                onClick={(e) => handleLinkClickSelect(e, "#projetos")}
               >
                 {t("header.menu.projects")}
               </a>
             </li>
             <li>
-              <button href="#contato" className="contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 
-                transition-all duration-500 ease-in-out animate-pulse-custom"onClick={(e) => handleLinkClick(e, "#contato")}>
-
+              <button
+                href="#contato"
+                className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 
+          transition-all duration-500 ease-in-out animate-pulse-custom 
+          ${selectedSection === "#contato" ? "border-purple-700" : ""}`}
+                onClick={(e) => handleLinkClickSelect(e, "#contato")}
+              >
                 {t("header.menu.contact")}
               </button>
             </li>
           </ul>
 
+          {/* Botão de alternância de tema */}
           <button
             onClick={toggleTheme}
             className="w-8 h-8 shadow-lg transition duration-1000 flex items-center rounded-full"
@@ -286,88 +324,61 @@ const Header = () => {
         {/* Menu para telas maiores (lg e acima) */}
         <nav className="hidden lg:flex items-center space-x-10 mr-[2%] animate-fadeInRight delay-400">
           <ul className="flex items-center lg:space-x-5">
-
             {/* Botões de idioma */}
             <button
               onClick={() => changeLanguage("pt")}
               className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
             >
-              <Flag
-                code="BR"
-                alt="Bandeira do Brasil"
-                className="w-full h-full object-cover rounded-full"
-              />
+              <Flag code="BR" alt="Bandeira do Brasil" className="w-full h-full object-cover rounded-full" />
             </button>
             <button
               onClick={() => changeLanguage("en")}
               className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
             >
-              <Flag
-                code="US"
-                alt="Bandeira dos EUA"
-                className="w-full h-full object-cover rounded-full"
-              />
+              <Flag code="US" alt="Bandeira dos EUA" className="w-full h-full object-cover rounded-full" />
             </button>
 
             {/* Itens do menu */}
-            <li>
-              <a
-                href="#sobre-mim"
-                className="hover:text-purple-700 font-semibold whitespace-nowrap"
-                onClick={(e) => handleLinkClick(e, "#sobre-mim")}
-              >
-                {t("header.menu.about")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#experiencias"
-                className="hover:text-purple-700 font-semibold "
-                onClick={(e) => handleLinkClick(e, "#experiencias")}
-              >
-                {t("header.menu.experiences")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#tecnologias"
-                className="hover:text-purple-700 font-semibold"
-                onClick={(e) => handleLinkClick(e, "#tecnologias")}
-              >
-                {t("header.menu.technologies")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projetos"
-                className="hover:text-purple-700 font-semibold"
-                onClick={(e) => handleLinkClick(e, "#projetos")}
-              >
-                {t("header.menu.projects")}
-              </a>
-            </li>
+            {[
+              { id: "#sobre-mim", label: t("header.menu.about") },
+              { id: "#experiencias", label: t("header.menu.experiences") },
+              { id: "#tecnologias", label: t("header.menu.technologies") },
+              { id: "#projetos", label: t("header.menu.projects") },
+            ].map((item) => (
+              <li key={item.id}>
+                <a
+                  href={item.id}
+                  className={`hover:text-purple-700 font-semibold whitespace-nowrap transition-all duration-300 
+            ${selectedSection === item.id
+                      ? "border-b-2 border-purple-700 pb-1"
+                      : "border-b-2 border-transparent"
+                    }`}
+                  onClick={(e) => handleLinkClickSelect(e, item.id)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+
+            {/* Botão de contato */}
             <li>
               <button
-                href="#contato"
-                className="contact-button font-semibold py-2 px-2 border border-black rounded-[10px] 
-    transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-purple-700 animate-pulse-custom"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(e, "#contato");
-                }}
+                className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-purple-700 animate-pulse-custom ${selectedSection === "#contato" ? "border-b-2 border-purple-700" : ""
+                  }`}
+                onClick={(e) => handleLinkClick(e, "#contato")}
               >
                 {t("header.menu.contact")}
               </button>
             </li>
           </ul>
 
-          {/* Botão de alternar tema, posicionado 4px da margem direita */}
+          {/* Botão de alternar tema */}
           <button
             onClick={toggleTheme}
             className="shadow-lg transition duration-1000 flex items-center justify-center rounded-full mr-[4%] lg:w-6 lg:h-6"
           >
             {darkMode ? (
-              <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" /> // Sol para o Light Mode
+              <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
             ) : (
               <FaMoon className="text-black w-6 h-6 transform hover:scale-110" />
             )}

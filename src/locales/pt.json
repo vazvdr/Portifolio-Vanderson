@@ -79,7 +79,10 @@
     "successMessage": "Email enviado com sucesso!",
     "errorMessage": "Erro ao enviar o email.",
     "connectionError": "Erro de conexão com o servidor.",
-    "closeButton": "Fechar"
+    "closeButton": "Fechar",
+    "requiredField": "Campo obrigatório",
+    "contactInfo": "Entre em Contato",
+    "adress": "Endereço"
   }
   
 }

@@ -1,20 +1,30 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { FaLinkedin, FaGithub, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaWhatsapp, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import { motion, useAnimation } from "framer-motion";
 
 const Contact = () => {
   const { t } = useTranslation();
-  const [alertMessage, setAlertMessage] = useState(null); 
-  const controls = useAnimation(); 
+  const [alertMessage, setAlertMessage] = useState(null);
+  const [errors, setErrors] = useState({});
+  const controls = useAnimation();
   const sectionRef = useRef(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const message = e.target.message.value.trim();
 
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
+    let formErrors = {};
+    if (!name) formErrors.name = t("contato.requiredField");
+    if (!email) formErrors.email = t("contato.requiredField");
+    if (!message) formErrors.message = t("contato.requiredField");
+
+    if (Object.keys(formErrors).length > 0) {
+      setErrors(formErrors);
+      return;
+    }
 
     try {
       const response = await fetch(
@@ -30,6 +40,7 @@ const Contact = () => {
 
       if (response.ok) {
         setAlertMessage(t("contato.successMessage"));
+        setErrors({});
         e.target.reset();
       } else {
         setAlertMessage(t("contato.errorMessage"));
@@ -42,17 +53,16 @@ const Contact = () => {
 
   const closeAlert = () => setAlertMessage(null);
 
-  // useEffect para monitorar a visibilidade da seção
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           controls.start({ opacity: 1, scale: 1, transition: { duration: 1 } });
         } else {
-          controls.start({ opacity: 0, scale: 0.5 });
+          controls.start({ opacity: 1, scale: 1 });
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.5, once: true }
     );
 
     if (sectionRef.current) {
@@ -67,7 +77,7 @@ const Contact = () => {
   }, [controls]);
 
   return (
-    <section className="flex flex-col items-center justify-center mt-[1.5%]">
+    <section className="flex flex-col items-center justify-center mt-[1.5%] px-4">
       {alertMessage && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
           <div className="bg-black text-white p-6 rounded-lg shadow-lg text-center space-y-4 max-w-xs">
@@ -82,126 +92,127 @@ const Contact = () => {
         </div>
       )}
 
-      {/* Contêiner do formulário com ref */}
-      <div id="contato" className="w-[100%] justify-items-center">
-        <motion.div
-          ref={sectionRef}
-          className="formulario w-[90%] h-[480px] md:w-[48%] lg:w-[44%] 
-          p-8 rounded-lg shadow-lg 
-          mb-[10%] mt-[6%] border border-purple-800"
-          animate={controls} 
-          initial={{ opacity: 0, scale: 0.5 }} // Começa invisível e menor
-        >
-          <h2
-            className="text-3xl font-bold text-center mb-3"
-            style={{ fontFamily: "DoctorGlitch" }}
+      <div id="contato" className="w-full mt-[8%] mb-[5%] flex flex-col items-center md:w-[90%] lg:w-[70%]">
+        <h1 className="text-center text-3xl mb-6" style={{ fontFamily: "DoctorGlitch" }}>
+          {t("contato.contactInfo")}
+        </h1>
+
+        <div className="w-full flex flex-col md:flex-row md:space-x-0">
+          {/* Div com as informações de contato */}
+          <motion.div
+            ref={sectionRef}
+            className="formulario w-full px-2 py-2 md:py-5 md:px-2 md:py-12 lg:px-8 lg:py-12 lg:w-1/2 rounded-lg shadow-lg border border-purple-800 h-full flex-1"
+            animate={controls}
+            initial={{ opacity: 0, scale: 0.5 }}
           >
-            {t("contato.title")}
-          </h2>
-          <form className="space-y-1" onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                {t("contato.namelabel")}
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder={t("contato.nameplaceholder")}
-                className="w-full px-4 py-2 rounded-lg border text-white formulario  
-            focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent"
-                required
-              />
-            </div>
+            <div className="w-full rounded-lg shadow-lg flex flex-col justify-center space-y-6 text-lg text-white">
+              <div
+                className="flex flex-col items-start cursor-pointer border-b border-purple-900 hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                onClick={() => window.open("https://www.linkedin.com/in/vanderson-de-azevedo/", "_blank")}
+              >
+                <div className="flex items-center space-x-3">
+                  <FaLinkedin className="text-3xl" />
+                  <span>Linkedin</span>
+                </div>
+                <p className="pl-[42px]">Vanderson de Azevedo</p>
+              </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                {t("contato.emaillabel")}
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder={t("contato.emailplaceholder")}
-                className="w-full px-4 py-2 rounded-lg border text-white formulario  
-            focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent"
-                required
-              />
-            </div>
+              <div
+                className="flex flex-col items-start cursor-pointer border-b border-purple-900 hover:bg-blue-600 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                onClick={() => window.open("mailto:vanderson.azevedo.rocha@gmail.com")}
+              >
+                <div className="flex items-center space-x-3">
+                  <FaEnvelope className="text-3xl" />
+                  <span>Email</span>
+                </div>
+                <p className="pl-[42px]">vanderson.azevedo.rocha@gmail.com</p>
+              </div>
 
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                {t("contato.messagelabel")}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder={t("contato.messageplaceholder")}
-                rows="4"
-                className="w-full px-4 py-2 rounded-lg border text-white formulario  
-              focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent"
-                required
-              ></textarea>
-            </div>
+              <div
+                className="flex flex-col items-start cursor-pointer border-b border-purple-900 hover:bg-green-600 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                onClick={() => window.open("https://wa.me/5521967441433?text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20pelo%20link%20portf%C3%B3lio%20do%20Vanderson!", "_blank")}
+              >
+                <div className="flex items-start space-x-3">
+                  <FaWhatsapp className="text-3xl" />
+                  <span>WhatsApp</span>
+                </div>
+                <p className="pl-[42px]">+55 (21) 96744-1433</p>
+              </div>
 
-            <div className="mt-2">
+              <div className="flex flex-col items-start border-b border-purple-900 hover:bg-purple-900/50 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out">
+                <div className="flex items-center space-x-3">
+                  <FaMapMarkerAlt className="text-3xl" />
+                  <span>{t("contato.adress")}</span>
+                </div>
+                <p className="pl-[42px]">Rio de Janeiro, Brasil</p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Div com o formulário */}
+          <motion.div
+            ref={sectionRef}
+            className="formulario w-full p-9 rounded-lg shadow-lg border border-purple-800 h-full flex-1"
+            animate={controls}
+            initial={{ opacity: 0, scale: 0.5 }}
+          >
+            <form className="space-y-2" onSubmit={handleSubmit}>
+              {/* Nome */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  {t("contato.namelabel")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
+                  className={`w-full px-4 py-2 rounded-lg border-b formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.name ? "border-red-500 placeholder-red-500" : ""
+                    }`}
+                />
+              </div>
+
+              {/* Email */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  {t("contato.emaillabel")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
+                  className={`w-full px-4 py-2 rounded-lg border-b formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.email ? "border-red-500 placeholder-red-500" : ""
+                    }`}
+                />
+              </div>
+
+              {/* Mensagem */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  {t("contato.messagelabel")}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
+                  rows="3"
+                  className={`w-full px-4 py-2 rounded-lg border formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.message ? "border-red-500 placeholder-red-500" : ""
+                    }`}
+                ></textarea>
+              </div>
+
+              {/* Botão de Envio */}
               <button
                 type="submit"
                 className="formulario w-full py-3 px-6 rounded-lg bg-transparent border border-purple-800 font-bold hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 {t("contato.submitbutton")}
               </button>
-            </div>
-          </form>
-        </motion.div>
-      </div>
-
-      <div className="w-full h-0.5 bg-gradient-to-r from-purple-800 via-blue-500 to-purple-800 my-4 "></div>
-      <footer className="w-full py-1 pt-2 flex flex-col items-center justify-center">
-        <p className="text-center mb-2">
-          Copyright © 2024 by Vanderson. All rights reserved.
-        </p>
-        <div className="relative flex space-x-4 mb-[1%]">
-          <div className="group relative">
-            <a
-              href="https://www.linkedin.com/in/vanderson-de-azevedo/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin className="text-xl"/>
-            </a>
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-              LinkedIn
-            </span>
-          </div>
-
-          <div className="group relative">
-            <a
-              href="https://github.com/vazvdr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub className="text-xl" />
-            </a>
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-              GitHub
-            </span>
-          </div>
-
-          <div className="group relative">
-            <a
-              href="https://wa.me/5521967441433"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaWhatsapp className="text-xl" />
-            </a>
-            <span className="absolute left-1/2 -translate-x-1/2 bottom-8 bg-black text-white text-sm p-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity">
-              WhatsApp
-            </span>
-          </div>
+            </form>
+          </motion.div>
         </div>
-      </footer>
+      </div>
     </section>
   );
 };

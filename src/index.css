@@ -68,7 +68,6 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* Evita barras de rolagem indesejadas */
 }
 
 .scroll-to-top-button {
@@ -126,7 +125,7 @@ body {
   border: var(--border-color);
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
-  padding: 1.0rem;
+  padding: 0.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 0.875rem;
 }

@@ -79,7 +79,9 @@
     "successMessage": "Email sent successfully!",
     "errorMessage": "Error sending the email.",
     "connectionError": "Server connection error.",
-    "closeButton": "Close"
-    
+    "closeButton": "Close",
+    "requiredField": "Required field",
+    "contactInfo": "Contact Me",
+    "adress": "Adress"    
   }
 }

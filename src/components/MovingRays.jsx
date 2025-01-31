@@ -4,7 +4,7 @@ import { useTheme } from "../ThemeProvider";
 const MovingRays = () => {
   const canvasRef = useRef(null);
   const [isRendered, setIsRendered] = useState(false);
-  const { isDarkMode } = useTheme(); // Acessa o estado do tema
+  const { isDarkMode } = useTheme();
 
   class Ray {
     constructor(parentNode, isDarkMode) {
@@ -48,10 +48,7 @@ const MovingRays = () => {
 
       this.size = this.generateDecimalBetween(20, 25);
 
-      const grayMin = this.isDarkMode ? 10 : 50;
-      const grayMax = this.isDarkMode ? 10 : 50;
-
-      const grayValue = Math.floor(this.generateDecimalBetween(grayMin, grayMax));
+      const grayValue = this.isDarkMode ? 10 : 50;
       this.color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${Math.random().toFixed(2)})`;
 
       this.movementX = this.generateDecimalBetween(-4, 4);
