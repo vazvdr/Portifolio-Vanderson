@@ -1,15 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useTheme } from "../ThemeProvider";
 
 const MovingRays = () => {
   const canvasRef = useRef(null);
   const [isRendered, setIsRendered] = useState(false);
-  const { isDarkMode } = useTheme();
 
   class Ray {
-    constructor(parentNode, isDarkMode) {
+    constructor(parentNode) {
       this.parentNode = parentNode;
-      this.isDarkMode = isDarkMode;
       this.getCanvasSize();
       this.randomize();
     }
@@ -45,15 +42,11 @@ const MovingRays = () => {
       this.y1 = this.generateDecimalBetween(0, this.canvasHeight);
       this.x2 = this.generateDecimalBetween(0, this.canvasWidth);
       this.y2 = this.generateDecimalBetween(0, this.canvasHeight);
-
       this.size = this.generateDecimalBetween(20, 25);
-
-      const grayValue = this.isDarkMode ? 10 : 50;
-      this.color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${Math.random().toFixed(2)})`;
-
+      this.color = `rgb(45, 45, 45)`;
       this.movementX = this.generateDecimalBetween(-4, 4);
       this.movementY = this.generateDecimalBetween(-4, 4);
-    }
+    }    
 
     resize() {
       this.getCanvasSize();
@@ -62,12 +55,11 @@ const MovingRays = () => {
   }
 
   class Background {
-    constructor(selector, isDarkMode) {
+    constructor(selector) {
       this.canvas = document.getElementById(selector);
       this.ctx = this.canvas.getContext("2d");
       this.dpr = window.devicePixelRatio;
       this.rays = [];
-      this.isDarkMode = isDarkMode;
     }
 
     start() {
@@ -82,14 +74,13 @@ const MovingRays = () => {
       this.canvas.style.width = `${this.canvas.parentNode.clientWidth}px`;
       this.canvas.style.height = `${this.canvas.parentNode.clientHeight}px`;
       this.ctx.scale(this.dpr, this.dpr);
-
       this.rays.forEach((ray) => ray.resize());
     }
 
     generateRays() {
-      const numberOfRays = 300;
+      const numberOfRays = 250;
       for (let i = 0; i < numberOfRays; i++) {
-        const ray = new Ray(this.canvas, this.isDarkMode);
+        const ray = new Ray(this.canvas);
         this.rays.push(ray);
       }
     }
@@ -99,7 +90,6 @@ const MovingRays = () => {
       this.rays.forEach((ray) => {
         ray.update();
         this.ctx.fillStyle = ray.color;
-
         this.ctx.fillRect(ray.x1, ray.y1, ray.size, ray.size);
       });
       requestAnimationFrame(this.animate.bind(this));
@@ -109,8 +99,7 @@ const MovingRays = () => {
   useEffect(() => {
     if (isRendered) {
       const canvas = canvasRef.current;
-      const heroParticles = new Background(canvas.id, isDarkMode);
-
+      const heroParticles = new Background(canvas.id);
       heroParticles.start();
 
       const handleResize = () => {
@@ -123,7 +112,7 @@ const MovingRays = () => {
         window.removeEventListener("resize", handleResize);
       };
     }
-  }, [isRendered, isDarkMode]);
+  }, [isRendered]);
 
   useEffect(() => {
     setIsRendered(true);

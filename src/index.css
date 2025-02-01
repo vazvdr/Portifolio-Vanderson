@@ -4,31 +4,6 @@
 
 /* Light Mode */
 :root {
-  --background-color: #ffffff;
-  --background-color-card: rgb(51, 46, 46);
-  --border-color: rgb(184, 38, 179) 3px solid;
-  /* borda para o form */
-  --gradient-start: #6b21a8; /* Purple 800 */
-  --gradient-middle: #3b82f6; /* Blue 500 */
-  --gradient-end: #6b21a8; /* Purple 800 */
-  /* borda para o form */ 
-  --text-color: #333333;
-  --header-line-gradient: linear-gradient(to right, #4c0b61, #84236f, #000000);
-  /* Light Mode */
-  --primary-color: #6b21a8;
-  /* Roxo Tailwind */
-  --secondary-color: #e2e8f0;
-  /* Cinza Claro */
-  --hover-color: #9333ea;
-  /* Roxo Mais Intenso */
-  --menu-btn-bg: #222;
-  /* Fundo do botão no Light Mode */ 
-  --box-shadow-light: 0px 4px 10px rgba(30, 19, 19, 0.1);
-  --text-primary: white;
-}
-
-/* Dark Mode */
-.dark {
   --background-color: #222;
   /* Cinza Escuro */
   --background-color-card: rgb(32, 26, 26);
@@ -154,9 +129,25 @@ body {
 
 .formulario {
   background-color: var(--background-color-card);
+  border-width: 2px; 
+  border-style: solid;
   border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
   color: white;
 }
+
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 
 /* Animações Slide */
 .animate-slide-in-right {

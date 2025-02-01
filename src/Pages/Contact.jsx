@@ -101,7 +101,7 @@ const Contact = () => {
           {/* Div com as informações de contato */}
           <motion.div
             ref={sectionRef}
-            className="formulario w-full px-2 py-2 md:py-5 md:px-2 md:py-12 lg:px-8 lg:py-12 lg:w-1/2 rounded-lg shadow-lg border border-purple-800 h-full flex-1"
+            className="formulario w-full px-2 py-2 md:py-5 md:px-2 md:py-14 lg:px-8 lg:py-14 lg:w-1/2 rounded-lg shadow-lg border border-purple-800 h-full flex-1 border-gradient"
             animate={controls}
             initial={{ opacity: 0, scale: 0.5 }}
           >
@@ -152,7 +152,7 @@ const Contact = () => {
           {/* Div com o formulário */}
           <motion.div
             ref={sectionRef}
-            className="formulario w-full p-9 rounded-lg shadow-lg border border-purple-800 h-full flex-1"
+            className="formulario w-full p-9 rounded-lg shadow-lg border border-purple-800 h-full flex-1 border-gradient"
             animate={controls}
             initial={{ opacity: 0, scale: 0.5 }}
           >
@@ -167,7 +167,7 @@ const Contact = () => {
                   id="name"
                   name="name"
                   placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
-                  className={`w-full px-4 py-2 rounded-lg border-b formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.name ? "border-red-500 placeholder-red-500" : ""
+                  className={`w-full px-4 py-2 rounded-lg border-b border-l formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.name ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 />
               </div>
@@ -182,7 +182,7 @@ const Contact = () => {
                   id="email"
                   name="email"
                   placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
-                  className={`w-full px-4 py-2 rounded-lg border-b formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.email ? "border-red-500 placeholder-red-500" : ""
+                  className={`w-full px-4 py-2 rounded-lg border-b border-l formulario text-transparent focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.email ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 />
               </div>
@@ -197,7 +197,7 @@ const Contact = () => {
                   name="message"
                   placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
                   rows="3"
-                  className={`w-full px-4 py-2 rounded-lg border formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.message ? "border-red-500 placeholder-red-500" : ""
+                  className={`w-full px-4 py-2 rounded-lg border-b border-l formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.message ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 ></textarea>
               </div>

@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { SiAlienware } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { ArrowUpCircle } from 'react-feather';
 
 const Header = () => {
@@ -97,25 +96,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", !darkMode);
-    // Salva a preferência no localStorage
-    localStorage.setItem("theme", !darkMode ? "dark" : "light");
-  };
-
-  useEffect(() => {
-    // Verifica a preferência salva no localStorage ao carregar a página
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "dark") {
-      setDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
-
+  
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-md flex justify-between items-center">
@@ -128,17 +109,6 @@ const Header = () => {
             </span>
           </a>
           <div className="md:hidden flex items-center justify-between">
-            {/* Botão de alternar tema */}
-            <button
-              onClick={toggleTheme}
-              className="w-6 h-6 shadow-lg transition duration-300 flex items-center justify-center rounded-full mr-4 mt-2" // Distância de 4px
-            >
-              {darkMode ? (
-                <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
-              ) : (
-                <FaMoon className="text-black w-6 h-6 transform hover:scale-110" />
-              )}
-            </button>
 
             {/* Botões de bandeiras */}
             <div className="flex flex-row items-center space-x-4 mt-2">
@@ -238,8 +208,8 @@ const Header = () => {
         </div>
 
         {/* Menu para telas medias */}
-        <nav className="hidden md:flex items-center space-x-6 mr-[1%] animate-fadeInLeft delay-150 sm:hidden lg:hidden">
-          <ul className="flex items-center space-x-3">
+        <nav className="hidden md:flex items-center space-x-6 mr-[5%] animate-fadeInLeft delay-150 sm:hidden lg:hidden">
+          <ul className="flex items-center space-x-4">
             {/* Botões de idioma */}
             <button
               onClick={() => changeLanguage("pt")}
@@ -307,22 +277,10 @@ const Header = () => {
               </button>
             </li>
           </ul>
-
-          {/* Botão de alternância de tema */}
-          <button
-            onClick={toggleTheme}
-            className="w-8 h-8 shadow-lg transition duration-1000 flex items-center rounded-full"
-          >
-            {darkMode ? (
-              <FaSun className="text-yellow-400 w-5 h-5 transform hover:scale-110" />
-            ) : (
-              <FaMoon className="text-blue-600 w-5 h-5 transform hover:scale-110" />
-            )}
-          </button>
         </nav>
 
         {/* Menu para telas maiores (lg e acima) */}
-        <nav className="hidden lg:flex items-center space-x-10 mr-[2%] animate-fadeInRight delay-400">
+        <nav className="hidden lg:flex items-center space-x-10 mr-[8%] animate-fadeInRight delay-400">
           <ul className="flex items-center lg:space-x-5">
             {/* Botões de idioma */}
             <button
@@ -371,18 +329,6 @@ const Header = () => {
               </button>
             </li>
           </ul>
-
-          {/* Botão de alternar tema */}
-          <button
-            onClick={toggleTheme}
-            className="shadow-lg transition duration-1000 flex items-center justify-center rounded-full mr-[4%] lg:w-6 lg:h-6"
-          >
-            {darkMode ? (
-              <FaSun className="text-yellow-400 w-6 h-6 transform hover:scale-110" />
-            ) : (
-              <FaMoon className="text-black w-6 h-6 transform hover:scale-110" />
-            )}
-          </button>
         </nav>
       </header>
 
