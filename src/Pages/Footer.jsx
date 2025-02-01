@@ -4,7 +4,7 @@ export default function Footer() {
     const year = new Date().getFullYear();
 
     return (
-        <footer className="text-center p-4 relative">
+        <footer className="text-center p-4 relative mt-[5%]">
             <div className="absolute inset-x-0 top-0 h-[2px]"
                 style={{
                     borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
