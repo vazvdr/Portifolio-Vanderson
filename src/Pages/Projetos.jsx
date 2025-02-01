@@ -84,13 +84,19 @@ const Projetos = () => {
                 </h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {projects.map((project, index) => (
-                        <div key={index} className={`relative card border-2 border-purple-900 shadow-lg rounded-lg overflow-hidden transition-transform transform hover:shadow-2xl ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}`}>
+                        <div key={index} className={`relative card shadow-lg rounded-lg overflow-hidden transition-transform transform 
+                        hover:shadow-2xl ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}`}
+                            style={{
+                                borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                                animation: "borderAnimation 1s infinite",
+                            }}
+                        >
                             <div className="absolute top-3 right-4 flex gap-4">
                                 <a href={project.repo} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub size={26} className="hover:scale-110" title="GitHub"/>
+                                    <FaGithub size={26} className="hover:scale-110" title="GitHub" />
                                 </a>
                                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                                    <FaExternalLinkAlt size={25} className="hover:scale-110" title="Ver Projeto"/>
+                                    <FaExternalLinkAlt size={25} className="hover:scale-110" title="Ver Projeto" />
                                 </a>
                             </div>
                             <div className="p-6 flex flex-col text-left">

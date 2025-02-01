@@ -7,7 +7,7 @@
   --background-color: #222;
   /* Cinza Escuro */
   --background-color-card: rgb(32, 26, 26);
-  --border-color: rgb(86, 7, 120) 3px solid;
+  --border-color: rgb(86, 7, 120) 2px solid;
   /* borda para o form */
   --gradient-start: #6b21a8; /* Purple 800 */
   --gradient-middle: #3b82f6; /* Blue 500 */
@@ -98,6 +98,7 @@ body {
   background-color: var(--background-color-card);
   color: var(--text-primary);
   border: var(--border-color);
+  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
   padding: 0.8rem;
@@ -132,22 +133,21 @@ body {
   border-width: 2px; 
   border-style: solid;
   border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
-  color: white;
 }
 
 
-@keyframes borderMove {
+@keyframes borderAnimation {
   0% {
-    background-position: 0% 50%;
+    border-image-source: linear-gradient(to right, #5b3e79, #3b82f6, #280548);
+    border-bottom: 1px solid;
   }
   50% {
-    background-position: 100% 50%;
+    border-image-source: linear-gradient(to right, #3b82f6, #603d7b, #300144);
   }
   100% {
-    background-position: 0% 50%;
+    border-image-source: linear-gradient(to right, #6b21a8, #3b82f6, #411a68);
   }
 }
-
 
 /* Animações Slide */
 .animate-slide-in-right {

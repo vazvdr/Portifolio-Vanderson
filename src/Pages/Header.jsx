@@ -100,7 +100,11 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-md flex justify-between items-center">
-        <div className="absolute inset-x-0 bottom-0 h-[2px] header-line"></div>
+        <div className="absolute inset-x-0 bottom-0 h-[3px]"
+        style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+        animation: "borderAnimation 1s infinite",}}
+        >
+        </div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
             <SiAlienware color="purple" size={50} className=" transform hover:scale-110" />

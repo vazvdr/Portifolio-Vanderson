@@ -92,7 +92,7 @@ const Contact = () => {
         </div>
       )}
 
-      <div id="contato" className="w-full mt-[8%] mb-[5%] flex flex-col items-center md:w-[90%] lg:w-[70%]">
+      <div id="contato" className="w-full mt-[8%] mb-[5%] flex flex-col items-center md:w-[90%] lg:w-[70%]" >
         <h1 className="text-center text-3xl mb-6" style={{ fontFamily: "DoctorGlitch" }}>
           {t("contato.contactInfo")}
         </h1>
@@ -101,15 +101,22 @@ const Contact = () => {
           {/* Div com as informações de contato */}
           <motion.div
             ref={sectionRef}
-            className="formulario w-full px-2 py-2 md:py-5 md:px-2 md:py-14 lg:px-8 lg:py-14 lg:w-1/2 rounded-lg shadow-lg border border-purple-800 h-full flex-1 border-gradient"
+            className="formulario w-full px-2 py-2 md:py-[7.7%] md:px-[2%] md:py-16 lg:px-8 lg:py-[6.5%] lg:w-1/2 rounded-lg md:rounded-l-lg shadow-lg border border-purple-800 h-full flex-1 border-gradient"
             animate={controls}
             initial={{ opacity: 0, scale: 0.5 }}
+            style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",}}
           >
             <div className="w-full rounded-lg shadow-lg flex flex-col justify-center space-y-6 text-lg text-white">
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-purple-900 hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                style={{
+                  borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",
+                }}
                 onClick={() => window.open("https://www.linkedin.com/in/vanderson-de-azevedo/", "_blank")}
               >
+
                 <div className="flex items-center space-x-3">
                   <FaLinkedin className="text-3xl" />
                   <span>Linkedin</span>
@@ -118,7 +125,11 @@ const Contact = () => {
               </div>
 
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-purple-900 hover:bg-blue-600 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                style={{
+                  borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",
+                }}
                 onClick={() => window.open("mailto:vanderson.azevedo.rocha@gmail.com")}
               >
                 <div className="flex items-center space-x-3">
@@ -129,7 +140,11 @@ const Contact = () => {
               </div>
 
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-purple-900 hover:bg-green-600 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                style={{
+                  borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",
+                }}
                 onClick={() => window.open("https://wa.me/5521967441433?text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20pelo%20link%20portf%C3%B3lio%20do%20Vanderson!", "_blank")}
               >
                 <div className="flex items-start space-x-3">
@@ -139,7 +154,11 @@ const Contact = () => {
                 <p className="pl-[42px]">+55 (21) 96744-1433</p>
               </div>
 
-              <div className="flex flex-col items-start border-b border-purple-900 hover:bg-purple-900/50 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out">
+              <div className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                style={{
+                  borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",
+                }}>
                 <div className="flex items-center space-x-3">
                   <FaMapMarkerAlt className="text-3xl" />
                   <span>{t("contato.adress")}</span>
@@ -155,8 +174,10 @@ const Contact = () => {
             className="formulario w-full p-9 rounded-lg shadow-lg border border-purple-800 h-full flex-1 border-gradient"
             animate={controls}
             initial={{ opacity: 0, scale: 0.5 }}
+            style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",}}
           >
-            <form className="space-y-2" onSubmit={handleSubmit}>
+            <form className="space-y-2 md:py-[2%]" onSubmit={handleSubmit}>
               {/* Nome */}
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -167,7 +188,11 @@ const Contact = () => {
                   id="name"
                   name="name"
                   placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
-                  className={`w-full px-4 py-2 rounded-lg border-b border-l formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.name ? "border-red-500 placeholder-red-500" : ""
+                  style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",}}
+                  className={`w-full px-4 py-2 rounded-lg formulario text-white 
+                  focus:outline-none focus:ring-2 focus:ring-purple-800 
+                  focus:border-transparent ${errors.name ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 />
               </div>
@@ -182,6 +207,8 @@ const Contact = () => {
                   id="email"
                   name="email"
                   placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
+                  style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",}}
                   className={`w-full px-4 py-2 rounded-lg border-b border-l formulario text-transparent focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.email ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 />
@@ -197,6 +224,8 @@ const Contact = () => {
                   name="message"
                   placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
                   rows="3"
+                  style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",}}
                   className={`w-full px-4 py-2 rounded-lg border-b border-l formulario text-white focus:outline-none focus:ring-2 focus:ring-purple-800 focus:border-transparent ${errors.message ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 ></textarea>
@@ -205,6 +234,8 @@ const Contact = () => {
               {/* Botão de Envio */}
               <button
                 type="submit"
+                style={{borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                  animation: "borderAnimation 1s infinite",}}
                 className="formulario w-full py-3 px-6 rounded-lg bg-transparent border border-purple-800 font-bold hover:bg-black focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
               >
                 {t("contato.submitbutton")}

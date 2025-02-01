@@ -41,6 +41,10 @@ const Experiencias = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Card 1 */}
           <div
+            style={{
+              borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+              animation: "borderAnimation 1s infinite",
+            }}
             className={`card rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate ? "animate-slide-in-left" : "opacity-0"
               }`}
           >
@@ -105,6 +109,10 @@ const Experiencias = () => {
 
           {/* Card 2 */}
           <div
+            style={{
+              borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+              animation: "borderAnimation 1s infinite",
+            }}
             className={`card rounded-lg shadow-md dark:shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate ? "animate-slide-in-right" : "opacity-0"
               }`}
           >

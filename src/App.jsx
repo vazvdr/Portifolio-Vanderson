@@ -6,6 +6,7 @@ import Projetos from "./Pages/Projetos";
 import Sobre from "./Pages/Sobre";
 import Tecnologias from "./Pages/Tecnologias";
 import MovingRays from "./components/MovingRays";
+import Footer from "./Pages/Footer";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Tecnologias />
                 <Projetos />
                 <Contact />
+                <Footer />
             </div>
         </div>
     );
