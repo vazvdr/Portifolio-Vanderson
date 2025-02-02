@@ -76,9 +76,9 @@ const Projetos = () => {
     }, []);
 
     return (
-        <section id="projetos" className="py-10">
+        <section id="projetos" className="py-6">
             <div className="max-w-6xl mx-auto px-10">
-                <h1 className={`text-3xl font-bold text-center mb-8 mt-10 ${animate ? "animate-slide-down" : ""}`}
+                <h1 className={`text-3xl font-bold text-center mb-8 mt-12 ${animate ? "animate-slide-down" : ""}`}
                     style={{ fontFamily: "DoctorGlitch" }}>
                     {t("projects.title")}
                 </h1>
@@ -86,10 +86,6 @@ const Projetos = () => {
                     {projects.map((project, index) => (
                         <div key={index} className={`relative card shadow-lg rounded-lg overflow-hidden transition-transform transform 
                         hover:shadow-2xl ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}`}
-                            style={{
-                                borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
-                                animation: "borderAnimation 1s infinite",
-                            }}
                         >
                             <div className="absolute top-3 right-4 flex gap-4">
                                 <a href={project.repo} target="_blank" rel="noopener noreferrer">

@@ -92,7 +92,7 @@ const Contact = () => {
         </div>
       )}
 
-      <div id="contato" className="w-full mt-[8%] mb-[5%] flex flex-col items-center md:w-[90%] lg:w-[70%]" >
+      <div id="contato" className="w-full mt-[10%] mb-[2%] flex flex-col items-center md:w-[90%] lg:w-[70%]" >
         <h1 className="text-center text-3xl mb-6" style={{ fontFamily: "DoctorGlitch" }}>
           {t("contato.contactInfo")}
         </h1>
@@ -109,7 +109,7 @@ const Contact = () => {
           >
             <div className="w-full rounded-lg shadow-lg flex flex-col justify-center space-y-6 text-lg text-white">
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer border-b border-r border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 style={{
                   borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
                   animation: "borderAnimation 1s infinite",
@@ -125,7 +125,7 @@ const Contact = () => {
               </div>
 
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer border-b border-r border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 style={{
                   borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
                   animation: "borderAnimation 1s infinite",
@@ -140,7 +140,7 @@ const Contact = () => {
               </div>
 
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer border-b border-r border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 style={{
                   borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
                   animation: "borderAnimation 1s infinite",
@@ -154,7 +154,7 @@ const Contact = () => {
                 <p className="pl-[42px]">+55 (21) 96744-1433</p>
               </div>
 
-              <div className="flex flex-col items-start cursor-pointer border-b border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+              <div className="flex flex-col items-start cursor-pointer border-b border-r border-transparent bg-clip-border hover:bg-blue-500 hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 style={{
                   borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
                   animation: "borderAnimation 1s infinite",

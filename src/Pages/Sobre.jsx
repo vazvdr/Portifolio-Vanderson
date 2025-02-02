@@ -117,17 +117,13 @@ const Sobre = () => {
   sm:w-[50%] sm:mt-[20%] sm:mr-[5%] sm:mb-[4%] 
   ${animate ? "animate-slide-in-right opacity-100" : ""}`}
           >
-            {/* Contêiner de sombreamento */}
-            <div
-              className="h-[40%] w-[150%] sm:h-[78%] absolute inset-0 transform scale-105 bg-gradient-to-r from-black to-orange-700 to-transparent 
-    rounded-md blur-md -z-10"
-            ></div>
-            {/* Imagem */}
-            <img
-              src={Foto}
-              alt="Vanderson"
-              className="w-full object-cover rounded-md"
-            />
+            <div className="relative p-[3px] rounded-md bg-gradient-to-r from-purple-900 via-blue-900 to-purple-900">
+              <img
+                src={Foto}
+                alt="Vanderson"
+                className="w-full object-cover rounded-md bg-white"
+              />
+            </div>
             <div className="mt-5 flex items-center justify-center md:justify-start space-x-1">
               <a
                 href="/Curriculo-Atualizado.pdf"
@@ -205,20 +201,18 @@ const Sobre = () => {
           <div
             id="foto-container"
             className={`w-[38%] mt-[15%] ml-[5%] mr-[10%] opacity-0 
-            lg:w-[27%] lg:mt-[8%] lg:ml-[5%] transition-opacity duration-1000 
+            lg:w-[27%] lg:mt-[5.5%] lg:ml-[5%] transition-opacity duration-1000 
             ${isVisible ? "opacity-100 scale-100" : "scale-90"
               }`}
           >
-            <div
-              className="absolute inset-0 z-0 rounded-md bg-gradient-to-r from-black to-gray-500 transform scale-105 blur-md
-              md:h-[75%] lg:h-[100%]"
-            ></div>
-            <img
-              src={Foto}
-              alt="Vanderson"
-              className="w-full object-cover rounded-md shadow-lg transform transition-transform duration-1000"
-              style={{ transform: isVisible ? "scale(1)" : "scale(0.9)" }}
-            />
+            <div className="relative p-[2px] rounded-md bg-gradient-to-r from-purple-900 via-blue-900 to-purple-900">
+              <img
+                src={Foto}
+                alt="Vanderson"
+                className="w-full object-cover rounded-md shadow-lg transform border border-transparent transition-transform duration-1000"
+                style={{ transform: isVisible ? "scale(1)" : "scale(0.9)" }}
+              />
+            </div>
           </div>
         </div>
       </div>
