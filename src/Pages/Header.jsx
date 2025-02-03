@@ -107,7 +107,7 @@ const Header = () => {
         </div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
-            <SiAlienware color="purple" size={50} className=" transform hover:scale-110" />
+            <SiAlienware color="gray" size={50} className=" transform hover:scale-110" />
             <span className="w-[30px] h-38 font-bold text-lg  text-center" style={{ fontFamily: "DoctorGlitch" }}>
               {t("header.developer")}
             </span>
@@ -158,8 +158,8 @@ const Header = () => {
                 <li>
                   <a
                     href="#sobre-mim"
-                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
-            ${selectedSection === "#sobre-mim" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#sobre-mim" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                     onClick={(e) => handleLinkClickSelect(e, "#sobre-mim")}
                   >
                     {t("header.menu.about")}
@@ -168,8 +168,8 @@ const Header = () => {
                 <li>
                   <a
                     href="#experiencias"
-                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
-            ${selectedSection === "#experiencias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#experiencias" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                     onClick={(e) => handleLinkClickSelect(e, "#experiencias")}
                   >
                     {t("header.menu.experiences")}
@@ -178,8 +178,8 @@ const Header = () => {
                 <li>
                   <a
                     href="#tecnologias"
-                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
-            ${selectedSection === "#tecnologias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#tecnologias" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                     onClick={(e) => handleLinkClickSelect(e, "#tecnologias")}
                   >
                     {t("header.menu.technologies")}
@@ -188,8 +188,8 @@ const Header = () => {
                 <li>
                   <a
                     href="#projetos"
-                    className={`hover:text-purple-800 font-semibold transition-all duration-300 
-            ${selectedSection === "#projetos" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                    className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#projetos" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                     onClick={(e) => handleLinkClickSelect(e, "#projetos")}
                   >
                     {t("header.menu.projects")}
@@ -200,7 +200,7 @@ const Header = () => {
                     href="#contato"
                     className={`contact-button font-semibold py-1 px-3 border border-black rounded-[10px] 
           transform hover:scale-110 transition-all duration-500 ease-in-out 
-          ${selectedSection === "#contato" ? "border-purple-700" : ""}`}
+          ${selectedSection === "#contato" ? "border-gray-600" : ""}`}
                     onClick={(e) => handleLinkClickSelect(e, "#contato")}
                   >
                     {t("header.menu.contact")}
@@ -232,8 +232,8 @@ const Header = () => {
             <li>
               <a
                 href="#sobre-mim"
-                className={`hover:text-purple-700 font-semibold whitespace-nowrap transition-all duration-300 
-            ${selectedSection === "#sobre-mim" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                className={`hover:text-gray-600 font-semibold whitespace-nowrap transition-all duration-300 
+            ${selectedSection === "#sobre-mim" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                 onClick={(e) => handleLinkClickSelect(e, "#sobre-mim")}
               >
                 {t("header.menu.about")}
@@ -242,8 +242,8 @@ const Header = () => {
             <li>
               <a
                 href="#experiencias"
-                className={`hover:text-purple-700 font-semibold transition-all duration-300 
-            ${selectedSection === "#experiencias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#experiencias" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                 onClick={(e) => handleLinkClickSelect(e, "#experiencias")}
               >
                 {t("header.menu.experiences")}
@@ -252,8 +252,8 @@ const Header = () => {
             <li>
               <a
                 href="#tecnologias"
-                className={`hover:text-purple-700 font-semibold transition-all duration-300 
-            ${selectedSection === "#tecnologias" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#tecnologias" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                 onClick={(e) => handleLinkClickSelect(e, "#tecnologias")}
               >
                 {t("header.menu.technologies")}
@@ -262,8 +262,8 @@ const Header = () => {
             <li>
               <a
                 href="#projetos"
-                className={`hover:text-purple-700 font-semibold transition-all duration-300 
-            ${selectedSection === "#projetos" ? "border-b-2 border-purple-700 pb-1" : "border-b-2 border-transparent"}`}
+                className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#projetos" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                 onClick={(e) => handleLinkClickSelect(e, "#projetos")}
               >
                 {t("header.menu.projects")}
@@ -274,7 +274,7 @@ const Header = () => {
                 href="#contato"
                 className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 
           transition-all duration-500 ease-in-out animate-pulse-custom 
-          ${selectedSection === "#contato" ? "border-purple-700" : ""}`}
+          ${selectedSection === "#contato" ? "border-gray-600" : ""}`}
                 onClick={(e) => handleLinkClickSelect(e, "#contato")}
               >
                 {t("header.menu.contact")}
@@ -310,9 +310,9 @@ const Header = () => {
               <li key={item.id}>
                 <a
                   href={item.id}
-                  className={`hover:text-purple-700 font-semibold whitespace-nowrap transition-all duration-300 
+                  className={`hover:text-gray-600 font-semibold whitespace-nowrap transition-all duration-300 
             ${selectedSection === item.id
-                      ? "border-b-2 border-purple-700 pb-1"
+                      ? "border-b-2 border-gray-600 pb-1"
                       : "border-b-2 border-transparent"
                     }`}
                   onClick={(e) => handleLinkClickSelect(e, item.id)}
@@ -340,9 +340,9 @@ const Header = () => {
       {showScrollButton && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top-button w-8 h-8 fixed bottom-16 right-6 bg-primary-01 text-white p-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300 z-50"
+          className="scroll-to-top-button w-8 h-8 fixed bottom-28 mr-[1%] bg-primary-01 text-white p-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300 z-50"
         >
-          <ArrowUpCircle size={34} className="hover:text-purple-800" />
+          <ArrowUpCircle size={34} className="hover:text-gray-600" />
         </button>
       )}
 

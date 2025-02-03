@@ -13,7 +13,7 @@ const Tecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg",
+    "https://registry.npmmirror.com/@lobehub/icons-static-png/1.15.0/files/dark/vercel-text.png",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
@@ -76,7 +76,7 @@ const Tecnologias = () => {
       </h1>
       <div
         id="carousel-container"
-        className="bg-gradient-to-r from-black via-fuchsia-900 to-black border-t border-b border-purple-800 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center"
+        className="bg-black/70  border-t-4 border-b-4 border-gray-600 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center"
         style={{ margin: "0 10%" }}
       >
         <div
@@ -105,7 +105,7 @@ const Tecnologias = () => {
             <span
               key={index}
               className={`w-3 h-3 rounded-full ${
-                index === currentStage ? "bg-purple-700" : "bg-gray-400"
+                index === currentStage ? "bg-gray-600" : "bg-gray-400"
               } transition-all`}
             ></span>
           ))}
@@ -114,7 +114,7 @@ const Tecnologias = () => {
         <div className="flex justify-center mt-1 gap-4">
           <button
             disabled={currentStage === 0}
-            className={`bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
+            className={`bg-transparent text-gray-400 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
               currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handlePrevStage}
@@ -123,7 +123,7 @@ const Tecnologias = () => {
           </button>
           <button
             disabled={currentStage === totalStages - 1}
-            className={`bg-transparent text-purple-700 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
+            className={`bg-transparent text-gray-400 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
               currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handleNextStage}

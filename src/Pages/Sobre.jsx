@@ -77,7 +77,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-purple-800 hover:text-blue-800 hover:translate-x-1 transition-all duration-300">
+              <span className="text-gray-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -117,7 +117,7 @@ const Sobre = () => {
   sm:w-[50%] sm:mt-[20%] sm:mr-[5%] sm:mb-[4%] 
   ${animate ? "animate-slide-in-right opacity-100" : ""}`}
           >
-            <div className="relative p-[3px] rounded-md bg-gradient-to-r from-purple-900 via-blue-900 to-purple-900">
+            <div className="relative p-[3px] rounded-md bg-gradient-to-r from-gray-400 via-gray-600 to-gray-700">
               <img
                 src={Foto}
                 alt="Vanderson"
@@ -178,7 +178,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-purple-800 hover:text-blue-800 hover:translate-x-1 transition-all duration-300">
+              <span className="text-gray-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -205,7 +205,7 @@ const Sobre = () => {
             ${isVisible ? "opacity-100 scale-100" : "scale-90"
               }`}
           >
-            <div className="relative p-[2px] rounded-md bg-gradient-to-r from-purple-900 via-blue-900 to-purple-900">
+            <div className="relative p-[2px] rounded-md bg-gradient-to-r from-gray-400 via-gray-600 to-gray-700">
               <img
                 src={Foto}
                 alt="Vanderson"
