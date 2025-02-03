@@ -77,7 +77,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-gray-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
+              <span className="text-blue-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -101,7 +101,7 @@ const Sobre = () => {
             <div className="mt-4 flex">
               <a
                 href="#projetos"
-                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-orange-500 
+                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-blue-600 
                 flex items-center space-x-2 
                 transition-all transform hover:scale-105 
                 whitespace-nowrap animate-pulse-custom"
@@ -129,7 +129,7 @@ const Sobre = () => {
                 href="/Curriculo-Atualizado.pdf"
                 download
                 className="buttons-sobre py-1 px-2 rounded-md font-semibold 
-                shadow-lg hover:bg-purple-800 hover:text-white transition-all 
+                shadow-lg hover:bg-blue-800 hover:text-white transition-all 
                 transform hover:scale-110 "
               >
                 {t("sobre.button")}
@@ -178,7 +178,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-gray-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
+              <span className="text-blue-600/80 hover:text-blue-500 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -222,7 +222,7 @@ const Sobre = () => {
         <a
           href="#projetos"
           className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md 
-  hover:bg-orange-500 flex items-center space-x-2 
+  hover:bg-blue-600 hover:text-white flex items-center space-x-2 
   transition-all transform hover:scale-105 whitespace-nowrap 
   animate-pulse-custom"
           onClick={(e) => handleLinkClick(e, "#projetos")}
@@ -234,7 +234,7 @@ const Sobre = () => {
           href="/Curriculo-Atualizado.pdf"
           download
           className="buttons-sobre h-9 py-1 px-4 rounded-md font-semibold 
-    shadow-lg hover:bg-purple-800 hover:text-white transition-all 
+    shadow-lg hover:bg-blue-600 hover:text-white transition-all 
     transform hover:scale-110 flex items-center"
         >
           {t("sobre.button")}

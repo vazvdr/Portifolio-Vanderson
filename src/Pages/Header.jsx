@@ -107,7 +107,7 @@ const Header = () => {
         </div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
-            <SiAlienware color="gray" size={50} className=" transform hover:scale-110" />
+            <SiAlienware color="blue" size={50} className=" transform hover:scale-110" />
             <span className="w-[30px] h-38 font-bold text-lg  text-center" style={{ fontFamily: "DoctorGlitch" }}>
               {t("header.developer")}
             </span>
@@ -272,7 +272,7 @@ const Header = () => {
             <li>
               <button
                 href="#contato"
-                className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 
+                className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] hover:bg-blue-800 hover:text-white transform hover:scale-110 
           transition-all duration-500 ease-in-out animate-pulse-custom 
           ${selectedSection === "#contato" ? "border-gray-600" : ""}`}
                 onClick={(e) => handleLinkClickSelect(e, "#contato")}
@@ -325,7 +325,7 @@ const Header = () => {
             {/* Botão de contato */}
             <li>
               <button
-                className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-purple-700 animate-pulse-custom ${selectedSection === "#contato" ? "border-b-2 border-purple-700" : ""
+                className={`contact-button font-semibold py-2 px-2 border border-black rounded-[10px] transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-blue-700 hover:text-white animate-pulse-custom ${selectedSection === "#contato" ? "border-b-2 border-purple-700" : ""
                   }`}
                 onClick={(e) => handleLinkClick(e, "#contato")}
               >
@@ -342,7 +342,7 @@ const Header = () => {
           onClick={scrollToTop}
           className="scroll-to-top-button w-8 h-8 fixed bottom-28 mr-[1%] bg-primary-01 text-white p-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300 z-50"
         >
-          <ArrowUpCircle size={34} className="hover:text-gray-600" />
+          <ArrowUpCircle size={34} className="hover:text-blue-600" />
         </button>
       )}
 
