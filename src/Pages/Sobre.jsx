@@ -77,7 +77,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-orange-600 hover:text-red-600 hover:translate-x-1 transition-all duration-300">
+              <span className="text-purple-800 hover:text-blue-800 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -178,7 +178,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-orange-600 hover:text-purple-600 hover:translate-x-1 transition-all duration-300">
+              <span className="text-purple-800 hover:text-blue-800 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />

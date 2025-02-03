@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
 
 const Experiencias = () => {
   const { t } = useTranslation();
@@ -40,7 +41,7 @@ const Experiencias = () => {
         {/* Container Responsivo */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Card 1 */}
-          <a href="https://01bit.tech/" target="_blank" rel="noopener noreferrer" title="Ver Site">
+
           <div
             style={{
               borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
@@ -49,6 +50,7 @@ const Experiencias = () => {
             className={`card rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate ? "animate-slide-in-left" : "opacity-0"
               }`}
           >
+
             <h2 className="text-xl sm:text-2xl font-bold">
               {t("experiencias.card1.titulo")}
             </h2>
@@ -103,8 +105,10 @@ const Experiencias = () => {
                 className="w-10 h-10"
               />
             </div>
+            <a href="https://01bit.tech/" target="_blank" rel="noopener noreferrer" title="Ver Site" className="absolute bottom-4 right-4 text-white hover:text-blue-600">
+              <FaExternalLinkAlt size={20} />
+            </a>
           </div>
-          </a>
 
           {/* Card 2 */}
           <div
@@ -219,6 +223,9 @@ const Experiencias = () => {
                 className="w-10 h-10"
               />
             </div>
+            <a href="https://www.vandersonazevedo.com.br" target="_blank" rel="noopener noreferrer" title="Ver Site" className="absolute bottom-4 right-4 text-white hover:text-blue-600">
+              <FaExternalLinkAlt size={20} />
+            </a>
           </div>
         </div>
       </div>

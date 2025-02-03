@@ -92,8 +92,8 @@ const Contact = () => {
         </div>
       )}
 
-      <div id="contato" className="w-full mt-[10%] mb-[2%] flex flex-col items-center md:w-[90%] lg:w-[70%]" >
-        <h1 className="text-center text-3xl mb-6" style={{ fontFamily: "DoctorGlitch" }}>
+      <div id="contato" className="w-full mb-[2%] flex flex-col items-center md:w-[90%] lg:w-[70%]" >
+        <h1 className="text-center text-3xl mb-6 mt-[8%]" style={{ fontFamily: "DoctorGlitch" }}>
           {t("contato.contactInfo")}
         </h1>
 
