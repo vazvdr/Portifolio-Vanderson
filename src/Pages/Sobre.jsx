@@ -74,7 +74,7 @@ const Sobre = () => {
               }`}
           >
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
+              <div className="md:mt-7 pt-0 animate-moveY lg:pt-3" >
                 {t("sobre.heading.greeting")}
               </div>
               <span className="text-blue-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
@@ -122,6 +122,8 @@ const Sobre = () => {
                 src={Foto}
                 alt="Vanderson"
                 className="w-full object-cover rounded-md bg-white"
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
               />
             </div>
             <div className="mt-5 flex items-center justify-center md:justify-start space-x-1">
@@ -210,6 +212,8 @@ const Sobre = () => {
                 src={Foto}
                 alt="Vanderson"
                 className="w-full object-cover rounded-md shadow-lg transform border border-transparent transition-transform duration-1000"
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
                 style={{ transform: isVisible ? "scale(1)" : "scale(0.9)" }}
               />
             </div>

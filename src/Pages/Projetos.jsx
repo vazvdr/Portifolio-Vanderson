@@ -100,7 +100,8 @@ const Projetos = () => {
                                 <div className="flex justify-center w-full">
                                     <p className="text-sm mb-4 text-center mt-4">{t(project.subtitleKey)}</p>
                                 </div>
-                                <img src={project.image} alt={project.title} className="rounded-lg shadow-md w-full h-48 object-cover mb-4 transition-transform transform hover:scale-110" />
+                                <img src={project.image} alt={project.title} className="rounded-lg shadow-md w-full h-48 object-cover 
+                                mb-4 transition-transform transform hover:scale-110" draggable="false" onContextMenu={(e) => e.preventDefault()} />
                                 <p className="text-left">{t(project.descriptionKey)}</p>
                                 <h3 className="text-lg font-semibold mt-4">Techs usadas:</h3>
                                 <div className="flex flex-wrap justify-center gap-4 mt-2">
