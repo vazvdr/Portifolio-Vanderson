@@ -7,7 +7,7 @@ export default function Footer() {
         <footer className="text-center relative justify-center mt-[4%]">
             <div className="absolute inset-x-0"
                 style={{
-                    borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
+                    borderImage: "linear-gradient(to right, #b4b4bb, #1e297b,  #130250) 4",
                     animation: "borderAnimation 1s infinite",
                 }}
             ></div>
