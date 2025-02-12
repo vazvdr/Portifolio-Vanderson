@@ -84,7 +84,7 @@ const Sobre = () => {
               <div className="relative min-h-[80px] sm:min-h-[80px]">
                 <span>
                   <Typewriter
-                    words={["FullStack Developer"]}
+                    words={["Software Engineer", "FullStack Developer", "Java Developer", "Javascript Developer"]}
                     loop={0}
                     cursor
                     cursorStyle="_"
@@ -187,7 +187,7 @@ const Sobre = () => {
               <div className="relative md:min-h-[90px] lg:min-h-[60px]">
                 <span>
                   <Typewriter
-                    words={["FullStack Developer"]}
+                    words={["Software Engineer", "FullStack Developer", "Java Developer", "Javascript Developer"]}
                     loop={0}
                     cursor
                     cursorStyle="_"
