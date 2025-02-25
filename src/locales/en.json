@@ -28,13 +28,13 @@
       "titulo": "Frontend Developer",
       "subtitulo": "System Factory · Freelance",
       "periodo": "Nov 2024 - Feb 2025",
-      "descricao": "Front-end development, mainly creating Landing Pages integrated with api's for sending emails and whatsapp messages and resolving merge conflicts on GitHub, with tools such as React, Tailwind CSS, HTML, CSS, Javascript, Typescript, Git and Github."
+      "descricao": "Front-end development, mainly creating Landing Pages integrated with api's for sending emails and whatsapp messages and resolving merge conflicts on GitHub, with tools such as:"
     },
     "card2": {
       "titulo": "FullStack Developer",
       "subtitulo": "Freelancer · Freelance",
       "periodo": "Aug 2023 - present",
-      "descricao": "Software development for companies through university extension projects and personal projects using tools like:"
+      "descricao": "Development of useful software from IoT projects, BigData, Mobile with React Native for companies through extension projects of the college of Systems Analysis and Development and projects for personal clients who seek my services as a software developer, I have knowledge in the following languages and tools:"
     }
   },
   "tecnologias": {
