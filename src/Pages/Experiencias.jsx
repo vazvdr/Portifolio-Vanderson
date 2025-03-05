@@ -70,7 +70,7 @@ const Experiencias = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {([
             { images: imagesCard1, link: "https://01bit.tech/", cardIndex: 1 },
-            { images: imagesCard2, link: "https://www.vandersonazevedo.com.br", cardIndex: 2 },
+            { images: imagesCard2, cardIndex: 2 },
           ].sort((a, b) => b.images.length - a.images.length)).map((card, index) => (
             <div
               key={index}
@@ -98,22 +98,22 @@ const Experiencias = () => {
                 ))}
               </div>
 
-              <a
-                href={card.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Ver Site"
-                className="absolute bottom-4 right-4 text-white hover:text-blue-600"
-              >
-                <FaExternalLinkAlt size={20} />
-              </a>
+              {card.link && (
+                <a
+                  href={card.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Ver Site"
+                  className="absolute bottom-4 right-4 text-white hover:text-blue-600"
+                >
+                  <FaExternalLinkAlt size={20} />
+                </a>
+              )}
             </div>
           ))}
         </div>
       </div>
     </section>
-
-
   );
 };
 
