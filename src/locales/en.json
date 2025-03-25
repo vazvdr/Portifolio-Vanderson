@@ -23,6 +23,67 @@
     "github": "GitHub Profile",
     "projects": "See my projects"
   },
+  "formacao": {
+    "titulo": "Academic and Courses",
+    "card1": {
+      "titulo": "Systems Analysis and Development",
+      "subtitulo": "Estácio",
+      "periodo": "Mar 2023 - Dec 2025",
+      "descricao": [
+        "Programming fundamentals",
+        "Web and mobile application development",
+        "Database and modeling",
+        "Software architecture and DevOps"
+      ]
+    },
+    "card2": {
+      "titulo": "Docker",
+      "subtitulo": "Udemy",
+      "periodo": "5.5 hours",
+      "descricao": [
+        "Creating images and containers",
+        "Configuring the Dockerfile",
+        "Handling two or more containers"
+      ]
+    },
+    "card3": {
+      "titulo": "Tailwind CSS",
+      "subtitulo": "Udemy",
+      "periodo": "11.5 hours",
+      "descricao": [
+        "Mobile-first layout",
+        "Building layouts with Grid and Flexbox",
+        "Best practices and clean code"
+      ]
+    },
+    "card4": {
+      "titulo": "Git and GitHub",
+      "subtitulo": "Udemy",
+      "periodo": "8.5 hours",
+      "descricao": [
+        "Git applied to a developer's daily practice",
+        "Creating gists for code sharing"
+      ]
+    },
+    "card5": {
+      "titulo": "Linux",
+      "subtitulo": "Udemy",
+      "periodo": "7.5 hours",
+      "descricao": [
+        "Install Linux from scratch and understand all the steps of the process",
+        "Execute commands through the Linux Terminal",
+        "Configure network settings on a Linux system"
+      ]
+    },
+    "card6": {
+      "titulo": "Advanced English",
+      "subtitulo": "Udemy",
+      "periodo": "17 hours",
+      "descricao": [
+        "Advanced English"
+      ]
+    }
+  },
   "experiencias": {
     "titulo": "Experiences",
     "card1": {

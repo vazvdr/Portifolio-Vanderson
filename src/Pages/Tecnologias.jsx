@@ -64,7 +64,6 @@ const Tecnologias = () => {
       setCurrentStage(currentStage - 1);
     }
   };
-
   const startIndex = currentStage * iconsPerStage;
   const displayedIcons = icons.slice(startIndex, startIndex + iconsPerStage);
 

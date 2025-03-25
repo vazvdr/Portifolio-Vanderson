@@ -23,6 +23,67 @@
     "github": "Perfil no GitHub",
     "projects": "Veja meus Projetos"
   },
+  "formacao": {
+    "titulo": "Formacao e Cursos",
+    "card1": {
+      "titulo": "Análise e Desenvolvimento de Sistemas",
+      "subtitulo": "Estácio",
+      "periodo": "Mar 2023 - Dez 2025",
+      "descricao": [
+        "Fundamentos de programação",
+        "Desenvolvimento de aplicações web e mobile",
+        "Banco de dados e modelagem",
+        "Arquitetura de software e DevOps"
+      ]
+    },
+    "card2": {
+      "titulo": "Docker",
+      "subtitulo": "Udemy",
+      "periodo": "5.5 horas",
+      "descricao": [
+        "Criação de imagens e containers",
+        "Configuração do arquivo Dockerfile",
+        "Manipulação de dois ou mais containers"
+      ]
+    },
+    "card3": {
+      "titulo": "Tailwind CSS",
+      "subtitulo": "Udemy",
+      "periodo": "11.5 horas",
+      "descricao": [
+        "Layout mobile first",
+        "Construção de layout com Grid e Flexbox",
+        "Boas práticas e clean code"
+      ]
+    },
+    "card4": {
+      "titulo": "Git e GitHub",
+      "subtitulo": "Udemy",
+      "periodo": "8.5 horas",
+      "descricao": [
+        "Git aplicado a prática de um dev",
+        "Criação de gists para compartilhamento de código"
+      ]
+    },
+    "card5": {
+      "titulo": "Linux",
+      "subtitulo": "Udemy",
+      "periodo": "7.5 horas",
+      "descricao": [
+        "Instalar o Linux do zero e entender todos os passos do processo",
+        "Executar comandos pelo Terminal Linux",
+        "Configurar rede em um equipamento Linux"
+      ]
+    },
+    "card6": {
+      "titulo": "Inglês avançado",
+      "subtitulo": "Udemy",
+      "periodo": "17 horas",
+      "descricao": [
+        "Inglês avançado"
+      ]
+    }
+  },
   "experiencias": {
     "titulo": "Experiências",
     "card1": {
@@ -90,5 +151,4 @@
     "contactInfo": "Entre em Contato",
     "adress": "Endereço"
   }
-  
 }
