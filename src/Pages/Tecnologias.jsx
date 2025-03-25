@@ -1,6 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import { ArrowLeftCircle, ArrowRightCircle } from "react-feather";
+import LandingPage from '../assets/LandingPage.jpg';
+import API from '../assets/CreateConsumeAPI.png';
+import Fullstack from '../assets/Fullstack.png';
+import Deploy from '../assets/Deployment.png';
 
 const Tecnologias = () => {
   const { t } = useTranslation();
@@ -82,7 +86,7 @@ const Tecnologias = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full px-6 mb-8">
       <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
           <img
-            src="../../src/assets/LandingPage.png"
+            src={LandingPage}
             alt="Fullstack Development"
             className="w-full h-48 object-cover rounded-t-lg"
           />
@@ -92,7 +96,7 @@ const Tecnologias = () => {
 
         <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
           <img
-            src="../../src/assets/CreateConsumeAPI.png"
+            src={API}
             alt="Create and consumption API"
             className="w-full h-48 object-cover rounded-t-lg"
           />
@@ -104,7 +108,7 @@ const Tecnologias = () => {
         
         <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
           <img
-            src="../../src/assets/Fullstack.png"
+            src={Fullstack}
             alt="Fullstack Development"
             className="w-full h-48 object-cover rounded-t-lg"
           />
@@ -114,7 +118,7 @@ const Tecnologias = () => {
 
         <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
           <img
-            src="../../src/assets/Deployment.png"
+            src={Deploy}
             alt="Deployment Websites"
             className="w-full h-48 object-cover rounded-t-lg"
           />
