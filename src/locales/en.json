@@ -3,8 +3,9 @@
     "developer": "FullStack Developer",
     "menu": {
       "about": "About Me",
+      "education": "Education",
       "experiences": "Experiences",
-      "technologies": "Technologies",
+      "technologies": "Skills",
       "projects": "Projects",
       "contact": "Contact"
     },
@@ -39,9 +40,14 @@
   },
   "tecnologias": {
     "title": "My Skills",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "tools": "Tools"
+    "landing_pages_title": "Creation Landing Pages",
+    "landing_pages_description": "Creation of landing pages with a modern and responsive design to boost your bussiness in internet.",
+    "fullstack_title": "Fullstack Development",
+    "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, encryption and the latest security techniques.",
+    "api_title": "Create and consumption API",
+    "api_description": "Integration with external APIs to extend the functionality of applications and creation of APIs following business rules.",
+    "deployment_title": "Deployment Websites",
+    "deployment_description": "Deployment both frontend and backend with or without a database using tools such as GitHub, Docker, Vercel and AWS."
   },
   "projects": {
     "title": "My Projects",
@@ -82,6 +88,6 @@
     "closeButton": "Close",
     "requiredField": "Required field",
     "contactInfo": "Contact Me",
-    "adress": "Adress"    
+    "adress": "Adress"
   }
 }
