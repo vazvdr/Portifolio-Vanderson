@@ -103,7 +103,7 @@ const Projetos = () => {
                                 <img src={project.image} alt={project.title} className="rounded-lg shadow-md w-full h-48 object-cover 
                                 mb-4 transition-transform transform hover:scale-110" draggable="false" onContextMenu={(e) => e.preventDefault()} />
                                 <p className="text-left">{t(project.descriptionKey)}</p>
-                                <h3 className="text-lg font-semibold mt-4">Techs usadas:</h3>
+                                <h3 className="text-lg font-semibold mt-4">{t("projects.techs")}</h3>
                                 <div className="flex flex-wrap justify-center gap-4 mt-2">
                                     {project.techs.map((tech, idx) => (
                                         <img key={idx} src={techIcons[tech]} alt={tech} className="w-10 h-10 transition-transform transform hover:scale-110" />

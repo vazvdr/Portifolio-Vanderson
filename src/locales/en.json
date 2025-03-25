@@ -45,7 +45,7 @@
   },
   "projects": {
     "title": "My Projects",
-    "techs": "Techs used:",
+    "techs": "Technologies used:",
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Barbershop appointments made easy.",
