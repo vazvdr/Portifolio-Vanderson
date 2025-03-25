@@ -79,9 +79,55 @@ const Tecnologias = () => {
       >
         {t("tecnologias.title")}
       </h1>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 w-full px-6 mb-8">
+      <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
+          <img
+            src="../../src/assets/LandingPage.png"
+            alt="Fullstack Development"
+            className="w-full h-48 object-cover rounded-t-lg"
+          />
+          <h3 className="text-xl font-bold text-white mt-4">{t("tecnologias.landing_pages_title")}</h3>
+          <p className="text-gray-300 mt-2">{t("tecnologias.landing_pages_description")}</p>
+        </div>
+
+        <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
+          <img
+            src="../../src/assets/CreateConsumeAPI.png"
+            alt="Create and consumption API"
+            className="w-full h-48 object-cover rounded-t-lg"
+          />
+          <h3 className="text-xl font-bold text-white mt-4">{t("tecnologias.api_title")}</h3>
+          <p className="text-gray-300 mt-2">
+          {t("tecnologias.api_description")}
+          </p>
+        </div>
+        
+        <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
+          <img
+            src="../../src/assets/Fullstack.png"
+            alt="Fullstack Development"
+            className="w-full h-48 object-cover rounded-t-lg"
+          />
+          <h3 className="text-xl font-bold text-white mt-4">{t("tecnologias.fullstack_title")}</h3>
+          <p className="text-gray-300 mt-2">{t("tecnologias.fullstack_description")}</p>
+        </div>
+
+        <div className="card p-4 bg-gray-800 rounded-lg shadow-lg hover:scale-105 transition-all duration-300">
+          <img
+            src="../../src/assets/Deployment.png"
+            alt="Deployment Websites"
+            className="w-full h-48 object-cover rounded-t-lg"
+          />
+          <h3 className="text-xl font-bold text-white mt-4">{t("tecnologias.deployment_title")}</h3>
+          <p className="text-gray-300 mt-2">
+          {t("tecnologias.deployment_description")}
+          </p>
+        </div>
+      </div>
       <div
         id="carousel-container"
-        className="bg-black/70  border-t-2 border-b-2 border-gray-600 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center"
+        className="bg-black/70 border-t-2 border-b-2 border-gray-600 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
         style={{ margin: "0 10%" }}
       >
         <div
@@ -103,34 +149,27 @@ const Tecnologias = () => {
           ))}
         </div>
       </div>
+
       <div className="flex flex-col items-center mt-4">
-        {/* Pontinhos Indicadores */}
         <div className="flex gap-2 mb-3">
           {Array.from({ length: totalStages }).map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentStage ? "bg-gray-600" : "bg-gray-400"
-              } transition-all`}
+              className={`w-3 h-3 rounded-full ${index === currentStage ? "bg-gray-600" : "bg-gray-400"} transition-all`}
             ></span>
           ))}
         </div>
-        {/* Botões de Navegação */}
         <div className="flex justify-center mt-1 gap-4">
           <button
             disabled={currentStage === 0}
-            className={`bg-transparent text-gray-400 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
-              currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className={`bg-transparent text-gray-400 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handlePrevStage}
           >
             <ArrowLeftCircle size="100%" />
           </button>
           <button
             disabled={currentStage === totalStages - 1}
-            className={`bg-transparent text-gray-400 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${
-              currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className={`bg-transparent text-gray-400 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handleNextStage}
           >
             <ArrowRightCircle size="100%" />

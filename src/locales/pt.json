@@ -3,8 +3,9 @@
     "developer": "FullStack Developer",
     "menu": {
       "about": "Sobre",
+      "education": "Educação",
       "experiences": "Experiências",
-      "technologies": "Tecnologias",
+      "technologies": "Habilidades",
       "projects": "Projetos",
       "contact": "Contato"
     },
@@ -39,9 +40,14 @@
   },
   "tecnologias": {
     "title": "Minhas Habilidades",
-    "frontend": "Frontend",
-    "backend": "Backend",
-    "tools": "Ferramentas"
+    "landing_pages_title": "Criação de Landing Pages",
+    "landing_pages_description": "Criação de landing pages com design moderno e responsivo para impulsionar seu negócio na internet.",
+    "fullstack_title": "Criação de Sistemas Fullstack",
+    "fullstack_description": "Desenvolvimento completo de sistemas, desde o front-end até o back-end com ou sem banco de dados, criptografia e as técnicas de segurança mais modernas.",
+    "api_title": "Consumo e criação de API's",
+    "api_description": "Integração com APIs externas para ampliar a funcionalidade das aplicações e criação de APIs seguindo regras de negócio usando ferramentas como, Nest.js, Spring Framework.",
+    "deployment_title": "Deploy de sites",
+    "deployment_description": "Deploy tanto de frontend quanto de backend com ou sem banco de dados usando ferramentas com GitHub, Docker, Vercel e AWS."
   },
   "projects": {
     "title": "Meus Projetos",

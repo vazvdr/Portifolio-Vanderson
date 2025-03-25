@@ -165,6 +165,16 @@ const Header = () => {
                 </li>
                 <li>
                   <a
+                    href="#formacao"
+                    className={`hover:text-gray-600 font-semibold transition-all duration-300 
+            ${selectedSection === "#sobre-mim" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
+                    onClick={(e) => handleLinkClickSelect(e, "#formacao")}
+                  >
+                    {t("header.menu.education")}
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#experiencias"
                     className={`hover:text-gray-600 font-semibold transition-all duration-300 
             ${selectedSection === "#experiencias" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
@@ -239,6 +249,16 @@ const Header = () => {
             </li>
             <li>
               <a
+                href="#formacao"
+                className={`hover:text-gray-600 font-semibold whitespace-nowrap transition-all duration-300 
+            ${selectedSection === "#sobre-mim" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
+                onClick={(e) => handleLinkClickSelect(e, "#formacao")}
+              >
+                {t("header.menu.education")}
+              </a>
+            </li>
+            <li>
+              <a
                 href="#experiencias"
                 className={`hover:text-gray-600 font-semibold transition-all duration-300 
             ${selectedSection === "#experiencias" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
@@ -301,6 +321,7 @@ const Header = () => {
             {/* Itens do menu */}
             {[
               { id: "#sobre-mim", label: t("header.menu.about") },
+              { id: "#formacao", label: t("header.menu.education")},
               { id: "#experiencias", label: t("header.menu.experiences") },
               { id: "#tecnologias", label: t("header.menu.technologies") },
               { id: "#projetos", label: t("header.menu.projects") },
