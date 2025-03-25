@@ -1,47 +1,53 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import Estacio from '../assets/Estacio.png';
+import Docker from '../assets/Docker.jpg';
+import Tailwind from '../assets/TailwindCSS.jpg';
+import Git from '../assets/GitHub.jpg';
+import Linux from '../assets/Linux.jpg';
+import English from '../assets/English-C2.jpg';
 
 const Formacao = () => {
     const { t } = useTranslation();
     
     const cursos = [
         {
-            img: "../../src/assets/Estacio.png",
+            img: Estacio,
             titulo: t("formacao.card1.titulo"),
             instituicao: t("formacao.card1.subtitulo"),
             periodo: t("formacao.card1.periodo"),
             descricao: t("formacao.card1.descricao", { returnObjects: true }) 
         },
         {
-            img: "../../src/assets/Docker.jpg",
+            img: Docker,
             titulo: t("formacao.card2.titulo"),
             instituicao: t("formacao.card2.subtitulo"),
             periodo: t("formacao.card2.periodo"),
             descricao: t("formacao.card2.descricao", { returnObjects: true }) 
         },
         {
-            img: "../../src/assets/TailwindCSS.jpg",
+            img: Tailwind,
             titulo: t("formacao.card3.titulo"),
             instituicao: t("formacao.card3.subtitulo"),
             periodo: t("formacao.card3.periodo"),
             descricao: t("formacao.card3.descricao", { returnObjects: true }) 
         },
         {
-            img: "../../src/assets/GitHub.jpg",
+            img: Git,
             titulo: t("formacao.card4.titulo"),
             instituicao: t("formacao.card4.subtitulo"),
             periodo: t("formacao.card4.periodo"),
             descricao: t("formacao.card4.descricao", { returnObjects: true }) 
         },
         {
-            img: "../../src/assets/Linux.jpg",
+            img: Linux,
             titulo: t("formacao.card5.titulo"),
             instituicao: t("formacao.card5.subtitulo"),
             periodo: t("formacao.card5.periodo"),
             descricao: t("formacao.card5.descricao", { returnObjects: true })
         },
         {
-            img: "../../src/assets/English-C2.jpg",
+            img: English,
             titulo: t("formacao.card6.titulo"),
             instituicao: t("formacao.card6.subtitulo"),
             periodo: t("formacao.card6.periodo"),
