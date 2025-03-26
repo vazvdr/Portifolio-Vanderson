@@ -62,7 +62,7 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  const sections = ["#sobre-mim", "#experiencias", "#tecnologias", "#projetos", "#contato"];
+  const sections = ["#sobre-mim", "#formacao", "#experiencias", "#tecnologias", "#projetos", "#contato"];
   const [selectedSection, setSelectedSection] = useState(null);
 
   // Função para tratar clique no menu
@@ -100,9 +100,7 @@ const Header = () => {
   return (
     <>
       <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-md flex justify-between items-center">
-        <div className="header-line absolute inset-x-0 bottom-0 h-[3px]"
-        >
-        </div>
+        <div className="header-line absolute inset-x-0 bottom-0 h-[3px]"></div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
             <SiAlienware color="blue" size={50} className=" transform hover:scale-110" />
@@ -167,7 +165,7 @@ const Header = () => {
                   <a
                     href="#formacao"
                     className={`hover:text-gray-600 font-semibold transition-all duration-300 
-            ${selectedSection === "#sobre-mim" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
+            ${selectedSection === "#formacao" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                     onClick={(e) => handleLinkClickSelect(e, "#formacao")}
                   >
                     {t("header.menu.education")}
@@ -251,7 +249,7 @@ const Header = () => {
               <a
                 href="#formacao"
                 className={`hover:text-gray-600 font-semibold whitespace-nowrap transition-all duration-300 
-            ${selectedSection === "#sobre-mim" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
+            ${selectedSection === "#formacao" ? "border-b-2 border-gray-600 pb-1" : "border-b-2 border-transparent"}`}
                 onClick={(e) => handleLinkClickSelect(e, "#formacao")}
               >
                 {t("header.menu.education")}
