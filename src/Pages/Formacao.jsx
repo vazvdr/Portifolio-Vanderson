@@ -9,25 +9,36 @@ import English from "../assets/English-C2.jpg";
 
 const Formacao = () => {
   const { t } = useTranslation();
-  const [animate, setAnimate] = useState(false);
+  const [animate, setAnimate] = useState(window.innerWidth >= 768);
 
   useEffect(() => {
-    const section = document.getElementById("formacao");
-    if (!section) return;
+    const handleAnimation = () => {
+      if (window.innerWidth < 768) {
+        setAnimate(true);
+        return;
+      }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setAnimate(false); // Reseta a animação
-          setTimeout(() => setAnimate(true), 100); // Reativa após um pequeno delay
-        }
-      },
-      { threshold: 0.3 }
-    );
+      const section = document.getElementById("formacao");
+      if (!section) return;
 
-    observer.observe(section);
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setAnimate(false);
+            setTimeout(() => setAnimate(true), 100);
+          }
+        },
+        { threshold: 0.3 }
+      );
 
-    return () => observer.unobserve(section);
+      observer.observe(section);
+      return () => observer.unobserve(section);
+    };
+
+    handleAnimation();
+    window.addEventListener("resize", handleAnimation);
+
+    return () => window.removeEventListener("resize", handleAnimation);
   }, []);
 
   return (
@@ -38,7 +49,7 @@ const Formacao = () => {
       }`}
     >
       <h1
-        className="text-3xl font-bold mb-8 mt-20 animate-slide-left"
+        className="text-3xl font-bold mb-8 mt-10 animate-slide-left"
         style={{ fontFamily: "DoctorGlitch" }}
       >
         {t("formacao.titulo")}
