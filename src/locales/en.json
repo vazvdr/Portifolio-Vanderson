@@ -25,6 +25,8 @@
   },
   "formacao": {
     "titulo": "Academic and Courses",
+    "verMais": "See more",
+    "verMenos": "See less",
     "card1": {
       "titulo": "Systems Analysis and Development",
       "subtitulo": "Estácio",

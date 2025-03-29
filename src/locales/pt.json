@@ -25,6 +25,8 @@
   },
   "formacao": {
     "titulo": "Formacao e Cursos",
+    "verMais": "Ver mais",
+    "verMenos": "Ver menos",
     "card1": {
       "titulo": "Análise e Desenvolvimento de Sistemas",
       "subtitulo": "Estácio",

@@ -10,6 +10,19 @@ import English from "../assets/English-C2.jpg";
 const Formacao = () => {
   const { t } = useTranslation();
   const [animate, setAnimate] = useState(window.innerWidth >= 768);
+  const [showAll, setShowAll] = useState(false);
+  const [visibleCards, setVisibleCards] = useState(
+    window.innerWidth >= 1024 ? 3 : 2
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleCards(window.innerWidth >= 1024 ? 3 : 2);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleAnimation = () => {
@@ -41,6 +54,15 @@ const Formacao = () => {
     return () => window.removeEventListener("resize", handleAnimation);
   }, []);
 
+  const cursos = [
+    { img: Estacio, titulo: "formacao.card1.titulo", instituicao: "formacao.card1.subtitulo", periodo: "formacao.card1.periodo", descricao: "formacao.card1.descricao" },
+    { img: Docker, titulo: "formacao.card2.titulo", instituicao: "formacao.card2.subtitulo", periodo: "formacao.card2.periodo", descricao: "formacao.card2.descricao" },
+    { img: Tailwind, titulo: "formacao.card3.titulo", instituicao: "formacao.card3.subtitulo", periodo: "formacao.card3.periodo", descricao: "formacao.card3.descricao" },
+    { img: Git, titulo: "formacao.card4.titulo", instituicao: "formacao.card4.subtitulo", periodo: "formacao.card4.periodo", descricao: "formacao.card4.descricao" },
+    { img: Linux, titulo: "formacao.card5.titulo", instituicao: "formacao.card5.subtitulo", periodo: "formacao.card5.periodo", descricao: "formacao.card5.descricao" },
+    { img: English, titulo: "formacao.card6.titulo", instituicao: "formacao.card6.subtitulo", periodo: "formacao.card6.periodo", descricao: "formacao.card6.descricao" },
+  ];
+
   return (
     <section
       id="formacao"
@@ -49,24 +71,17 @@ const Formacao = () => {
       }`}
     >
       <h1
-        className="text-3xl font-bold mb-8 mt-10 animate-slide-left"
+        className="text-3xl font-bold mb-8 mt-20 animate-slide-left"
         style={{ fontFamily: "DoctorGlitch" }}
       >
         {t("formacao.titulo")}
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {[
-          { img: Estacio, titulo: "formacao.card1.titulo", instituicao: "formacao.card1.subtitulo", periodo: "formacao.card1.periodo", descricao: "formacao.card1.descricao" },
-          { img: Docker, titulo: "formacao.card2.titulo", instituicao: "formacao.card2.subtitulo", periodo: "formacao.card2.periodo", descricao: "formacao.card2.descricao" },
-          { img: Tailwind, titulo: "formacao.card3.titulo", instituicao: "formacao.card3.subtitulo", periodo: "formacao.card3.periodo", descricao: "formacao.card3.descricao" },
-          { img: Git, titulo: "formacao.card4.titulo", instituicao: "formacao.card4.subtitulo", periodo: "formacao.card4.periodo", descricao: "formacao.card4.descricao" },
-          { img: Linux, titulo: "formacao.card5.titulo", instituicao: "formacao.card5.subtitulo", periodo: "formacao.card5.periodo", descricao: "formacao.card5.descricao" },
-          { img: English, titulo: "formacao.card6.titulo", instituicao: "formacao.card6.subtitulo", periodo: "formacao.card6.periodo", descricao: "formacao.card6.descricao" },
-        ].map((curso, index) => (
+        {(showAll ? cursos : cursos.slice(0, visibleCards)).map((curso, index) => (
           <div
             key={index}
-            className="card p-6 rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
+            className="card p-6 w-[90%] mx-auto rounded-lg shadow-lg hover:scale-105 transition-all duration-300"
           >
             <img
               src={curso.img}
@@ -86,6 +101,15 @@ const Formacao = () => {
           </div>
         ))}
       </div>
+
+      {cursos.length > visibleCards && (
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="card mt-6 px-4 py-2 w-[90%] rounded-lg font-bold text-3x1 transition-all hover:bg-black hover:scale-105"
+        >
+          {showAll ? t("formacao.verMenos") : t("formacao.verMais")}
+        </button>
+      )}
     </section>
   );
 };
