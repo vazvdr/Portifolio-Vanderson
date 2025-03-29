@@ -218,7 +218,7 @@ const Header = () => {
         </div>
 
         {/* Menu para telas medias */}
-        <nav className="hidden md:flex items-center space-x-6 mr-[5%] animate-fadeInLeft delay-150 sm:hidden lg:hidden">
+        <nav className="hidden md:flex items-center space-x-6 mr-[0.2%] animate-fadeInLeft delay-150 sm:hidden lg:hidden">
           <ul className="flex items-center space-x-4">
             {/* Botões de idioma */}
             <button
