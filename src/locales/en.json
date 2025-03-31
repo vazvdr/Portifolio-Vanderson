@@ -24,9 +24,9 @@
     "projects": "See my projects"
   },
   "formacao": {
-    "titulo": "Academic and Courses",
-    "verMais": "See more",
-    "verMenos": "See less",
+    "titulo": "Academic background",
+    "verMais": "Show more",
+    "verMenos": "Hide",
     "card1": {
       "titulo": "Systems Analysis and Development",
       "subtitulo": "Estácio",
