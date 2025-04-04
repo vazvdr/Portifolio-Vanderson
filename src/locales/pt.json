@@ -27,7 +27,7 @@
     "titulo": "Formacao e Cursos",
     "verMais": "Ver mais",
     "verMenos": "Ver menos",
-    "card1": {
+    "card1": {      
       "titulo": "Análise e Desenvolvimento de Sistemas",
       "subtitulo": "Estácio",
       "periodo": "Mar 2023 - Dez 2025",
@@ -39,8 +39,18 @@
       ]
     },
     "card2": {
+      "titulo": "Inglês avançado",
+      "subtitulo": "Fluencypass - 2025",
+      "periodo": "42 horas",
+      "descricao": [
+        "Conversação e fluência avançada",
+        "Compreensão de textos técnicos e acadêmicos",
+        "Redação de documentos e e-mails formais"
+      ]          
+    },
+    "card3": {
       "titulo": "Docker",
-      "subtitulo": "Udemy",
+      "subtitulo": "Udemy - 2025",
       "periodo": "5.5 horas",
       "descricao": [
         "Criação de imagens e containers",
@@ -48,41 +58,33 @@
         "Manipulação de dois ou mais containers"
       ]
     },
-    "card3": {
+    "card4": {
       "titulo": "Tailwind CSS",
-      "subtitulo": "Udemy",
+      "subtitulo": "Udemy - 2024",
       "periodo": "11.5 horas",
       "descricao": [
         "Layout mobile first",
         "Construção de layout com Grid e Flexbox",
         "Boas práticas e clean code"
-      ]
+      ]     
     },
-    "card4": {
+    "card5": {
       "titulo": "Git e GitHub",
-      "subtitulo": "Udemy",
+      "subtitulo": "Udemy - 2024",
       "periodo": "8.5 horas",
       "descricao": [
         "Git aplicado a prática de um dev",
         "Criação de gists para compartilhamento de código"
-      ]
+      ]      
     },
-    "card5": {
+    "card6": {
       "titulo": "Linux",
-      "subtitulo": "Udemy",
+      "subtitulo": "Udemy - 2023",
       "periodo": "7.5 horas",
       "descricao": [
         "Instalar o Linux do zero e entender todos os passos do processo",
         "Executar comandos pelo Terminal Linux",
         "Configurar rede em um equipamento Linux"
-      ]
-    },
-    "card6": {
-      "titulo": "Inglês avançado",
-      "subtitulo": "Udemy",
-      "periodo": "17 horas",
-      "descricao": [
-        "Inglês avançado"
       ]
     }
   },
@@ -92,13 +94,14 @@
       "titulo": "Desenvolvedor Frontend",
       "subtitulo": "Fábrica de Sistemas · Freelance",
       "periodo": "Nov de 2024 - Fevereiro de 2025",
-      "descricao": "Desenvolvimento Frontend principalmente criando Landing Pages integradas com api's para envio de emails e mensagens de whatsapp e resolução do conflitos de merge no GitHub, com ferramentas como:"
+      "descricao":  "Desenvolvimento Frontend principalmente criando Landing Pages integradas com api's para envio de emails e mensagens de whatsapp e resolução do conflitos de merge no GitHub, com ferramentas como:"
     },
     "card2": {
       "titulo": "Desenvolvedor FullStack",
       "subtitulo": "Freelancer · Freelance",
       "periodo": "Ago de 2023 - o momento",
-      "descricao": "Desenvolvimento de software uteis desde projetos de IoT, BigData, Mobile com React Native para empresas por meio de projetos de extensão da faculdade de Analise e Desenvolvimento de Sistemas e projetos para clientes pessoais que procuram meus serviços de desenvolvedor de software, possuo conhecimentos nas seguintes linguagens e ferramentas:"
+      "descricao":
+        "Desenvolvimento de aplicações frontend usando React, Next.js, Javascript ou Typescript e Tailwind CSS, criação de API’S usando Java, Spring Boot, PostgreSQL ou, MySQL, com testes unitários e de integração com Docker, Criacão de layouts e telas utilizando componentes Shadcn/ui e experiência com ambiente CI/CD como GitHub actions."
     }
   },
   "tecnologias": {

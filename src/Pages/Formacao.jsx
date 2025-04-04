@@ -5,7 +5,7 @@ import Docker from "../assets/Docker.jpg";
 import Tailwind from "../assets/TailwindCSS.jpg";
 import Git from "../assets/GitHub.jpg";
 import Linux from "../assets/Linux.jpg";
-import English from "../assets/English-C2.jpg";
+import English from "../assets/Proficient-English.jpg";
 
 const Formacao = () => {
   const { t } = useTranslation();
@@ -56,11 +56,11 @@ const Formacao = () => {
 
   const cursos = [
     { img: Estacio, titulo: "formacao.card1.titulo", instituicao: "formacao.card1.subtitulo", periodo: "formacao.card1.periodo", descricao: "formacao.card1.descricao" },
-    { img: Docker, titulo: "formacao.card2.titulo", instituicao: "formacao.card2.subtitulo", periodo: "formacao.card2.periodo", descricao: "formacao.card2.descricao" },
-    { img: Tailwind, titulo: "formacao.card3.titulo", instituicao: "formacao.card3.subtitulo", periodo: "formacao.card3.periodo", descricao: "formacao.card3.descricao" },
-    { img: Git, titulo: "formacao.card4.titulo", instituicao: "formacao.card4.subtitulo", periodo: "formacao.card4.periodo", descricao: "formacao.card4.descricao" },
-    { img: Linux, titulo: "formacao.card5.titulo", instituicao: "formacao.card5.subtitulo", periodo: "formacao.card5.periodo", descricao: "formacao.card5.descricao" },
-    { img: English, titulo: "formacao.card6.titulo", instituicao: "formacao.card6.subtitulo", periodo: "formacao.card6.periodo", descricao: "formacao.card6.descricao" },
+    { img: English, titulo: "formacao.card2.titulo", instituicao: "formacao.card2.subtitulo", periodo: "formacao.card2.periodo", descricao: "formacao.card2.descricao" },
+    { img: Docker, titulo: "formacao.card3.titulo", instituicao: "formacao.card3.subtitulo", periodo: "formacao.card3.periodo", descricao: "formacao.card3.descricao" },
+    { img: Tailwind, titulo: "formacao.card4.titulo", instituicao: "formacao.card4.subtitulo", periodo: "formacao.card4.periodo", descricao: "formacao.card4.descricao" },
+    { img: Git, titulo: "formacao.card5.titulo", instituicao: "formacao.card5.subtitulo", periodo: "formacao.card5.periodo", descricao: "formacao.card5.descricao" },
+    { img: Linux, titulo: "formacao.card6.titulo", instituicao: "formacao.card6.subtitulo", periodo: "formacao.card6.periodo", descricao: "formacao.card6.descricao" },
   ];
 
   return (
@@ -71,7 +71,7 @@ const Formacao = () => {
       }`}
     >
       <h1
-        className="text-3xl font-bold mb-8 mt-20 animate-slide-left"
+        className="text-2xl md:text-3xl md:font-bold  mb-8 mt-20 animate-slide-left"
         style={{ fontFamily: "DoctorGlitch" }}
       >
         {t("formacao.titulo")}
