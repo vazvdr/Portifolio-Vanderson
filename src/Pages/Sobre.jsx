@@ -96,18 +96,7 @@ const Sobre = () => {
             <p className="text-base sm:text-lg leading-snug text-center">
               {t("sobre.description")}
             </p>
-            <div className="mt-4 flex justify-center space-x-3">
-              <a
-                href="#projetos"
-                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-blue-600 
-          flex items-center space-x-2 
-          transition-all transform hover:scale-105 
-          whitespace-nowrap animate-pulse-custom"
-                onClick={(e) => handleLinkClick(e, "#projetos")}
-              >
-                <span>{t("sobre.projects")}</span>
-                <FaArrowDown size={20} />
-              </a>              
+            <div className="mt-5 flex items-center justify-center space-x-2">
               <a
                 href="/Curriculo-Vanderson.pdf"
                 download
@@ -141,9 +130,20 @@ const Sobre = () => {
                 <FaGithub size={32} />
               </a>
             </div>
+            <div className="mt-4 flex justify-center">
+              <a
+                href="#projetos"
+                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-blue-600 
+          flex items-center space-x-2 
+          transition-all transform hover:scale-105 
+          whitespace-nowrap animate-pulse-custom"
+                onClick={(e) => handleLinkClick(e, "#projetos")}
+              >
+                <span>{t("sobre.projects")}</span>
+                <FaArrowDown size={20} />
+              </a>
             </div>
           </div>
-
           <div
             className={`relative w-[50%] sm:w-[50%] mt-10 animate-fade-in-left text-center ${animate ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
           >
@@ -155,9 +155,10 @@ const Sobre = () => {
                 draggable="false"
                 onContextMenu={(e) => e.preventDefault()}
               />
-            </div>
+            </div>            
           </div>
-        </div>      
+        </div>
+      </div>
 
       {/*Codigo para telas medias e grandes */}
 
