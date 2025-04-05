@@ -125,7 +125,7 @@ const Sobre = () => {
               {t("sobre.description")}
               <span className="inline-block bg-transparent text-blue-600 py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
                 {tempo.anos} {t("sobre.anos")} {" "} 
-                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")}  
+                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {""} 
                 {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}
               </span>
               {t("sobre.description2")}
@@ -225,9 +225,9 @@ const Sobre = () => {
             </h1>
             <p className="text-base sm:text-lg leading-snug">
               {t("sobre.description")}
-              <span className="inline-block text-blue-600 py-1 mx-2 animate-pulse-custom font-bold tracking-wide">
+              <span className="inline-block text-blue-600 py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
                 {tempo.anos} {t("sobre.anos")}{" "}
-                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")}{" "}
+                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {""}
                 {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}
               </span>
               {t("sobre.description2")}
