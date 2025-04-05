@@ -78,7 +78,7 @@ const Tecnologias = () => {
       className="relative py-10 w-full flex flex-col items-center"
     >
       <h1
-        className="text-3xl font-bold mb-8 mt-10 animate-slide-right"
+        className="text-2xl md:text-3xl font-bold mb-8 mt-10 animate-slide-right"
         style={{ fontFamily: "DoctorGlitch" }}
       >
         {t("tecnologias.title")}

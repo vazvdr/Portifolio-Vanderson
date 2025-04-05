@@ -17,7 +17,11 @@
       "name": "Vanderson,",
       "role": "FullStack Developer."
     },
-    "description": "Tenho 2 anos de experiência com programação e sou apaixonado pelo universo da internet e por usar minha criatividade para criar sites inteligentes, funcionais e que agregam valor.",
+    "description": "Tenho ",
+    "description2": " de experiência com programação usando o ecossistema do Java com Spring e Javascript com React e Next.js principalmente e sou apaixonado pelo universo da internet e por usar minha criatividade para criar sites inteligentes, funcionais e que agregam valor.",
+    "anos": "anos",
+    "meses": "meses e",
+    "dias": "dias",
     "button": "Currículo",
     "linkedin": "Perfil no LinkedIn",
     "github": "Perfil no GitHub",

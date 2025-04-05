@@ -10,6 +10,7 @@ const Sobre = () => {
 
   const [animate, setAnimate] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [tempo, setTempo] = useState({ anos: 0, meses: 0, dias: 0, horas: 0, minutos: 0, segundos: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -63,6 +64,33 @@ const Sobre = () => {
     }
   };
 
+  useEffect(() => {
+    const dataInicio = new Date('2023-01-04T08:00:00');
+
+    const calcularDiferenca = () => {
+      const agora = new Date();
+      let anos = agora.getFullYear() - dataInicio.getFullYear();
+      let meses = agora.getMonth() - dataInicio.getMonth();
+      let dias = agora.getDate() - dataInicio.getDate();
+      
+      if (dias < 0) {
+        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+        dias += ultimoMes;
+        meses--;
+      }
+      if (meses < 0) {
+        meses += 12;
+        anos--;
+      }
+
+      setTempo({ anos, meses, dias });
+    };
+
+    calcularDiferenca();
+    const intervalo = setInterval(calcularDiferenca, 1000);
+    return () => clearInterval(intervalo);
+  }, []);
+
   return (
     <section id="sobre-mim" className="relative">
       {/*Codigo para telas pequenas */}
@@ -88,13 +116,17 @@ const Sobre = () => {
                     cursorStyle="_"
                     typeSpeed={20}
                     deleteSpeed={20}
-                    delaySpeed={1000}
+                    delaySpeed={250}
                   />
                 </span>
               </div>
             </h1>
             <p className="text-base sm:text-lg leading-snug text-center">
               {t("sobre.description")}
+              <span className="inline-block bg-transparent text-blue-600 py-1 mx-2 animate-pulse-custom font-bold tracking-wide">
+                {tempo.anos} {t("sobre.anos")} {tempo.meses} {t("sobre.meses")} {tempo.dias} {t("sobre.dias")}
+              </span>
+              {t("sobre.description2")}
             </p>
             <div className="mt-5 flex items-center justify-center space-x-2">
               <a
@@ -155,7 +187,7 @@ const Sobre = () => {
                 draggable="false"
                 onContextMenu={(e) => e.preventDefault()}
               />
-            </div>            
+            </div>
           </div>
         </div>
       </div>
@@ -164,7 +196,7 @@ const Sobre = () => {
 
       <div className="hidden md:flex relative z-10 flex-col items-center md:items-start">
         <div className="flex flex-colum max-w-[100%]">
-          <div className={`mt-[10%] w-[40%] ml-[20%]
+          <div className={`mt-[10%] w-[40%] ml-[15%]
           lg:w-[50%] animate-fade-in-right ${animate ? "animate-slide-in-left" : "opacity-0"
             }`}>
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
@@ -184,16 +216,22 @@ const Sobre = () => {
                     cursorStyle="_"
                     typeSpeed={20}
                     deleteSpeed={20}
-                    delaySpeed={1000}
+                    delaySpeed={200}
                   />
                 </span>
               </div>
             </h1>
-            <p className="text-base sm:text-lg leading-snug">{t("sobre.description")}</p>
+            <p className="text-base sm:text-lg leading-snug">
+              {t("sobre.description")}
+              <span className="inline-block text-blue-600 py-1 mx-2 animate-pulse-custom font-bold tracking-wide">
+                {tempo.anos} {t("sobre.anos")} {tempo.meses} {t("sobre.meses")} {tempo.dias} {t("sobre.dias")}
+              </span>
+              {t("sobre.description2")}
+            </p>
           </div>
           <div
             id="foto-container"
-            className={`w-[38%] mt-[15%] ml-[5%] mr-[10%] opacity-0 
+            className={`w-[38%] mt-[15%] ml-[5%] mr-[15%] opacity-0 
             lg:w-[27%] lg:mt-[5.5%] lg:ml-[5%] transition-opacity duration-1000 
             ${isVisible ? "opacity-100 scale-100" : "scale-90"
               }`}
@@ -212,8 +250,8 @@ const Sobre = () => {
         </div>
       </div>
       <div className="hidden sm:hidden md:flex mt-[5%] ml-[25%] space-x-4
-      md:mt-[2%] md:ml-[20%] 
-      lg:mt-[1%] lg:ml-[20%] lg:w-[50%]">
+      md:mt-[2%] md:ml-[15%] 
+      lg:mt-[1%] lg:ml-[15%] lg:w-[50%]">
         <a
           href="#projetos"
           className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md 
