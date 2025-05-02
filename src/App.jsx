@@ -5,24 +5,20 @@ import Header from "./Pages/Header";
 import Projetos from "./Pages/Projetos";
 import Sobre from "./Pages/Sobre";
 import Tecnologias from "./Pages/Tecnologias";
-import MovingRays from "./components/MovingRays";
 import Footer from "./Pages/Footer";
 import Formacao from "./Pages/Formacao";
 
 function App() {
     return (
         <div style={{ position: "relative", overflow: "hidden", minHeight: "100vh" }}>
-            <MovingRays/>
-            <div style={{ position: "relative", zIndex: 1 }}>
-                <Header />
-                <Sobre />
-                <Formacao/>
-                <Experiencias />
-                <Tecnologias />
-                <Projetos />
-                <Contact />
-                <Footer />
-            </div>
+            <Header />
+            <Sobre />
+            <Formacao />
+            <Experiencias />
+            <Tecnologias />
+            <Projetos />
+            <Contact />
+            <Footer />
         </div>
     );
 }

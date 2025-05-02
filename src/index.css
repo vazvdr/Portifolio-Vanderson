@@ -2,37 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Light Mode */
+/* Dark */
 :root {
   --background-color: #222;
-  /* Cinza Escuro */
   --background-color-card: rgb(32, 26, 26);
-  --border-color: rgb(86, 7, 120) 1px solid;
-  /* borda para o form */
-  --gradient-start: #6b21a8; /* Purple 800 */
-  --gradient-middle: #3b82f6; /* Blue 500 */
-  --gradient-end: #6b21a8; /* Purple 800 */
-  /* borda para o form */ 
-  --text-color: #f9fafb;
-  /* Texto Claro */
-  --header-line-gradient: linear-gradient(to right,#b4b4bb, #1e297b,  #130250);
-  /* Dark Mode */
-  --primary-color: #9333ea;
-  /* Roxo Mais Intenso */
-  --secondary-color: #222;
-  /* Cinza Médio */
-  --hover-color: #d946ef;
-  /* Rosa-Choque */
+  --border-color: rgb(116, 244, 81) 1px solid;
+  --gradient-start: #67f130; 
+  --gradient-middle: #69e52f; 
+  --gradient-end: #80f23d;
+  --text-color: #ffd;
+  --header-line-gradient: linear-gradient(to right,#5af222, #26f926,  #70dc0a);
  
-  --menu-btn-bg: #fff;
+  --menu-btn-bg: #222;
   /* Fundo do botão no Dark Mode */
-  --menu-btn-line: #9333ea;
+  --menu-btn-line: white;
   /* Cor das linhas no Dark Mode */
   --text-color-menu: white;
   /* Texto no modo dark */
  
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  --text-primary: #e0e0e0;
+  --text-sobre: rgb(137, 255, 34);
+}
+
+:root.light{
+  --background-color: #fff;
+  --background-color-card: rgb(244, 241, 241);
+  --border-color: rgb(116, 244, 81) 1px solid;
+  --gradient-start: #67f130; 
+  --gradient-middle: #69e52f;
+  --gradient-end: #80f23d; 
+  --text-color: black;
+  --header-line-gradient: linear-gradient(to right,#5af222, #26f926,  #70dc0a);
+
+  --menu-btn-bg: #fff;
+  /* Fundo do botão no Dark Mode */
+  --menu-btn-line: black;
+  /* Cor das linhas no Dark Mode */
+  --text-color-menu: #222;
+  /* Texto no modo dark */
+ 
+  --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0);
+  --text-sobre: rgb(87, 86, 84);
 }
 
 /* Aplicação global */
@@ -85,7 +95,11 @@ body {
 
 .contact-button{
   background-color: var(--menu-btn-bg);
-  color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.text-sobre{
+  color: var(--text-sobre);
 }
 
 .buttons-sobre {
@@ -135,19 +149,6 @@ body {
   border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
 }
 
-
-@keyframes borderAnimation {
-  0% {
-    border-image-source: linear-gradient(to right, #5b3e79, #3b82f6, #280548);
-    border-bottom: 1px solid;
-  }
-  50% {
-    border-image-source: linear-gradient(to right, #3b82f6, #603d7b, #300144);
-  }
-  100% {
-    border-image-source: linear-gradient(to right, #6b21a8, #3b82f6, #411a68);
-  }
-}
 
 /* Animações Slide */
 .animate-slide-in-right {
