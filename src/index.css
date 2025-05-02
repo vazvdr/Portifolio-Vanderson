@@ -27,7 +27,7 @@
 :root.light{
   --background-color: #fff;
   --background-color-card: rgb(244, 241, 241);
-  --border-color: rgb(116, 244, 81) 1px solid;
+  --border-color: rgb(116, 244, 81) 2px solid;
   --gradient-start: #67f130; 
   --gradient-middle: #69e52f;
   --gradient-end: #80f23d; 
@@ -104,7 +104,6 @@ body {
 
 .buttons-sobre {
   background-color: var(--menu-btn-bg);
-  color: var(--secondary-color);
   border-color: var(--border-color);
 }
 
