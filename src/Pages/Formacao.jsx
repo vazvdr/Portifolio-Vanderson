@@ -89,9 +89,9 @@ const Formacao = () => {
               className="w-[100%] object-contain"
             />
             <h2 className="text-xl font-semibold">{t(curso.titulo)}</h2>
-            <p className="text-gray-400">{t(curso.instituicao)}</p>
-            <p className="text-gray-400 mb-2">{t(curso.periodo)}</p>
-            <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+            <p>{t(curso.instituicao)}</p>
+            <p className="mb-2">{t(curso.periodo)}</p>
+            <ul className="list-disc list-inside text-sm space-y-1">
               {t(curso.descricao, { returnObjects: true }).map((item, i) => (
                 <li key={i} className="block">
                   {item}
@@ -105,7 +105,7 @@ const Formacao = () => {
       {cursos.length > visibleCards && (
         <button
           onClick={() => setShowAll(!showAll)}
-          className="card mt-6 px-4 py-2 w-[90%] rounded-lg font-bold text-3x1 transition-all hover:bg-black hover:scale-105"
+          className="card mt-6 px-4 py-2 w-[90%] rounded-lg font-bold text-3x1 transition-all hover:scale-105"
         >
           {showAll ? t("formacao.verMenos") : t("formacao.verMais")}
         </button>

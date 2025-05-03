@@ -10,7 +10,7 @@ const Sobre = () => {
 
   const [animate, setAnimate] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [tempo, setTempo] = useState({ anos: 0, meses: 0, dias: 0, horas: 0, minutos: 0, segundos: 0 });
+  const [tempo, setTempo] = useState({ anos: 0, meses: 0, dias: 0});
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -103,7 +103,7 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-blue-600 hover:text-blue-400 hover:translate-x-1 transition-all duration-300">
+              <span className="text-sobre hover:text-black/20 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -123,9 +123,9 @@ const Sobre = () => {
             </h1>
             <p className="text-base sm:text-lg leading-snug text-center">
               {t("sobre.description")}
-              <span className="inline-block bg-transparent text-blue-600 py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
+              <span className="inline-block  text-sobre py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
                 {tempo.anos} {t("sobre.anos")} {" "} 
-                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {""} 
+                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {" "} 
                 {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}
               </span>
               {t("sobre.description2")}
@@ -135,7 +135,7 @@ const Sobre = () => {
                 href="/Curriculo-Vanderson.pdf"
                 download
                 className="buttons-sobre py-1 px-2 rounded-md font-semibold 
-          shadow-lg hover:bg-blue-800 hover:text-white transition-all 
+              border border-black shadow-lg hover:bg-black hover:text-white transition-all 
           transform hover:scale-110"
               >
                 {t("sobre.button")}
@@ -167,8 +167,8 @@ const Sobre = () => {
             <div className="mt-4 flex justify-center">
               <a
                 href="#projetos"
-                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-blue-600 
-          flex items-center space-x-2 
+                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-black 
+          hover:text-white border border-black flex items-center space-x-2 
           transition-all transform hover:scale-105 
           whitespace-nowrap animate-pulse-custom"
                 onClick={(e) => handleLinkClick(e, "#projetos")}
@@ -179,7 +179,7 @@ const Sobre = () => {
             </div>
           </div>
           <div
-            className={`relative w-[50%] sm:w-[50%] mt-10 animate-fade-in-left text-center ${animate ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
+            className={`relative w-[48%] sm:w-[40%] mt-10 animate-fade-in-left text-center ${animate ? "animate-slide-in-right opacity-100" : "opacity-0"}`}
           >
             <div className="relative p-[3px] rounded-md bg-gradient-to-r from-gray-400 via-gray-600 to-gray-700">
               <img
@@ -198,14 +198,14 @@ const Sobre = () => {
 
       <div className="hidden md:flex relative z-10 flex-col items-center md:items-start">
         <div className="flex flex-colum max-w-[100%]">
-          <div className={`mt-[10%] w-[40%] ml-[15%]
+          <div className={`mt-[10%] w-[40%] ml-[10%]
           lg:w-[50%] animate-fade-in-right ${animate ? "animate-slide-in-left" : "opacity-0"
             }`}>
             <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-blue-600/80 hover:text-blue-500 hover:translate-x-1 transition-all duration-300">
+              <span className="text-sobre hover:text-black/20 hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
               </span>
               <br />
@@ -225,9 +225,9 @@ const Sobre = () => {
             </h1>
             <p className="text-base sm:text-lg leading-snug">
               {t("sobre.description")}
-              <span className="inline-block text-blue-600 py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
-                {tempo.anos} {t("sobre.anos")}{" "}
-                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {""}
+              <span className="inline-block text-sobre py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
+                {tempo.anos} {t("sobre.anos")} {" "}
+                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {" "}
                 {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}
               </span>
               {t("sobre.description2")}
@@ -235,8 +235,8 @@ const Sobre = () => {
           </div>
           <div
             id="foto-container"
-            className={`w-[38%] mt-[15%] ml-[5%] mr-[15%] opacity-0 
-            lg:w-[27%] lg:mt-[5.5%] lg:ml-[5%] transition-opacity duration-1000 
+            className={`w-[30%] mt-[15%] ml-[15%] mr-[2%] opacity-0 
+            lg:w-[27%] lg:mt-[8.5%] lg:ml-[15%] lg:mr-[10%] transition-opacity duration-1000 
             ${isVisible ? "opacity-100 scale-100" : "scale-90"
               }`}
           >
@@ -254,12 +254,12 @@ const Sobre = () => {
         </div>
       </div>
       <div className="hidden sm:hidden md:flex mt-[5%] ml-[25%] space-x-4
-      md:mt-[2%] md:ml-[15%] 
-      lg:mt-[1%] lg:ml-[15%] lg:w-[50%]">
+      md:mt-[2%] md:ml-[10%] 
+      lg:mt-[1%] lg:ml-[10%] lg:w-[50%]">
         <a
           href="#projetos"
-          className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md 
-  hover:bg-blue-600 hover:text-white flex items-center space-x-2 
+          className="h-9 font-semibold py-2 px-4 rounded-md border border-black
+  hover:bg-black hover:text-white hover:border border-lime-600 flex items-center space-x-2 
   transition-all transform hover:scale-105 whitespace-nowrap 
   animate-pulse-custom"
           onClick={(e) => handleLinkClick(e, "#projetos")}
@@ -271,7 +271,7 @@ const Sobre = () => {
           href="/Curriculo-Vanderson.pdf"
           download
           className="buttons-sobre h-9 py-1 px-4 rounded-md font-semibold 
-    shadow-lg hover:bg-blue-600 hover:text-white transition-all 
+    shadow-lg border border-black hover:bg-black hover:text-white transition-all 
     transform hover:scale-110 flex items-center"
         >
           {t("sobre.button")}

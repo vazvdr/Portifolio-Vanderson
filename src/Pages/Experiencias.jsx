@@ -74,10 +74,6 @@ const Experiencias = () => {
           ].sort((a, b) => b.images.length - a.images.length)).map((card, index) => (
             <div
               key={index}
-              style={{
-                borderImage: "linear-gradient(to right, #6b21a8, #3b82f6, #6b21a8) 1",
-                animation: "borderAnimation 1s infinite",
-              }}
               className={`card rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate
                 ? index === 0
                   ? "animate-slide-in-left"
@@ -104,7 +100,7 @@ const Experiencias = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   title="Ver Site"
-                  className="absolute bottom-4 right-4 text-white hover:text-blue-600"
+                  className="absolute bottom-4 right-4 hover:text-blue-600"
                 >
                   <FaExternalLinkAlt size={20} />
                 </a>
