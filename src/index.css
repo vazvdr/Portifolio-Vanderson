@@ -7,7 +7,7 @@
   --background-color: #222;
   /* Cinza Escuro */
   --background-color-card: rgb(32, 26, 26);
-  --border-color: rgb(86, 7, 120) 1px solid;
+  --border-color: rgb(86, 7, 120) 2px solid;
   /* borda para o form */
   --gradient-start: #6b21a8; /* Purple 800 */
   --gradient-middle: #3b82f6; /* Blue 500 */
