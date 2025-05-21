@@ -104,7 +104,7 @@ const Header = () => {
         <div className="header-line absolute inset-x-0 bottom-0 h-[1.5px]"></div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
-            <SiAlienware color="orange" size={50} className=" transform hover:scale-110" />
+            <SiAlienware size={50} className="alien transform hover:scale-110" />
             <span className="w-[30px] h-38 font-bold text-lg  text-center" style={{ fontFamily: "DoctorGlitch" }}>
               {t("header.developer")}
             </span>
@@ -252,9 +252,9 @@ const Header = () => {
               <li key={item.id}>
                 <a
                   href={item.id}
-                  className={`hover:text-lime-400 font-semibold whitespace-nowrap transition-all duration-300 
+                  className={`font-semibold whitespace-nowrap transition-all duration-300 
             ${selectedSection === item.id
-                      ? "border-b-2 border-lime-400 pb-1"
+                      ? "border-b-2 menu-selector pb-1"
                       : "border-b-2 border-transparent"
                     }`}
                   onClick={(e) => handleLinkClickSelect(e, item.id)}
@@ -266,7 +266,7 @@ const Header = () => {
             {/* Botão de contato */}
             <li>
               <button
-                className={`font-semibold py-2 px-2 border border-lime-400 rounded-[10px] transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-black hover:text-white animate-pulse-custom ${selectedSection === "#contato" ? "border-b-2 border-lime-400" : ""
+                className={`border border-black font-semibold py-2 px-2 rounded-[10px] transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-black hover:text-white animate-pulse-custom ${selectedSection === "#contato" ? "" : ""
                   }`}
                 onClick={(e) => handleLinkClick(e, "#contato")}
               >
@@ -287,9 +287,9 @@ const Header = () => {
       {showScrollButton && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top-button w-8 h-8 fixed bottom-28 mr-[1%] bg-primary-01 text-white p-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300 z-50"
+          className="scroll-to-top-button w-8 h-8 fixed bottom-28 mr-[1%] text-white p-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300 z-50"
         >
-          <ArrowUpCircle size={34} className="hover:text-lime-500" />
+          <ArrowUpCircle size={40} />
         </button>
       )}
 

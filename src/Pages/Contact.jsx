@@ -107,7 +107,7 @@ const Contact = () => {
             >
             <div className="w-full rounded-lg shadow-lg flex flex-col justify-center space-y-6 text-lg">
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-l border-lime-500 bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer contact-info bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 onClick={() => window.open("https://www.linkedin.com/in/vanderson-de-azevedo/", "_blank")}
               >
 
@@ -119,7 +119,7 @@ const Contact = () => {
               </div>
 
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-l border-lime-500 bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer contact-info bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 onClick={() => window.open("mailto:vanderson.azevedo.rocha@gmail.com")}
               >
                 <div className="flex items-center space-x-3">
@@ -130,7 +130,7 @@ const Contact = () => {
               </div>
 
               <div
-                className="flex flex-col items-start cursor-pointer border-b border-l border-lime-500 hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+                className="flex flex-col items-start cursor-pointer contact-info hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 onClick={() => window.open("https://wa.me/5521967441433?text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20pelo%20link%20portf%C3%B3lio%20do%20Vanderson!", "_blank")}
               >
                 <div className="flex items-start space-x-3">
@@ -140,7 +140,7 @@ const Contact = () => {
                 <p className="pl-[42px]">+55 (21) 96744-1433</p>
               </div>
 
-              <div className="flex flex-col items-start cursor-pointer border-b border-l border-lime-500 bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+              <div className="flex flex-col items-start cursor-pointer contact-info bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
               >
                 <div className="flex items-center space-x-3">
                   <FaMapMarkerAlt className="text-3xl" />

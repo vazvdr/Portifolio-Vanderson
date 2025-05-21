@@ -26,13 +26,13 @@
 
 :root.light{
   --background-color: #fff;
-  --background-color-card: rgb(244, 241, 241);
-  --border-color: rgb(116, 244, 81) 2px solid;
-  --gradient-start: #67f130; 
-  --gradient-middle: #69e52f;
-  --gradient-end: #80f23d; 
+  --background-color-card: rgb(247, 247, 247);
+  --border-color: rgb(48, 51, 225) 2px solid;
+  --gradient-start: #4030f1; 
+  --gradient-middle: #5244ef;
+  --gradient-end: #2215b3; 
   --text-color: black;
-  --header-line-gradient: linear-gradient(to right,#5af222, #26f926,  #70dc0a);
+  --header-line-gradient: linear-gradient(to right,#3a22f2, #262af9,  #0d0adc);
 
   --menu-btn-bg: #fff;
   /* Fundo do botão no Dark Mode */
@@ -55,12 +55,19 @@ body {
   height: 100%;
 }
 
+.alien{
+  color: var(--gradient-start);
+}
+
+.menu-selector{
+  border-color: var(--gradient-start);
+}
+
 .scroll-to-top-button {
   position: fixed;
   right: 14px;
   background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-
+  color: var(--gradient-start);
 }
 
 /* Classe para o botão */
@@ -93,9 +100,10 @@ body {
   background: var(--header-line-gradient);
 }
 
-.contact-button{
+.contact{
   background-color: var(--menu-btn-bg);
   color: var(--text-color);
+  border-color: #26f926;
 }
 
 .text-sobre{
@@ -137,9 +145,24 @@ body {
 }
 
 .stack {
-  background-color: var(--background-color-card);
-  border: var(--border-color);
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
 }
+
+.stage-carrossel-tech{
+  background-color: var(--gradient-start);
+}
+
+.stage-carrossel-button{
+  color: var(--gradient-start);
+}
+
+.contact-info{
+  border-left: var(--border-color);
+  border-bottom: var(--border-color);
+}
+
+
 
 .formulario {
   background-color: var(--background-color-card);

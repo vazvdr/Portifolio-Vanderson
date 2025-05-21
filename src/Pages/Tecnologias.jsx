@@ -131,7 +131,7 @@ const Tecnologias = () => {
       </div>
       <div
         id="carousel-container"
-        className="bg-black/90 border-t-2 border-b-2 border-lime-500 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
+        className="bg-black/90 stack relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
         style={{ margin: "0 10%" }}
       >
         <div
@@ -159,21 +159,21 @@ const Tecnologias = () => {
           {Array.from({ length: totalStages }).map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${index === currentStage ? "bg-lime-500" : "bg-gray-400"} transition-all`}
+              className={`w-3 h-3 rounded-full ${index === currentStage ? "stage-carrossel-tech" : "bg-gray-400"} transition-all`}
             ></span>
           ))}
         </div>
         <div className="flex justify-center mt-1 gap-4">
           <button
             disabled={currentStage === 0}
-            className={`bg-transparent text-lime-500 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handlePrevStage}
           >
             <ArrowLeftCircle size="100%" />
           </button>
           <button
             disabled={currentStage === totalStages - 1}
-            className={`bg-transparent text-lime-500 w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
+            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handleNextStage}
           >
             <ArrowRightCircle size="100%" />
