@@ -83,6 +83,18 @@ body {
   transition: background-color 0.8s ease;
 }
 
+.menu-button:hover{
+  color: var(--gradient-start);
+}
+
+.buttons-menu{
+  color: var(--text-color);
+}
+
+.buttons-menu:hover{
+  color: var(--gradient-middle);
+}
+
 .menu-button span {
   display: block;
   width: 1.5rem;

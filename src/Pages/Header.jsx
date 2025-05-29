@@ -252,7 +252,7 @@ const Header = () => {
               <li key={item.id}>
                 <a
                   href={item.id}
-                  className={`font-semibold whitespace-nowrap transition-all duration-300 
+                  className={`buttons-menu font-semibold whitespace-nowrap transition-all duration-300 
             ${selectedSection === item.id
                       ? "border-b-2 menu-selector pb-1"
                       : "border-b-2 border-transparent"
