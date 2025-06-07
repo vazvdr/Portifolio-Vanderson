@@ -140,13 +140,13 @@
       "description": "This project consumes the Open Weather API to display current weather conditions. The site automatically changes to Snow Mode, Cloud Mode, or Summer Mode based on the searched city's temperature."
     },
     "movies": {
-      "title": "Movie Finder",
+      "title": "Buscador de Filmes",
       "subtitle": "Discover movies in theaters and save your favorites.",
       "description": "This project uses TheMovieDB API to list trending movies and allows users to search the catalog. Features include saving to favorites and watching trailers on YouTube."
     }
   },
   "contato": {
-    "title": "Contact",
+    "title": "Contact Me",
     "namelabel": "Name",
     "nameplaceholder": "Enter your name",
     "emaillabel": "Email",
