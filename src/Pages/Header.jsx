@@ -104,7 +104,7 @@ const Header = () => {
         <div className="header-line absolute inset-x-0 bottom-0 h-[1.5px]"></div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
-            <SiAlienware size={50} className="alien transform hover:scale-110" />
+            <SiAlienware data-testid="alien-icon" size={50} className="alien transform hover:scale-110" />
             <span className="w-[30px] h-38 font-bold text-lg  text-center" style={{ fontFamily: "DoctorGlitch" }}>
               {t("header.developer")}
             </span>
@@ -275,6 +275,7 @@ const Header = () => {
             </li>
             <button
               onClick={toggleTheme}
+              data-testid="theme-wrapper"
               className="p-2 rounded-full transition duration-300 flex items-center justify-center w-12 h-12 border-none"
             >
               {theme === 'dark' ? <Sun size={22} className="text-yellow-400 hover:scale-110" /> : <Moon size={22} className="text-blue-600 hover:scale-110"/>}
