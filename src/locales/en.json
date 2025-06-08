@@ -99,15 +99,26 @@
     "titulo": "Experiences",
     "card1": {
       "titulo": "Frontend Developer",
-      "subtitulo": "System Factory · Freelance",
-      "periodo": "Nov 2024 - Feb 2025",
-      "descricao": "Front-end development, mainly creating Landing Pages integrated with api's for sending emails and whatsapp messages and resolving merge conflicts on GitHub, with tools such as:"
+      "subtitulo": "Fábrica de Sistemas · Freelance",
+      "periodo": "Nov 2024 - February 2025",
+      "descricao": [
+        "Development of Landing Pages with React and Javascript",
+        "Creation of APIs for sending emails and WhatsApp messages",
+        "Resolution of merge conflicts on GitHub",
+        "Teamwork using Agile methodology"
+      ]
     },
     "card2": {
       "titulo": "FullStack Developer",
       "subtitulo": "Freelancer · Freelance",
-      "periodo": "Aug 2023 - present",
-      "descricao": "Development of frontend applications using React, Next.js, Javascript or Typescript and Tailwind CSS, creation of API's using Java, Spring Boot, PostgreSQL or MySQL, with unit and integration tests with Docker, Creation of layouts and screens, using components of Shadcn/ui, and experience with environment CI/CD such as, Github actions."
+      "periodo": "Aug 2023 - Present",
+      "descricao": [
+        "Frontend application development using React, Next.js",
+        "Unit and integration testing with Vitest and Cypress",
+        "API creation using Spring Boot or Nest.js with SQL or NoSQL",
+        "Unit and integration testing with JUnit, Docker or Jest",
+        "Experience with CI/CD environments like GitHub Actions"
+      ]
     }
   },
   "tecnologias": {
@@ -140,7 +151,7 @@
       "description": "This project consumes the Open Weather API to display current weather conditions. The site automatically changes to Snow Mode, Cloud Mode, or Summer Mode based on the searched city's temperature."
     },
     "movies": {
-      "title": "Movie Finder",
+      "title": "Buscador de Filmes",
       "subtitle": "Discover movies in theaters and save your favorites.",
       "description": "This project uses TheMovieDB API to list trending movies and allows users to search the catalog. Features include saving to favorites and watching trailers on YouTube."
     }

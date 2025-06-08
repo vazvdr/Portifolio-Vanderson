@@ -33,7 +33,7 @@
     "titulo": "Formacao e Cursos",
     "verMais": "Ver mais",
     "verMenos": "Ver menos",
-    "card1": {      
+    "card1": {
       "titulo": "Análise e Desenvolvimento de Sistemas",
       "subtitulo": "Estácio",
       "periodo": "Mar 2023 - Dez 2025",
@@ -52,7 +52,7 @@
         "Conversação e fluência avançada",
         "Compreensão de textos técnicos e acadêmicos",
         "Redação de documentos e e-mails formais"
-      ]          
+      ]
     },
     "card3": {
       "titulo": "Docker",
@@ -72,7 +72,7 @@
         "Layout mobile first",
         "Construção de layout com Grid e Flexbox",
         "Boas práticas e clean code"
-      ]     
+      ]
     },
     "card5": {
       "titulo": "Git e GitHub",
@@ -81,7 +81,7 @@
       "descricao": [
         "Git aplicado a prática de um dev",
         "Criação de gists para compartilhamento de código"
-      ]      
+      ]
     },
     "card6": {
       "titulo": "Linux",
@@ -100,14 +100,24 @@
       "titulo": "Desenvolvedor Frontend",
       "subtitulo": "Fábrica de Sistemas · Freelance",
       "periodo": "Nov de 2024 - Fevereiro de 2025",
-      "descricao":  "Desenvolvimento Frontend principalmente criando Landing Pages integradas com api's para envio de emails e mensagens de whatsapp e resolução do conflitos de merge no GitHub, com ferramentas como:"
-    },
+      "descricao": [
+        "Desenvolvimento de Landing Pages com React e Javascript", 
+        "Criação de api's para envio de emails e mensagens de whatsapp",
+        "Resolução do conflitos de merge no GitHub",
+        "Trabalho em equipe com metodologia ágil"
+    ]
+  },
     "card2": {
       "titulo": "Desenvolvedor FullStack",
       "subtitulo": "Freelancer · Freelance",
       "periodo": "Ago de 2023 - o momento",
-      "descricao":
-        "Desenvolvimento de aplicações frontend usando React, Next.js, Javascript ou Typescript e Tailwind CSS, criação de API’S usando Java, Spring Boot, PostgreSQL ou, MySQL, com testes unitários e de integração com Docker, Criacão de layouts e telas utilizando componentes Shadcn/ui e experiência com ambiente CI/CD como GitHub actions."
+      "descricao": [
+        "Desenvolvimento de aplicações frontend usando React, Next.js",
+        "Testes unitários e de integração com Vitest e Cypress", 
+        "criação de API’S usando Spring Boot, ou Nest.js com SQL ou NoSQL", 
+        "Testes unitários e de integração com Junit, Docker ou Jest", 
+        "Experiência com ambiente CI/CD como GitHub actions."
+      ]
     }
   },
   "tecnologias": {
