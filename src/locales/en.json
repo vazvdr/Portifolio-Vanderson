@@ -18,7 +18,7 @@
       "role": "FullStack Developer."
     },
     "description": "I have",
-    "description2": " of experience in programming using the Java ecosystem with Spring and JavaScript with React and Next.js mainly and i'm passionate about the world of the internet and about using my creativity to build smart, functional websites that deliver real value.",
+    "description2": " of experience in programming using the Java ecosystem with Spring and JavaScript with React, Next.js and Nest.js mainly and i'm passionate about the world of the internet and about using my creativity to build smart, functional websites that deliver real value.",
     "anos": "years ",
     "meses": " months and",
     "mes": "month and ",
@@ -116,8 +116,8 @@
         "Frontend application development using React, Next.js",
         "Unit and integration testing with Vitest and Cypress",
         "API creation using Spring Boot or Nest.js with SQL or NoSQL",
-        "Unit and integration testing with JUnit, Docker or Jest",
-        "Experience with CI/CD environments like GitHub Actions"
+        "Unit and integration testing with JUnit or Jest and Docker",
+        "Development with CI/CD environments like GitHub Actions"
       ]
     }
   },
