@@ -50,18 +50,15 @@ describe("Componente Tecnologias", () => {
     );
   });
 
-  it("deve renderizar os 4 cards principais", () => {
-    render(
-      <ThemeProvider>
-        <I18nextProvider i18n={i18n}>
-          <Tecnologias />
-        </I18nextProvider>
-      </ThemeProvider>
-    );
+  test("renderiza os cards com as imagens corretamente", () => {
+    render(<Tecnologias/>);
 
     const allImages = screen.getAllByRole("img");
-    expect(allImages.length).toBeGreaterThanOrEqual(4);
-  });
+
+    const ImagensEsperadas = 5;
+
+    expect(allImages.length).toBeGreaterThanOrEqual(ImagensEsperadas);
+  })
 
   test("renderiza as imagens do stage atual corretamente", () => {
     render(<Tecnologias />);

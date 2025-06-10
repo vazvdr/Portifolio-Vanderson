@@ -6,6 +6,7 @@
 :root {
   --background-color: #222;
   --background-color-card: rgb(32, 26, 26);
+  --background-color-button: rgb(22, 22, 22);
   --border-color: rgb(116, 244, 81) 1px solid;
   --gradient-start: #67f130; 
   --gradient-middle: #69e52f; 
@@ -26,7 +27,8 @@
 
 :root.light{
   --background-color: #fff;
-  --background-color-card: rgb(247, 247, 247);
+  --background-color-card: #ffe;
+  --background-color-button: rgb(234, 234, 223);
   --border-color: rgb(48, 51, 225) 2px solid;
   --gradient-start: #4030f1; 
   --gradient-middle: #5244ef;
@@ -139,6 +141,56 @@ body {
   font-size: 0.875rem;
 }
 
+.buttons-abilitys-left {
+  background-color: var(--background-color-card);
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+  border-left: var(--border-color);
+  border-right: var(--border-color);
+  border-top-left-radius: 55%; 
+  border-bottom-left-radius: 55%; 
+}
+
+.buttons-abilitys-right {
+  background-color: var(--background-color-card);
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+  border-right: var(--border-color);
+  border-top-right-radius: 55%;
+  border-bottom-right-radius: 55%;
+}
+
+.buttons-abilitys-left:hover {
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+  border-right: var(--border-color);
+  border-top-left-radius: 55%;
+  border-bottom-left-radius: 55%;
+  background-color: var(--background-color-button);
+  transition: 600ms;
+}
+
+.buttons-abilitys-right:hover {
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+  border-left: var(--border-color);
+  border-top-right-radius: 55%;
+  border-bottom-right-radius: 55%;
+  background-color: var(--background-color-button);
+  transition: 600ms;
+
+}
+
+.card-abilitys {
+  background-color: var(--background-color-card);
+  color: var(--text-primary);
+  border: var(--border-color);
+  box-shadow: var(--box-shadow);  
+  padding: 0.8rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 0.875rem;
+}
+
 .card h2 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -174,8 +226,6 @@ body {
   border-bottom: var(--border-color);
 }
 
-
-
 .formulario {
   background-color: var(--background-color-card);
   border-width: 1px; 
@@ -183,6 +233,14 @@ body {
   border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
 }
 
+/*classes para não aparecer o scroll na sessão tecnologias */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* Animações Slide */
 .animate-slide-in-right {

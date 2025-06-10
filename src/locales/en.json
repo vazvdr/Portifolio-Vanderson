@@ -52,7 +52,7 @@
         "Advanced conversation and fluency",
         "Understanding of technical and academic texts",
         "Writing of documents and formal emails"
-      ]      
+      ]
     },
     "card3": {
       "titulo": "Docker",
@@ -62,7 +62,7 @@
         "Creating images and containers",
         "Configuring the Dockerfile",
         "Handling two or more containers"
-      ]      
+      ]
     },
     "card4": {
       "titulo": "Tailwind CSS",
@@ -72,7 +72,7 @@
         "Mobile-first layout",
         "Building layouts with Grid and Flexbox",
         "Best practices and clean code"
-      ]      
+      ]
     },
     "card5": {
       "titulo": "Git and GitHub",
@@ -81,7 +81,7 @@
       "descricao": [
         "Git applied to a developer's daily practice",
         "Creating gists for code sharing"
-      ]      
+      ]
     },
     "card6": {
       "titulo": "Linux",
@@ -92,7 +92,6 @@
         "Execute commands through the Linux Terminal",
         "Configure network settings on a Linux system"
       ]
-      
     }
   },
   "experiencias": {
@@ -125,10 +124,12 @@
     "title": "My Skills",
     "landing_pages_title": "Creation Landing Pages",
     "landing_pages_description": "Creation of landing pages with a modern and responsive design to boost your bussiness in internet.",
-    "fullstack_title": "Fullstack Development",
-    "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, encryption and the latest security techniques.",
     "api_title": "Create and consumption API",
     "api_description": "Integration with external APIs to extend the functionality of applications and creation of APIs following business rules.",
+    "fullstack_title": "Fullstack Development",
+    "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, encryption and the latest security techniques.",
+    "tests_title": "Unit and Integration Testing",
+    "tests_description": "Development of unit and integration tests using Vitest and Cypress, and for backend using JUnit, Mockito, Jest, and Docker.",
     "deployment_title": "Deployment Websites",
     "deployment_description": "Deployment both frontend and backend with or without a database using tools such as GitHub, Docker, Vercel and AWS."
   },
