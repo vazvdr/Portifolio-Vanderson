@@ -131,7 +131,7 @@ const Tecnologias = () => {
             disabled={currentCardStage === 0}
             className={`buttons-abilitys-left absolute left-[-2rem] h-[95.5%] top-[0%] z-10 
         p-2
-        ${currentCardStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+        ${currentCardStage === 0 ? "cursor-not-allowed" : ""}`}
           >
             <ArrowLeft size={28} />
           </button>
@@ -176,7 +176,7 @@ const Tecnologias = () => {
             disabled={currentCardStage + cardPerStage >= cards.length}
             className={`buttons-abilitys-right absolute right-[-2rem] h-[95.5%] top-[0%] z-10 
             p-2
-        ${currentCardStage + cardPerStage >= cards.length ? "opacity-50 cursor-not-allowed" : ""}`}
+        ${currentCardStage + cardPerStage >= cards.length ? "cursor-not-allowed" : ""}`}
           >
             <ArrowRight size={28} />
           </button>
@@ -185,7 +185,7 @@ const Tecnologias = () => {
 
       <div
         id="carousel-container"
-        className="bg-black/90 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
+        className="stage-carrossel-tech bg-black/90 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
         style={{ margin: "0 10%" }}
       >
         <div

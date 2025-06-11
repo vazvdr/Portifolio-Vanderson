@@ -7,7 +7,7 @@
   --background-color: #222;
   --background-color-card: rgb(32, 26, 26);
   --background-color-button: rgb(22, 22, 22);
-  --border-color: rgb(116, 244, 81) 1px solid;
+  --border-color: rgb(116, 244, 81) 2px solid;
   --gradient-start: #67f130; 
   --gradient-middle: #69e52f; 
   --gradient-end: #80f23d;
@@ -29,7 +29,7 @@
   --background-color: #fff;
   --background-color-card: #ffe;
   --background-color-button: rgb(234, 234, 223);
-  --border-color: rgb(48, 51, 225) 2px solid;
+  --border-color: rgb(48, 51, 225) 3px solid;
   --gradient-start: #4030f1; 
   --gradient-middle: #5244ef;
   --gradient-end: #2215b3; 
@@ -155,7 +155,6 @@ body {
   background-color: var(--background-color-card);
   border-top: var(--border-color);
   border-bottom: var(--border-color);
-  border-left: var(--border-color);
   border-right: var(--border-color);
   border-top-right-radius: 55%;
   border-bottom-right-radius: 55%;
@@ -174,7 +173,7 @@ body {
 .buttons-abilitys-right:hover {
   border-top: var(--border-color);
   border-bottom: var(--border-color);
-  border-left: var(--border-color);
+  
   border-top-right-radius: 55%;
   border-bottom-right-radius: 55%;
   background-color: var(--background-color-button);
@@ -185,7 +184,9 @@ body {
 .card-abilitys {
   background-color: var(--background-color-card);
   color: var(--text-primary);
-  border: var(--border-color);
+  border-top: var(--border-color);
+  border-bottom: var(--border-color);
+  border-right: var(--border-color);
   box-shadow: var(--box-shadow);  
   padding: 0.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -215,7 +216,7 @@ body {
 }
 
 .stage-carrossel-tech{
-  background-color: var(--gradient-start);
+  border: var(--border-color);
 }
 
 .stage-carrossel-button{
