@@ -155,6 +155,7 @@ body {
   background-color: var(--background-color-card);
   border-top: var(--border-color);
   border-bottom: var(--border-color);
+  border-left: var(--border-color);
   border-right: var(--border-color);
   border-top-right-radius: 55%;
   border-bottom-right-radius: 55%;

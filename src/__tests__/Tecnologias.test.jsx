@@ -58,14 +58,14 @@ describe("Componente Tecnologias", () => {
     const ImagensEsperadas = 5;
 
     expect(allImages.length).toBeGreaterThanOrEqual(ImagensEsperadas);
-  })
+  });
 
   test("renderiza as imagens do stage atual corretamente", () => {
     render(<Tecnologias />);
   
     const allImages = screen.getAllByRole("img");
   
-    const expectedCarouselImagesCount = 7;
+    const expectedCarouselImagesCount = 5;
   
     const totalExpectedImages = 7 + expectedCarouselImagesCount;
   
@@ -102,8 +102,6 @@ describe("Componente Tecnologias", () => {
     expect(screen.getByText(tecnologias.api_description)).toBeInTheDocument();
     expect(screen.getByText(tecnologias.fullstack_title)).toBeInTheDocument();
     expect(screen.getByText(tecnologias.fullstack_description)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.deployment_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.deployment_description)).toBeInTheDocument();
   });
 
   it("exibe informações em inglês", async () => {
@@ -125,7 +123,5 @@ describe("Componente Tecnologias", () => {
     expect(screen.getByText(tecnologias.api_description)).toBeInTheDocument();
     expect(screen.getByText(tecnologias.fullstack_title)).toBeInTheDocument();
     expect(screen.getByText(tecnologias.fullstack_description)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.deployment_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.deployment_description)).toBeInTheDocument();
   });
 });

@@ -9,9 +9,12 @@ import Deploy from '../assets/Deployment.png';
 
 const Tecnologias = () => {
   const { t } = useTranslation();
-  const [currentStage, setCurrentStage] = useState(0);
+  const [currentIconsStage, setCurrentIconsStage] = useState(0);
   const [iconsPerStage, setIconsPerStage] = useState(4);
+  const [currentCardStage, setCurrentCardStage] = useState(0);
   const [cardPerStage, setCardPerStage] = useState(3);
+
+  const cards = [LandingPage, API, Fullstack, Test, Deploy]
 
   const icons = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
@@ -49,11 +52,11 @@ const Tecnologias = () => {
   useEffect(() => {
     const updateCardPerStage = () => {
       if (window.innerWidth < 768) {
-        setIconsPerStage(1);
+        setCardPerStage(1);
       } else if (window.innerWidth < 1024) {
-        setIconsPerStage(2);
+        setCardPerStage(2);
       } else {
-        setIconsPerStage(3);
+        setCardPerStage(3);
       }
     };
 
@@ -63,20 +66,18 @@ const Tecnologias = () => {
   }, []);
 
   const CardNextStage = () => {
-    const maxIndex = icons.length - iconsPerStage;
-    if (currentStage < maxIndex) {
-      setCurrentStage(prev => prev + 1);
+    if (currentCardStage + cardPerStage < cards.length) {
+      setCurrentCardStage((prev) => prev + 1);
     }
   };
 
   const CardPrevStage = () => {
-    if (currentStage > 0) {
-      setCurrentStage(prev => prev - 1);
+    if (currentCardStage > 0) {
+      setCurrentCardStage((prev) => prev - 1);
     }
   };
 
-  const CardStages = icons.length - iconsPerStage + 1;
-
+  const displayedCards = cards.slice(currentCardStage, currentCardStage + cardPerStage);
 
   useEffect(() => {
     const updateIconsPerStage = () => {
@@ -97,18 +98,18 @@ const Tecnologias = () => {
   const totalStages = Math.ceil(icons.length / iconsPerStage);
 
   const handleNextStage = () => {
-    if (currentStage < totalStages - 1) {
-      setCurrentStage(currentStage + 1);
+    if (currentIconsStage < totalStages - 1) {
+      setCurrentIconsStage(currentIconsStage + 1);
     }
   };
 
   const handlePrevStage = () => {
-    if (currentStage > 0) {
-      setCurrentStage(currentStage - 1);
+    if (currentIconsStage > 0) {
+      setCurrentIconsStage(currentIconsStage - 1);
     }
   };
 
-  const startIndex = currentStage * iconsPerStage;
+  const startIndex = currentIconsStage * iconsPerStage;
   const displayedIcons = icons.slice(startIndex, startIndex + iconsPerStage);
 
   return (
@@ -124,67 +125,64 @@ const Tecnologias = () => {
       </h1>
 
       <div className="relative w-[90%] px-[5%] lg:px-[3%]">
-        <div
-          id="carousel-scroll"
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-0 px-4 pb-4 no-scrollbar"
-        >
-          {[LandingPage, API, Fullstack, Test, Deploy].map((image, index) => (
-            <div
-              key={index}
-              className="card-abilitys snap-center flex-shrink-0 w-full sm:w-full md:w-1/2 lg:w-1/3 p-4 shadow-lg"
-            >
-              <img
-                src={image}
-                alt={`Imagem ${index}`}
-                className="w-full h-48 object-cover rounded-t-lg hover:scale-105 transition-all duration-300"
-              />
-              <h3 className="text-xl font-bold mt-4">
-                {t(`tecnologias.${[
-                  "landing_pages_title",
-                  "api_title",
-                  "fullstack_title",
-                  "tests_title",
-                  "deployment_title",
-                ][index]}`)}
-              </h3>
-              <p className="mt-2">
-                {t(`tecnologias.${[
-                  "landing_pages_description",
-                  "api_description",
-                  "fullstack_description",
-                  "tests_description",
-                  "deployment_description",
-                ][index]}`)}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        <div className="buttons-abilitys-left absolute top-[0%] lg:mr-[0%] md:ml-[2%] left-0 h-[95.5%] flex items-center z-10">
+        <div className="relative flex items-center">
           <button
-            onClick={() =>
-              document.getElementById("carousel-scroll")?.scrollBy({ left: -300, behavior: "smooth" })
-            }
-            className="h-full w-10 transition duration-300  flex items-center justify-center"
+            onClick={CardPrevStage}
+            disabled={currentCardStage === 0}
+            className={`buttons-abilitys-left absolute left-[-2rem] h-[95.5%] top-[0%] z-10 
+        p-2
+        ${currentCardStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
           >
             <ArrowLeft size={28} />
           </button>
-        </div>
 
-        <div className="buttons-abilitys-right absolute top-[0%] right-0 lg:right-4 h-[95.5%]  flex items-center z-10">
-          <button
-            onClick={() =>
-              document.getElementById("carousel-scroll")?.scrollBy({ left: 300, behavior: "smooth" })
-            }
-            className="h-full w-10 transition duration-300 flex items-center justify-center"
+          <div
+            id="carousel-scroll"
+            className="flex overflow-hidden snap-x snap-mandatory scroll-smooth gap-0 px-4 pb-4 no-scrollbar w-full"
           >
-            <ArrowRight size={28} className="" />
+            {displayedCards.map((image, index) => {
+              const translationKeys = [
+                { title: "landing_pages_title", description: "landing_pages_description" },
+                { title: "api_title", description: "api_description" },
+                { title: "fullstack_title", description: "fullstack_description" },
+                { title: "tests_title", description: "tests_description" },
+                { title: "deployment_title", description: "deployment_description" },
+              ];
+
+              const realIndex = currentCardStage + index;
+              const key = translationKeys[realIndex];
+
+              return (
+                <div
+                  key={realIndex}
+                  className="card-abilitys snap-center w-full sm:w-full md:w-1/2 lg:w-1/3 p-4 shadow-lg"
+                >
+                  <img
+                    src={image}
+                    alt={`Imagem ${realIndex}`}
+                    className="w-full h-48 object-cover rounded-t-lg hover:scale-105 transition-all duration-300"
+                  />
+                  <h3 className="text-xl font-bold mt-4">
+                    {t(`tecnologias.${key.title}`)}
+                  </h3>
+                  <p className="mt-2">{t(`tecnologias.${key.description}`)}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <button
+            onClick={CardNextStage}
+            disabled={currentCardStage + cardPerStage >= cards.length}
+            className={`buttons-abilitys-right absolute right-[-2rem] h-[95.5%] top-[0%] z-10 
+            p-2
+        ${currentCardStage + cardPerStage >= cards.length ? "opacity-50 cursor-not-allowed" : ""}`}
+          >
+            <ArrowRight size={28} />
           </button>
         </div>
       </div>
 
-
-      {/* Carrossel de Tecnologias */}
       <div
         id="carousel-container"
         className="bg-black/90 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
@@ -207,27 +205,26 @@ const Tecnologias = () => {
         </div>
       </div>
 
-      {/* Indicadores e Botões */}
       <div className="flex flex-col items-center mt-4">
         <div className="flex gap-2 mb-3">
           {Array.from({ length: totalStages }).map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${index === currentStage ? "stage-carrossel-tech" : "bg-gray-400"} transition-all`}
+              className={`w-3 h-3 rounded-full ${index === currentIconsStage ? "stage-carrossel-tech" : "bg-gray-400"} transition-all`}
             ></span>
           ))}
         </div>
         <div className="flex justify-center mt-1 gap-4">
           <button
-            disabled={currentStage === 0}
-            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
+            disabled={currentIconsStage === 0}
+            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentIconsStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handlePrevStage}
           >
             <ArrowLeftCircle size="100%" />
           </button>
           <button
-            disabled={currentStage === totalStages - 1}
-            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
+            disabled={currentIconsStage === totalStages - 1}
+            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentIconsStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handleNextStage}
           >
             <ArrowRightCircle size="100%" />
