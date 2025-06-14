@@ -8,6 +8,7 @@
   --background-color-card: rgb(32, 26, 26);
   --background-color-button: rgb(22, 22, 22);
   --border-color: rgb(116, 244, 81) 2px solid;
+  --border-contact-info: rgb(116, 244, 81) 2px solid;
   --gradient-start: #67f130; 
   --gradient-middle: #69e52f; 
   --gradient-end: #80f23d;
@@ -30,6 +31,7 @@
   --background-color-card: #ffe;
   --background-color-button: rgb(234, 234, 223);
   --border-color: rgb(48, 51, 225) 3px solid;
+  --border-contact-info: rgb(48, 51, 225) 2px solid;
   --gradient-start: #4030f1; 
   --gradient-middle: #5244ef;
   --gradient-end: #2215b3; 
@@ -224,18 +226,23 @@ body {
 }
 
 .contact-info{
-  border-left: var(--border-color);
-  border-bottom: var(--border-color);
+  border-left: var(--border-contact-info);
+  border-bottom: var(--border-contact-info);
 }
 
 .formulario {
   background-color: var(--background-color-card);
-  border-width: 1px; 
+  border-width: 2px; 
   border-style: solid;
   border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
 }
 
-/*classes para não aparecer o scroll na sessão tecnologias */
+.formulario ::placeholder {
+  color: var(--text-color);
+  opacity: 1;
+}
+
+/*classes para não aparecer o scroll nos cards de habilidades */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

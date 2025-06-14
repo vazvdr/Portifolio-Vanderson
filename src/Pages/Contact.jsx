@@ -154,7 +154,7 @@ const Contact = () => {
           {/* Div com o formulário */}
           <motion.div
             ref={sectionRef}
-            className="formulario w-full p-9 rounded-lg shadow-lg h-full flex-1 border-gradient md:mb-[1%] md:py-[4.8%] lg:py-[3.8%]"
+            className="formulario w-full p-9 shadow-lg h-full flex-1 md:mb-[1%] md:py-[4.8%] lg:py-[3.8%]"
             animate={controls}
             initial={{ opacity: 0, scale: 0.5 }}
           >
@@ -170,7 +170,6 @@ const Contact = () => {
                   name="name"
                   placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}                  
                   className={`w-full px-4 py-2 rounded-lg formulario 
-                  focus:outline-none focus:ring-2 
                   focus:border-transparent ${errors.name ? "border-red-500 placeholder-red-500" : ""
                     }`}
                 />
