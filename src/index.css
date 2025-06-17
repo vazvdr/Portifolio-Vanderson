@@ -116,12 +116,6 @@ body {
   background: var(--header-line-gradient);
 }
 
-.contact{
-  background-color: var(--menu-btn-bg);
-  color: var(--text-color);
-  border-color: #26f926;
-}
-
 .text-sobre{
   color: var(--text-sobre);
 }
@@ -135,12 +129,13 @@ body {
   background-color: var(--background-color-card);
   color: var(--text-primary);
   border: var(--border-color);
-  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
+  
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
   padding: 0.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 0.875rem;
+  border-radius: 0.5rem;
 }
 
 .buttons-abilitys-left {
@@ -219,6 +214,7 @@ body {
 
 .stage-carrossel-tech{
   border: var(--border-color);
+  border-radius: 1rem;
 }
 
 .stage-carrossel-button{
@@ -228,13 +224,15 @@ body {
 .contact-info{
   border-left: var(--border-contact-info);
   border-bottom: var(--border-contact-info);
+  border-radius: 0.5rem;
 }
 
 .formulario {
   background-color: var(--background-color-card);
   border-width: 2px; 
   border-style: solid;
-  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
+  border-radius: 0.8rem;
+  border-color: var(--gradient-start);
 }
 
 .formulario ::placeholder {
