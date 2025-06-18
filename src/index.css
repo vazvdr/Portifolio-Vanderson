@@ -135,7 +135,6 @@ body {
   background-color: var(--background-color-card);
   color: var(--text-primary);
   border: var(--border-color);
-  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
   padding: 0.8rem;
@@ -219,6 +218,7 @@ body {
 
 .stage-carrossel-tech{
   border: var(--border-color);
+  border-radius: 2rem;
 }
 
 .stage-carrossel-button{
@@ -228,13 +228,15 @@ body {
 .contact-info{
   border-left: var(--border-contact-info);
   border-bottom: var(--border-contact-info);
+  border-radius: 0.5rem;
 }
 
 .formulario {
   background-color: var(--background-color-card);
   border-width: 2px; 
   border-style: solid;
-  border-image: linear-gradient(to right, var(--gradient-start), var(--gradient-middle), var(--gradient-end)) 1;
+  border-color: var(--gradient-start);
+  border-radius: 0.8rem;
 }
 
 .formulario ::placeholder {
