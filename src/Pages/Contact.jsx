@@ -108,7 +108,7 @@ const Contact = () => {
         <div className="w-full flex flex-col md:flex-row md:mb-[5%]">
           {isMdOrLarger ? (
             <motion.div
-              initial={{ opacity: 0, x: -100 }} Add commentMore actions
+              initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false }}
@@ -225,7 +225,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500Add commentMore actions
+                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.email ? "border-red-500 placeholder-red-500" : ""
                       }`}
                   />
