@@ -28,11 +28,11 @@ jobs:
         run: |
           echo "JSON enviado para deploy:"
           cat <<EOF
-{
-  "projectId": "$VERCEL_PROJECT_ID",
-  "target": "production"
-}
-EOF
+            {
+              "projectId": "$VERCEL_PROJECT_ID",
+              "target": "production"
+            }
+            EOF
 
       - name: Deploy para Vercel (só se os testes passarem)
         if: success()
