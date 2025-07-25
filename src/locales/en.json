@@ -19,11 +19,10 @@
     },
     "description": "I have",
     "description2": " of experience in programming using the Java ecosystem with Spring and JavaScript with React, Next.js and Nest.js mainly and i'm passionate about the world of the internet and about using my creativity to build smart, functional websites that deliver real value.",
-    "anos": "years ",
-    "meses": " months and",
-    "mes": "month and ",
-    "dias": " days",
+    "anos": "years",
     "dia": "day",
+    "dias": "days",
+    "segundos": "seconds",
     "button": "Resume",
     "linkedin": "LinkedIn Profile",
     "github": "GitHub Profile",
@@ -96,6 +95,9 @@
   },
   "experiencias": {
     "titulo": "Experiences",
+    "verStack": "View stack",
+    "voltar": "Back",
+    "stackTitulo": "Technologies used",
     "card1": {
       "titulo": "Frontend Developer",
       "subtitulo": "Fábrica de Sistemas · Freelance",
@@ -113,9 +115,8 @@
       "periodo": "Aug 2023 - Present",
       "descricao": [
         "Frontend application development using React, Next.js",
-        "Unit and integration testing with Vitest and Cypress",
         "API creation using Spring Boot or Nest.js with SQL or NoSQL",
-        "Unit and integration testing with JUnit or Jest and Docker",
+        "Unit and integration testing with Vitest, Cypress, JUnit or Jest and Docker",
         "Development with CI/CD environments like GitHub Actions"
       ]
     }
@@ -136,6 +137,11 @@
   "projects": {
     "title": "My Projects",
     "techs": "Technologies used:",
+    "classscheduling": {
+      "title": "Class Scheduling",
+      "subtitle": "Scheduling system for a school.",
+      "description": "Scheduling system for a programming and English school. This site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
+    },    
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Barbershop appointments made easy.",

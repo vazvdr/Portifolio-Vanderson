@@ -19,11 +19,10 @@
     },
     "description": "Tenho ",
     "description2": " de experiência com programação usando o ecossistema do Java com Spring e Javascript com React, Next.js e Nest.js principalmente e sou apaixonado pelo universo da internet e por usar minha criatividade para criar sites inteligentes, funcionais e que agregam valor.",
-    "anos": "anos ",
-    "meses": "meses e ",
-    "mes": "mês ",
-    "dias": "dias",
+    "anos": "anos",
     "dia": "dia",
+    "dias": "dias",
+    "segundos": "segundos",
     "button": "Currículo",
     "linkedin": "Perfil no LinkedIn",
     "github": "Perfil no GitHub",
@@ -96,26 +95,28 @@
   },
   "experiencias": {
     "titulo": "Experiências",
+    "verStack": "Ver stack",
+    "voltar": "Voltar",
+    "stackTitulo": "Tecnologias Usadas",
     "card1": {
       "titulo": "Desenvolvedor Frontend",
       "subtitulo": "Fábrica de Sistemas · Freelance",
       "periodo": "Nov de 2024 - Fevereiro de 2025",
       "descricao": [
-        "Desenvolvimento de Landing Pages com React e Javascript", 
+        "Desenvolvimento de Landing Pages com React e Javascript",
         "Criação de api's para envio de emails e mensagens de whatsapp",
         "Resolução do conflitos de merge no GitHub",
         "Trabalho em equipe com metodologia ágil"
-    ]
-  },
+      ]
+    },
     "card2": {
       "titulo": "Desenvolvedor FullStack",
       "subtitulo": "Freelancer · Freelance",
       "periodo": "Ago de 2023 - o momento",
       "descricao": [
         "Desenvolvimento de aplicações frontend usando React, Next.js",
-        "Testes unitários e de integração com Vitest e Cypress", 
-        "criação de API’S usando Spring Boot, ou Nest.js com SQL ou NoSQL", 
-        "Testes unitários e de integração com Junit ou Jest e Docker", 
+        "criação de API’S usando Spring Boot, ou Nest.js com SQL ou NoSQL",
+        "Testes unitários e de integração com Vitest, Cypress, Junit ou Jest e Docker",
         "Desenvolvimento com ambiente CI/CD como GitHub actions."
       ]
     }
@@ -136,6 +137,11 @@
   "projects": {
     "title": "Meus Projetos",
     "techs": "Techs usadas:",
+    "classscheduling": {
+      "title": "Class Scheduling",
+      "subtitle": "Sistema de agendamentos aulas.",
+      "description": "Sistema de agendamentos para uma escola de programação e inglês, esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
+    },
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Agendamentos para barbearias feitos com facilidade.",

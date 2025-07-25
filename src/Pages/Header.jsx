@@ -4,13 +4,43 @@ import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 import { ArrowUpCircle, Sun, Moon } from 'react-feather';
 import { useTheme } from '../ThemeProvider'
+import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
+  const [showLangOptionsMobile, setShowLangOptionsMobile] = useState(false);
+  const [showLangOptionsDesktop, setShowLangOptionsDesktop] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const menuRef = useRef(null);
+  const langRefMobile = useRef(null);
+  const langRefDesktop = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        langRefMobile.current &&
+        !langRefMobile.current.contains(event.target)
+      ) {
+        setShowLangOptionsMobile(false);
+      }
+
+      if (
+        langRefDesktop.current &&
+        !langRefDesktop.current.contains(event.target)
+      ) {
+        setShowLangOptionsDesktop(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -100,7 +130,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-md flex justify-between items-center">
+      <header className="fixed top-0 left-0 w-full z-50 h-[70px] backdrop-blur-lg flex justify-between items-center">
         <div className="header-line absolute inset-x-0 bottom-0 h-[1.5px]"></div>
         <div className="container mx-auto flex items-center justify-between">
           <a href="/" className="inline-flex items-center space-x-1">
@@ -111,28 +141,27 @@ const Header = () => {
           </a>
           <div className="lg:hidden flex items-center justify-between">
 
-            {/* Botões de bandeiras */}
-            <div className="flex flex-row items-center space-x-4 mt-2">
+            <div className="relative mt-2" ref={langRefMobile}>
               <button
-                onClick={() => changeLanguage("pt")}
+                onClick={() => setShowLangOptionsMobile(prev => !prev)}
                 className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
-                  code="BR"
-                  alt="Bandeira do Brasil"
+                  code={i18n.language === "pt" ? "BR" : "US"}
+                  alt="Idioma atual"
                   className="w-full h-full object-cover rounded-full"
                 />
               </button>
-              <button
-                onClick={() => changeLanguage("en")}
-                className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
-              >
-                <Flag
-                  code="US"
-                  alt="Bandeira dos EUA"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </button>
+              {showLangOptionsMobile && (
+                <div className="absolute top-8 right-0 min-w-[60px] bg-transparent rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
+                  <button onClick={() => { changeLanguage("pt"); setShowLangOptionsMobile(false); }}>
+                    <Flag code="BR" className="w-6 h-6 object-cover rounded-full" alt="Português" />
+                  </button>
+                  <button onClick={() => { changeLanguage("en"); setShowLangOptionsMobile(false); }}>
+                    <Flag code="US" className="w-6 h-6 object-cover rounded-full" alt="Inglês" />
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* Botão do menu hambúrguer */}
@@ -146,7 +175,7 @@ const Header = () => {
               onClick={toggleTheme}
               className="p-2 mt-[3%] rounded-full transition duration-300 flex items-center justify-center w-12 h-12 border-none"
             >
-              {theme === 'dark' ? <Sun size={22} className="text-yellow-400 hover:scale-110" /> : <Moon size={22} className="text-blue-600 hover:scale-110"/>}
+              {theme === 'dark' ? <Sun size={22} className="text-yellow-400 hover:scale-110" /> : <Moon size={22} className="text-blue-600 hover:scale-110" />}
             </button>
 
             {/* Menu aberto para telas menores */}
@@ -209,15 +238,15 @@ const Header = () => {
                   </a>
                 </li>
                 <li>
-                  <button
-                    href="#contato"
-                    className={`contact-button font-semibold py-1 px-3 border border-black rounded-[10px] 
-          transform hover:scale-110 transition-all duration-500 ease-in-out 
-          ${selectedSection === "#contato" ? "border-gray-600" : ""}`}
+                  <HoverBorderGradient
+                    as="button"
                     onClick={(e) => handleLinkClickSelect(e, "#contato")}
+                    containerClassName={`transform hover:scale-110 transition-all duration-500 ease-in-out ${selectedSection === "#contato" ? "border-gray-600" : ""
+                      }`}
+                    className="contact-button font-semibold"
                   >
                     {t("header.menu.contact")}
-                  </button>
+                  </HoverBorderGradient>
                 </li>
               </ul>
             </div>
@@ -227,19 +256,29 @@ const Header = () => {
         {/* Menu para telas maiores (lg e acima) */}
         <nav className="hidden lg:flex items-center space-x-10 mr-[2%] animate-fadeInRight delay-400">
           <ul className="flex items-center lg:space-x-5">
-            {/* Botões de idioma */}
-            <button
-              onClick={() => changeLanguage("pt")}
-              className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
-            >
-              <Flag code="BR" alt="Bandeira do Brasil" className="w-full h-full object-cover rounded-full" />
-            </button>
-            <button
-              onClick={() => changeLanguage("en")}
-              className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
-            >
-              <Flag code="US" alt="Bandeira dos EUA" className="w-full h-full object-cover rounded-full" />
-            </button>
+            {/* Botões de bandeiras (desktop) */}
+            <div className="relative" ref={langRefDesktop}>
+              <button
+                onClick={() => setShowLangOptionsDesktop(prev => !prev)}
+                className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
+              >
+                <Flag
+                  code={i18n.language === "pt" ? "BR" : "US"}
+                  alt="Idioma atual"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </button>
+              {showLangOptionsDesktop && (
+                <div className="absolute top-8 right-0 min-w-[60px] bg-transparent rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
+                  <button onClick={() => { changeLanguage("pt"); setShowLangOptionsDesktop(false); }}>
+                    <Flag code="BR" className="w-6 h-6 object-cover rounded-full" alt="Português" />
+                  </button>
+                  <button onClick={() => { changeLanguage("en"); setShowLangOptionsDesktop(false); }}>
+                    <Flag code="US" className="w-6 h-6 object-cover rounded-full" alt="Inglês" />
+                  </button>
+                </div>
+              )}
+            </div>
 
             {/* Itens do menu */}
             {[
@@ -265,20 +304,22 @@ const Header = () => {
             ))}
             {/* Botão de contato */}
             <li>
-              <button
-                className={`border border-black font-semibold py-2 px-2 rounded-[10px] transform hover:scale-110 transition-all duration-500 ease-in-out text-md hover:bg-black hover:text-white animate-pulse-custom ${selectedSection === "#contato" ? "" : ""
+              <HoverBorderGradient
+                as="button"
+                onClick={(e) => handleLinkClickSelect(e, "#contato")}
+                containerClassName={`transform hover:scale-110 transition-all duration-500 ease-in-out ${selectedSection === "#contato" ? "border-gray-600" : ""
                   }`}
-                onClick={(e) => handleLinkClick(e, "#contato")}
+                className="contact-button font-semibold"
               >
                 {t("header.menu.contact")}
-              </button>
+              </HoverBorderGradient>
             </li>
             <button
               onClick={toggleTheme}
               data-testid="theme-wrapper"
               className="p-2 rounded-full transition duration-300 flex items-center justify-center w-12 h-12 border-none"
             >
-              {theme === 'dark' ? <Sun size={22} className="text-yellow-400 hover:scale-110" /> : <Moon size={22} className="text-blue-600 hover:scale-110"/>}
+              {theme === 'dark' ? <Sun size={22} className="text-yellow-400 hover:scale-110" /> : <Moon size={22} className="text-blue-600 hover:scale-110" />}
             </button>
           </ul>
         </nav>

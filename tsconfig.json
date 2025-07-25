@@ -8,7 +8,12 @@
     "allowSyntheticDefaultImports": true,  // Permite importar módulos sem exportações padrão
     "strict": true,  // Para garantir o uso de tipos mais seguros
     "skipLibCheck": true,  // Ignorar verificação de tipo em arquivos de declaração
-    "resolveJsonModule": true  // Permite importar arquivos JSON como módulos
+    "resolveJsonModule": true,  // Permite importar arquivos JSON como módulos
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",

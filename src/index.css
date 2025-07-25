@@ -1,19 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
 
 /* Dark */
 :root {
   --background-color: #222;
   --background-color-card: rgb(32, 26, 26);
   --background-color-button: rgb(22, 22, 22);
-  --border-color: rgb(116, 244, 81) 2px solid;
-  --border-contact-info: rgb(116, 244, 81) 2px solid;
-  --gradient-start: #67f130; 
-  --gradient-middle: #69e52f; 
-  --gradient-end: #80f23d;
+  --border-color: rgb(172, 177, 171) 1px solid;
+  --background-button-card-experiences: white;
+  --color-button-card-experiences: black;
+  --border-contact-info: rgb(172, 177, 171) 1px solid;
+  --gradient-start: #787978; 
+  --gradient-middle: #4d4d55; 
+  --gradient-end: #090711;
   --text-color: #ffd;
-  --header-line-gradient: linear-gradient(to right,#5af222, #26f926,  #70dc0a);
+  --header-line-gradient: linear-gradient(to right,#a4a6a3, #36363f,  #090711);
  
   --menu-btn-bg: #222;
   /* Fundo do botão no Dark Mode */
@@ -23,22 +26,25 @@
   /* Texto no modo dark */
  
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  --text-sobre: rgb(137, 255, 34);
+  --text-sobre: rgb(131, 120, 120);
+  --text-cover: rgb(131, 120, 120);
 }
 
 :root.light{
   --background-color: #fff;
   --background-color-card: #ffe;
   --background-color-button: rgb(234, 234, 223);
-  --border-color: rgb(48, 51, 225) 3px solid;
-  --border-contact-info: rgb(48, 51, 225) 2px solid;
-  --gradient-start: #4030f1; 
-  --gradient-middle: #5244ef;
-  --gradient-end: #2215b3; 
+  --border-color: rgb(2, 2, 21) 2px solid;
+  --background-button-card-experiences: black;
+  --color-button-card-experiences: white;
+  --border-contact-info: rgb(2, 2, 15) 1px solid;
+  --gradient-start: #5d5d60; 
+  --gradient-middle: #e5e5e9;
+  --gradient-end: #090810; 
   --text-color: black;
-  --header-line-gradient: linear-gradient(to right,#3a22f2, #262af9,  #0d0adc);
+  --header-line-gradient: linear-gradient(to right,#222224, #14152e,  #02010e);
 
-  --menu-btn-bg: #fff;
+  --menu-btn-bg: #ffd;
   /* Fundo do botão no Dark Mode */
   --menu-btn-line: black;
   /* Cor das linhas no Dark Mode */
@@ -46,7 +52,8 @@
   /* Texto no modo dark */
  
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0);
-  --text-sobre: rgb(87, 86, 84);
+  --text-sobre: rgb(50, 49, 51);
+  --text-cover: rgb(131, 120, 120);
 }
 
 /* Aplicação global */
@@ -142,6 +149,11 @@ body {
   font-size: 0.875rem;
 }
 
+.button-card-experiences{
+  background-color: var(--background-button-card-experiences);
+  color: var(--color-button-card-experiences);
+}
+
 .buttons-abilitys-left {
   background-color: var(--background-color-card);
   border-top: var(--border-color);
@@ -179,7 +191,6 @@ body {
   border-bottom-right-radius: 55%;
   background-color: var(--background-color-button);
   transition: 600ms;
-
 }
 
 .card-abilitys {
@@ -223,6 +234,22 @@ body {
 
 .stage-carrossel-button{
   color: var(--gradient-start);
+}
+
+.button-project-next{
+  border: var(--border-color);
+}
+.button-project-next:hover{
+  border: var(--border-color);
+  background-color: var(--gradient-middle);
+}
+
+.button-project-back{
+  border: var(--border-color)
+}
+.button-project-back:hover{
+  border: var(--border-color);
+  background-color: var(--gradient-middle);
 }
 
 .contact-info{
@@ -398,46 +425,63 @@ body {
   src: url("/src/assets/doctor-glitch.otf") format("opentype");
 }
 
+.perspective {
+  perspective: 1500px;
+}
+
+.transform-style {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
 @layer base {
   :root {
 
     --background: 0 0% 100%;
 
-    --foreground: 224 71.4% 4.1%;
+    --foreground: 240 10% 3.9%;
 
     --card: 0 0% 100%;
 
-    --card-foreground: 224 71.4% 4.1%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
 
-    --popover-foreground: 224 71.4% 4.1%;
+    --popover-foreground: 240 10% 3.9%;
 
-    --primary: 220.9 39.3% 11%;
+    --primary: 240 5.9% 10%;
 
-    --primary-foreground: 210 20% 98%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 220 14.3% 95.9%;
+    --secondary: 240 4.8% 95.9%;
 
-    --secondary-foreground: 220.9 39.3% 11%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 220 14.3% 95.9%;
+    --muted: 240 4.8% 95.9%;
 
-    --muted-foreground: 220 8.9% 46.1%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 220 14.3% 95.9%;
+    --accent: 240 4.8% 95.9%;
 
-    --accent-foreground: 220.9 39.3% 11%;
+    --accent-foreground: 240 5.9% 10%;
 
     --destructive: 0 84.2% 60.2%;
 
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
+    --border: 240 5.9% 90%;
 
-    --input: 220 13% 91%;
+    --input: 240 5.9% 90%;
 
-    --ring: 224 71.4% 4.1%;
+    --ring: 240 10% 3.9%;
 
     --chart-1: 12 76% 61%;
 
@@ -449,48 +493,47 @@ body {
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
-  }
+    --radius: 0.5rem}
 
   .dark {
 
-    --background: 224 71.4% 4.1%;
+    --background: 240 10% 3.9%;
 
-    --foreground: 210 20% 98%;
+    --foreground: 0 0% 98%;
 
-    --card: 224 71.4% 4.1%;
+    --card: 240 10% 3.9%;
 
-    --card-foreground: 210 20% 98%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 224 71.4% 4.1%;
+    --popover: 240 10% 3.9%;
 
-    --popover-foreground: 210 20% 98%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 20% 98%;
+    --primary: 0 0% 98%;
 
-    --primary-foreground: 220.9 39.3% 11%;
+    --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 215 27.9% 16.9%;
+    --secondary: 240 3.7% 15.9%;
 
-    --secondary-foreground: 210 20% 98%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 27.9% 16.9%;
+    --muted: 240 3.7% 15.9%;
 
-    --muted-foreground: 217.9 10.6% 64.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 215 27.9% 16.9%;
+    --accent: 240 3.7% 15.9%;
 
-    --accent-foreground: 210 20% 98%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
 
-    --destructive-foreground: 210 20% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 27.9% 16.9%;
+    --border: 240 3.7% 15.9%;
 
-    --input: 215 27.9% 16.9%;
+    --input: 240 3.7% 15.9%;
 
-    --ring: 216 12.2% 83.9%;
+    --ring: 240 4.9% 83.9%;
 
     --chart-1: 220 70% 50%;
 
@@ -500,8 +543,7 @@ body {
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%
-  }
+    --chart-5: 340 75% 55%}
 }
 
 @layer base {

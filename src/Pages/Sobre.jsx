@@ -4,13 +4,14 @@ import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import { Cover } from "../components/ui/cover";
 
 const Sobre = () => {
   const { t } = useTranslation();
 
   const [animate, setAnimate] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [tempo, setTempo] = useState({ anos: 0, meses: 0, dias: 0});
+  const [tempo, setTempo] = useState({ anos: 0, dias: 0, segundos: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -69,21 +70,25 @@ const Sobre = () => {
 
     const calcularDiferenca = () => {
       const agora = new Date();
-      let anos = agora.getFullYear() - dataInicio.getFullYear();
-      let meses = agora.getMonth() - dataInicio.getMonth();
-      let dias = agora.getDate() - dataInicio.getDate();
+      const diffMs = agora.getTime() - dataInicio.getTime();
+      const diffSegundos = Math.floor(diffMs / 1000);
+      const diffDias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
-      if (dias < 0) {
-        const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
-        dias += ultimoMes;
-        meses--;
-      }
-      if (meses < 0) {
-        meses += 12;
-        anos--;
+      const anos = agora.getFullYear() - dataInicio.getFullYear();
+      const inicioAniversarioAno = new Date(dataInicio);
+      inicioAniversarioAno.setFullYear(agora.getFullYear());
+
+      if (agora < inicioAniversarioAno) {
+        inicioAniversarioAno.setFullYear(agora.getFullYear() - 1);
       }
 
-      setTempo({ anos, meses, dias });
+      const diasDesdeUltimoAniversario = Math.floor((agora.getTime() - inicioAniversarioAno.getTime()) / (1000 * 60 * 60 * 24));
+
+      setTempo({
+        anos,
+        dias: diasDesdeUltimoAniversario,
+        segundos: diffSegundos
+      });
     };
 
     calcularDiferenca();
@@ -103,9 +108,9 @@ const Sobre = () => {
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-sobre hover:text-black/20 hover:translate-x-1 transition-all duration-300">
+              <Cover className="transition-all duration-300">
                 {t("sobre.heading.name")}
-              </span>
+              </Cover>
               <br />
               <div className="relative min-h-[10px] sm:min-h-[40px]">
                 <span>
@@ -123,10 +128,10 @@ const Sobre = () => {
             </h1>
             <p className="text-base sm:text-lg leading-snug text-center">
               {t("sobre.description")}
-              <span className="inline-block  text-sobre py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
-                {tempo.anos} {t("sobre.anos")} {" "} 
-                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {" "} 
-                {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}
+              <span className="inline-block  text-sobre py-0 mx-3 animate-pulse-custom font-bold tracking-wide">
+                {tempo.anos} {t("sobre.anos")}{" "}
+                {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}{" "}
+                {tempo.segundos.toLocaleString()} {t("sobre.segundos")}
               </span>
               {t("sobre.description2")}
             </p>
@@ -167,10 +172,10 @@ const Sobre = () => {
             <div className="mt-4 flex justify-center">
               <a
                 href="#projetos"
-                className="buttons-sobre font-semibold py-2 px-2 rounded-md hover:bg-black 
-          hover:text-white border border-black flex items-center space-x-2 
-          transition-all transform hover:scale-105 
-          whitespace-nowrap animate-pulse-custom"
+                className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md border
+  hover:bg-black hover:text-white flex items-center space-x-2 
+  transition-all transform hover:scale-105 whitespace-nowrap 
+  animate-pulse-custom"
                 onClick={(e) => handleLinkClick(e, "#projetos")}
               >
                 <span>{t("sobre.projects")}</span>
@@ -201,13 +206,13 @@ const Sobre = () => {
           <div className={`mt-[10%] w-[40%] ml-[10%]
           lg:w-[50%] animate-fade-in-right ${animate ? "animate-slide-in-left" : "opacity-0"
             }`}>
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
+            <h1 className="text-sobre text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
-              <span className="text-sobre hover:text-black/20 hover:translate-x-1 transition-all duration-300">
+              <Cover className="hover:translate-x-1 transition-all duration-300">
                 {t("sobre.heading.name")}
-              </span>
+              </Cover>
               <br />
               <div className="relative md:min-h-[90px] lg:min-h-[60px]">
                 <span>
@@ -225,10 +230,10 @@ const Sobre = () => {
             </h1>
             <p className="text-base sm:text-lg leading-snug">
               {t("sobre.description")}
-              <span className="inline-block text-sobre py-1 mx-3 animate-pulse-custom font-bold tracking-wide">
-                {tempo.anos} {t("sobre.anos")} {" "}
-                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")} {" "}
-                {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}
+              <span className="inline-block text-sobre py-0 mx-2 animate-pulse-custom font-bold tracking-wide">
+                {tempo.anos} {t("sobre.anos")}{" "}
+                {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}{" "}
+                {tempo.segundos.toLocaleString()} {t("sobre.segundos")}
               </span>
               {t("sobre.description2")}
             </p>
@@ -258,8 +263,8 @@ const Sobre = () => {
       lg:mt-[1%] lg:ml-[10%] lg:w-[50%]">
         <a
           href="#projetos"
-          className="h-9 font-semibold py-2 px-4 rounded-md border border-black
-  hover:bg-black hover:text-white hover:border border-lime-600 flex items-center space-x-2 
+          className="buttons-sobre h-9 font-semibold py-2 px-4 rounded-md border
+  hover:bg-black hover:text-white flex items-center space-x-2 
   transition-all transform hover:scale-105 whitespace-nowrap 
   animate-pulse-custom"
           onClick={(e) => handleLinkClick(e, "#projetos")}

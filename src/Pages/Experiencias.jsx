@@ -5,6 +5,11 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 const Experiencias = () => {
   const { t } = useTranslation();
   const [animate, setAnimate] = useState(false);
+  const [showStacks, setShowStacks] = useState({});
+
+  const toggleStack = (index) => {
+    setShowStacks((prev) => ({ ...prev, [index]: !prev[index] }));
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,7 +40,8 @@ const Experiencias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "https://www.svgrepo.com/show/373624/git2.svg",
-    "https://www.svgrepo.com/show/475654/github-color.svg"
+    "https://www.svgrepo.com/show/475654/github-color.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twilio/twilio-original-wordmark.svg"
   ];
 
   const imagesCard2 = [
@@ -46,32 +52,35 @@ const Experiencias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-    "https://www.svgrepo.com/show/373624/git2.svg",
-    "https://www.svgrepo.com/show/475654/github-color.svg",
+    "https://logowik.com/content/uploads/images/cypress1720868719.logowik.com.webp",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg",
-    "https://www.svgrepo.com/show/435664/file-regexp.svg",
+    "https://www.thedataschool.com.au/wp-content/uploads/2023/02/RegEx-1-1.png",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg",
     "https://www.svgrepo.com/show/439238/nodejs.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg",
+    "https://www.svgrepo.com/show/439231/mongodb.svg",
+    "https://www.svgrepo.com/show/354200/postgresql.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg",
+    "https://www.svgrepo.com/show/373624/git2.svg",
+    "https://www.svgrepo.com/show/475654/github-color.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
     "https://www.svgrepo.com/show/354420/swagger.svg",
+    "https://www.svgrepo.com/show/303231/docker-logo.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+    "https://www.svgrepo.com/show/448266/aws.svg"
   ];
 
   return (
     <section id="experiencias" className="py-10 relative">
       <div className="max-w-4xl mx-auto px-10">
         <h1
-          className={`text-3xl font-bold text-center mb-8 mt-10 ${animate ? "animate-slide-in-right" : "opacity-0"
-            }`}
+          className={`text-3xl font-bold text-center mb-8 mt-10 ${animate ? "animate-slide-in-right" : "opacity-0"}`}
           style={{ fontFamily: "DoctorGlitch" }}
         >
           {t("experiencias.titulo")}
@@ -86,64 +95,96 @@ const Experiencias = () => {
             .map((card, index) => (
               <div
                 key={index}
-                className={`card rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:-translate-y-2 ${animate
-                    ? index === 0
-                      ? "animate-slide-in-left"
-                      : "animate-slide-in-right"
-                    : "opacity-0"
-                  }`}
+                className={`group perspective w-full relative h-[340px] sm:h-[360px]`}
               >
-                <h2 className="text-xl sm:text-2xl font-bold">
-                  {t(`experiencias.card${card.cardIndex}.titulo`)}
-                </h2>
-                <h3 className="text-lg">
-                  {t(`experiencias.card${card.cardIndex}.subtitulo`)}
-                </h3>
-                <p className="text-sm">
-                  {t(`experiencias.card${card.cardIndex}.periodo`)}
-                </p>
+                <div
+                  className={`relative w-full h-full transition-transform duration-700 transform-style preserve-3d ${showStacks[index] ? "rotate-y-180" : ""
+                    }`}
+                >
+                  {/* Frente do card */}
+                  <div className="absolute w-full h-full backface-hidden card rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    {/* Ícone no topo direito */}
+                    {card.link && (
+                      <a
+                        href={card.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Ver Site"
+                        className="absolute top-4 right-4 hover:text-blue-600 transition-all"
+                      >
+                        <FaExternalLinkAlt size={20} />
+                      </a>
+                    )}
 
-                {/* Renderização da descrição */}
-                {Array.isArray(
-                  t(`experiencias.card${card.cardIndex}.descricao`, {
-                    returnObjects: true,
-                  })
-                ) ? (
-                  <ul className="mt-4 list-disc list-inside text-sm space-y-1">
-                    {t(`experiencias.card${card.cardIndex}.descricao`, {
-                      returnObjects: true,
-                    }).map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="mt-4 text-sm">
-                    {t(`experiencias.card${card.cardIndex}.descricao`)}
-                  </p>
-                )}
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-bold">
+                        {t(`experiencias.card${card.cardIndex}.titulo`)}
+                      </h2>
+                      <h3 className="text-lg">
+                        {t(`experiencias.card${card.cardIndex}.subtitulo`)}
+                      </h3>
+                      <p className="text-sm">
+                        {t(`experiencias.card${card.cardIndex}.periodo`)}
+                      </p>
 
-                <div className="flex flex-wrap gap-4 mt-4">
-                  {card.images.map((src, imgIndex) => (
-                    <img
-                      key={imgIndex}
-                      src={src}
-                      alt={`Tech ${imgIndex}`}
-                      className="w-10 h-10"
-                    />
-                  ))}
+                      {Array.isArray(
+                        t(`experiencias.card${card.cardIndex}.descricao`, { returnObjects: true })
+                      ) ? (
+                        <ul className="mt-4 list-disc list-inside text-sm space-y-1">
+                          {t(`experiencias.card${card.cardIndex}.descricao`, { returnObjects: true }).map(
+                            (item, i) => (
+                              <li key={i}>{item}</li>
+                            )
+                          )}
+                        </ul>
+                      ) : (
+                        <p className="mt-4 text-sm">
+                          {t(`experiencias.card${card.cardIndex}.descricao`)}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Botão Ver Stack */}
+                    <div className="mt-4">
+                      <button
+                        onClick={() => toggleStack(index)}
+                        className="button-card-experiences w-full py-2 px-4 rounded-lg text-sm font-medium transition-all"
+                      >
+                        {t("experiencias.verStack")}
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Verso do card */}
+                  <div className="absolute w-full h-full backface-hidden rotate-y-180 card rounded-lg shadow-md p-6 flex flex-col justify-between">
+                    <div>
+                      <h2 className="text-xl font-audiowide tracking-wider text-center drop-shadow-lg shadow-black">
+                        {t("experiencias.stackTitulo")}
+                      </h2>
+
+                      <div className="flex flex-wrap gap-3 justify-center mt-4 mb-6">
+                        {card.images.map((src, imgIndex) => (
+                          <img
+                            key={imgIndex}
+                            src={src}
+                            alt={`Tech ${imgIndex}`}
+                            className="w-9 h-9 transition-transform hover:scale-110"
+                          />
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Botão Voltar */}
+                    <div className="mt-1">
+                      <button
+                        onClick={() => toggleStack(index)}
+                        className="button-card-experiences w-full py-2 px-4 rounded-lg text-sm font-medium transition-all"
+                      >
+                        {t("experiencias.voltar")}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-
-                {card.link && (
-                  <a
-                    href={card.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Ver Site"
-                    className="absolute bottom-4 right-4 hover:text-blue-600"
-                  >
-                    <FaExternalLinkAlt size={20} />
-                  </a>
-                )}
               </div>
             ))}
         </div>

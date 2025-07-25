@@ -138,17 +138,6 @@ const Contact = () => {
                   <p className="pl-[42px]">vanderson.azevedo.rocha@gmail.com</p>
                 </div>
 
-                <div
-                  className="flex flex-col items-start cursor-pointer contact-info hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
-                  onClick={() => window.open("https://wa.me/5521967441433?text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20pelo%20link%20portf%C3%B3lio%20do%20Vanderson!", "_blank")}
-                >
-                  <div className="flex items-start space-x-3">
-                    <FaWhatsapp className="text-3xl" />
-                    <span>WhatsApp</span>
-                  </div>
-                  <p className="pl-[42px]">+55 (21) 96744-1433</p>
-                </div>
-
                 <div className="flex flex-col items-start cursor-pointer contact-info bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
                 >
                   <div className="flex items-center space-x-3">
@@ -184,25 +173,14 @@ const Contact = () => {
                 <p className="pl-[42px]">vanderson.azevedo.rocha@gmail.com</p>
               </div>
 
-              <div
-                  className="flex flex-col items-start cursor-pointer contact-info hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
-                  onClick={() => window.open("https://wa.me/5521967441433?text=Ol%C3%A1,%20estou%20entrando%20em%20contato%20pelo%20link%20portf%C3%B3lio%20do%20Vanderson!", "_blank")}
-                >
-                  <div className="flex items-start space-x-3">
-                    <FaWhatsapp className="text-3xl" />
-                    <span>WhatsApp</span>
-                  </div>
-                  <p className="pl-[42px]">+55 (21) 96744-1433</p>
+              <div className="flex flex-col items-start cursor-pointer contact-info bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
+              >
+                <div className="flex items-center space-x-3">
+                  <FaMapMarkerAlt className="text-3xl" />
+                  <span>{t("contato.adress")}</span>
                 </div>
-
-                <div className="flex flex-col items-start cursor-pointer contact-info bg-clip-border hover:bg-black hover:text-white hover:scale-105 transition-all duration-300 ease-in-out"
-                >
-                  <div className="flex items-center space-x-3">
-                    <FaMapMarkerAlt className="text-3xl" />
-                    <span>{t("contato.adress")}</span>
-                  </div>
-                  <p className="pl-[42px]">Rio de Janeiro, Brasil</p>
-                </div>
+                <p className="pl-[42px]">Rio de Janeiro, Brasil</p>
+              </div>
             </div>
           )}
 
@@ -214,128 +192,128 @@ const Contact = () => {
               viewport={{ once: false }}
               className="formulario h-full flex-1 md:px-[2%] md:py-[4.8%] lg:py-[3.6%] space-y-2"
               onSubmit={handleSubmit}
-            >              
-                {/* Nome */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    {t("contato.namelabel")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
+            >
+              {/* Nome */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  {t("contato.namelabel")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
+                  className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.name ? "border-red-500 placeholder-red-500" : ""
-                      }`}
-                  />
-                </div>
+                    }`}
+                />
+              </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    {t("contato.emaillabel")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
+              {/* Email */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  {t("contato.emaillabel")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
+                  className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.email ? "border-red-500 placeholder-red-500" : ""
-                      }`}
-                  />
-                </div>
+                    }`}
+                />
+              </div>
 
-                {/* Mensagem */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    {t("contato.messagelabel")}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
-                    rows="3"
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
+              {/* Mensagem */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  {t("contato.messagelabel")}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
+                  rows="3"
+                  className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.message ? "border-red-500 placeholder-red-500" : ""
-                      }`}
-                  ></textarea>
-                </div>
+                    }`}
+                ></textarea>
+              </div>
 
-                {/* Botão de Envio */}
-                <button
-                  type="submit"
-                  className="formulario w-full py-3 px-6 rounded-lg bg-transparent 
+              {/* Botão de Envio */}
+              <button
+                type="submit"
+                className="formulario w-full py-3 px-6 rounded-lg bg-transparent 
                 hover:bg-black hover:text-white hover:scale-105 transition-all 500
                 font-bold"
-                >
-                  {t("contato.submitbutton")}
-                </button>
-              </motion.form>
+              >
+                {t("contato.submitbutton")}
+              </button>
+            </motion.form>
           ) : (
             <form className="formulario p-6 h-full space-y-2" onSubmit={handleSubmit}>
-                {/* Nome */}
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    {t("contato.namelabel")}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
+              {/* Nome */}
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  {t("contato.namelabel")}
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder={errors.name ? errors.name : t("contato.nameplaceholder")}
+                  className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.name ? "border-red-500 placeholder-red-500" : ""
-                      }`}
-                  />
-                </div>
+                    }`}
+                />
+              </div>
 
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    {t("contato.emaillabel")}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
+              {/* Email */}
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  {t("contato.emaillabel")}
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder={errors.email ? errors.email : t("contato.emailplaceholder")}
+                  className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.email ? "border-red-500 placeholder-red-500" : ""
-                      }`}
-                  />
-                </div>
+                    }`}
+                />
+              </div>
 
-                {/* Mensagem */}
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    {t("contato.messagelabel")}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
-                    rows="3"
-                    className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
+              {/* Mensagem */}
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  {t("contato.messagelabel")}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder={errors.message ? errors.message : t("contato.messageplaceholder")}
+                  rows="3"
+                  className={`w-full px-4 py-2 formulario hover:scale-105 transition-all 500
                   ${errors.message ? "border-red-500 placeholder-red-500" : ""
-                      }`}
-                  ></textarea>
-                </div>
+                    }`}
+                ></textarea>
+              </div>
 
-                {/* Botão de Envio */}
-                <button
-                  type="submit"
-                  className="formulario w-full py-3 px-6 rounded-lg bg-transparent 
+              {/* Botão de Envio */}
+              <button
+                type="submit"
+                className="formulario w-full py-3 px-6 rounded-lg bg-transparent 
                 hover:bg-black hover:text-white hover:scale-105 transition-all 500
                 font-bold"
-                >
-                  {t("contato.submitbutton")}
-                </button>
-              </form>
+              >
+                {t("contato.submitbutton")}
+              </button>
+            </form>
           )}
 
-            </div>
+        </div>
       </div>
     </section>
   );

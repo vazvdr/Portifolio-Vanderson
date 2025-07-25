@@ -11,12 +11,18 @@ import en from '../locales/en.json'
 // Mock scrollTo para não causar erro
 beforeEach(() => {
   window.scrollTo = vi.fn()
-  window.matchMedia = vi.fn().mockReturnValue({
+
+  window.matchMedia = vi.fn().mockImplementation((query) => ({
     matches: false,
-    addListener: vi.fn(),
-    removeListener: vi.fn(),
-  })
-});
+    media: query,
+    onchange: null,
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+    addListener: vi.fn(), // legacy
+    removeListener: vi.fn(), // legacy
+    dispatchEvent: vi.fn(),
+  }))
+})
 
 //Mock do icone do alien
 vi.mock("react-icons/si", () => ({

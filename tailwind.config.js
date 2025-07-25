@@ -5,25 +5,52 @@ module.exports = {
 	theme: {
 		extend: {
 			animation: {
-				"fade-in-left": "fadeInLeft 1.5s ease-out forwards",
-				"fade-in-right": "fadeInRight 1.5s ease-out forwards",
-				shake: "shake 0.5s infinite",
+				'fade-in-left': 'fadeInLeft 1.5s ease-out forwards',
+				'fade-in-right': 'fadeInRight 1.5s ease-out forwards',
+				shake: 'shake 0.5s infinite'
+			},
+			fontFamily: {
+				orbitron: ['Orbitron', 'sans-serif'],
+				audiowide: ['Audiowide', 'cursive'],
+				bebas: ['Bebas Neue', 'sans-serif'],
+				rajdhani: ['Rajdhani', 'sans-serif'],
+				fira: ['Fira Code', 'monospace'],
 			},
 			keyframes: {
 				fadeInLeft: {
-					'0%': { opacity: 0, transform: 'translateX(100%)' },
-					'100%': { opacity: 1, transform: 'translateX(0)' },
+					'0%': {
+						opacity: 0,
+						transform: 'translateX(100%)'
+					},
+					'100%': {
+						opacity: 1,
+						transform: 'translateX(0)'
+					}
 				},
 				fadeInRight: {
-					'0%': { opacity: 0, transform: 'translateX(-100%)' },
-					'100%': { opacity: 1, transform: 'translateX(0)' },
+					'0%': {
+						opacity: 0,
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						opacity: 1,
+						transform: 'translateX(0)'
+					}
 				},
 				shake: {
-					"0%, 100%": { transform: "translateX(0)" },
-					"25%": { transform: "translateX(-2px)" },
-					"50%": { transform: "translateX(2px)" },
-					"75%": { transform: "translateX(-1px)" },
-				  },
+					'0%, 100%': {
+						transform: 'translateX(0)'
+					},
+					'25%': {
+						transform: 'translateX(-2px)'
+					},
+					'50%': {
+						transform: 'translateX(2px)'
+					},
+					'75%': {
+						transform: 'translateX(-1px)'
+					}
+				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -75,8 +102,8 @@ module.exports = {
 					md840px: '840px',
 					screen320px: '320px',
 					screen414px: '414px',
-					screen360px: '360px',
-				},
+					screen360px: '360px'
+				}
 			}
 		}
 	},

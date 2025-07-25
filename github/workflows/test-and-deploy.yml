@@ -1,0 +1,33 @@
+name: Test and Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_TOKEN: ${{ secrets.vercel_token }}
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Rodar testes
+        run: npm run test
+
+      - name: Deploy para Vercel (se testes passarem)
+        run: |
+          curl --fail -X POST "https://api.vercel.com/v13/deployments" \
+          -H "Authorization: Bearer $VERCEL_TOKEN" \
+          -H "Content-Type: application/json" \
+          -d '{
+            "name": "portifolio-vanderson",
+            "project": "${{ secrets.project_id }}",
+            "target": "production"
+          }'
