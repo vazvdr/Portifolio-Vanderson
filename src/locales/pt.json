@@ -140,7 +140,7 @@
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Sistema de agendamentos aulas.",
-      "description": "Sistema de agendamentos para uma escola de programação e inglês, esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
+      "description": "Esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
     },
     "barbabrutal": {
       "title": "Barbabrutal",
@@ -150,7 +150,7 @@
     "gamerstore": {
       "title": "GamerStore",
       "subtitle": "Loja virtual para produtos gamers.",
-      "description": "Uma loja virtual feita para gamers, com integração para listar e comprar os produtos mais populares."
+      "description": "Esse sistema permite que o usuário veja os produtos listados pela API, veja os produtos no carrinho de compras e veja seus pedidos armazenados no localStorage do navegador"
     },
     "weather": {
       "title": "Weather Project",

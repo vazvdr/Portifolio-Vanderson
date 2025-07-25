@@ -21,8 +21,8 @@ describe('Projetos section', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByAltText(/class scheduling/i)).toBeInTheDocument();
-    expect(screen.getByAltText(/gamerstore/i)).toBeInTheDocument();
+    expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
+    expect(screen.getByText(/gamerstore/i)).toBeInTheDocument();
   });
 
   it('deve renderizar um card por vez em telas pequenas', () => {
@@ -35,7 +35,7 @@ describe('Projetos section', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByAltText(/class scheduling/i)).toBeInTheDocument();
+    expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
   });
 
   it('deve desabilitar o botão "Voltar" no início', () => {

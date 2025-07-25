@@ -7,7 +7,7 @@ import ClassScheduling from '../assets/ClassScheduling.jpg'
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { SiSwagger } from 'react-icons/si';
 import { useTranslation } from "react-i18next";
-import { ArrowLeft, ArrowRight} from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const projects = [
     {
@@ -180,88 +180,70 @@ const Projetos = () => {
 
     return (
         <section id="projetos" className="py-6">
-            <div className="max-w-6xl mx-auto px-10 relative">
+            <div className="mx-auto lg:w-[92%] px-4 relative">
                 <h1
-                    className={`text-3xl font-bold text-center mb-8 mt-12 ${animate ? "animate-slide-down" : ""
-                        }`}
+                    className={`text-3xl font-bold text-center mb-8 mt-12 ${animate ? "animate-slide-down" : ""}`}
                     style={{ fontFamily: "DoctorGlitch" }}
                 >
                     {t("projects.title")}
                 </h1>
 
-                <div className="flex items-center justify-center relative w-full max-w-full">
+                <div className="flex items-center justify-center relative w-full">
                     {/* Botão voltar */}
                     <button
                         onClick={handlePrev}
                         disabled={currentIndex === 0}
-                        className={`button-project-back absolute left-0 top-1/2 -translate-y-1/2 z-20 h-[500px] w-10 
-    rounded-tl-full rounded-bl-full disabled:cursor-not-allowed disabled:opacity-50`}
                         aria-label="Voltar"
+                        className={`button-project-back relative left-0 z-20 w-10
+          rounded-tl-full rounded-bl-full disabled:opacity-50
+          h-[280px] md:h-[380px] lg:h-[320px] xl:h-[300px]
+        `}
                     >
-                       <ArrowLeft size={28} />
+                        <ArrowLeft size={28} />
                     </button>
 
                     {/* Cards */}
-                    <div className="flex gap-0 overflow-hidden w-full justify-center px-12">
+                    <div className="flex gap-0 overflow-hidden w-full justify-center px-2">
                         {displayedProjects.map((project, index) => (
                             <div
                                 key={index}
-                                className={`w-full max-w-[500px] min-h-[400px] flex flex-col justify-between 
-                relative card shadow-lg rounded-lg overflow-hidden transition-transform transform hover:shadow-2xl
-                ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}
-                ${cardsPerView === 2 ? "md:basis-1/2" : "basis-full"}`}
+                                className={`
+                              flex flex-col justify-between relative card shadow-lg rounded-lg overflow-hidden
+                              transition-transform transform hover:shadow-2xl
+                              ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}
+                              ${cardsPerView === 2 ? "md:basis-full" : "basis-full"}
+                              w-[80%] sm:w-[80%] md:w-[90%] lg:w-[48%] xl:w-[35%]
+                              h-auto md:h-[410px] lg:h-[340px] xl:h-[320px]
+                            `}
+                                style={{
+                                    backgroundImage: `url(${project.image})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    backgroundRepeat: "no-repeat",
+                                    color: "white",
+                                }}
                             >
-                                <div className="absolute top-3 right-4 flex flex-col gap-2 items-end">
-                                    <div className="flex gap-2">
-                                        {project.title === "Class Scheduling" && (
-                                            <a
-                                                href="https://class-scheduling-backend.onrender.com/swagger-ui/index.html"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                aria-label="Swagger"
-                                            >
-                                                <SiSwagger size={26} className="hover:scale-110 text-green-400" />
-                                            </a>
-                                        )}
-                                        <a
-                                            href={project.link}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="Ver Projeto"
-                                        >
-                                            <FaExternalLinkAlt size={25} className="hover:scale-110" />
-                                        </a>
-                                    </div>
-                                    <a
-                                        href={project.repo}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label="GitHub"
-                                    >
-                                        <FaGithub size={26} className="hover:scale-110" />
-                                    </a>
-                                </div>
-                                <div className="p-6 flex flex-col text-left">
-                                    <h2 className="text-2xl font-bold mb-2 absolute top-3 left-4 transition-transform transform hover:scale-110">
+
+                                {/* Camada escura para contraste */}
+                                <div className="absolute inset-0 bg-black bg-opacity-80 rounded-lg" />
+
+                                {/* Conteúdo do card */}
+                                <div className="relative p-4 flex flex-col text-left h-full z-10">
+                                    <h2 className="text-2xl font-bold mb-2 absolute top-2 left-2 transition-transform transform hover:scale-110">
                                         {project.title}
                                     </h2>
-                                    <div className="flex justify-start w-full">
-                                        <p className="text-sm mb-4 text-center mt-4">
+                                    <div className="flex justify-start w-full mt-12">
+                                        <p className="text-sm sm:text-base mb-4 text-left leading-relaxed max-w-full sm:max-w-[90%]">
                                             {t(project.subtitleKey)}
                                         </p>
                                     </div>
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="rounded-lg shadow-md w-full h-48 object-cover mb-4 transition-transform transform hover:scale-110"
-                                        draggable={false}
-                                        onContextMenu={(e) => e.preventDefault()}
-                                    />
-                                    <p className="text-left">{t(project.descriptionKey)}</p>
-                                    <h3 className="text-lg font-semibold mt-4">
-                                        {t("projects.techs")}
-                                    </h3>
-                                    <div className="flex flex-wrap justify-center gap-4 mt-2">
+
+                                    <p className="text-left text-sm sm:text-base leading-relaxed mb-2">
+                                        {t(project.descriptionKey)}
+                                    </p>
+
+                                    <h3 className="text-base font-semibold">{t("projects.techs")}</h3>
+                                    <div className="flex flex-wrap justify-start gap-3 mt-2">
                                         {project.techs.map((tech, idx) => (
                                             <img
                                                 key={idx}
@@ -270,6 +252,38 @@ const Projetos = () => {
                                                 className="w-8 h-8 transition-transform transform hover:scale-110"
                                             />
                                         ))}
+                                    </div>
+
+                                    {/* Ícones no topo direito */}
+                                    <div className="absolute top-0 right-0 flex flex-col gap-1 items-end z-20">
+                                        <div className="flex gap-2">
+                                            {project.title === "Class Scheduling" && (
+                                                <a
+                                                    href="https://class-scheduling-backend.onrender.com/swagger-ui/index.html"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label="Swagger"
+                                                >
+                                                    <SiSwagger size={26} className="hover:scale-110 text-green-400" />
+                                                </a>
+                                            )}
+                                            <a
+                                                href={project.link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                aria-label="Ver Projeto"
+                                            >
+                                                <FaExternalLinkAlt size={25} className="hover:scale-110" />
+                                            </a>
+                                        </div>
+                                        <a
+                                            href={project.repo}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label="GitHub"
+                                        >
+                                            <FaGithub size={26} className="hover:scale-110" />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -280,15 +294,18 @@ const Projetos = () => {
                     <button
                         onClick={handleNext}
                         disabled={currentIndex >= projects.length - cardsPerView}
-                        className={`button-project-next absolute right-0 top-1/2 -translate-y-1/2 z-20 h-[500px] w-10 
-    rounded-tr-full rounded-br-full disabled:cursor-not-allowed disabled:opacity-50`}
                         aria-label="Avançar"
+                        className={`button-project-next relative right-0 z-20 w-10
+          rounded-tr-full rounded-br-full disabled:opacity-50
+          h-[280px] md:h-[380px] lg:h-[320px] xl:h-[300px]
+        `}
                     >
-                       <ArrowRight size={28} />
+                        <ArrowRight size={28} />
                     </button>
                 </div>
             </div>
         </section>
+
     );
 };
 

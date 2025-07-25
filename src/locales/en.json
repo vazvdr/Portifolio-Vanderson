@@ -140,7 +140,7 @@
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Scheduling system for a school.",
-      "description": "Scheduling system for a programming and English school. This site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
+      "description": "This site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
     },    
     "barbabrutal": {
       "title": "Barbabrutal",

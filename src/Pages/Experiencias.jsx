@@ -95,7 +95,7 @@ const Experiencias = () => {
             .map((card, index) => (
               <div
                 key={index}
-                className={`group perspective w-full relative h-[340px] sm:h-[360px]`}
+                className={`group perspective w-full relative h-[400px] sm:h-[420px]`}
               >
                 <div
                   className={`relative w-full h-full transition-transform duration-700 transform-style preserve-3d ${showStacks[index] ? "rotate-y-180" : ""
@@ -155,14 +155,14 @@ const Experiencias = () => {
                     </div>
                   </div>
 
-                  {/* Verso do card */}
                   <div className="absolute w-full h-full backface-hidden rotate-y-180 card rounded-lg shadow-md p-6 flex flex-col justify-between">
-                    <div>
-                      <h2 className="text-xl font-audiowide tracking-wider text-center drop-shadow-lg shadow-black">
+                    {/* Conteúdo centralizado */}
+                    <div className="flex-1 flex flex-col items-center justify-center">
+                      <h2 className="text-xl font-audiowide tracking-wider text-center drop-shadow-lg shadow-black mb-4">
                         {t("experiencias.stackTitulo")}
                       </h2>
 
-                      <div className="flex flex-wrap gap-3 justify-center mt-4 mb-6">
+                      <div className="flex flex-wrap gap-3 justify-center">
                         {card.images.map((src, imgIndex) => (
                           <img
                             key={imgIndex}
@@ -175,7 +175,7 @@ const Experiencias = () => {
                     </div>
 
                     {/* Botão Voltar */}
-                    <div className="mt-1">
+                    <div className="mt-4">
                       <button
                         onClick={() => toggleStack(index)}
                         className="button-card-experiences w-full py-2 px-4 rounded-lg text-sm font-medium transition-all"
