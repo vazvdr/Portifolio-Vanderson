@@ -24,15 +24,15 @@ jobs:
       - name: Rodar testes
         run: npm run test
 
-      - name: Deploy para Vercel (caso testes passem)
+      - name: Deploy para Vercel
         if: success()
         run: |
           curl --fail -X POST "https://api.vercel.com/v13/deployments" \
             -H "Authorization: Bearer $VERCEL_TOKEN" \
             -H "Content-Type: application/json" \
-            -d "{
-              \"name\": \"portifolio-vanderson\",
-              \"projectId\": \"$VERCEL_PROJECT_ID\",
-              \"orgId\": \"$VERCEL_ORG_ID\",
-              \"target\": \"production\"
-            }"
+            -d '{
+              "name": "portifolio-vanderson",
+              "projectId": "'"$VERCEL_PROJECT_ID"'",
+              "orgId": "'"$VERCEL_ORG_ID"'",
+              "target": "production"
+            }'
