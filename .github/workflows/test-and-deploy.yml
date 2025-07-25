@@ -9,7 +9,7 @@ jobs:
   test-and-deploy:
     runs-on: ubuntu-latest
     env:
-      VERCEL_TOKEN: ${{ secrets.vercel_token }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
     steps:
       - name: Checkout do código
@@ -25,12 +25,11 @@ jobs:
         if: success()
         run: |
           curl --fail -X POST "https://api.vercel.com/v13/deployments" \
-            -H "Authorization: Bearer ${{ secrets.vercel_token }}" \
+            -H "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
             -H "Content-Type: application/json" \
             -d '{
               "name": "portifolio-vanderson",
-              "projectId": "'${{ secrets.project_id }}'",
-              "orgId": "'${{ secrets.org_id }}'",
+              "projectId": "'"${{ secrets.VERCEL_PROJECT_ID }}"'",
+              "orgId": "'"${{ secrets.VERCEL_ORG_ID }}"'",
               "target": "production"
             }'
-
