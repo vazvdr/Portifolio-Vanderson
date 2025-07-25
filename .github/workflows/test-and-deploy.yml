@@ -6,41 +6,32 @@ on:
       - master
 
 jobs:
-  test-and-deploy:
+  test:
     runs-on: ubuntu-latest
 
-    env:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-
     steps:
-      - name: Checkout do código
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Instalar dependências
+      - name: Install dependencies
         run: npm ci
 
-      - name: Rodar testes
+      - name: Run tests
         run: npm run test
 
-      - name: Validar JSON para deploy (debug)
-        if: success()
-        run: |
-          echo "JSON enviado para deploy:"
-          cat <<EOF
-            {
-              "projectId": "$VERCEL_PROJECT_ID",
-              "target": "production"
-            }
-            EOF
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
 
-      - name: Deploy para Vercel (só se os testes passarem)
-        if: success()
-        run: |
-          curl --fail -X POST "https://api.vercel.com/v13/deployments" \
-            -H "Authorization: Bearer $VERCEL_TOKEN" \
-            -H "Content-Type: application/json" \
-            -d '{
-              "projectId": "'"$VERCEL_PROJECT_ID"'",
-              "target": "production"
-            }'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: '.'
