@@ -88,7 +88,7 @@ const techIcons = {
     tailwindcss:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     cypress:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg",
+        "https://logowik.com/content/uploads/images/cypress1720868719.logowik.com.webp",
     nextjs:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     typescript:
@@ -203,7 +203,7 @@ const Projetos = () => {
                     </button>
 
                     {/* Cards */}
-                    <div className="flex gap-0 overflow-hidden w-full justify-center px-2">
+                    <div className="flex gap-1 overflow-hidden w-full justify-center px-2">
                         {displayedProjects.map((project, index) => (
                             <div
                                 key={index}

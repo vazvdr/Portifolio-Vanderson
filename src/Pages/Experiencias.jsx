@@ -158,7 +158,7 @@ const Experiencias = () => {
                   <div className="absolute w-full h-full backface-hidden rotate-y-180 card rounded-lg shadow-md p-6 flex flex-col justify-between">
                     {/* Conteúdo centralizado */}
                     <div className="flex-1 flex flex-col items-center justify-center">
-                      <h2 className="text-xl font-audiowide tracking-wider text-center drop-shadow-lg shadow-black mb-4">
+                      <h2 className="text-xl font-orbitron tracking-wider text-center drop-shadow-lg shadow-black mb-4">
                         {t("experiencias.stackTitulo")}
                       </h2>
 

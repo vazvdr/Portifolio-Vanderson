@@ -153,7 +153,7 @@ const Header = () => {
                 />
               </button>
               {showLangOptionsMobile && (
-                <div className="absolute top-8 right-0 min-w-[60px] bg-transparent rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
+                <div className="absolute top-8 right-0 min-w-[60px] bg-black/80 rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
                   <button onClick={() => { changeLanguage("pt"); setShowLangOptionsMobile(false); }}>
                     <Flag code="BR" className="w-6 h-6 object-cover rounded-full" alt="Português" />
                   </button>
@@ -269,7 +269,7 @@ const Header = () => {
                 />
               </button>
               {showLangOptionsDesktop && (
-                <div className="absolute top-8 right-0 min-w-[60px] bg-transparent rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
+                <div className="absolute top-8 right-0 min-w-[60px] bg-black/80 rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
                   <button onClick={() => { changeLanguage("pt"); setShowLangOptionsDesktop(false); }}>
                     <Flag code="BR" className="w-6 h-6 object-cover rounded-full" alt="Português" />
                   </button>

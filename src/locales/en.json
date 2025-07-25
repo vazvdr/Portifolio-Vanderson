@@ -140,7 +140,7 @@
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Scheduling system for a school.",
-      "description": "This site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
+      "description": "Created of the zero absolute, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
     },    
     "barbabrutal": {
       "title": "Barbabrutal",
@@ -150,7 +150,7 @@
     "gamerstore": {
       "title": "GamerStore",
       "subtitle": "Online store for gamer products.",
-      "description": "An online store for gamers, integrating listing and purchasing of popular products."
+      "description": "This system allows the user to view the products listed by the API, see the products in the shopping cart, and view their orders stored in the browser's localStorage."
     },
     "weather": {
       "title": "Weather Project",

@@ -140,7 +140,7 @@
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Sistema de agendamentos aulas.",
-      "description": "Esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
+      "description": "Criado do absoluto zero, esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
     },
     "barbabrutal": {
       "title": "Barbabrutal",
