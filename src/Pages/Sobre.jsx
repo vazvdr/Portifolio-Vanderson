@@ -66,35 +66,33 @@ const Sobre = () => {
   };
 
   useEffect(() => {
-    const dataInicio = new Date('2023-01-04T08:00:00');
-
-    const calcularDiferenca = () => {
+    const dataInicio = new Date("2023-01-04T08:00:00");
+  
+    const calcularExperiencia = () => {
       const agora = new Date();
-      const diffMs = agora.getTime() - dataInicio.getTime();
-      const diffSegundos = Math.floor(diffMs / 1000);
-      const diffDias = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-
-      const anos = agora.getFullYear() - dataInicio.getFullYear();
-      const inicioAniversarioAno = new Date(dataInicio);
-      inicioAniversarioAno.setFullYear(agora.getFullYear());
-
-      if (agora < inicioAniversarioAno) {
-        inicioAniversarioAno.setFullYear(agora.getFullYear() - 1);
-      }
-
-      const diasDesdeUltimoAniversario = Math.floor((agora.getTime() - inicioAniversarioAno.getTime()) / (1000 * 60 * 60 * 24));
-
+      const diffSegundosTotais = Math.floor((agora.getTime() - dataInicio.getTime()) / 1000);
+  
+      const segundosPorDia = 86400;
+      const segundosPorAno = 365 * segundosPorDia;
+  
+      const totalDias = Math.floor(diffSegundosTotais / segundosPorDia);
+      const segundosHoje = diffSegundosTotais % segundosPorDia;
+  
+      const anos = Math.floor(totalDias / 365);
+      const dias = totalDias % 365;
+  
       setTempo({
         anos,
-        dias: diasDesdeUltimoAniversario,
-        segundos: diffSegundos
+        dias,
+        segundos: segundosHoje,
       });
     };
-
-    calcularDiferenca();
-    const intervalo = setInterval(calcularDiferenca, 1000);
+  
+    calcularExperiencia();
+    const intervalo = setInterval(calcularExperiencia, 1000);
+  
     return () => clearInterval(intervalo);
-  }, []);
+  }, []);     
 
   return (
     <section id="sobre-mim" className="relative">
