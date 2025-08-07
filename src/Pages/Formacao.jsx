@@ -6,6 +6,7 @@ import Tailwind from "../assets/TailwindCSS.jpg";
 import Git from "../assets/GitHub.jpg";
 import Linux from "../assets/Linux.jpg";
 import English from "../assets/Proficient-English.jpg";
+import Spring from '../assets/Spring2025.jpg';
 
 const Formacao = () => {
   const { t } = useTranslation();
@@ -55,12 +56,13 @@ const Formacao = () => {
   }, []);
 
   const cursos = [
-    { img: Estacio, titulo: "formacao.card1.titulo", instituicao: "formacao.card1.subtitulo", periodo: "formacao.card1.periodo", descricao: "formacao.card1.descricao" },
-    { img: English, titulo: "formacao.card2.titulo", instituicao: "formacao.card2.subtitulo", periodo: "formacao.card2.periodo", descricao: "formacao.card2.descricao" },
-    { img: Docker, titulo: "formacao.card3.titulo", instituicao: "formacao.card3.subtitulo", periodo: "formacao.card3.periodo", descricao: "formacao.card3.descricao" },
-    { img: Tailwind, titulo: "formacao.card4.titulo", instituicao: "formacao.card4.subtitulo", periodo: "formacao.card4.periodo", descricao: "formacao.card4.descricao" },
-    { img: Git, titulo: "formacao.card5.titulo", instituicao: "formacao.card5.subtitulo", periodo: "formacao.card5.periodo", descricao: "formacao.card5.descricao" },
-    { img: Linux, titulo: "formacao.card6.titulo", instituicao: "formacao.card6.subtitulo", periodo: "formacao.card6.periodo", descricao: "formacao.card6.descricao" },
+    { img: Estacio, titulo: "formacao.cardCollege.titulo", instituicao: "formacao.cardCollege.subtitulo", periodo: "formacao.cardCollege.periodo", descricao: "formacao.cardCollege.descricao" },
+    { img: English, titulo: "formacao.cardEnglish.titulo", instituicao: "formacao.cardEnglish.subtitulo", periodo: "formacao.cardEnglish.periodo", descricao: "formacao.cardEnglish.descricao" },
+    { img: Spring, titulo: "formacao.cardSpring.titulo", instituicao: "formacao.cardSpring.subtitulo", periodo: "formacao.cardSpring.periodo", descricao: "formacao.cardSpring.descricao" },
+    { img: Docker, titulo: "formacao.cardDocker.titulo", instituicao: "formacao.cardDocker.subtitulo", periodo: "formacao.cardDocker.periodo", descricao: "formacao.cardDocker.descricao" },
+    { img: Tailwind, titulo: "formacao.cardTailwind.titulo", instituicao: "formacao.cardTailwind.subtitulo", periodo: "formacao.cardTailwind.periodo", descricao: "formacao.cardTailwind.descricao" },
+    { img: Git, titulo: "formacao.cardGit.titulo", instituicao: "formacao.cardGit.subtitulo", periodo: "formacao.cardGit.periodo", descricao: "formacao.cardGit.descricao" },
+    { img: Linux, titulo: "formacao.cardLinux.titulo", instituicao: "formacao.cardLinux.subtitulo", periodo: "formacao.cardLinux.periodo", descricao: "formacao.cardLinux.descricao" },
   ];
 
   return (

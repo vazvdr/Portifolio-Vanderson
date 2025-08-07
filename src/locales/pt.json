@@ -32,7 +32,7 @@
     "titulo": "Formacao e Cursos",
     "verMais": "Ver mais",
     "verMenos": "Ver menos",
-    "card1": {
+    "cardCollege": {
       "titulo": "Análise e Desenvolvimento de Sistemas",
       "subtitulo": "Estácio",
       "periodo": "Mar 2023 - Dez 2025",
@@ -43,7 +43,7 @@
         "Arquitetura de software e DevOps"
       ]
     },
-    "card2": {
+    "cardEnglish": {
       "titulo": "Inglês avançado",
       "subtitulo": "Fluencypass - 2025",
       "periodo": "42 horas",
@@ -53,7 +53,18 @@
         "Redação de documentos e e-mails formais"
       ]
     },
-    "card3": {
+    "cardSpring": {
+      "titulo": "Springboot 2025",
+      "subtitulo": "Udemy - 2025",
+      "periodo": "54 horas",
+      "descricao": [
+        "Criação de API's Restful com boas práticas e clean code ",
+        "Criação de teste unitários e de integração com Junit, Mockito, REST Assured e TestContainers",
+        "Contêinerizar a API com Docker e Docker Compose",
+        "Continuous Deployment na AWS com GitHub Actions, Docker, Amazon ECR e Amazon ECS"
+      ]
+    },
+    "cardDocker": {
       "titulo": "Docker",
       "subtitulo": "Udemy - 2025",
       "periodo": "5.5 horas",
@@ -63,7 +74,7 @@
         "Manipulação de dois ou mais containers"
       ]
     },
-    "card4": {
+    "cardTailwind": {
       "titulo": "Tailwind CSS",
       "subtitulo": "Udemy - 2024",
       "periodo": "11.5 horas",
@@ -73,7 +84,7 @@
         "Boas práticas e clean code"
       ]
     },
-    "card5": {
+    "cardGit": {
       "titulo": "Git e GitHub",
       "subtitulo": "Udemy - 2024",
       "periodo": "8.5 horas",
@@ -82,7 +93,7 @@
         "Criação de gists para compartilhamento de código"
       ]
     },
-    "card6": {
+    "cardLinux": {
       "titulo": "Linux",
       "subtitulo": "Udemy - 2023",
       "periodo": "7.5 horas",

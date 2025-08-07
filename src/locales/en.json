@@ -32,7 +32,7 @@
     "titulo": "Academic background",
     "verMais": "Show more",
     "verMenos": "Hide",
-    "card1": {
+    "cardCollege": {
       "titulo": "Systems Analysis and Development",
       "subtitulo": "Estácio",
       "periodo": "Mar 2023 - Dec 2025",
@@ -43,7 +43,7 @@
         "Software architecture and DevOps"
       ]
     },
-    "card2": {
+    "cardEnglish": {
       "titulo": "Advanced English",
       "subtitulo": "Fluencypass - 2025",
       "periodo": "42 hours",
@@ -53,7 +53,18 @@
         "Writing of documents and formal emails"
       ]
     },
-    "card3": {
+    "cardSpring": {
+      "titulo": "Springboot 2025",
+      "subtitulo": "Udemy - 2025",
+      "periodo": "54 hours",
+      "descricao": [
+        "Creation of RESTful APIs following best practices and clean code",
+        "Development of unit and integration tests using JUnit, Mockito, REST Assured, and TestContainers",
+        "Containerizing the API with Docker and Docker Compose",
+        "Continuous Deployment on AWS using GitHub Actions, Docker, Amazon ECR, and Amazon ECS"
+      ]
+    },
+    "cardDocker": {
       "titulo": "Docker",
       "subtitulo": "Udemy - 2025",
       "periodo": "5.5 hours",
@@ -63,7 +74,7 @@
         "Handling two or more containers"
       ]
     },
-    "card4": {
+    "cardTailwind": {
       "titulo": "Tailwind CSS",
       "subtitulo": "Udemy - 2024",
       "periodo": "11.5 hours",
@@ -73,7 +84,7 @@
         "Best practices and clean code"
       ]
     },
-    "card5": {
+    "cardGit": {
       "titulo": "Git and GitHub",
       "subtitulo": "Udemy - 2024",
       "periodo": "8.5 hours",
@@ -82,7 +93,7 @@
         "Creating gists for code sharing"
       ]
     },
-    "card6": {
+    "cardLinux": {
       "titulo": "Linux",
       "subtitulo": "Udemy - 2023",
       "periodo": "7.5 hours",
@@ -141,7 +152,7 @@
       "title": "Class Scheduling",
       "subtitle": "Scheduling system for a school.",
       "description": "Created of the zero absolute, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
-    },    
+    },
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Barbershop appointments made easy.",
