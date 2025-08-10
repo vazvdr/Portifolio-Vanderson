@@ -53,6 +53,17 @@
         "Redação de documentos e e-mails formais"
       ]
     },
+    "cardReact": {
+      "titulo": "React",
+      "subtitulo": "Udemy - 2025",
+      "periodo": "24 horas",
+      "descricao": [
+        "Criação de aplicações frontend",
+        "Envio de requisições com axios",
+        "Aplicações usando Firebase",
+        "Criação de contextos globais com Context API e Redux"
+      ]
+    },
     "cardSpring": {
       "titulo": "Springboot 2025",
       "subtitulo": "Udemy - 2025",

@@ -7,6 +7,7 @@ import Git from "../assets/GitHub.jpg";
 import Linux from "../assets/Linux.jpg";
 import English from "../assets/Proficient-English.jpg";
 import Spring from '../assets/Spring2025.jpg';
+import ReactCourse from '../assets/React.jpg';
 
 const Formacao = () => {
   const { t } = useTranslation();
@@ -58,6 +59,7 @@ const Formacao = () => {
   const cursos = [
     { img: Estacio, titulo: "formacao.cardCollege.titulo", instituicao: "formacao.cardCollege.subtitulo", periodo: "formacao.cardCollege.periodo", descricao: "formacao.cardCollege.descricao" },
     { img: English, titulo: "formacao.cardEnglish.titulo", instituicao: "formacao.cardEnglish.subtitulo", periodo: "formacao.cardEnglish.periodo", descricao: "formacao.cardEnglish.descricao" },
+    { img: ReactCourse, titulo: "formacao.cardReact.titulo", instituicao: "formacao.cardReact.subtitulo", periodo: "formacao.cardReact.periodo", descricao: "formacao.cardReact.descricao" },
     { img: Spring, titulo: "formacao.cardSpring.titulo", instituicao: "formacao.cardSpring.subtitulo", periodo: "formacao.cardSpring.periodo", descricao: "formacao.cardSpring.descricao" },
     { img: Docker, titulo: "formacao.cardDocker.titulo", instituicao: "formacao.cardDocker.subtitulo", periodo: "formacao.cardDocker.periodo", descricao: "formacao.cardDocker.descricao" },
     { img: Tailwind, titulo: "formacao.cardTailwind.titulo", instituicao: "formacao.cardTailwind.subtitulo", periodo: "formacao.cardTailwind.periodo", descricao: "formacao.cardTailwind.descricao" },
@@ -79,7 +81,7 @@ const Formacao = () => {
         {t("formacao.titulo")}
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 gap-x-0">
         {(showAll ? cursos : cursos.slice(0, visibleCards)).map((curso, index) => (
           <div
             key={index}

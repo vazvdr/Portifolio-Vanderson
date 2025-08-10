@@ -53,6 +53,17 @@
         "Writing of documents and formal emails"
       ]
     },
+    "cardReact": {
+      "titulo": "React",
+      "subtitulo": "Udemy - 2025",
+      "periodo": "24 hours",
+      "descricao": [
+        "Creation of frontend applications",
+        "Sending requests with Axios",
+        "Applications using Firebase",
+        "Creation of global contexts with Context API and Redux"
+      ]
+    },    
     "cardSpring": {
       "titulo": "Springboot 2025",
       "subtitulo": "Udemy - 2025",
