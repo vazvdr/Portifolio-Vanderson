@@ -44,7 +44,7 @@
   --text-color: black;
   --header-line-gradient: linear-gradient(to right,#222224, #14152e,  #02010e);
 
-  --menu-btn-bg: #ffd;
+  --menu-btn-bg: rgb(246, 244, 244);
   /* Fundo do botão no Dark Mode */
   --menu-btn-line: black;
   /* Cor das linhas no Dark Mode */
