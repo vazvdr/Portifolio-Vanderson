@@ -22,6 +22,8 @@ const Tecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
     "https://esker.ee/images/cypress-logo-white.png",
@@ -45,8 +47,9 @@ const Tecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
     "https://www.svgrepo.com/show/354420/swagger.svg",
     "https://www.svgrepo.com/show/303231/docker-logo.svg",
-    "https://www.svgrepo.com/show/448236/linux.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
+    "https://www.svgrepo.com/show/448236/linux.svg",
     "https://www.svgrepo.com/show/448266/aws.svg"
   ];
 
