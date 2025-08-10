@@ -32,8 +32,8 @@
 
 :root.light{
   --background-color: #fff;
-  --background-color-card: #ffe;
-  --background-color-button: rgb(234, 234, 223);
+  --background-color-card: rgb(246, 244, 244);
+  --background-color-button: rgb(255, 255, 255);
   --border-color: rgb(2, 2, 21) 2px solid;
   --background-button-card-experiences: black;
   --color-button-card-experiences: white;
