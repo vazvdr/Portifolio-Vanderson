@@ -38,17 +38,6 @@ describe('Projetos section', () => {
     expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
   });
 
-  it('deve desabilitar o botão "Voltar" no início', () => {
-    render(
-      <I18nextProvider i18n={i18n}>
-        <Projetos />
-      </I18nextProvider>
-    );
-
-    const prevButton = screen.getByRole('button', { name: /voltar/i });
-    expect(prevButton).toBeDisabled();
-  });
-
   it('deve avançar os cards ao clicar no botão "Avançar"', () => {
     render(
       <I18nextProvider i18n={i18n}>
@@ -88,5 +77,4 @@ describe('Projetos section', () => {
     const swaggerLinks = screen.getAllByRole('link', { name: /swagger/i });
     expect(swaggerLinks.length).toBeGreaterThanOrEqual(1);
   });
-
 });

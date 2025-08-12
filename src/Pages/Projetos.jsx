@@ -20,6 +20,7 @@ const projects = [
         techs: [
             "react",
             "tailwindcss",
+            "axios",
             "cypress",
             "spring",
             "swagger",
@@ -164,20 +165,22 @@ const Projetos = () => {
     }, []);
 
     const handlePrev = () => {
-        setCurrentIndex((prev) => Math.max(prev - 1, 0));
+        setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
     };
-
+    
     const handleNext = () => {
-        setCurrentIndex((prev) =>
-            Math.min(prev + 1, projects.length - cardsPerView)
-        );
+        setCurrentIndex((prev) => (prev + 1) % projects.length);
     };
-
-    const displayedProjects = projects.slice(
-        currentIndex,
-        currentIndex + cardsPerView
-    );
-
+    
+    // Monta os cards dinamicamente com base no cardsPerView e wrap-around
+    const displayedProjects = Array.from({ length: cardsPerView }, (_, i) => {
+        return projects[(currentIndex + i) % projects.length];
+    });
+    
+    // Stage é baseado no primeiro card visível
+    const stage = currentIndex + 1;
+    const totalStages = projects.length;    
+        
     return (
         <section id="projetos" className="py-6">
             <div className="mx-auto lg:w-[92%] px-4 relative">
@@ -192,10 +195,9 @@ const Projetos = () => {
                     {/* Botão voltar */}
                     <button
                         onClick={handlePrev}
-                        disabled={currentIndex === 0}
                         aria-label="Voltar"
                         className={`button-project-back relative left-0 z-20 w-10
-          rounded-tl-full rounded-bl-full disabled:opacity-50
+          rounded-tl-full rounded-bl-full
           h-[280px] md:h-[380px] lg:h-[320px] xl:h-[300px]
         `}
                     >
@@ -293,15 +295,18 @@ const Projetos = () => {
                     {/* Botão avançar */}
                     <button
                         onClick={handleNext}
-                        disabled={currentIndex >= projects.length - cardsPerView}
                         aria-label="Avançar"
                         className={`button-project-next relative right-0 z-20 w-10
-          rounded-tr-full rounded-br-full disabled:opacity-50
+          rounded-tr-full rounded-br-full
           h-[280px] md:h-[380px] lg:h-[320px] xl:h-[300px]
         `}
                     >
                         <ArrowRight size={28} />
                     </button>
+                </div>
+                {/* Indicador de estágio */}
+                <div className="text-center mt-4 text-sm">
+                    {`Projeto ${stage} de ${totalStages}`}
                 </div>
             </div>
         </section>
