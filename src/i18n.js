@@ -1,26 +1,22 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
-import en from './locales/en.json'; // Traduções em inglês
-import pt from './locales/pt.json'; // Traduções em português
+import en from "./locales/en.json"; // Traduções em inglês
+import pt from "./locales/pt.json"; // Traduções em português
 
 i18n
-  .use(LanguageDetector) // Detecta o idioma do navegador
-  .use(initReactI18next) // Integra com o React
+  .use(initReactI18next)
   .init({
     resources: {
-      en: {
-        translation: en
-      },
-      pt: {
-        translation: pt
-      }
+      en: { translation: en },
+      pt: { translation: pt },
     },
-    fallbackLng: 'en', // Idioma padrão
+    // Se existir linguagem no localStorage, usa ela, senão inicia em "pt"
+    lng: localStorage.getItem("lang") || "pt",
+    fallbackLng: "pt", // Se não encontrar nada, força português
     interpolation: {
-      escapeValue: false // React já faz o escaping
-    }
+      escapeValue: false, // React já faz o escaping
+    },
   });
 
 export default i18n;

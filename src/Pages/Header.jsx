@@ -79,9 +79,11 @@ const Header = () => {
   };
 
   // Função para traduzir
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
+  const changeLanguage = (lng) => {
+    const value = lng === "pt" ? "pt-BR" : "en";
+    i18n.changeLanguage(value);
+    localStorage.setItem("i18nextLng", value);
+  };  
 
   // Suave rolagem ao clicar em um link do menu
   const handleLinkClick = (e, target) => {
@@ -147,18 +149,18 @@ const Header = () => {
                 className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
-                  code={i18n.language === "pt" ? "BR" : "US"}
+                  code={i18n.language?.startsWith("pt") ? "BR" : "US"}
                   alt="Idioma atual"
                   className="w-full h-full object-cover rounded-full"
                 />
               </button>
               {showLangOptionsMobile && (
-                <div className="absolute top-8 right-0 min-w-[60px] bg-black/80 rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
+                <div className="absolute top-0 right-0 min-w-[90px] cursor-pointer bg-black rounded-md shadow-lg px-4 py-2 flex flex-row gap-2 z-50">
                   <button onClick={() => { changeLanguage("pt"); setShowLangOptionsMobile(false); }}>
                     <Flag code="BR" className="w-6 h-6 object-cover rounded-full" alt="Português" />
                   </button>
                   <button onClick={() => { changeLanguage("en"); setShowLangOptionsMobile(false); }}>
-                    <Flag code="US" className="w-6 h-6 object-cover rounded-full" alt="Inglês" />
+                    <Flag code="US" className="w-6 h-6 object-cover rounded-full cursor-pointer" alt="Inglês" />
                   </button>
                 </div>
               )}
@@ -263,13 +265,13 @@ const Header = () => {
                 className="w-6 h-6 bg-secondary-01 shadow-lg transform hover:scale-110 transition duration-300 flex items-center justify-center rounded-full"
               >
                 <Flag
-                  code={i18n.language === "pt" ? "BR" : "US"}
+                  code={i18n.language?.startsWith("pt") ? "BR" : "US"}
                   alt="Idioma atual"
                   className="w-full h-full object-cover rounded-full"
                 />
               </button>
               {showLangOptionsDesktop && (
-                <div className="absolute top-8 right-0 min-w-[60px] bg-black/80 rounded-md shadow-lg px-4 py-2 flex flex-col gap-3 z-50">
+                <div className="absolute top-0 right-0 min-w-[90px] bg-black rounded-md shadow-lg px-4 py-2 flex flex-row gap-3 z-50">
                   <button onClick={() => { changeLanguage("pt"); setShowLangOptionsDesktop(false); }}>
                     <Flag code="BR" className="w-6 h-6 object-cover rounded-full" alt="Português" />
                   </button>
