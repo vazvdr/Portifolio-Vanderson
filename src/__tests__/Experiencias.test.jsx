@@ -31,7 +31,7 @@ describe('Experiencias component', () => {
   })
 
   it('exibe informações em inglês', () => {
-    i18n.changeLanguage('eng')
+    i18n.changeLanguage('en')
     render(
       <I18nextProvider i18n={i18n}>
         <Experiencias />

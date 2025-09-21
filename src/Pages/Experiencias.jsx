@@ -60,7 +60,7 @@ const Experiencias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg",
-    "https://www.thedataschool.com.au/wp-content/uploads/2023/02/RegEx-1-1.png",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWnC5QqDWvMmzDdzVY0SZZSiuZDmV55lFzIQ&s",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg",
     "https://www.svgrepo.com/show/439238/nodejs.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
