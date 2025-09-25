@@ -164,6 +164,11 @@
       "subtitle": "Sistema de agendamentos aulas.",
       "description": "Criado do absoluto zero, esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
     },
+    "photoshared": {
+      "title": "PhotoShared",
+      "subtitle": "Sistema de compartilhamento de fotos",
+      "description": "Criado do absoluto zero, esse site consome a API da Unsplash para listar fotos aleatórias e permite o usuário dar likes, seguir autores e postar fotos e todos os dados do usuário são salvos no Firebase."
+    },
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Agendamentos para barbearias feitos com facilidade.",

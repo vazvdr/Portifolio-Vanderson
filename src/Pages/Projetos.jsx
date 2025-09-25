@@ -4,6 +4,7 @@ import Weather from "../assets/Weather.png";
 import BarbaBrutal from "../assets/BarbaBrutal.png";
 import GamerStore from "../assets/GamerStore.png";
 import ClassScheduling from '../assets/ClassScheduling.jpg'
+import PhotoShared from '../assets/PhotoShared.png'
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { SiSwagger } from 'react-icons/si';
 import { useTranslation } from "react-i18next";
@@ -27,6 +28,19 @@ const projects = [
             "junit",
             "postgresql",
             "docker"
+        ],
+    },
+    {
+        title: "Photo Shared",
+        image: PhotoShared,
+        link: "https://photoshared.vercel.app/",
+        repo: "https://github.com/vazvdr/PhotoShared",
+        subtitleKey: "projects.photoshared.subtitle",
+        descriptionKey: "projects.photoshared.description",
+        techs: [
+            "react",
+            "tailwindcss",
+            "firebase"
         ],
     },
     {
@@ -86,6 +100,8 @@ const projects = [
 const techIcons = {
     react:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    firebase:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg",
     tailwindcss:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     cypress:
@@ -167,20 +183,20 @@ const Projetos = () => {
     const handlePrev = () => {
         setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
     };
-    
+
     const handleNext = () => {
         setCurrentIndex((prev) => (prev + 1) % projects.length);
     };
-    
+
     // Monta os cards dinamicamente com base no cardsPerView e wrap-around
     const displayedProjects = Array.from({ length: cardsPerView }, (_, i) => {
         return projects[(currentIndex + i) % projects.length];
     });
-    
+
     // Stage é baseado no primeiro card visível
     const stage = currentIndex + 1;
-    const totalStages = projects.length;    
-        
+    const totalStages = projects.length;
+
     return (
         <section id="projetos" className="py-6">
             <div className="mx-auto lg:w-[92%] px-4 relative">

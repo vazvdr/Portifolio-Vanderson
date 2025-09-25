@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '../i18n'
-import Experiencias from '../Pages/Experiencias'
+import Experiencias from '../pages/Experiencias'
 import { describe, it, expect } from 'vitest'
 
 import pt from '../locales/pt.json'

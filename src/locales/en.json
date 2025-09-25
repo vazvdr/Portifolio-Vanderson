@@ -162,8 +162,13 @@
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Scheduling system for a school.",
-      "description": "Created of the zero absolute, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
+      "description": "Created from absolute scratch, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
     },
+    "photoshared": {
+      "title": "PhotoShared",
+      "subtitle": "Photo sharing system",
+      "description": "Created from absolute scratch, this site consumes the Unsplash API to list random photos and allows the user to like, follow authors, and post photos, with all user data being saved in Firebase."
+    },    
     "barbabrutal": {
       "title": "Barbabrutal",
       "subtitle": "Barbershop appointments made easy.",

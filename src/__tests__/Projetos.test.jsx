@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Projetos from '../Pages/Projetos';
+import Projetos from '../pages/Projetos';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../i18n'
 
@@ -22,7 +22,7 @@ describe('Projetos section', () => {
     );
 
     expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
-    expect(screen.getByText(/gamerstore/i)).toBeInTheDocument();
+    expect(screen.getByText(/photo shared/i)).toBeInTheDocument();
   });
 
   it('deve renderizar um card por vez em telas pequenas', () => {
