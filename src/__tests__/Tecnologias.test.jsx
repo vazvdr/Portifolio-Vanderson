@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { describe, it, expect } from "vitest";
-import Tecnologias from "../pages/Tecnologias";
+import Tecnologias from "../Pages/Tecnologias";
 import { I18nextProvider } from "react-i18next";
 import { ThemeProvider } from "../ThemeProvider";
 import i18n from "../i18n";

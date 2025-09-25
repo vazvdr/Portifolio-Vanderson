@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
-import Header from '../pages/Header'
+import Header from '../Pages/Header'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '../i18n'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
