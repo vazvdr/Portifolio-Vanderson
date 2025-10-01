@@ -277,7 +277,7 @@ const Projetos = () => {
                                         <div className="flex gap-2">
                                             {project.title === "Class Scheduling" && (
                                                 <a
-                                                    href="https://class-scheduling-backend.onrender.com/swagger-ui/index.html"
+                                                    href="https://class-scheduling-backend-production.up.railway.app/swagger-ui/index.html"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     aria-label="Swagger"
