@@ -45,7 +45,7 @@ const Tecnologias = () => {
     "https://www.svgrepo.com/show/475654/github-color.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-    "https://www.svgrepo.com/show/354420/swagger.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
     "https://www.svgrepo.com/show/303231/docker-logo.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",

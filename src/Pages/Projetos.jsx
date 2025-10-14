@@ -127,7 +127,7 @@ const techIcons = {
     docker:
         "https://www.svgrepo.com/show/303231/docker-logo.svg",
     swagger:
-        "https://www.svgrepo.com/show/354420/swagger.svg",
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
     html5:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain-wordmark.svg",
     css3: "https://www.svgrepo.com/show/349330/css3.svg",
