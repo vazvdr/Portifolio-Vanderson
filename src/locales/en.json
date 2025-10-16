@@ -52,159 +52,174 @@
         "Understanding of technical and academic texts",
         "Writing of documents and formal emails"
       ]
-    },
-    "cardReact": {
-      "titulo": "React",
-      "subtitulo": "Udemy - 2025",
-      "periodo": "24 hours",
-      "descricao": [
-        "Creation of frontend applications",
-        "Sending requests with Axios",
-        "Applications using Firebase",
-        "Creation of global contexts with Context API and Redux"
-      ]
-    },    
-    "cardSpring": {
-      "titulo": "Springboot 2025",
-      "subtitulo": "Udemy - 2025",
-      "periodo": "54 hours",
-      "descricao": [
-        "Creation of RESTful APIs following best practices and clean code",
-        "Development of unit and integration tests using JUnit, Mockito, REST Assured, and TestContainers",
-        "Containerizing the API with Docker and Docker Compose",
-        "Continuous Deployment on AWS using GitHub Actions, Docker, Amazon ECR, and Amazon ECS"
-      ]
-    },
-    "cardDocker": {
-      "titulo": "Docker",
-      "subtitulo": "Udemy - 2025",
-      "periodo": "5.5 hours",
-      "descricao": [
-        "Creating images and containers",
-        "Configuring the Dockerfile",
-        "Handling two or more containers"
-      ]
-    },
-    "cardTailwind": {
-      "titulo": "Tailwind CSS",
-      "subtitulo": "Udemy - 2024",
-      "periodo": "11.5 hours",
-      "descricao": [
-        "Mobile-first layout",
-        "Building layouts with Grid and Flexbox",
-        "Best practices and clean code"
-      ]
-    },
-    "cardGit": {
-      "titulo": "Git and GitHub",
-      "subtitulo": "Udemy - 2024",
-      "periodo": "8.5 hours",
-      "descricao": [
-        "Git applied to a developer's daily practice",
-        "Creating gists for code sharing"
-      ]
-    },
-    "cardLinux": {
-      "titulo": "Linux",
-      "subtitulo": "Udemy - 2023",
-      "periodo": "7.5 hours",
-      "descricao": [
-        "Install Linux from scratch and understand all the steps of the process",
-        "Execute commands through the Linux Terminal",
-        "Configure network settings on a Linux system"
-      ]
-    }
   },
-  "experiencias": {
-    "titulo": "Experiences",
-    "verStack": "View stack",
-    "voltar": "Back",
-    "stackTitulo": "Technologies used",
-    "card1": {
-      "titulo": "Frontend Developer",
-      "subtitulo": "Fábrica de Sistemas · Freelance",
-      "periodo": "Nov 2024 - February 2025",
-      "descricao": [
-        "Development of Landing Pages with React and Javascript",
-        "Creation of APIs for sending emails and WhatsApp messages",
-        "Resolution of merge conflicts on GitHub",
-        "Teamwork using Agile methodology"
-      ]
-    },
-    "card2": {
-      "titulo": "FullStack Developer",
-      "subtitulo": "Freelancer · Freelance",
-      "periodo": "Aug 2023 - Present",
-      "descricao": [
-        "Frontend application development using React, Next.js",
-        "API creation using Spring Boot or Nest.js with SQL or NoSQL",
-        "Unit and integration testing with Vitest, Cypress, JUnit or Jest and Docker",
-        "Development with CI/CD environments like GitHub Actions"
-      ]
-    }
+  "cardSpringMicrosservices": {
+    "titulo": "Spring Microsservices",
+    "subtitulo": "Udemy - 2025",
+    "periodo": "43 hours",
+    "descricao": [
+      "Springboot actuator for monitoring services",
+      "Feign for communications between the microsservices",
+      "Spring Cloud LoadBalancer for management of load",
+      "Resilience4J for implements circuit breaker",
+      "Kubernetes for orquestration of services"
+    ]
   },
-  "tecnologias": {
-    "title": "My Skills",
-    "landing_pages_title": "Creation Landing Pages",
-    "landing_pages_description": "Creation of landing pages with a modern and responsive design to boost your bussiness in internet.",
-    "api_title": "Create and consumption API",
-    "api_description": "Integration with external APIs to extend the functionality of applications and creation of APIs following business rules.",
-    "fullstack_title": "Fullstack Development",
-    "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, encryption and the latest security techniques.",
-    "tests_title": "Unit and Integration Testing",
-    "tests_description": "Development of unit and integration tests using Vitest and Cypress, and for backend using JUnit, Mockito, Jest, and Docker.",
-    "deployment_title": "Deployment Websites",
-    "deployment_description": "Deployment both frontend and backend with or without a database using tools such as GitHub, Docker, Vercel and AWS."
+  "cardReact": {
+    "titulo": "React",
+    "subtitulo": "Udemy - 2025",
+    "periodo": "24 hours",
+    "descricao": [
+      "Creation of frontend applications",
+      "Sending requests with Axios",
+      "Applications using Firebase",
+      "Creation of global contexts with Context API and Redux"
+    ]
   },
-  "projects": {
-    "title": "My Projects",
-    "techs": "Technologies used:",
-    "classscheduling": {
-      "title": "Class Scheduling",
-      "subtitle": "Scheduling system for a school.",
-      "description": "Created from absolute scratch, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
-    },
-    "photoshared": {
-      "title": "PhotoShared",
-      "subtitle": "Photo sharing system",
-      "description": "Created from absolute scratch, this site consumes the Unsplash API to list random photos and allows the user to like, follow authors, and post photos, with all user data being saved in Firebase."
-    },    
-    "barbabrutal": {
-      "title": "Barbabrutal",
-      "subtitle": "Barbershop appointments made easy.",
-      "description": "A barbershop scheduling system that allows the user to make and manage their appointments after logging in, this system has REST API, database and encryption"
-    },
-    "gamerstore": {
-      "title": "GamerStore",
-      "subtitle": "Online store for gamer products.",
-      "description": "This system allows the user to view the products listed by the API, see the products in the shopping cart, and view their orders stored in the browser's localStorage."
-    },
-    "weather": {
-      "title": "Weather Project",
-      "subtitle": "Current weather conditions in any city worldwide.",
-      "description": "This project consumes the Open Weather API to display current weather conditions. The site automatically changes to Snow Mode, Cloud Mode, or Summer Mode based on the searched city's temperature."
-    },
-    "movies": {
-      "title": "Buscador de Filmes",
-      "subtitle": "Discover movies in theaters and save your favorites.",
-      "description": "This project uses TheMovieDB API to list trending movies and allows users to search the catalog. Features include saving to favorites and watching trailers on YouTube."
-    }
+  "cardSpring": {
+    "titulo": "Springboot 2025",
+    "subtitulo": "Udemy - 2025",
+    "periodo": "54 hours",
+    "descricao": [
+      "Creation of RESTful APIs following best practices and clean code",
+      "Development of unit and integration tests using JUnit, Mockito, REST Assured, and TestContainers",
+      "Containerizing the API with Docker and Docker Compose",
+      "Continuous Deployment on AWS using GitHub Actions, Docker, Amazon ECR, and Amazon ECS"
+    ]
   },
-  "contato": {
-    "title": "Contact Me",
-    "namelabel": "Name",
-    "nameplaceholder": "Enter your name",
-    "emaillabel": "Email",
-    "emailplaceholder": "Enter your email",
-    "messagelabel": "Message",
-    "messageplaceholder": "Write your message here",
-    "submitbutton": "Send",
-    "successMessage": "Email sent successfully!",
-    "errorMessage": "Error sending the email.",
-    "connectionError": "Server connection error.",
-    "closeButton": "Close",
-    "requiredField": "Required field",
-    "contactInfo": "Contact Me",
-    "adress": "Adress"
+  "cardDocker": {
+    "titulo": "Docker",
+    "subtitulo": "Udemy - 2025",
+    "periodo": "5.5 hours",
+    "descricao": [
+      "Creating images and containers",
+      "Configuring the Dockerfile",
+      "Handling two or more containers"
+    ]
+  },
+  "cardTailwind": {
+    "titulo": "Tailwind CSS",
+    "subtitulo": "Udemy - 2024",
+    "periodo": "11.5 hours",
+    "descricao": [
+      "Mobile-first layout",
+      "Building layouts with Grid and Flexbox",
+      "Best practices and clean code"
+    ]
+  },
+  "cardGit": {
+    "titulo": "Git and GitHub",
+    "subtitulo": "Udemy - 2024",
+    "periodo": "8.5 hours",
+    "descricao": [
+      "Git applied to a developer's daily practice",
+      "Creating gists for code sharing"
+    ]
+  },
+  "cardLinux": {
+    "titulo": "Linux",
+    "subtitulo": "Udemy - 2023",
+    "periodo": "7.5 hours",
+    "descricao": [
+      "Install Linux from scratch and understand all the steps of the process",
+      "Execute commands through the Linux Terminal",
+      "Configure network settings on a Linux system"
+    ]
   }
+},
+"experiencias": {
+  "titulo": "Experiences",
+  "verStack": "View stack",
+  "voltar": "Back",
+  "stackTitulo": "Technologies used",
+  "card1": {
+    "titulo": "Frontend Developer",
+    "subtitulo": "Fábrica de Sistemas · Freelance",
+    "periodo": "Nov 2024 - February 2025",
+    "descricao": [
+      "Development of Landing Pages with React and Javascript",
+      "Creation of APIs for sending emails and WhatsApp messages",
+      "Resolution of merge conflicts on GitHub",
+      "Deployment of systems in modern environment",
+      "Teamwork using Agile methodology"
+    ]
+  },
+  "card2": {
+    "titulo": "FullStack Developer",
+    "subtitulo": "Freelancer · Freelance",
+    "periodo": "Aug 2023 - Present",
+    "descricao": [
+      "Frontend application development using React, Next.js",
+      "API creation using Spring Boot or Nest.js with SQL or NoSQL",
+      "Creation of full stack system with microservices architecture ", 
+      "Unit and integration testing with Vitest, Cypress, JUnit or Jest and Docker",
+      "Development with CI/CD environments like GitHub Actions",
+      "Deployment of systems in modern environment"
+    ]
+  }
+},
+"tecnologias": {
+  "title": "My Skills",
+  "landing_pages_title": "Creation Landing Pages",
+  "landing_pages_description": "Creation of landing pages with a modern and responsive design, forms for sending emails, to boost your bussiness in internet.",
+  "api_title": "Create and consumption API",
+  "api_description": "Integration with external APIs to extend the functionality of applications and creation of APIs following business rules.",
+  "fullstack_title": "Fullstack Development",
+  "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, microsservices architecture, automated tests, encryption and the latest security techniques.",
+  "tests_title": "Unit and Integration Testing",
+  "tests_description": "Development of unit and integration tests using Vitest and Cypress, and for backend using JUnit, Mockito, Jest, and Docker.",
+  "deployment_title": "Deployment Websites",
+  "deployment_description": "Deployment both frontend and backend with or without a database using tools such as GitHub, Docker, Vercel and AWS."
+},
+"projects": {
+  "title": "My Projects",
+  "techs": "Technologies used:",
+  "classscheduling": {
+    "title": "Class Scheduling",
+    "subtitle": "Scheduling system for a school.",
+    "description": "Created from absolute scratch, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
+  },
+  "photoshared": {
+    "title": "PhotoShared",
+    "subtitle": "Photo sharing system",
+    "description": "Created from absolute scratch, this site consumes the Unsplash API to list random photos and allows the user to like, follow authors, and post photos, with all user data being saved in Firebase."
+  },
+  "barbabrutal": {
+    "title": "Barbabrutal",
+    "subtitle": "Barbershop appointments made easy.",
+    "description": "A barbershop scheduling system that allows the user to make and manage their appointments after logging in, this system has REST API, database and encryption"
+  },
+  "gamerstore": {
+    "title": "GamerStore",
+    "subtitle": "Online store for gamer products.",
+    "description": "This system allows the user to view the products listed by the API, see the products in the shopping cart, and view their orders stored in the browser's localStorage."
+  },
+  "weather": {
+    "title": "Weather Project",
+    "subtitle": "Current weather conditions in any city worldwide.",
+    "description": "This project consumes the Open Weather API to display current weather conditions. The site automatically changes to Snow Mode, Cloud Mode, or Summer Mode based on the searched city's temperature."
+  },
+  "movies": {
+    "title": "Buscador de Filmes",
+    "subtitle": "Discover movies in theaters and save your favorites.",
+    "description": "This project uses TheMovieDB API to list trending movies and allows users to search the catalog. Features include saving to favorites and watching trailers on YouTube."
+  }
+},
+"contato": {
+  "title": "Contact Me",
+  "namelabel": "Name",
+  "nameplaceholder": "Enter your name",
+  "emaillabel": "Email",
+  "emailplaceholder": "Enter your email",
+  "messagelabel": "Message",
+  "messageplaceholder": "Write your message here",
+  "submitbutton": "Send",
+  "successMessage": "Email sent successfully!",
+  "errorMessage": "Error sending the email.",
+  "connectionError": "Server connection error.",
+  "closeButton": "Close",
+  "requiredField": "Required field",
+  "contactInfo": "Contact Me",
+  "adress": "Adress"
+}
 }

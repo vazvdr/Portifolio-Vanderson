@@ -83,7 +83,7 @@ const Header = () => {
     const value = lng === "pt" ? "pt-BR" : "en";
     i18n.changeLanguage(value);
     localStorage.setItem("i18nextLng", value);
-  };  
+  };
 
   // Suave rolagem ao clicar em um link do menu
   const handleLinkClick = (e, target) => {
@@ -331,9 +331,18 @@ const Header = () => {
       {showScrollButton && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top-button w-8 h-8 fixed bottom-28 mr-[1%] text-white p-2 rounded-full shadow-lg transform hover:scale-110 transition duration-300 z-50"
+          className="scroll-to-top-button w-12 h-9 fixed bottom-28 mr-[1%] p-2 shadow-lg rounded-lg transform hover:scale-110 transition duration-300 z-50"
         >
-          <ArrowUpCircle size={40} />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+          </svg>
         </button>
       )}
 

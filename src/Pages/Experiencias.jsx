@@ -72,7 +72,7 @@ const Experiencias = () => {
     "https://www.svgrepo.com/show/475654/github-color.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-    "https://www.svgrepo.com/show/354420/swagger.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
     "https://www.svgrepo.com/show/303231/docker-logo.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
@@ -98,7 +98,7 @@ const Experiencias = () => {
             .map((card, index) => (
               <div
                 key={index}
-                className={`group perspective w-full relative h-[400px] sm:h-[420px]`}
+                className={`group perspective w-full relative h-[420px] sm:h-[490px]`}
               >
                 <div
                   className={`relative w-full h-full transition-transform duration-700 transform-style preserve-3d ${showStacks[index] ? "rotate-y-180" : ""
