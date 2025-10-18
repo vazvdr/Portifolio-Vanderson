@@ -35,7 +35,7 @@
   --background-color: #fff;
   --background-color-card: rgb(246, 244, 244);
   --background-color-button: rgb(235, 215, 215);
-  --background-button-scroll-top: rgb(182, 167, 167);
+  --background-button-scroll-top: #222;
   --border-color: rgb(2, 2, 21) 2px solid;
   --background-button-card-experiences: black;
   --color-button-card-experiences: white;
@@ -80,7 +80,7 @@ body {
   position: fixed;
   right: 14px;
   background-color: var(--background-button-scroll-top);
-  color: var(--text-color);
+  color: var(--gradient-middle);
 }
 
 /* Classe para o botão */
