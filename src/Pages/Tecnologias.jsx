@@ -14,7 +14,7 @@ const Tecnologias = () => {
   const [currentCardStage, setCurrentCardStage] = useState(0);
   const [cardPerStage, setCardPerStage] = useState(3);
 
-  const cards = [LandingPage, API, Fullstack, Test, Deploy]
+  const cards = [LandingPage, API, Fullstack, Test, Deploy];
 
   const icons = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
@@ -53,6 +53,7 @@ const Tecnologias = () => {
     "https://www.svgrepo.com/show/448266/aws.svg"
   ];
 
+  // Responsividade - define quantos cards aparecem
   useEffect(() => {
     const updateCardPerStage = () => {
       if (window.innerWidth < 768) {
@@ -63,26 +64,32 @@ const Tecnologias = () => {
         setCardPerStage(3);
       }
     };
-
     updateCardPerStage();
     window.addEventListener("resize", updateCardPerStage);
     return () => window.removeEventListener("resize", updateCardPerStage);
   }, []);
 
+  // 🔁 Navegação circular dos CARDS
   const CardNextStage = () => {
-    if (currentCardStage + cardPerStage < cards.length) {
+    if (currentCardStage + cardPerStage >= cards.length) {
+      setCurrentCardStage(0);
+    } else {
       setCurrentCardStage((prev) => prev + 1);
     }
   };
 
   const CardPrevStage = () => {
-    if (currentCardStage > 0) {
+    if (currentCardStage === 0) {
+      const lastStage = Math.max(cards.length - cardPerStage, 0);
+      setCurrentCardStage(lastStage);
+    } else {
       setCurrentCardStage((prev) => prev - 1);
     }
   };
 
   const displayedCards = cards.slice(currentCardStage, currentCardStage + cardPerStage);
 
+  // Responsividade - define quantos ícones aparecem
   useEffect(() => {
     const updateIconsPerStage = () => {
       if (window.innerWidth < 768) {
@@ -93,7 +100,6 @@ const Tecnologias = () => {
         setIconsPerStage(10);
       }
     };
-
     updateIconsPerStage();
     window.addEventListener("resize", updateIconsPerStage);
     return () => window.removeEventListener("resize", updateIconsPerStage);
@@ -101,15 +107,20 @@ const Tecnologias = () => {
 
   const totalStages = Math.ceil(icons.length / iconsPerStage);
 
+  // 🔁 Navegação circular dos ÍCONES
   const handleNextStage = () => {
-    if (currentIconsStage < totalStages - 1) {
-      setCurrentIconsStage(currentIconsStage + 1);
+    if (currentIconsStage >= totalStages - 1) {
+      setCurrentIconsStage(0);
+    } else {
+      setCurrentIconsStage((prev) => prev + 1);
     }
   };
 
   const handlePrevStage = () => {
-    if (currentIconsStage > 0) {
-      setCurrentIconsStage(currentIconsStage - 1);
+    if (currentIconsStage === 0) {
+      setCurrentIconsStage(totalStages - 1);
+    } else {
+      setCurrentIconsStage((prev) => prev - 1);
     }
   };
 
@@ -117,10 +128,7 @@ const Tecnologias = () => {
   const displayedIcons = icons.slice(startIndex, startIndex + iconsPerStage);
 
   return (
-    <section
-      id="tecnologias"
-      className="relative py-10 w-full flex flex-col items-center"
-    >
+    <section id="tecnologias" className="relative py-10 w-full flex flex-col items-center">
       <h1
         className="text-2xl md:text-3xl font-bold mb-8 mt-10 animate-slide-right"
         style={{ fontFamily: "DoctorGlitch" }}
@@ -128,14 +136,12 @@ const Tecnologias = () => {
         {t("tecnologias.title")}
       </h1>
 
+      {/* 🃏 Carrossel de cards */}
       <div className="relative w-[90%] px-[5%] lg:px-[3%]">
         <div className="relative flex items-center">
           <button
             onClick={CardPrevStage}
-            disabled={currentCardStage === 0}
-            className={`buttons-abilitys-left absolute left-[-2rem] h-[95.5%] top-[0%] z-10 
-        p-2
-        ${currentCardStage === 0 ? "cursor-not-allowed" : ""}`}
+            className="buttons-abilitys-left absolute left-[-2rem] h-[95.5%] top-[0%] z-10 p-2"
           >
             <ArrowLeft size={28} />
           </button>
@@ -152,8 +158,7 @@ const Tecnologias = () => {
                 { title: "tests_title", description: "tests_description" },
                 { title: "deployment_title", description: "deployment_description" },
               ];
-
-              const realIndex = currentCardStage + index;
+              const realIndex = (currentCardStage + index) % cards.length;
               const key = translationKeys[realIndex];
 
               return (
@@ -177,25 +182,20 @@ const Tecnologias = () => {
 
           <button
             onClick={CardNextStage}
-            disabled={currentCardStage + cardPerStage >= cards.length}
-            className={`buttons-abilitys-right absolute right-[-2rem] h-[95.5%] top-[0%] z-10 
-            p-2
-        ${currentCardStage + cardPerStage >= cards.length ? "cursor-not-allowed" : ""}`}
+            className="buttons-abilitys-right absolute right-[-2rem] h-[95.5%] top-[0%] z-10 p-2"
           >
             <ArrowRight size={28} />
           </button>
         </div>
       </div>
 
+      {/* 💡 Carrossel de ícones */}
       <div
         id="carousel-container"
         className="stage-carrossel-tech bg-black/90 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
         style={{ margin: "0 10%" }}
       >
-        <div
-          id="carousel-track"
-          className="flex items-center gap-6 justify-center"
-        >
+        <div id="carousel-track" className="flex items-center gap-6 justify-center">
           {displayedIcons.map((icon, index) => (
             <img
               key={index}
@@ -209,27 +209,30 @@ const Tecnologias = () => {
         </div>
       </div>
 
+      {/* 🔘 Indicadores e botões */}
       <div className="flex flex-col items-center mt-4">
         <div className="flex gap-2 mb-3">
           {Array.from({ length: totalStages }).map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${index === currentIconsStage ? "stage-carrossel-tech" : "bg-gray-400"} transition-all`}
+              className={`w-3 h-3 rounded-full ${
+                index === currentIconsStage ? "stage-carrossel-tech" : "bg-gray-400"
+              } transition-all`}
             ></span>
           ))}
         </div>
+
         <div className="flex justify-center mt-1 gap-4">
           <button
-            disabled={currentIconsStage === 0}
-            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentIconsStage === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handlePrevStage}
+            className="bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
           >
             <ArrowLeftCircle size="100%" />
           </button>
+
           <button
-            disabled={currentIconsStage === totalStages - 1}
-            className={`bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80 ${currentIconsStage === totalStages - 1 ? "opacity-50 cursor-not-allowed" : ""}`}
             onClick={handleNextStage}
+            className="bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
           >
             <ArrowRightCircle size="100%" />
           </button>
