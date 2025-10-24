@@ -53,6 +53,17 @@
         "Redação de documentos e e-mails formais"
       ]
     },
+    "cardSpringRabbitMQ": {
+      "titulo": "Spring e RabbitMq",
+      "subtitulo": "Udemy - 2025",
+      "periodo": "6 horas",
+      "descricao": [
+        "Envio de mensagens assíncronas com RabbitMq",
+        "Ambientes de desenvolvimento com Docker e Docker Compose",
+        "Documentação com Swagger",
+        "Implantação na AWS criando instância EC2"
+      ]
+    },
     "cardSpringMicrosservices": {
       "titulo": "Spring Microsservices",
       "subtitulo": "Udemy - 2025",
