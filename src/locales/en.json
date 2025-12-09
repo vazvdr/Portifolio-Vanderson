@@ -18,7 +18,7 @@
       "role": "FullStack Developer."
     },
     "description": "I have",
-    "description2": " of experience in programming using the Java ecosystem with Spring and JavaScript with React, Next.js and Nest.js mainly and i'm passionate about the world of the internet and about using my creativity to build smart, functional websites that deliver real value.",
+    "description2": " of experience how FullStack and Mobile Developer, i have academic background in Analysis and Development of Systems and my main skills are in Java with Spring ecosystem, JavaScript with React and Nest.js and Dart with Flutter.",
     "anos": "years",
     "dia": "day",
     "dias": "days",
@@ -52,6 +52,17 @@
         "Understanding of technical and academic texts",
         "Writing of documents and formal emails"
       ]
+  },
+  "cardGitLab": {
+    "titulo": "GitLab - CI/CD",
+    "subtitulo": "Udemy - 2025",
+    "periodo": "4.5 hours",
+    "descricao": [
+      "Create a build pipeline all the way to production",
+      "Create Jobs and Stages",
+      "Run application tests in the pipeline",
+      "Deploy the application to the Kubernetes cluster"
+    ]
   },
   "cardSpringRabbitMQ": {
     "titulo": "Spring and RabbitMq",
@@ -164,8 +175,18 @@
       "API creation using Spring Boot or Nest.js with SQL or NoSQL",
       "Creation of full stack system with microservices architecture ", 
       "Unit and integration testing with Vitest, Cypress, JUnit or Jest and Docker",
-      "Development with CI/CD environments like GitHub Actions",
+      "Development with CI/CD environments with GitHub Actions or GitLab",
       "Deployment of systems in modern environment"
+    ]
+  },
+  "card3": {
+    "titulo": "Mobile Developer",
+    "subtitulo": "Freelancer · Freelance",
+    "periodo": "Nov 2025 - Present",
+    "descricao": [
+      "Mobile programs for iOS and Android systems with Dart and Flutter",
+      "Creation API's with Spring or Nest.js With SQL, NoSQL or Redis",
+      "Development with CI/CD environments with GitHub Actions or GitLab"
     ]
   }
 },

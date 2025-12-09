@@ -102,7 +102,7 @@ const Sobre = () => {
           <div
             className={`mt-[17%] w-[90%] animate-fade-in-right sm:mt-[15%] sm:mb-[4%] ${animate ? "animate-slide-in-left" : "opacity-0"}`}
           >
-            <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
+            <h1 className="text-sobre text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
                 {t("sobre.heading.greeting")}
               </div>
@@ -113,7 +113,7 @@ const Sobre = () => {
               <div className="relative min-h-[10px] sm:min-h-[40px]">
                 <span>
                   <Typewriter
-                    words={["Software Engineer", "FullStack Developer", "Java Developer", "Javascript Developer"]}
+                    words={["Software Engineer", "FullStack Developer", "Mobile Developer", "Java Developer", "Javascript Developer", "Flutter Developer"]}
                     loop={0}
                     cursor
                     cursorStyle="_"
@@ -215,7 +215,7 @@ const Sobre = () => {
               <div className="relative md:min-h-[90px] lg:min-h-[60px]">
                 <span>
                   <Typewriter
-                    words={["Software Engineer", "FullStack Developer", "Java Developer", "Javascript Developer"]}
+                    words={["Software Engineer", "FullStack Developer", "Mobile Developer","Java Developer", "Javascript Developer", "Flutter Developer"]}
                     loop={0}
                     cursor
                     cursorStyle="_"

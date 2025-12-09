@@ -4,6 +4,7 @@ import Estacio from "../assets/Estacio.png";
 import Docker from "../assets/Docker.jpg";
 import Tailwind from "../assets/TailwindCSS.jpg";
 import Git from "../assets/GitHub.jpg";
+import GitLab from '../assets/GitLab.jpg';
 import Linux from "../assets/Linux.jpg";
 import English from "../assets/Proficient-English.jpg";
 import Spring from '../assets/Spring2025.jpg';
@@ -61,6 +62,7 @@ const Formacao = () => {
   const cursos = [
     { img: Estacio, titulo: "formacao.cardCollege.titulo", instituicao: "formacao.cardCollege.subtitulo", periodo: "formacao.cardCollege.periodo", descricao: "formacao.cardCollege.descricao" },
     { img: English, titulo: "formacao.cardEnglish.titulo", instituicao: "formacao.cardEnglish.subtitulo", periodo: "formacao.cardEnglish.periodo", descricao: "formacao.cardEnglish.descricao" },
+    { img: GitLab, titulo: "formacao.cardGitLab.titulo", instituicao: "formacao.cardGitLab.subtitulo", periodo: "formacao.cardGitLab.periodo", descricao: "formacao.cardGitLab.descricao" },
     { img: SpringRabbitMQ, titulo: "formacao.cardSpringRabbitMQ.titulo", instituicao: "formacao.cardSpringRabbitMQ.subtitulo", periodo: "formacao.cardSpringRabbitMQ.periodo", descricao: "formacao.cardSpringRabbitMQ.descricao" },
     { img: SpringMicrosservices, titulo: "formacao.cardSpringMicrosservices.titulo", instituicao: "formacao.cardSpringMicrosservices.subtitulo", periodo: "formacao.cardSpringMicrosservices.periodo", descricao: "formacao.cardSpringMicrosservices.descricao" },
     { img: ReactCourse, titulo: "formacao.cardReact.titulo", instituicao: "formacao.cardReact.subtitulo", periodo: "formacao.cardReact.periodo", descricao: "formacao.cardReact.descricao" },

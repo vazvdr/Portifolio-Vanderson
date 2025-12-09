@@ -18,7 +18,7 @@
       "role": "FullStack Developer."
     },
     "description": "Tenho ",
-    "description2": " de experiência com programação usando o ecossistema do Java com Spring e Javascript com React, Next.js e Nest.js principalmente e sou apaixonado pelo universo da internet e por usar minha criatividade para criar sites inteligentes, funcionais e que agregam valor.",
+    "description2": " de experiência como desenvolvedor FullStack e Mobile, sou formado em Análise e Desenvolvimento de Sistemas e minhas principais habilidades são no ecossistema do Java com Spring, Javascript com React e Nest.js e Dart com Flutter.",
     "anos": "anos",
     "dia": "dia",
     "dias": "dias",
@@ -51,6 +51,17 @@
         "Conversação e fluência avançada",
         "Compreensão de textos técnicos e acadêmicos",
         "Redação de documentos e e-mails formais"
+      ]
+    },
+    "cardGitLab": {
+      "titulo": "GitLab - CI/CD",
+      "subtitulo": "Udemy - 2025",
+      "periodo": "4.5 horas",
+      "descricao": [
+        "Criar um pipeline do desenvolvimento a produção",
+        "Criar Jobs e Stages",
+        "Realizar o teste de aplicações em um pipeline",
+        "Realizar um deploy de uma aplicação em um cluster Kubernetes"
       ]
     },
     "cardSpringRabbitMQ": {
@@ -161,11 +172,21 @@
       "periodo": "Ago de 2023 - o momento",
       "descricao": [
         "Desenvolvimento de aplicações frontend usando React, Next.js",
-        "Criação de API’S usando Spring Boot, ou Nest.js com SQL ou NoSQL",
+        "Criação de API’S usando Spring Boot, ou Nest.js com SQL, NoSQL ou Redis",
         "Criação de sistemas fullstack com arquitetura de microsserviços",
         "Testes unitários e de integração com Vitest, Cypress, Junit ou Jest e Docker",
-        "Desenvolvimento com ambiente CI/CD como GitHub actions.",
+        "Desenvolvimento com ambiente CI/CD como GitHub actions ou GitLab.",
         "Deploy de sistemas em ambientes modernos"
+      ]
+    },
+    "card3": {
+      "titulo": "Desenvolvedor Mobile",
+      "subtitulo": "Freelancer · Freelance",
+      "periodo": "Nov de 2025 - o momento",
+      "descricao": [
+        "Desenvolvimento de aplicativos para iOS e Android com Dart e Flutter",
+        "Criação de API’S usando Spring Boot, ou Nest.js com SQL, NoSQL ou Redis ",
+        "Desenvolvimento com ambiente CI/CD como GitHub actions ou GitLab."
       ]
     }
   },

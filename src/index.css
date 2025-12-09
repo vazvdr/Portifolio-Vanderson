@@ -27,7 +27,7 @@
   /* Texto no modo dark */
  
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  --text-sobre: rgb(131, 120, 120);
+  --text-sobre: rgb(255, 255, 255);
   --text-cover: rgb(131, 120, 120);
 }
 
@@ -54,7 +54,7 @@
   /* Texto no modo dark */
  
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0);
-  --text-sobre: rgb(50, 49, 51);
+  --text-sobre: rgb(145, 130, 161);
   --text-cover: rgb(131, 120, 120);
 }
 
