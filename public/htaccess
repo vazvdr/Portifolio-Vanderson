@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://www.vandersonazevedo.com.br/$1 [R,L]
