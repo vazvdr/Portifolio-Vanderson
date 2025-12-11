@@ -198,6 +198,8 @@
   "api_description": "Integration with external APIs to extend the functionality of applications and creation of APIs following business rules.",
   "fullstack_title": "Fullstack Development",
   "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, microsservices architecture, automated tests, encryption and the latest security techniques.",
+  "mobile_title": "Mobile Development",
+  "mobile_description": "Developing modern, fast, and intuitive applications for Android and iOS using Flutter. I create apps with fluid interfaces, native features, and high performance, ensuring a quality mobile experience.",
   "tests_title": "Unit and Integration Testing",
   "tests_description": "Development of unit and integration tests using Vitest and Cypress, and for backend using JUnit, Mockito, Jest, and Docker.",
   "deployment_title": "Deployment Websites",

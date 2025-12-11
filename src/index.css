@@ -381,6 +381,20 @@ body {
 .animate-slide-left {
   animation: slideInLeft 1.5s ease-out;
 }
+ 
+.scroll-marquee {
+  display: flex;
+  animation: marquee 25s linear infinite;
+}
+
+.scroll-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 
 @keyframes slideInRight {
   from {

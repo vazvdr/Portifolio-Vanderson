@@ -198,6 +198,8 @@
     "api_description": "Integração com APIs externas para ampliar a funcionalidade das aplicações e criação de APIs seguindo regras de negócio usando ferramentas como, Nest.js, Spring Framework.",
     "fullstack_title": "Criação de Sistemas Fullstack",
     "fullstack_description": "Desenvolvimento completo de sistemas, desde o front-end até o back-end com ou sem banco de dados, arquitetura de microsserviços, testes automatizados, criptografia e as técnicas de segurança mais modernas.",
+    "mobile_title": "Criação de Apps Android e iOS",
+    "mobile_description": "Desenvolvimento de aplicativos modernos, rápidos e intuitivos para Android e iOS com Flutter. Crio aplicativos com interfaces fluidas, recursos nativos e alto desempenho, garantindo uma experiência mobile de qualidade.",
     "tests_title": "Testes Unitários e de Integração",
     "tests_description": "Desenvolvimento de testes unitários e de integração usando Vitest e Cypress para frontend e Junit, Mockito, Jest e Docker para backend.",
     "deployment_title": "Deploy de sites",

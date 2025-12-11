@@ -1,20 +1,76 @@
 import { useTranslation } from "react-i18next";
-import { useState, useEffect } from "react";
-import { ArrowLeft, ArrowRight, ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
-import LandingPage from '../assets/LandingPage.jpg';
+import { useState, useEffect, useRef } from "react";
+import { ArrowLeftCircle, ArrowRightCircle } from "lucide-react";
+import LandingPage from '../assets/LandingPage.png';
 import API from '../assets/CreateConsumeAPI.png';
 import Fullstack from '../assets/Fullstack.png';
+import Mobile from '../assets/Mobile2.png';
 import Test from '../assets/Test.png';
 import Deploy from '../assets/Deployment.png';
 
 const Tecnologias = () => {
   const { t } = useTranslation();
+
+  // --- CONFIG CARDS ---
+  const cards = [LandingPage, API, Fullstack, Mobile, Test, Deploy];
+  const infiniteCards = [...cards, ...cards]; // LOOP REAL
+
+  // -------- LOOP INFINITO PARA A DIREITA ----------
+  const speed = 2.5; // velocidade
+  const trackRef = useRef(null);
+  const [offset, setOffset] = useState(0);
+  const isPaused = useRef(false);
+
+  // EVENTOS DE PAUSA
+  const handleMouseEnter = () => {
+    isPaused.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isPaused.current = false;
+  };
+
+  useEffect(() => {
+    let frame;
+
+    const animate = () => {
+      if (!isPaused.current) {
+        setOffset(prev => {
+          const cardWidth = 350;
+          const totalWidth = infiniteCards.length * cardWidth;
+
+          let newX = prev - speed;
+
+          if (Math.abs(newX) >= totalWidth / 2) {
+            return 0;
+          }
+
+          return newX;
+        });
+      }
+
+      frame = requestAnimationFrame(animate);
+    };
+
+    frame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  // --- CONFIG DOS ÍCONES (inalterado) ---
   const [currentIconsStage, setCurrentIconsStage] = useState(0);
   const [iconsPerStage, setIconsPerStage] = useState(4);
-  const [currentCardStage, setCurrentCardStage] = useState(0);
-  const [cardPerStage, setCardPerStage] = useState(3);
 
-  const cards = [LandingPage, API, Fullstack, Test, Deploy];
+  useEffect(() => {
+    const updateIconsPerStage = () => {
+      if (window.innerWidth < 768) setIconsPerStage(4);
+      else if (window.innerWidth < 1024) setIconsPerStage(5);
+      else setIconsPerStage(10);
+    };
+    updateIconsPerStage();
+    window.addEventListener("resize", updateIconsPerStage);
+    return () => window.removeEventListener("resize", updateIconsPerStage);
+  }, []);
 
   const icons = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
@@ -57,143 +113,67 @@ const Tecnologias = () => {
     "https://www.svgrepo.com/show/448266/aws.svg"
   ];
 
-  // Responsividade - define quantos cards aparecem
-  useEffect(() => {
-    const updateCardPerStage = () => {
-      if (window.innerWidth < 768) {
-        setCardPerStage(1);
-      } else if (window.innerWidth < 1024) {
-        setCardPerStage(2);
-      } else {
-        setCardPerStage(3);
-      }
-    };
-    updateCardPerStage();
-    window.addEventListener("resize", updateCardPerStage);
-    return () => window.removeEventListener("resize", updateCardPerStage);
-  }, []);
-
-  // 🔁 Navegação circular dos CARDS
-  const CardNextStage = () => {
-    if (currentCardStage + cardPerStage >= cards.length) {
-      setCurrentCardStage(0);
-    } else {
-      setCurrentCardStage((prev) => prev + 1);
-    }
-  };
-
-  const CardPrevStage = () => {
-    if (currentCardStage === 0) {
-      const lastStage = Math.max(cards.length - cardPerStage, 0);
-      setCurrentCardStage(lastStage);
-    } else {
-      setCurrentCardStage((prev) => prev - 1);
-    }
-  };
-
-  const displayedCards = cards.slice(currentCardStage, currentCardStage + cardPerStage);
-
-  // Responsividade - define quantos ícones aparecem
-  useEffect(() => {
-    const updateIconsPerStage = () => {
-      if (window.innerWidth < 768) {
-        setIconsPerStage(4);
-      } else if (window.innerWidth < 1024) {
-        setIconsPerStage(5);
-      } else {
-        setIconsPerStage(10);
-      }
-    };
-    updateIconsPerStage();
-    window.addEventListener("resize", updateIconsPerStage);
-    return () => window.removeEventListener("resize", updateIconsPerStage);
-  }, []);
-
   const totalStages = Math.ceil(icons.length / iconsPerStage);
-
-  // 🔁 Navegação circular dos ÍCONES
-  const handleNextStage = () => {
-    if (currentIconsStage >= totalStages - 1) {
-      setCurrentIconsStage(0);
-    } else {
-      setCurrentIconsStage((prev) => prev + 1);
-    }
-  };
-
-  const handlePrevStage = () => {
-    if (currentIconsStage === 0) {
-      setCurrentIconsStage(totalStages - 1);
-    } else {
-      setCurrentIconsStage((prev) => prev - 1);
-    }
-  };
-
   const startIndex = currentIconsStage * iconsPerStage;
   const displayedIcons = icons.slice(startIndex, startIndex + iconsPerStage);
 
   return (
     <section id="tecnologias" className="relative py-10 w-full flex flex-col items-center">
-      <h1
-        className="text-2xl md:text-3xl font-bold mb-8 mt-10 animate-slide-right"
-        style={{ fontFamily: "DoctorGlitch" }}
-      >
+
+      <h1 className="text-2xl md:text-3xl font-bold mb-8 mt-10 animate-slide-right"
+        style={{ fontFamily: "DoctorGlitch" }}>
         {t("tecnologias.title")}
       </h1>
 
-      {/* 🃏 Carrossel de cards */}
-      <div className="relative w-[90%] px-[5%] lg:px-[3%]">
-        <div className="relative flex items-center">
-          <button
-            onClick={CardPrevStage}
-            className="buttons-abilitys-left absolute left-[-2rem] h-[95.5%] top-[0%] z-10 p-2"
-          >
-            <ArrowLeft size={28} />
-          </button>
+      {/* ===== CARROSSEL DE CARDS ===== */}
+      <div
+        className="relative w-[90%] overflow-hidden mt-6 mb-2"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div
+          ref={trackRef}
+          className="flex gap-4"
+          style={{
+            transform: `translateX(${offset}px)`,
+            transition: "none",
+            width: `${infiniteCards.length * 350}px`
+          }}
+        >
+          {infiniteCards.map((image, index) => {
+            const translationKeys = [
+              { title: "landing_pages_title", description: "landing_pages_description" },
+              { title: "api_title", description: "api_description" },
+              { title: "fullstack_title", description: "fullstack_description" },
+              { title: "mobile_title", description: "mobile_description" },
+              { title: "tests_title", description: "tests_description" },
+              { title: "deployment_title", description: "deployment_description" },
+            ];
 
-          <div
-            id="carousel-scroll"
-            className="flex overflow-hidden snap-x snap-mandatory scroll-smooth gap-0 px-4 pb-4 no-scrollbar w-full"
-          >
-            {displayedCards.map((image, index) => {
-              const translationKeys = [
-                { title: "landing_pages_title", description: "landing_pages_description" },
-                { title: "api_title", description: "api_description" },
-                { title: "fullstack_title", description: "fullstack_description" },
-                { title: "tests_title", description: "tests_description" },
-                { title: "deployment_title", description: "deployment_description" },
-              ];
-              const realIndex = (currentCardStage + index) % cards.length;
-              const key = translationKeys[realIndex];
+            const realIndex = index % cards.length;
+            const key = translationKeys[realIndex];
 
-              return (
-                <div
-                  key={realIndex}
-                  className="card-abilitys snap-center w-full sm:w-full md:w-1/2 lg:w-1/3 p-4 shadow-lg"
-                >
-                  <img
-                    src={image}
-                    alt={`Imagem ${realIndex}`}
-                    className="w-full h-48 object-cover rounded-t-lg hover:scale-105 transition-all duration-300"
-                  />
-                  <h3 className="text-xl font-bold mt-4">
-                    {t(`tecnologias.${key.title}`)}
-                  </h3>
-                  <p className="mt-2">{t(`tecnologias.${key.description}`)}</p>
-                </div>
-              );
-            })}
-          </div>
-
-          <button
-            onClick={CardNextStage}
-            className="buttons-abilitys-right absolute right-[-2rem] h-[95.5%] top-[0%] z-10 p-2"
-          >
-            <ArrowRight size={28} />
-          </button>
+            return (
+              <div
+                key={index}
+                className="card-abilitys w-[350px] bg-black/30 rounded-lg shadow-lg p-3"
+                style={{ flexShrink: 0 }}
+              >
+                <img
+                  src={image}
+                  className="w-full h-48 object-cover rounded-lg"
+                />
+                <h3 className="text-xl font-bold mt-4">
+                  {t(`tecnologias.${key.title}`)}
+                </h3>
+                <p className="mt-2">{t(`tecnologias.${key.description}`)}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* 💡 Carrossel de ícones */}
+      {/* ===== ÍCONES ===== */}
       <div
         id="carousel-container"
         className="stage-carrossel-tech bg-black/90 relative w-[98%] h-[150px] lg:h-[200px] flex items-center justify-center mt-10"
@@ -204,44 +184,41 @@ const Tecnologias = () => {
             <img
               key={index}
               src={icon}
-              alt={`Icon ${index}`}
-              className="w-[60px] md:w-[65px] lg:w-[75px] xl:w-[85px] 
-              transition-transform duration-300 hover:scale-110 animate-wiggle"
+              className="w-[60px] md:w-[65px] lg:w-[75px] xl:w-[85px] transition-transform duration-300 hover:scale-110 animate-wiggle"
               style={{ flexShrink: 0 }}
             />
           ))}
         </div>
       </div>
 
-      {/* 🔘 Indicadores e botões */}
+      {/* Indicadores e botões dos ícones */}
       <div className="flex flex-col items-center mt-4">
         <div className="flex gap-2 mb-3">
           {Array.from({ length: totalStages }).map((_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIconsStage ? "stage-carrossel-tech" : "bg-gray-400"
-              } transition-all`}
+              className={`w-3 h-3 rounded-full ${index === currentIconsStage ? "stage-carrossel-tech" : "bg-gray-400"} transition-all`}
             ></span>
           ))}
         </div>
 
         <div className="flex justify-center mt-1 gap-4">
           <button
-            onClick={handlePrevStage}
-            className="bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
+            onClick={() => setCurrentIconsStage(prev => prev === 0 ? totalStages - 1 : prev - 1)}
+            className="stage-carrossel-button w-12 h-12 rounded-full flex items-center justify-center"
           >
             <ArrowLeftCircle size="100%" />
           </button>
 
           <button
-            onClick={handleNextStage}
-            className="bg-transparent stage-carrossel-button w-12 h-12 rounded-full shadow-md transition-all flex items-center justify-center hover:scale-110 hover:opacity-80"
+            onClick={() => setCurrentIconsStage(prev => prev >= totalStages - 1 ? 0 : prev + 1)}
+            className="stage-carrossel-button w-12 h-12 rounded-full flex items-center justify-center"
           >
             <ArrowRightCircle size="100%" />
           </button>
         </div>
       </div>
+
     </section>
   );
 };

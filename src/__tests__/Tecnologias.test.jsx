@@ -62,7 +62,7 @@ describe("Componente Tecnologias", () => {
 
     const allImages = screen.getAllByRole("img");
 
-    const ImagensEsperadas = 5;
+    const ImagensEsperadas = 6;
 
     expect(allImages.length).toBeGreaterThanOrEqual(ImagensEsperadas);
   });
@@ -89,8 +89,7 @@ describe("Componente Tecnologias", () => {
 
   it("exibe informações em português", async () => {
     await i18n.changeLanguage("pt");
-
-
+  
     render(
       <ThemeProvider>
         <I18nextProvider i18n={i18n}>
@@ -98,22 +97,24 @@ describe("Componente Tecnologias", () => {
         </I18nextProvider>
       </ThemeProvider>
     );
-
+  
     const { tecnologias } = pt;
-
-    const titles = screen.getAllByText(tecnologias.landing_pages_title);
-    expect(titles.length).toBeGreaterThan(0);
-
-    expect(screen.getByText(tecnologias.landing_pages_description)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.api_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.api_description)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.fullstack_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.fullstack_description)).toBeInTheDocument();
+  
+    // como o carrossel se duplica infinitamente, checamos se existe pelo menos 1
+    expect(screen.getAllByText(tecnologias.landing_pages_title).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(tecnologias.landing_pages_description).length).toBeGreaterThan(0);
+  
+    expect(screen.getAllByText(tecnologias.api_title).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(tecnologias.api_description).length).toBeGreaterThan(0);
+  
+    expect(screen.getAllByText(tecnologias.fullstack_title).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(tecnologias.fullstack_description).length).toBeGreaterThan(0);
   });
-
+  
+  
   it("exibe informações em inglês", async () => {
     await i18n.changeLanguage("en");
-
+  
     render(
       <ThemeProvider>
         <I18nextProvider i18n={i18n}>
@@ -121,14 +122,17 @@ describe("Componente Tecnologias", () => {
         </I18nextProvider>
       </ThemeProvider>
     );
-
+  
     const { tecnologias } = en;
-
-    expect(screen.getByText(tecnologias.landing_pages_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.landing_pages_description)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.api_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.api_description)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.fullstack_title)).toBeInTheDocument();
-    expect(screen.getByText(tecnologias.fullstack_description)).toBeInTheDocument();
+  
+    expect(screen.getAllByText(tecnologias.landing_pages_title).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(tecnologias.landing_pages_description).length).toBeGreaterThan(0);
+  
+    expect(screen.getAllByText(tecnologias.api_title).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(tecnologias.api_description).length).toBeGreaterThan(0);
+  
+    expect(screen.getAllByText(tecnologias.fullstack_title).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(tecnologias.fullstack_description).length).toBeGreaterThan(0);
   });
+  
 });
