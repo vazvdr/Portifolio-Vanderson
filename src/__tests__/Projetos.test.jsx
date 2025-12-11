@@ -22,7 +22,7 @@ describe('Projetos section', () => {
     );
 
     expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
-    expect(screen.getByText(/photo shared/i)).toBeInTheDocument();
+    expect(screen.getByText(/praia cheia/i)).toBeInTheDocument();
   });
 
   it('deve renderizar um card por vez em telas pequenas', () => {

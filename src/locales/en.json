@@ -213,6 +213,11 @@
     "subtitle": "Scheduling system for a school.",
     "description": "Created from absolute scratch, this site allows logged-in users to create and manage their appointments. The system includes a REST API, Swagger documentation, database integration, encryption, unit and integration tests, and email sending functionality."
   },
+  "praiacheia": {
+    "title": "Praia Cheia",
+    "subtitle": "An app to show the number of people on the beaches",
+    "description": "This landing page, as well as the Praia Cheia app, were created by me after being hired to execute the brilliant idea of ​​creating an app that would provide information on the best route, weather forecast, and beach occupancy levels in Rio de Janeiro."
+  },
   "photoshared": {
     "title": "PhotoShared",
     "subtitle": "Photo sharing system",

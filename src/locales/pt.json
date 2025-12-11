@@ -213,6 +213,11 @@
       "subtitle": "Sistema de agendamentos aulas.",
       "description": "Criado do absoluto zero, esse site permite que o usuário logado possa fazer e gerenciar seus agendamentos, esse sistema possui API Rest, documentaçao com Swagger, banco de dados, criptografia, testes unitários e de integração e envio de emails.  "
     },
+    "praiacheia": {
+      "title": "Praia Cheia",
+      "subtitle": "Aplicativo para informar lotação das praias",
+      "description": "Essa landing page assim como o aplicativo foram criados por mim depois de ter sido contratado para criar um aplicativo com a brilhante ideia de informar a melhor rota, previsão do tempo e a lotação das praias do Rio de Janeiro."
+    },
     "photoshared": {
       "title": "PhotoShared",
       "subtitle": "Sistema de compartilhamento de fotos",

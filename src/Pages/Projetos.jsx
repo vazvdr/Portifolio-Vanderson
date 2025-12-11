@@ -3,8 +3,9 @@ import CineTrends from "../assets/CineTrends.png";
 import Weather from "../assets/Weather.png";
 import BarbaBrutal from "../assets/BarbaBrutal.png";
 import GamerStore from "../assets/GamerStore.png";
-import ClassScheduling from '../assets/ClassScheduling.jpg'
-import PhotoShared from '../assets/PhotoShared.png'
+import ClassScheduling from '../assets/ClassScheduling.jpg';
+import PhotoShared from '../assets/PhotoShared.png';
+import PraiaCheia from '../assets/PraiaCheia.png';
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { SiSwagger } from 'react-icons/si';
 import { useTranslation } from "react-i18next";
@@ -29,6 +30,22 @@ const projects = [
             "postgresql",
             "docker",
             "githubactions"
+        ],
+    },
+    {
+        title: "Praia Cheia",
+        image: PraiaCheia,
+        link: "https://praiacheia.com.br/",
+        subtitleKey: "projects.praiacheia.subtitle",
+        descriptionKey: "projects.praiacheia.description",
+        techs: [
+            "react",
+            "tailwindcss",
+            "firebase",
+            "nodejs",
+            "nestjs",
+            "redis"
+
         ],
     },
     {
@@ -125,6 +142,8 @@ const techIcons = {
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg",
     postgresql:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    redis: 
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
     docker:
         "https://www.svgrepo.com/show/303231/docker-logo.svg",
     swagger:
@@ -280,7 +299,7 @@ const Projetos = () => {
                                         <div className="flex gap-2">
                                             {project.title === "Class Scheduling" && (
                                                 <a
-                                                    href="https://class-scheduling-backend.onrender.com/swagger-ui/index.html"
+                                                    href="https://class-scheduling-backend.up.railway.app/swagger-ui/index.html"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     aria-label="Swagger"
