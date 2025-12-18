@@ -17,6 +17,7 @@ const projects = [
         image: ClassScheduling,
         link: "https://class-scheduling.vercel.app/",
         repo: "https://github.com/vazvdr/Class-Scheduling-Frontend",
+        swagger: "https://class-scheduling-backend.up.railway.app/swagger-ui/index.html",
         subtitleKey: "projects.classscheduling.subtitle",
         descriptionKey: "projects.classscheduling.description",
         techs: [
@@ -42,6 +43,7 @@ const projects = [
             "react",
             "tailwindcss",
             "firebase",
+            "flutter",
             "nodejs",
             "nestjs",
             "redis"
@@ -118,6 +120,8 @@ const projects = [
 const techIcons = {
     react:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    flutter:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
     firebase:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-plain.svg",
     tailwindcss:
@@ -142,7 +146,7 @@ const techIcons = {
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg",
     postgresql:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    redis: 
+    redis:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
     docker:
         "https://www.svgrepo.com/show/303231/docker-logo.svg",
@@ -296,17 +300,29 @@ const Projetos = () => {
 
                                     {/* Ícones no topo direito */}
                                     <div className="absolute top-0 right-0 flex flex-col gap-1 items-end z-20">
+
                                         <div className="flex gap-2">
-                                            {project.title === "Class Scheduling" && (
-                                                <a
-                                                    href="https://class-scheduling-backend.up.railway.app/swagger-ui/index.html"
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    aria-label="Swagger"
-                                                >
-                                                    <SiSwagger size={26} className="hover:scale-110 text-green-400" />
-                                                </a>
-                                            )}
+
+                                            {/* Swagger */}
+                                            <div>
+                                                {project.swagger ? (
+                                                    <a
+                                                        href={project.swagger}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        aria-label="Swagger"
+                                                    >
+                                                        <SiSwagger size={26} className="hover:scale-110 text-green-400" />
+                                                    </a>
+                                                ) : (
+                                                    <SiSwagger
+                                                        size={26}
+                                                        className="opacity-40"
+                                                    />
+                                                )}
+                                            </div>
+
+                                            {/* External link */}
                                             <a
                                                 href={project.link}
                                                 target="_blank"
@@ -315,16 +331,30 @@ const Projetos = () => {
                                             >
                                                 <FaExternalLinkAlt size={25} className="hover:scale-110" />
                                             </a>
+
                                         </div>
-                                        <a
-                                            href={project.repo}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="GitHub"
-                                        >
-                                            <FaGithub size={26} className="hover:scale-110" />
-                                        </a>
+
+                                        {/* GitHub */}
+                                        <div>
+                                            {project.repo ? (
+                                                <a
+                                                    href={project.repo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label="GitHub"
+                                                >
+                                                    <FaGithub size={26} className="hover:scale-110" />
+                                                </a>
+                                            ) : (
+                                                <FaGithub
+                                                    size={26}
+                                                    className="opacity-40"
+                                                />
+                                            )}
+                                        </div>
+
                                     </div>
+
                                 </div>
                             </div>
                         ))}
