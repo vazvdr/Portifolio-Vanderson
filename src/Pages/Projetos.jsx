@@ -6,6 +6,7 @@ import GamerStore from "../assets/GamerStore.png";
 import ClassScheduling from '../assets/ClassScheduling.jpg';
 import PhotoShared from '../assets/PhotoShared.png';
 import PraiaCheia from '../assets/PraiaCheia.png';
+import GamerExplorer from '../assets/GamerExplorer.png';
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { SiSwagger } from 'react-icons/si';
 import { useTranslation } from "react-i18next";
@@ -49,6 +50,18 @@ const projects = [
             "redis"
 
         ],
+    },
+    {
+        title: "Gamer Explorer",
+        image: GamerExplorer,
+        link: "https://gamer-explorer.vercel.app/",
+        subtitleKey: "projects.gamerexplorer.subtitle",
+        descriptionKey: "projects.gamerexplorer.description",
+        techs: [
+            "angular",
+            "primeng",
+            "tailwindcss"
+        ]
     },
     {
         title: "Photo Shared",
@@ -98,15 +111,6 @@ const projects = [
         ],
     },
     {
-        title: "Buscador de Filmes",
-        image: CineTrends,
-        link: "https://buscadordefilmes.netlify.app",
-        repo: "https://github.com/vazvdr/CineTrends",
-        subtitleKey: "projects.movies.subtitle",
-        descriptionKey: "projects.movies.description",
-        techs: ["react", "tailwindcss", "axios"],
-    },
-    {
         title: "Weather Project",
         image: Weather,
         link: "https://vazvdr.github.io/Weather-Project",
@@ -120,6 +124,10 @@ const projects = [
 const techIcons = {
     react:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    angular:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+    primeng:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/primeng/primeng-original.svg",
     flutter:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
     firebase:

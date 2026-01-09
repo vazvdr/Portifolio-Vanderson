@@ -53,6 +53,18 @@
         "Writing of documents and formal emails"
       ]
   },
+  "cardAngular": {
+    "titulo": "Angular",
+    "subtitulo": "Udemy - 2026",
+    "periodo": "18 hours",
+    "descricao": [
+      "Standalone components",
+      "Signals",
+      "Smart e Dumb components",
+      "Prevention of problems of memory leak",
+      "Implementation of lazy loading"
+    ]
+  },
   "cardGitLab": {
     "titulo": "GitLab - CI/CD",
     "subtitulo": "Udemy - 2025",
@@ -217,6 +229,12 @@
     "title": "Praia Cheia",
     "subtitle": "An app to show the number of people on the beaches",
     "description": "This landing page, as well as the Praia Cheia app, were created by me after being hired to execute the brilliant idea of ​​creating an app that would provide information on the best route, weather forecast, and beach occupancy levels in Rio de Janeiro."
+  },
+  "gamerexplorer": {
+    "title": "GamerExplorer",
+    "subtitle": "System of exibition of games",
+    "description": "A system developed with Angular that uses the RAWG API to display and search for games, allowing users to save their favorite games and watch trailers on YouTube."
+    
   },
   "photoshared": {
     "title": "PhotoShared",

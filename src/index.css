@@ -13,26 +13,26 @@
   --background-button-card-experiences: white;
   --color-button-card-experiences: black;
   --border-contact-info: rgb(172, 177, 171) 1px solid;
-  --gradient-start: #787978; 
-  --gradient-middle: #4d4d55; 
+  --gradient-start: #787978;
+  --gradient-middle: #4d4d55;
   --gradient-end: #090711;
   --text-color: #ffd;
-  --header-line-gradient: linear-gradient(to right,#a4a6a3, #36363f,  #090711);
- 
+  --header-line-gradient: linear-gradient(to right, #a4a6a3, #36363f, #090711);
+
   --menu-btn-bg: #222;
   /* Fundo do botão no Dark Mode */
   --menu-btn-line: white;
   /* Cor das linhas no Dark Mode */
   --text-color-menu: white;
   /* Texto no modo dark */
- 
+
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0.5);
   --text-sobre: rgb(255, 255, 255);
   --text-cover: rgb(131, 120, 120);
 }
 
-:root.light{
-  --background-color: #fff;
+:root.light {
+  --background-color: #f7f6f6;
   --background-color-card: rgb(246, 244, 244);
   --background-color-button: rgb(235, 215, 215);
   --background-button-scroll-top: #222;
@@ -40,11 +40,11 @@
   --background-button-card-experiences: black;
   --color-button-card-experiences: white;
   --border-contact-info: rgb(2, 2, 15) 1px solid;
-  --gradient-start: #5d5d60; 
+  --gradient-start: #5d5d60;
   --gradient-middle: #e5e5e9;
-  --gradient-end: #090810; 
+  --gradient-end: #090810;
   --text-color: black;
-  --header-line-gradient: linear-gradient(to right,#222224, #14152e,  #02010e);
+  --header-line-gradient: linear-gradient(to right, #222224, #14152e, #02010e);
 
   --menu-btn-bg: rgb(246, 244, 244);
   /* Fundo do botão no Dark Mode */
@@ -52,9 +52,9 @@
   /* Cor das linhas no Dark Mode */
   --text-color-menu: #222;
   /* Texto no modo dark */
- 
+
   --box-shadow-dark: 0px 4px 10px rgba(0, 0, 0, 0);
-  --text-sobre: rgb(145, 130, 161);
+  --text-sobre: rgb(70, 70, 71);
   --text-cover: rgb(131, 120, 120);
 }
 
@@ -68,11 +68,11 @@ body {
   height: 100%;
 }
 
-.alien{
+.alien {
   color: var(--gradient-start);
 }
 
-.menu-selector{
+.menu-selector {
   border-color: var(--gradient-start);
 }
 
@@ -96,15 +96,15 @@ body {
   transition: background-color 0.8s ease;
 }
 
-.menu-button:hover{
+.menu-button:hover {
   color: var(--gradient-start);
 }
 
-.buttons-menu{
+.buttons-menu {
   color: var(--text-color);
 }
 
-.buttons-menu:hover{
+.buttons-menu:hover {
   color: var(--gradient-middle);
 }
 
@@ -125,13 +125,13 @@ body {
   background: var(--header-line-gradient);
 }
 
-.contact{
+.contact {
   background-color: var(--menu-btn-bg);
   color: var(--text-color);
   border-color: #26f926;
 }
 
-.text-sobre{
+.text-sobre {
   color: var(--text-sobre);
 }
 
@@ -151,7 +151,7 @@ body {
   font-size: 0.875rem;
 }
 
-.button-card-experiences{
+.button-card-experiences {
   background-color: var(--background-button-card-experiences);
   color: var(--color-button-card-experiences);
 }
@@ -162,8 +162,8 @@ body {
   border-bottom: var(--border-color);
   border-left: var(--border-color);
   border-right: var(--border-color);
-  border-top-left-radius: 55%; 
-  border-bottom-left-radius: 55%; 
+  border-top-left-radius: 55%;
+  border-bottom-left-radius: 55%;
 }
 
 .buttons-abilitys-right {
@@ -188,7 +188,7 @@ body {
 .buttons-abilitys-right:hover {
   border-top: var(--border-color);
   border-bottom: var(--border-color);
-  
+
   border-top-right-radius: 55%;
   border-bottom-right-radius: 55%;
   background-color: var(--background-color-button);
@@ -201,7 +201,7 @@ body {
   border-top: var(--border-color);
   border-bottom: var(--border-color);
   border-right: var(--border-color);
-  box-shadow: var(--box-shadow);  
+  box-shadow: var(--box-shadow);
   padding: 0.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 0.875rem;
@@ -229,32 +229,34 @@ body {
   border-bottom: var(--border-color);
 }
 
-.stage-carrossel-tech{
+.stage-carrossel-tech {
   border: var(--border-color);
   border-radius: 2rem;
 }
 
-.stage-carrossel-button{
+.stage-carrossel-button {
   color: var(--gradient-start);
 }
 
-.button-project-next{
+.button-project-next {
   border: var(--border-color);
 }
-.button-project-next:hover{
+
+.button-project-next:hover {
   border: var(--border-color);
   background-color: var(--gradient-middle);
 }
 
-.button-project-back{
+.button-project-back {
   border: var(--border-color)
 }
-.button-project-back:hover{
+
+.button-project-back:hover {
   border: var(--border-color);
   background-color: var(--gradient-middle);
 }
 
-.contact-info{
+.contact-info {
   border-left: var(--border-contact-info);
   border-bottom: var(--border-contact-info);
   border-radius: 0.5rem;
@@ -262,7 +264,7 @@ body {
 
 .formulario {
   background-color: var(--background-color-card);
-  border-width: 2px; 
+  border-width: 2px;
   border-style: solid;
   border-color: var(--gradient-start);
   border-radius: 0.8rem;
@@ -277,6 +279,7 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -295,6 +298,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -304,6 +308,7 @@ body {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -316,7 +321,8 @@ body {
 
 #carousel-track {
   display: flex;
-  width: 200%; /* Espaço para o loop contínuo */
+  width: 200%;
+  /* Espaço para o loop contínuo */
 }
 
 
@@ -324,21 +330,27 @@ body {
   from {
     transform: translateX(0%);
   }
+
   to {
     transform: translateX(-100%);
   }
 }
 
 @keyframes wiggle {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateX(0px);
   }
+
   25% {
     transform: translateX(-5px);
   }
+
   50% {
     transform: translateX(5px);
   }
+
   75% {
     transform: translateX(-1px);
   }
@@ -381,7 +393,7 @@ body {
 .animate-slide-left {
   animation: slideInLeft 1.5s ease-out;
 }
- 
+
 .scroll-marquee {
   display: flex;
   animation: marquee 25s linear infinite;
@@ -392,8 +404,13 @@ body {
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes slideInRight {
@@ -424,9 +441,11 @@ body {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.1);
   }
+
   100% {
     transform: scale(1);
   }
@@ -509,7 +528,8 @@ body {
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem}
+    --radius: 0.5rem
+  }
 
   .dark {
 
@@ -559,7 +579,8 @@ body {
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%}
+    --chart-5: 340 75% 55%
+  }
 }
 
 @layer base {

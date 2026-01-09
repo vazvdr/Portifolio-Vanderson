@@ -11,6 +11,7 @@ import Spring from '../assets/Spring2025.jpg';
 import SpringMicrosservices from '../assets/SpringMicrosservices2025.jpg';
 import SpringRabbitMQ from '../assets/SpringRabbitMQ.jpg';
 import ReactCourse from '../assets/React.jpg';
+import Angular from '../assets/Angular.jpg';
 
 const Formacao = () => {
   const { t } = useTranslation();
@@ -62,6 +63,7 @@ const Formacao = () => {
   const cursos = [
     { img: Estacio, titulo: "formacao.cardCollege.titulo", instituicao: "formacao.cardCollege.subtitulo", periodo: "formacao.cardCollege.periodo", descricao: "formacao.cardCollege.descricao" },
     { img: English, titulo: "formacao.cardEnglish.titulo", instituicao: "formacao.cardEnglish.subtitulo", periodo: "formacao.cardEnglish.periodo", descricao: "formacao.cardEnglish.descricao" },
+    { img: Angular, titulo: "formacao.cardAngular.titulo", instituicao: "formacao.cardAngular.subtitulo", periodo: "formacao.cardAngular.periodo", descricao: "formacao.cardAngular.descricao" },
     { img: GitLab, titulo: "formacao.cardGitLab.titulo", instituicao: "formacao.cardGitLab.subtitulo", periodo: "formacao.cardGitLab.periodo", descricao: "formacao.cardGitLab.descricao" },
     { img: SpringRabbitMQ, titulo: "formacao.cardSpringRabbitMQ.titulo", instituicao: "formacao.cardSpringRabbitMQ.subtitulo", periodo: "formacao.cardSpringRabbitMQ.periodo", descricao: "formacao.cardSpringRabbitMQ.descricao" },
     { img: SpringMicrosservices, titulo: "formacao.cardSpringMicrosservices.titulo", instituicao: "formacao.cardSpringMicrosservices.subtitulo", periodo: "formacao.cardSpringMicrosservices.periodo", descricao: "formacao.cardSpringMicrosservices.descricao" },
@@ -76,9 +78,8 @@ const Formacao = () => {
   return (
     <section
       id="formacao"
-      className={`relative py-16 w-full flex flex-col items-center transition-all duration-1000 ${
-        animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      className={`relative py-16 w-full flex flex-col items-center transition-all duration-1000 ${animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}
     >
       <h1
         className="text-2xl md:text-3xl md:font-bold  mb-8 mt-20 animate-slide-left"

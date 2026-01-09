@@ -53,6 +53,18 @@
         "Redação de documentos e e-mails formais"
       ]
     },
+    "cardAngular": {
+      "titulo": "Angular",
+      "subtitulo": "Udemy - 2026",
+      "periodo": "18 horas",
+      "descricao": [
+        "Standalone components",
+        "Signals",
+        "Smart e Dumb components",
+        "Prevenção de problemas de memory leak",
+        "Implementação de lazy loading"
+      ]
+    },
     "cardGitLab": {
       "titulo": "GitLab - CI/CD",
       "subtitulo": "Udemy - 2025",
@@ -217,6 +229,11 @@
       "title": "Praia Cheia",
       "subtitle": "Aplicativo para informar lotação das praias",
       "description": "Essa landing page assim como o aplicativo foram criados por mim depois de ter sido contratado para criar um aplicativo com a brilhante ideia de informar a melhor rota, previsão do tempo e a lotação das praias do Rio de Janeiro."
+    },
+    "gamerexplorer": {
+      "title": "GamerExplorer",
+      "subtitle": "Sistema de exibição de jogos",
+      "description": "Sistema feito em Angular que consome a RAWG API para exibir e buscar jogos e permite o usuário salvar seus jogos favoritos e ver o trailer no Youtube"
     },
     "photoshared": {
       "title": "PhotoShared",
