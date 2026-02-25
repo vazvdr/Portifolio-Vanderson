@@ -170,7 +170,7 @@ const Experiencias = () => {
                   flex flex-col justify-between relative card shadow-lg rounded-lg overflow-hidden
                   transition-transform transform hover:shadow-2xl
                   w-[90%] sm:w-[80%] lg:w-[48%] xl:w-[35%]
-                  h-[500px] sm:h-[460px] md:h-[400px] lg:h-[600px] xl:h-[460px]
+                  h-[520px] sm:h-[460px] md:h-[400px] lg:h-[600px] xl:h-[460px]
                 `}
               >
                 <div className="relative w-full h-full perspective">
