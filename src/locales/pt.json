@@ -183,7 +183,7 @@
       "subtitulo": "Freelancer · Freelance",
       "periodo": "Ago de 2023 - o momento",
       "descricao": [
-        "Desenvolvimento de aplicações frontend usando React, Next.js",
+        "Desenvolvimento de aplicações frontend usando React, Next.js ou Angular",
         "Criação de API’S usando Spring Boot, ou Nest.js com SQL, NoSQL ou Redis",
         "Criação de sistemas fullstack com arquitetura de microsserviços",
         "Testes unitários e de integração com Vitest, Cypress, Junit ou Jest e Docker",
@@ -193,12 +193,12 @@
     },
     "card3": {
       "titulo": "Desenvolvedor Mobile",
-      "subtitulo": "Freelancer · Freelance",
+      "subtitulo": "Freelancer · Praia Cheia",
       "periodo": "Nov de 2025 - o momento",
       "descricao": [
-        "Desenvolvimento de aplicativos para iOS e Android com Dart e Flutter",
-        "Criação de API’S usando Spring Boot, ou Nest.js com SQL, NoSQL ou Redis ",
-        "Desenvolvimento com ambiente CI/CD como GitHub actions ou GitLab."
+        "Desenvolvimento do aplicativo Praia Cheia usando Dart e Flutter.",
+        "Arquitetura do backend do aplicativo usando Nest.js, Redis e Firebase.",
+        "Desenvolvimento da Landing Page de divulgação usando React, TailwindCSS e Firebase."
       ]
     }
   },

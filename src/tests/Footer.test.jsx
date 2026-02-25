@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Footer from '../Pages/Footer'
+import Footer from '../pages/Footer'
 import { describe, it, expect } from 'vitest'
 import React from 'react'
 

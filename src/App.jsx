@@ -1,12 +1,11 @@
-import React from "react";
-import Contact from "./Pages/Contact";
-import Experiencias from "./Pages/Experiencias";
-import Header from "./Pages/Header";
-import Projetos from "./Pages/Projetos";
-import Sobre from "./Pages/Sobre";
-import Tecnologias from "./Pages/Tecnologias";
-import Footer from "./Pages/Footer";
-import Formacao from "./Pages/Formacao";
+import Contact from "./pages/Contact";
+import Experiencias from "./pages/Experiencias";
+import Header from "./pages/Header";
+import Projetos from "./pages/Projetos";
+import Sobre from "./pages/Sobre";
+import Tecnologias from "./pages/Tecnologias";
+import Footer from "./pages/Footer";
+import Formacao from "./pages/Formacao";
 
 function App() {
     return (

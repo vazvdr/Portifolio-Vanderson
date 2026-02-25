@@ -1,8 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import Contact from '../Pages/Contact';
+import Contact from '../pages/Contact';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '../i18n';
-import React from 'react';
 import { describe, it, expect } from 'vitest'
 import pt from '../locales/pt.json'
 import en from '../locales/en.json'

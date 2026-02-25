@@ -183,7 +183,7 @@
     "subtitulo": "Freelancer · Freelance",
     "periodo": "Aug 2023 - Present",
     "descricao": [
-      "Frontend application development using React, Next.js",
+      "Frontend application development using React, Next.js, or Angular",
       "API creation using Spring Boot or Nest.js with SQL or NoSQL",
       "Creation of full stack system with microservices architecture ", 
       "Unit and integration testing with Vitest, Cypress, JUnit or Jest and Docker",
@@ -196,9 +196,9 @@
     "subtitulo": "Freelancer · Freelance",
     "periodo": "Nov 2025 - Present",
     "descricao": [
-      "Mobile programs for iOS and Android systems with Dart and Flutter",
-      "Creation API's with Spring or Nest.js With SQL, NoSQL or Redis",
-      "Development with CI/CD environments with GitHub Actions or GitLab"
+        "Development of the Praia Cheia app.",
+        "Backend architecture of the app using Nest.js, Redis, and Firebase.",
+        "Development of the promotional landing page."
     ]
   }
 },
