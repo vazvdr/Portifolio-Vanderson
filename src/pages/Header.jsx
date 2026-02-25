@@ -331,7 +331,7 @@ const Header = () => {
       {showScrollButton && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top-button w-12 h-10 fixed bottom-28 mr-[1%] p-2 shadow-lg 
+          className="scroll-to-top-button w-10 h-10 fixed bottom-28 mr-[1%] p-2 shadow-lg 
           rounded-lg transform hover:scale-110 transition duration-300 border border-zinc-400 z-50"
         >
           <svg

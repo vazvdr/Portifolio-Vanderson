@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import CineTrends from "../assets/CineTrends.png";
 import Weather from "../assets/Weather.png";
 import BarbaBrutal from "../assets/BarbaBrutal.png";
 import GamerStore from "../assets/GamerStore.png";
 import ClassScheduling from '../assets/ClassScheduling.jpg';
-import PhotoShared from '../assets/PhotoShared.png';
 import PraiaCheia from '../assets/PraiaCheia.png';
 import GamerExplorer from '../assets/GamerExplorer.png';
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
@@ -62,19 +60,6 @@ const projects = [
             "primeng",
             "tailwindcss"
         ]
-    },
-    {
-        title: "Photo Shared",
-        image: PhotoShared,
-        link: "https://photoshared.vercel.app/",
-        repo: "https://github.com/vazvdr/PhotoShared",
-        subtitleKey: "projects.photoshared.subtitle",
-        descriptionKey: "projects.photoshared.description",
-        techs: [
-            "react",
-            "tailwindcss",
-            "firebase"
-        ],
     },
     {
         title: "GamerStore",
@@ -265,7 +250,7 @@ const Projetos = () => {
                               ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}
                               ${cardsPerView === 2 ? "md:basis-full" : "basis-full"}
                               w-[80%] sm:w-[80%] md:w-[90%] lg:w-[48%] xl:w-[35%]
-                              h-auto md:h-[410px] lg:h-[340px] xl:h-[320px]
+                              h-auto md:h-[440px] lg:h-[385px] xl:h-[320px]
                             `}
                                 style={{
                                     backgroundImage: `url(${project.image})`,

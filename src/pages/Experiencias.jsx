@@ -10,8 +10,6 @@ const Experiencias = () => {
   const [cardsPerView, setCardsPerView] = useState(2);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  /* ================== ARRAYS COMPLETOS ================== */
-
   const imagesCard1 = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
     "https://www.svgrepo.com/show/349330/css3.svg",
@@ -74,11 +72,11 @@ const Experiencias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
   ];
 
- const experiences = [
-  { images: imagesCard3, link: "https://praiacheia.com.br", cardIndex: 3 },
-  { images: imagesCard2, cardIndex: 2 },
-  { images: imagesCard1, link: "https://01bit.tech/", cardIndex: 1 },
-];
+  const experiences = [
+    { images: imagesCard3, link: "https://praiacheia.com.br", cardIndex: 3 },
+    { images: imagesCard2, cardIndex: 2 },
+    { images: imagesCard1, link: "https://01bit.tech/", cardIndex: 1 },
+  ];
 
   useEffect(() => {
     const updateCardsPerView = () => {
@@ -86,8 +84,8 @@ const Experiencias = () => {
         window.innerWidth < 768
           ? 1
           : window.innerWidth < 1024
-          ? 2
-          : 3;
+            ? 1
+            : 3;
 
       setCardsPerView(perView);
     };
@@ -96,8 +94,6 @@ const Experiencias = () => {
     window.addEventListener("resize", updateCardsPerView);
     return () => window.removeEventListener("resize", updateCardsPerView);
   }, []);
-
-  /* ================== ANIMAÇÃO ================== */
 
   useEffect(() => {
     const section = document.querySelector("#experiencias");
@@ -114,8 +110,6 @@ const Experiencias = () => {
 
     if (section) observer.observe(section);
   }, []);
-
-  /* ================== CONTROLES ================== */
 
   const handlePrev = () => {
     setCurrentIndex(
@@ -149,25 +143,22 @@ const Experiencias = () => {
       <div className="mx-auto lg:w-[92%] px-4 relative">
 
         <h1
-          className={`text-3xl font-bold text-center mb-8 mt-12 ${
-            animate ? "animate-slide-down" : ""
-          }`}
+          className={`text-3xl font-bold text-center mb-8 mt-12 ${animate ? "animate-slide-down" : ""
+            }`}
           style={{ fontFamily: "DoctorGlitch" }}
         >
           {t("experiencias.titulo")}
         </h1>
+        <button
+          onClick={handlePrev}
+          className="absolute left-4 md:-right-20  lg:-left-3
+                      top-1/2 -translate-y-1/2
+                      z-20 w-10
+                      rounded-tl-full rounded-bl-full">
+          <ArrowLeft size={24} />
+        </button>
+        <div className="relative w-full flex justify-center">
 
-        <div className="flex items-center justify-center relative w-full">
-
-          {/* BOTÃO VOLTAR (ALTURA REDUZIDA) */}
-          <button
-            onClick={handlePrev}
-            className="button-project-back relative left-0 z-20 w-10
-              rounded-tl-full rounded-bl-full
-              h-[220px] md:h-[260px] lg:h-[240px]"
-          >
-            <ArrowLeft size={24} />
-          </button>
 
           {/* CARDS */}
           <div className="flex gap-1 overflow-hidden w-full justify-center px-2">
@@ -178,15 +169,14 @@ const Experiencias = () => {
                   group
                   flex flex-col justify-between relative card shadow-lg rounded-lg overflow-hidden
                   transition-transform transform hover:shadow-2xl
-                  w-[98%] sm:w-[80%] md:w-[90%] lg:w-[48%] xl:w-[35%]
-                  h-[460px] md:h-[520px] lg:h-[480px] xl:h-[460px]
+                  w-[90%] sm:w-[80%] lg:w-[48%] xl:w-[35%]
+                  h-[500px] sm:h-[460px] md:h-[400px] lg:h-[600px] xl:h-[460px]
                 `}
               >
                 <div className="relative w-full h-full perspective">
                   <div
-                    className={`relative w-full h-full transition-transform duration-700 transform-style preserve-3d ${
-                      showStacks[card.realIndex] ? "rotate-y-180" : ""
-                    }`}
+                    className={`relative w-full h-full transition-transform duration-700 transform-style preserve-3d ${showStacks[card.realIndex] ? "rotate-y-180" : ""
+                      }`}
                   >
                     {/* FRENTE */}
                     <div className="absolute w-full h-full backface-hidden pt-1 px-6 pb-6 flex flex-col justify-between">
@@ -213,14 +203,14 @@ const Experiencias = () => {
                           {t(`experiencias.card${card.cardIndex}.periodo`)}
                         </p>
                         <div className="mt-4 text-sm space-y-2">
-                        {t(`experiencias.card${card.cardIndex}.descricao`, {
-                          returnObjects: true,
-                        }).map((item, i) => (
-                          <p key={i} className="leading-relaxed">
-                            • {item}
-                          </p>
-                        ))}
-                      </div>
+                          {t(`experiencias.card${card.cardIndex}.descricao`, {
+                            returnObjects: true,
+                          }).map((item, i) => (
+                            <p key={i} className="leading-relaxed">
+                              • {item}
+                            </p>
+                          ))}
+                        </div>
                       </div>
 
                       <button
@@ -234,21 +224,21 @@ const Experiencias = () => {
                     {/* VERSO */}
                     <div className="absolute w-full h-full backface-hidden rotate-y-180 pt-2 px-6 pb-6 flex flex-col justify-between">
                       <div className="flex-1 flex flex-col items-center justify-center">
-                      <h2 className="text-xl font-orbitron tracking-wider text-center drop-shadow-lg shadow-black mb-4">
-                        {t("experiencias.stackTitulo")}
-                      </h2>
+                        <h2 className="text-xl font-orbitron tracking-wider text-center drop-shadow-lg shadow-black mb-4">
+                          {t("experiencias.stackTitulo")}
+                        </h2>
 
-                      <div className="flex flex-wrap gap-3 justify-center">
-                        {card.images.map((src, imgIndex) => (
-                          <img
-                            key={imgIndex}
-                            src={src}
-                            alt={`Tech ${imgIndex}`}
-                            className="w-9 h-9 transition-transform hover:scale-110"
-                          />
-                        ))}
+                        <div className="flex flex-wrap gap-3 justify-center">
+                          {card.images.map((src, imgIndex) => (
+                            <img
+                              key={imgIndex}
+                              src={src}
+                              alt={`Tech ${imgIndex}`}
+                              className="w-9 h-9 transition-transform hover:scale-110"
+                            />
+                          ))}
+                        </div>
                       </div>
-                    </div>
 
                       <button
                         onClick={() => toggleStack(card.realIndex)}
@@ -264,16 +254,16 @@ const Experiencias = () => {
             ))}
           </div>
 
-          {/* BOTÃO AVANÇAR (ALTURA REDUZIDA) */}
-          <button
-            onClick={handleNext}
-            className="button-project-next relative right-0 z-20 w-10
-              rounded-tr-full rounded-br-full
-              h-[220px] md:h-[260px] lg:h-[240px]"
-          >
-            <ArrowRight size={24} />
-          </button>
         </div>
+        <button
+          onClick={handleNext}
+          className="absolute right-0 md:-right-3 lg:-right-7
+            top-1/2 -translate-y-1/2
+            z-20 w-10
+            rounded-tr-full rounded-br-full
+            h-[220px] md:h-[260px] lg:h-[240px]">
+          <ArrowRight size={24} />
+        </button>
       </div>
     </section>
   );
