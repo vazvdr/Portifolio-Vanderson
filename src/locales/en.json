@@ -236,11 +236,6 @@
     "description": "A system developed with Angular that uses the RAWG API to display and search for games, allowing users to save their favorite games and watch trailers on YouTube."
     
   },
-  "photoshared": {
-    "title": "PhotoShared",
-    "subtitle": "Photo sharing system",
-    "description": "Created from absolute scratch, this site consumes the Unsplash API to list random photos and allows the user to like, follow authors, and post photos, with all user data being saved in Firebase."
-  },
   "barbabrutal": {
     "title": "Barbabrutal",
     "subtitle": "Barbershop appointments made easy.",
@@ -248,8 +243,8 @@
   },
   "gamerstore": {
     "title": "GamerStore",
-    "subtitle": "Online store for gamer products.",
-    "description": "This system allows the user to view the products listed by the API, see the products in the shopping cart, and view their orders stored in the browser's localStorage."
+    "subtitle": "E-commerce with microsservice archtecture",
+    "description": "This site is a true e-commerce with event-oriented microservice architecture, with integration with Stripe API for payment, cart, sign up of users, address and and credit card and show orders and products. "
   },
   "weather": {
     "title": "Weather Project",

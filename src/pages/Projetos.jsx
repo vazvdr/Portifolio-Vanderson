@@ -12,23 +12,26 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const projects = [
     {
-        title: "Class Scheduling",
-        image: ClassScheduling,
-        link: "https://class-scheduling.vercel.app/",
-        repo: "https://github.com/vazvdr/Class-Scheduling-Frontend",
-        swagger: "https://class-scheduling-backend.up.railway.app/swagger-ui/index.html",
-        subtitleKey: "projects.classscheduling.subtitle",
-        descriptionKey: "projects.classscheduling.description",
+        title: "GamerStore",
+        image: GamerStore,
+        link: "https://gamerstore-shop.vercel.app/",
+        repo: "https://github.com/vazvdr/GamerStore-Microsservice",
+        swagger: "https://api-gateway-gamerstore.up.railway.app/webjars/swagger-ui/index.html",
+        subtitleKey: "projects.gamerstore.subtitle",
+        descriptionKey: "projects.gamerstore.description",
         techs: [
             "react",
             "tailwindcss",
-            "axios",
-            "cypress",
+            "java",
             "spring",
             "swagger",
             "junit",
             "postgresql",
+            "redis",
+            "mongodb",
+            "rabbitmq",
             "docker",
+            "kubernetes",
             "githubactions"
         ],
     },
@@ -50,6 +53,27 @@ const projects = [
         ],
     },
     {
+        title: "Class Scheduling",
+        image: ClassScheduling,
+        link: "https://class-scheduling.vercel.app/",
+        repo: "https://github.com/vazvdr/Class-Scheduling-Frontend",
+        swagger: "https://class-scheduling-backend.up.railway.app/swagger-ui/index.html",
+        subtitleKey: "projects.classscheduling.subtitle",
+        descriptionKey: "projects.classscheduling.description",
+        techs: [
+            "react",
+            "tailwindcss",
+            "axios",
+            "cypress",
+            "spring",
+            "swagger",
+            "junit",
+            "postgresql",
+            "docker",
+            "githubactions"
+        ],
+    },
+    {
         title: "Gamer Explorer",
         image: GamerExplorer,
         link: "https://gamer-explorer.vercel.app/",
@@ -60,23 +84,6 @@ const projects = [
             "primeng",
             "tailwindcss"
         ]
-    },
-    {
-        title: "GamerStore",
-        image: GamerStore,
-        link: "https://game-nest.vercel.app/",
-        repo: "https://github.com/vazvdr/GamerStore-Frontend",
-        subtitleKey: "projects.gamerstore.subtitle",
-        descriptionKey: "projects.gamerstore.description",
-        techs: [
-            "react",
-            "tailwindcss",
-            "nextjs",
-            "typescript",
-            "nodejs",
-            "nestjs",
-            "postgresql",
-        ],
     },
     {
         title: "Barbabrutal",
@@ -141,8 +148,14 @@ const techIcons = {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     redis:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
+    mongodb:
+        "https://www.svgrepo.com/show/439231/mongodb.svg",
     docker:
         "https://www.svgrepo.com/show/303231/docker-logo.svg",
+    kubernetes:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
+    rabbitmq:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
     swagger:
         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg",
     githubactions:

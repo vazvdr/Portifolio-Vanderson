@@ -1,4 +1,3 @@
-import React from "react";
 import Foto from "../assets/Foto2.jpg";
 import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
 import { useTranslation } from "react-i18next";

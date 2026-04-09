@@ -21,7 +21,7 @@ describe('Projetos section', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
+    expect(screen.getByText(/GamerStore/i)).toBeInTheDocument();
     expect(screen.getByText(/praia cheia/i)).toBeInTheDocument();
   });
 
@@ -35,7 +35,7 @@ describe('Projetos section', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByText(/class scheduling/i)).toBeInTheDocument();
+    expect(screen.getByText(/GamerStore/i)).toBeInTheDocument();
   });
 
   it('deve avançar os cards ao clicar no botão "Avançar"', () => {
