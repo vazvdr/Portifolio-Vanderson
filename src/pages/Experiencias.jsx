@@ -110,41 +110,20 @@ const Experiencias = () => {
   };
 
   return (
-    <section id="experiencias" className="py-6">
+    <section id="experiencias" className="py-3">
       <div className="mx-auto w-[96%] sm:w-[75%] md:w-[80%] lg:w-[50%] px-4 relative">
 
         <h1
-          className={`text-3xl font-bold text-center mb-8 mt-12 ${animate ? "animate-slide-down" : ""
+          className={`text-3xl font-bold text-center mb-1 mt-12 ${animate ? "animate-slide-down" : ""
             }`}
           style={{ fontFamily: "DoctorGlitch" }}
         >
           {t("experiencias.titulo")}
         </h1>
 
-        {/* BOTÕES */}
-        <button
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-          className={`absolute left-1 top-1/2 -translate-y-1/2 z-20 ${currentIndex === 0 ? "opacity-30" : "hover:scale-110"
-            }`}
-        >
-          <ArrowLeft size={40} />
-        </button>
-
-        <button
-          onClick={handleNext}
-          disabled={currentIndex === experiences.length - 1}
-          className={`absolute right-1 top-1/2 -translate-y-1/2 z-20 ${currentIndex === experiences.length - 1
-            ? "opacity-30"
-            : "hover:scale-110"
-            }`}
-        >
-          <ArrowRight size={40} />
-        </button>
-
         {/* CARROSSEL */}
         <div className="relative w-full flex justify-center overflow-hidden">
-          <div className="relative w-full h-[520px] flex items-center justify-center">
+          <div className="relative w-full h-[435px] md:h-[420px] flex items-center justify-center perspective-[1200px]">
 
             {experiences.map((card, index) => {
               const offset = index - currentIndex;
@@ -152,27 +131,28 @@ const Experiencias = () => {
               return (
                 <div
                   key={index}
-                  className={`
-                    absolute transition-all duration-500 ease-in-out
-                    ${offset === 0 ? "z-20 scale-100 opacity-100" : ""}
-                    ${Math.abs(offset) === 1 ? "z-10 scale-90 opacity-40" : ""}
-                    ${Math.abs(offset) > 1 ? "opacity-0 scale-75" : ""}
-                  `}
+                  className="absolute transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
-                    transform: `translateX(${offset * 92}%)`,
+                    transform: `
+                  translateX(${offset * 90}%)
+                  scale(${offset === 0 ? 1 : 0.85})
+                  rotateY(${offset * -25}deg)
+                  translateZ(${offset === 0 ? 0 : -100}px)
+                `,
+                    opacity: Math.abs(offset) > 1 ? 0 : 1,
+                    filter: offset === 0 ? "blur(0px)" : "blur(1.5px)",
+                    zIndex: 20 - Math.abs(offset),
                     width: "380px",
                   }}
                 >
-                  <div className="min-h-[500px] perspective">
+                  <div className="h-full min-h-[350px] md:min-h-[380px] lg:min-h-[400px]">
                     <div
-                      className={`
-                        relative w-full h-full transition-transform duration-700 transform-style
-                        ${showStacks[index] ? "rotate-y-180" : ""}
-                      `}
+                      className={`relative w-full h-full transition-transform duration-700 transform-style ${showStacks[index] ? "rotate-y-180" : ""
+                        }`}
                     >
 
                       {/* FRENTE */}
-                      <div className="absolute w-full h-full backface-hidden rounded-lg p-6 flex flex-col justify-between">
+                      <div className="relative w-full h-full backface-hidden rounded-xl p-1 flex flex-col justify-between">
 
                         {card.link && (
                           <a
@@ -195,9 +175,10 @@ const Experiencias = () => {
                           </p>
 
                           <div className="mt-4 text-sm space-y-2">
-                            {t(`experiencias.card${card.cardIndex}.descricao`, {
-                              returnObjects: true,
-                            }).map((item, i) => (
+                            {t(
+                              `experiencias.card${card.cardIndex}.descricao`,
+                              { returnObjects: true }
+                            ).map((item, i) => (
                               <p key={i}>• {item}</p>
                             ))}
                           </div>
@@ -211,14 +192,13 @@ const Experiencias = () => {
                         </button>
                       </div>
 
-                      <div className="absolute w-full h-full backface-hidden rotate-y-180 rounded-lg p-6 flex flex-col">
+                      <div className="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 rounded-xl p-1 flex flex-col justify-between">
 
-                        <h2 className="text-xl font-orbitron tracking-wider text-center drop-shadow-lg shadow-black mb-4">
-                          {t("experiencias.stackTitulo")}
-                        </h2>
+                        <div>
+                          <h2 className="text-xl text-center mb-4 font-orbitron tracking-wider">
+                            {t("experiencias.stackTitulo")}
+                          </h2>
 
-                        {/* ÁREA DOS ÍCONES */}
-                        <div className="flex-1 flex items-center justify-center">
                           <div className="flex flex-wrap gap-3 justify-center">
                             {card.images.map((src, i) => (
                               <img key={i} src={src} className="w-10 h-10" />
@@ -226,10 +206,9 @@ const Experiencias = () => {
                           </div>
                         </div>
 
-                        {/* BOTÃO */}
                         <button
                           onClick={() => toggleStack(index)}
-                          className="button-card-experiences w-full py-2 rounded-lg mt-4"
+                          className="button-card-experiences mt-4 py-2 rounded-lg"
                         >
                           {t("experiencias.voltar")}
                         </button>
@@ -245,21 +224,42 @@ const Experiencias = () => {
           </div>
         </div>
 
-        {/* BOLINHAS */}
-        <div className="flex justify-center mt-6 gap-2">
-          {experiences.map((_, index) => (
-            <div
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`
-                w-3 h-3 rounded-full cursor-pointer transition-all
-                ${currentIndex === index
+        {/* CONTROLES ABAIXO DO CARROSSEL */}
+        <div className="flex items-center justify-center mt-0 gap-4">
+
+          <button
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            className={`transition-all ${currentIndex === 0 ? "opacity-30" : "hover:scale-110"
+              }`}
+          >
+            <ArrowLeft size={32} />
+          </button>
+
+          <div className="flex gap-2">
+            {experiences.map((_, index) => (
+              <div
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-3 h-3 rounded-full cursor-pointer transition-all ${currentIndex === index
                   ? "bg-zinc-700 scale-125"
-            : "bg-zinc-400 hover:bg-black/70"
-                }
-              `}
-            />
-          ))}
+                  : "bg-zinc-400 hover:bg-black/70"
+                  }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNext}
+            disabled={currentIndex === experiences.length - 1}
+            className={`transition-all ${currentIndex === experiences.length - 1
+              ? "opacity-30"
+              : "hover:scale-110"
+              }`}
+          >
+            <ArrowRight size={32} />
+          </button>
+
         </div>
 
       </div>
