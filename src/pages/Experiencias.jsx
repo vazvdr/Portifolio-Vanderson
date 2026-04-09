@@ -111,7 +111,7 @@ const Experiencias = () => {
 
   return (
     <section id="experiencias" className="py-3">
-      <div className="mx-auto w-[96%] sm:w-[75%] md:w-[80%] lg:w-[50%] px-4 relative">
+      <div className="mx-auto w-[90%] sm:w-[75%] md:w-[80%] lg:w-[50%] px-4 relative">
 
         <h1
           className={`text-3xl font-bold text-center mb-1 mt-12 ${animate ? "animate-slide-down" : ""
