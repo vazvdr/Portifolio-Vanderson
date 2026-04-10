@@ -114,7 +114,7 @@ const Experiencias = () => {
       <div className="mx-auto w-screen sm:w-[75%] md:w-[80%] lg:w-[50%] px-4 relative">
 
         <h1
-          className={`text-3xl font-bold text-center mb-1 mt-12 ${animate ? "animate-slide-down" : ""
+          className={`text-3xl font-bold text-center mb-4 md:mb-12 mt-12 ${animate ? "animate-slide-down" : ""
             }`}
           style={{ fontFamily: "DoctorGlitch" }}
         >
@@ -230,7 +230,9 @@ const Experiencias = () => {
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
-            className={`transition-all ${currentIndex === 0 ? "opacity-30" : "hover:scale-110"
+            className={`transition-all ${currentIndex === 0 ? "opacity-30 border border-zinc-500 rounded-lg" 
+              : 
+              "hover:scale-110 rounded-lg border border-zinc-500"
               }`}
           >
             <ArrowLeft size={32} />
@@ -253,8 +255,8 @@ const Experiencias = () => {
             onClick={handleNext}
             disabled={currentIndex === experiences.length - 1}
             className={`transition-all ${currentIndex === experiences.length - 1
-              ? "opacity-30"
-              : "hover:scale-110"
+              ? "opacity-30 rounded-lg border border-zinc-500"
+              : "hover:scale-110 rounded-lg border border-zinc-500"
               }`}
           >
             <ArrowRight size={32} />
