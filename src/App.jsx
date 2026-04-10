@@ -1,6 +1,6 @@
 import Contact from "./pages/Contact";
 import Experiencias from "./pages/Experiencias";
-import Header from "./pages/Header";
+import Header from "../src/pages/Header";
 import Projetos from "./pages/Projetos";
 import Sobre from "./pages/Sobre";
 import Tecnologias from "./pages/Tecnologias";
