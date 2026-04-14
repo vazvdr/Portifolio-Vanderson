@@ -26,7 +26,6 @@ export const useHeader = () => {
     "#contato",
   ];
 
-  // 🔥 fechar dropdown idioma
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (langRefMobile.current && !langRefMobile.current.contains(event.target)) {
@@ -41,12 +40,10 @@ export const useHeader = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // 🔥 toggle menu
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
-  // 🔥 fechar menu ao clicar fora
   useEffect(() => {
   const handleClickOutside = (event) => {
     if (
@@ -62,7 +59,6 @@ export const useHeader = () => {
     document.removeEventListener("mousedown", handleClickOutside);
 }, []);
 
-  // 🔥 scroll (botão topo + seleção menu)
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollButton(window.scrollY > 100);

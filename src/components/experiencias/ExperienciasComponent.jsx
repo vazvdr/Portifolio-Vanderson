@@ -7,16 +7,16 @@ const ExperienciasComponent = ({
   showStacks,
   currentIndex,
   experiences,
-  handlePrev,
-  handleNext,
   toggleStack,
   setCurrentIndex,
 }) => {
   const { t } = useTranslation();
 
+  const total = experiences.length;
+
   return (
     <section id="experiencias" className="py-3">
-      <div className="mx-auto w-screen sm:w-[75%] md:w-[80%] lg:w-[50%] px-4 relative">
+      <div className="mx-auto w-screen px-4 relative">
 
         <h1
           className={`text-3xl font-bold text-center mb-4 md:mb-12 mt-12 ${
@@ -27,12 +27,14 @@ const ExperienciasComponent = ({
           {t("experiencias.titulo")}
         </h1>
 
-        {/* CARROSSEL */}
         <div className="relative w-full flex justify-center overflow-hidden">
           <div className="relative w-full h-[435px] md:h-[420px] flex items-center justify-center perspective-[1200px]">
 
             {experiences.map((card, index) => {
-              const offset = index - currentIndex;
+              let offset = index - currentIndex;
+
+              if (offset > total / 2) offset -= total;
+              if (offset < -total / 2) offset += total;
 
               return (
                 <div
@@ -58,7 +60,6 @@ const ExperienciasComponent = ({
                       }`}
                     >
 
-                      {/* FRENTE */}
                       <div className="relative w-full h-full backface-hidden rounded-xl p-1 flex flex-col justify-between">
 
                         {card.link && (
@@ -99,7 +100,6 @@ const ExperienciasComponent = ({
                         </button>
                       </div>
 
-                      {/* VERSO */}
                       <div className="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 rounded-xl p-1 flex flex-col justify-between">
 
                         <div>
@@ -131,17 +131,15 @@ const ExperienciasComponent = ({
           </div>
         </div>
 
-        {/* CONTROLES */}
         <div className="flex items-center justify-center mt-0 gap-4">
 
           <button
-            onClick={handlePrev}
-            disabled={currentIndex === 0}
-            className={`transition-all ${
-              currentIndex === 0
-                ? "opacity-30 border border-zinc-500 rounded-lg"
-                : "hover:scale-110 rounded-lg border border-zinc-500"
-            }`}
+            onClick={() =>
+              setCurrentIndex((prev) =>
+                (prev - 1 + total) % total
+              )
+            }
+            className="hover:scale-110 rounded-lg border border-zinc-500"
           >
             <ArrowLeft size={32} />
           </button>
@@ -161,13 +159,12 @@ const ExperienciasComponent = ({
           </div>
 
           <button
-            onClick={handleNext}
-            disabled={currentIndex === experiences.length - 1}
-            className={`transition-all ${
-              currentIndex === experiences.length - 1
-                ? "opacity-30 rounded-lg border border-zinc-500"
-                : "hover:scale-110 rounded-lg border border-zinc-500"
-            }`}
+            onClick={() =>
+              setCurrentIndex((prev) =>
+                (prev + 1) % total
+              )
+            }
+            className="hover:scale-110 rounded-lg border border-zinc-500"
           >
             <ArrowRight size={32} />
           </button>

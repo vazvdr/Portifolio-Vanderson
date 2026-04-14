@@ -5,7 +5,6 @@ const useSobre = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [tempo, setTempo] = useState({ anos: 0, dias: 0, segundos: 0 });
 
-  // animação da section
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -22,7 +21,6 @@ const useSobre = () => {
     };
   }, []);
 
-  // animação da imagem
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -39,7 +37,6 @@ const useSobre = () => {
     };
   }, []);
 
-  // scroll suave
   const handleLinkClick = (e, target) => {
     e.preventDefault();
     const element = document.querySelector(target);
@@ -48,7 +45,6 @@ const useSobre = () => {
     }
   };
 
-  // tempo de experiência
   useEffect(() => {
     const dataInicio = new Date("2023-01-04T08:00:00");
 

@@ -4,6 +4,7 @@ import Header from "../src/pages/Header";
 import Projetos from "./pages/Projetos";
 import Sobre from "./pages/Sobre";
 import Tecnologias from "./pages/Tecnologias";
+import HabilidadesPage from "./pages/Habilidades";
 import Footer from "./pages/Footer";
 import Formacao from "./pages/Formacao";
 
@@ -14,6 +15,7 @@ function App() {
             <Sobre />
             <Formacao />
             <Experiencias />
+            <HabilidadesPage/>
             <Tecnologias />
             <Projetos />
             <Contact />
