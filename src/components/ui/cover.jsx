@@ -28,9 +28,7 @@ export const Cover = ({ children, className }) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       ref={ref}
-      className="relative hover:bg-neutral-900 group/cover inline-block 
-      dark:bg-black/50 bg-black px-2 py-2 border dark:border-white 
-      border-black transition duration-200 rounded-sm"
+      className="relative group/cover inline-block dark:bg-gradient-to-r from-zinc-700 to-zinc-900 bg-zinc-100 px-2 py-2 border dark:border-white border-black transition-all duration-300 rounded-sm hover:scale-[1.02]"
     >
       <AnimatePresence>
         {hovered && (
@@ -55,16 +53,16 @@ export const Cover = ({ children, className }) => {
               <SparklesCore
                 background="transparent"
                 minSize={0.4}
-                maxSize={1}
-                particleDensity={500}
+                maxSize={hovered ? 1.4 : 1}
+                particleDensity={hovered ? 700 : 500}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
               <SparklesCore
                 background="transparent"
                 minSize={0.4}
-                maxSize={1}
-                particleDensity={500}
+                maxSize={hovered ? 1.4 : 1}
+                particleDensity={hovered ? 700 : 500}
                 className="w-full h-full"
                 particleColor="#FFFFFF"
               />
@@ -87,9 +85,12 @@ export const Cover = ({ children, className }) => {
       <motion.span
         key={String(hovered)}
         animate={{
-          scale: hovered ? 0.8 : 1,
-          x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
-          y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
+          scale: hovered ? 0.72 : 1,
+          filter: hovered
+            ? "blur(0.5px) brightness(1.2)"
+            : "blur(0px) brightness(1)",
+          x: hovered ? [0, -12, 12, -12, 12, 0] : 0,
+          y: hovered ? [0, 12, -12, 12, -12, 0] : 0,
         }}
         exit={{
           filter: "none",
@@ -98,28 +99,30 @@ export const Cover = ({ children, className }) => {
           y: 0,
         }}
         transition={{
-          duration: 0.2,
+          scale: {
+            type: "spring",
+            stiffness: 260,
+            damping: 18,
+          },
+          filter: { duration: 0.2 },
           x: {
-            duration: 0.2,
+            duration: 0.25,
             repeat: Infinity,
             repeatType: "loop",
           },
           y: {
-            duration: 0.2,
+            duration: 0.25,
             repeat: Infinity,
             repeatType: "loop",
           },
-          scale: { duration: 0.2 },
-          filter: { duration: 0.2 },
         }}
         className={cn(
-          "bg-gradient-to-r from-white to-gray-700 bg-clip-text text-transparent inline-block relative z-20 transition duration-200",
+          "transform-gpu inline-block relative z-20 bg-gradient-to-r from-zinc-600 to-zinc-950 dark:bg-none dark:bg-gradient-to-r dark:from-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent drop-shadow-[0_0_0px_rgba(255,255,255,0)] group-hover/cover:drop-shadow-[0_0_8px_rgba(255,255,255,0.15)] transition-all duration-300",
           className
         )}
       >
         {children}
       </motion.span>
-
     </div>
   );
 };
@@ -144,10 +147,7 @@ export const Beam = ({
       className={cn("absolute inset-x-0 w-full", className)}
       {...svgProps}
     >
-      <motion.path
-        d={`M0 0.5H${width}`}
-        stroke={`url(#svgGradient-${id})`}
-      />
+      <motion.path d={`M0 0.5H${width}`} stroke={`url(#svgGradient-${id})`} />
 
       <defs>
         <motion.linearGradient
@@ -167,7 +167,7 @@ export const Beam = ({
             y2: 0,
           }}
           transition={{
-            duration: hovered ? 0.5 : duration || 2,
+            duration: hovered ? 0.4 : duration || 2,
             ease: "linear",
             repeat: Infinity,
             delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
@@ -183,11 +183,11 @@ export const Beam = ({
   );
 };
 
-export const CircleIcon = ({ className, delay }) => {
+export const CircleIcon = ({ className }) => {
   return (
     <div
       className={cn(
-        `pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
+        "pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white",
         className
       )}
     ></div>
