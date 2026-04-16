@@ -56,7 +56,7 @@ export const Cover = ({ children, className }) => {
                 maxSize={hovered ? 1.4 : 1}
                 particleDensity={hovered ? 700 : 500}
                 className="w-full h-full"
-                particleColor="#FFFFFF"
+                particleColor="#ffffff"
               />
               <SparklesCore
                 background="transparent"
@@ -64,7 +64,7 @@ export const Cover = ({ children, className }) => {
                 maxSize={hovered ? 1.4 : 1}
                 particleDensity={hovered ? 700 : 500}
                 className="w-full h-full"
-                particleColor="#FFFFFF"
+                particleColor="#0b0202"
               />
             </motion.div>
           </motion.div>
@@ -176,7 +176,7 @@ export const Beam = ({
         >
           <stop stopColor="#2EB9DF" stopOpacity="0" />
           <stop stopColor="#3b82f6" />
-          <stop offset="1" stopColor="#3b82f6" stopOpacity="0" />
+          <stop offset="1" stopColor="#010610" stopOpacity="0" />
         </motion.linearGradient>
       </defs>
     </motion.svg>
