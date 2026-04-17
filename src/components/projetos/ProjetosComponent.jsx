@@ -11,14 +11,15 @@ const ProjetosComponent = ({
   handleNext,
   stage,
   totalStages,
-  iconMap
+  iconMap,
+  setStage // 👈 precisa receber isso pra clicar nas bolinhas
 }) => {
 
   const { t } = useTranslation();
 
   return (
     <section id="projetos" className="py-6">
-      <div className="mx-auto lg:w-[92%] px-4 relative">
+      <div className="mx-auto lg:w-[92%] px-4">
 
         <h1
           className={`text-3xl font-bold text-center mb-8 mt-12 ${animate ? "animate-slide-down" : ""}`}
@@ -27,18 +28,11 @@ const ProjetosComponent = ({
           {t("projects.title")}
         </h1>
 
-        <div className="flex items-center justify-center relative w-full">
-
-          {/* BOTÃO VOLTAR */}
-          <button
-            onClick={handlePrev}
-            className="button-project-back relative left-0 z-20 w-10 rounded-tl-full rounded-bl-full h-[280px] md:h-[380px] lg:h-[320px] xl:h-[300px]"
-          >
-            <ArrowLeft size={28} />
-          </button>
+        {/* CONTAINER PRINCIPAL */}
+        <div className="flex flex-col items-center gap-6">
 
           {/* CARDS */}
-          <div className="flex gap-1 overflow-hidden w-full justify-center px-2">
+          <div className="flex gap-2 overflow-hidden w-full justify-center px-2">
             {displayedProjects.map((project, index) => (
               <div
                 key={index}
@@ -58,7 +52,6 @@ const ProjetosComponent = ({
                   color: "white",
                 }}
               >
-
                 <div className="absolute inset-0 bg-black bg-opacity-80 rounded-lg" />
 
                 <div className="relative p-4 flex flex-col text-left h-full z-10">
@@ -95,7 +88,6 @@ const ProjetosComponent = ({
                   <div className="absolute top-0 right-0 flex flex-col gap-1 items-end z-20">
 
                     <div className="flex gap-2">
-
                       <div>
                         {project.swagger ? (
                           <a href={project.swagger} target="_blank">
@@ -127,21 +119,45 @@ const ProjetosComponent = ({
             ))}
           </div>
 
-          {/* BOTÃO NEXT */}
-          <button
-            onClick={handleNext}
-            className="button-project-next relative right-0 z-20 w-10 rounded-tr-full rounded-br-full h-[280px] md:h-[380px] lg:h-[320px] xl:h-[300px]"
-          >
-            <ArrowRight size={28} />
-          </button>
-        </div>
+          {/* CONTROLES */}
+          <div className="flex items-center justify-center gap-6 mt-4">
 
-        <div className="text-center mt-4 text-sm">
-          {`Projeto ${stage} de ${totalStages}`}
-        </div>
+            {/* BOTÃO VOLTAR */}
+            <button
+              onClick={handlePrev}
+              className="p-1 rounded-md border border-zinc-600 hover:scale-110 transition"
+            >
+              <ArrowLeft size={24} />
+            </button>
 
+            {/* INDICADORES */}
+            <div className="flex items-center gap-2">
+              {Array.from({ length: totalStages }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setStage && setStage(index + 1)}
+                  className={`
+          w-3 h-3 rounded-full transition-all
+          ${stage === index + 1
+                      ? "bg-zinc-500 scale-125"
+                      : "bg-gray-500 opacity-50 hover:opacity-100"}
+        `}
+                />
+              ))}
+            </div>
+
+            {/* BOTÃO NEXT */}
+            <button
+              onClick={handleNext}
+              className="p-1 rounded-md border border-zinc-600 hover:scale-110 transition"
+            >
+              <ArrowRight size={24} />
+            </button>
+
+          </div>
+        </div>
       </div>
-    </section>
+    </section >
   );
 };
 
