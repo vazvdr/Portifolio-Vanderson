@@ -117,7 +117,7 @@ export const Cover = ({ children, className }) => {
           },
         }}
         className={cn(
-          "transform-gpu inline-block relative z-20 bg-gradient-to-r from-zinc-600 to-zinc-950 dark:bg-none dark:bg-gradient-to-r dark:from-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent drop-shadow-[0_0_0px_rgba(255,255,255,0)] group-hover/cover:drop-shadow-[0_0_8px_rgba(255,255,255,0.15)] transition-all duration-300",
+          "transform-gpu inline-block relative z-20 bg-gradient-to-r from-zinc-600 to-zinc-950 dark:bg-none dark:bg-gradient-to-r dark:from-zinc-100 dark:to-zinc-500 bg-clip-text text-transparent drop-shadow-[0_0_0px_rgba(255,255,255,0)] group-hover/cover:drop-shadow-[0_0_8px_rgba(255,255,255,0.15)] transition-all duration-300",
           className
         )}
       >

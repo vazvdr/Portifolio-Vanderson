@@ -18,7 +18,7 @@ const ProjetosComponent = ({
   const { t } = useTranslation();
 
   return (
-    <section id="projetos" className="py-6">
+    <section id="projetos" className="py-6 mb-24">
       <div className="mx-auto lg:w-[92%] px-4">
 
         <h1
