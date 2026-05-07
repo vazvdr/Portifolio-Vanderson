@@ -10,6 +10,7 @@ import SpringMicrosservices from "../../assets/SpringMicrosservices2025.jpg";
 import SpringRabbitMQ from "../../assets/SpringRabbitMQ.jpg";
 import ReactCourse from "../../assets/React.jpg";
 import Angular from "../../assets/Angular.jpg";
+import Nestjs from "../../assets/Nestjs.jpg";
 
 const FormacaoComponent = ({
   t,
@@ -21,6 +22,7 @@ const FormacaoComponent = ({
   const cursos = [
     { img: Estacio, titulo: "formacao.cardCollege.titulo", instituicao: "formacao.cardCollege.subtitulo", periodo: "formacao.cardCollege.periodo", descricao: "formacao.cardCollege.descricao" },
     { img: English, titulo: "formacao.cardEnglish.titulo", instituicao: "formacao.cardEnglish.subtitulo", periodo: "formacao.cardEnglish.periodo", descricao: "formacao.cardEnglish.descricao" },
+    { img: Nestjs, titulo: "formacao.cardNest.titulo", instituicao: "formacao.cardNest.subtitulo", periodo: "formacao.cardNest.periodo", descricao: "formacao.cardNest.descricao" },
     { img: Angular, titulo: "formacao.cardAngular.titulo", instituicao: "formacao.cardAngular.subtitulo", periodo: "formacao.cardAngular.periodo", descricao: "formacao.cardAngular.descricao" },
     { img: GitLab, titulo: "formacao.cardGitLab.titulo", instituicao: "formacao.cardGitLab.subtitulo", periodo: "formacao.cardGitLab.periodo", descricao: "formacao.cardGitLab.descricao" },
     { img: SpringRabbitMQ, titulo: "formacao.cardSpringRabbitMQ.titulo", instituicao: "formacao.cardSpringRabbitMQ.subtitulo", periodo: "formacao.cardSpringRabbitMQ.periodo", descricao: "formacao.cardSpringRabbitMQ.descricao" },

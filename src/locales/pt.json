@@ -53,6 +53,17 @@
         "Redação de documentos e e-mails formais"
       ]
     },
+    "cardNest": {
+      "titulo": "NestJs",
+      "subtitulo": "Udemy - 2026",
+      "periodo": "13.5 horas",
+      "descricao": [
+        "Aplicar padrões de projetos, injeção de dependências, testes atuamatizados",
+        "Estruturar projetos com módulos, controllers e services, seguindo boas práticas e padrões SOLID.",
+        "Aplicar validação de dados com DTO, Pipes e testes automatizados com Jest",
+        "Autenticação JWT, upload de arquivos, documentação autimática com Swagger"
+      ]
+    },
     "cardAngular": {
       "titulo": "Angular",
       "subtitulo": "Udemy - 2026",
