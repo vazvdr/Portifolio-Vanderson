@@ -254,7 +254,7 @@
     "gamerstore": {
       "title": "GamerStore",
       "subtitle": "E-commerce com arquitetura de microsserviços",
-      "description": "Esse site é como um e-commerce real, com arquitetura de microsserviços orientada a eventos, integração com a Stripe para pagamentos, carrinho de compras, cadastro de usuários, endereços, cartões, listagem de pedidos e produtos"
+      "description": "Esse site é como um e-commerce real, com arquitetura de microsserviços orientada a eventos, integração com a Stripe para pagamentos, carrinho de compras, cadastro de usuários, endereços, cartões, listagem de pedidos e produtos e IA para sugestão de produtos"
     },
     "weather": {
       "title": "Weather Project",

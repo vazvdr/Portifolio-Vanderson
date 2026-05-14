@@ -254,7 +254,7 @@
     "gamerstore": {
       "title": "GamerStore",
       "subtitle": "E-commerce with microsservice archtecture",
-      "description": "This site is a true e-commerce with event-oriented microservice architecture, with integration with Stripe API for payment, cart, sign up of users, address and and credit card and show orders and products. "
+      "description": "This site is a true e-commerce with event-oriented microservice architecture, with integration with Stripe API for payment, cart, sign up of users, address and and credit card and show orders and products and IA for suggestion products. "
     },
     "weather": {
       "title": "Weather Project",
