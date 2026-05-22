@@ -53,6 +53,17 @@
         "Writing of documents and formal emails"
       ]
     },
+    "cardDevOps": {
+      "titulo": "DevOps",
+      "subtitulo": "Udemy - 2026",
+      "periodo": "3.5 hours",
+      "descricao": [
+        "Metrics monitoring with Prometheus.",
+        "Observability intelligence with Grafana and OpenSearch.",
+        "Load testing and resilience with K6.",
+        "Advanced observability strategy in Kubernetes with Lens, Kind, Istio, and Kiali."
+      ]
+    },
     "cardNest": {
       "titulo": "NestJs",
       "subtitulo": "Udemy - 2026",

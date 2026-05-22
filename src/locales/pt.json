@@ -53,6 +53,17 @@
         "Redação de documentos e e-mails formais"
       ]
     },
+    "cardDevOps": {
+      "titulo": "NestJs",
+      "subtitulo": "Udemy - 2026",
+      "periodo": "13.5 horas",
+      "descricao": [
+        "Monitoramento de métricas com Prometheus",
+        "Observabilidade inteligente com Grafana e OpenSearch",
+        "Testes de carga e resiliência com K6",
+        "Estratégias avançadas no Kubernetes (Kind, Lens, Istio, Kiali)"
+      ]
+    },
     "cardNest": {
       "titulo": "NestJs",
       "subtitulo": "Udemy - 2026",
