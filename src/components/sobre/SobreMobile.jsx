@@ -57,7 +57,7 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
 
           <div className="mt-5 flex items-center justify-center space-x-2">
             <a
-              href="/Curriculo-Atualizado-12-2025.pdf"
+              href="/Curriculo-Atualizado-05-2026.pdf"
               download
               className="buttons-sobre py-1 px-2 rounded-md font-semibold 
               border border-black shadow-lg hover:bg-black hover:text-white transition-all 
