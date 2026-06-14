@@ -12,7 +12,7 @@ const ProjetosComponent = ({
   stage,
   totalStages,
   iconMap,
-  setStage // 👈 precisa receber isso pra clicar nas bolinhas
+  setStage
 }) => {
 
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ const ProjetosComponent = ({
                   ${animate ? (index % 2 === 0 ? "animate-slide-left" : "animate-slide-right") : ""}
                   ${cardsPerView === 2 ? "md:basis-full" : "basis-full"}
                   w-[80%] sm:w-[80%] md:w-[90%] lg:w-[48%] xl:w-[35%]
-                  h-auto md:h-[440px] lg:h-[385px] xl:h-[320px]
+                  h-auto md:h-[510px] lg:h-[405px] xl:h-[370px]
                 `}
                 style={{
                   backgroundImage: `url(${project.image})`,
