@@ -202,7 +202,7 @@
     },
     "card2": {
       "titulo": "Desenvolvedor FullStack",
-      "subtitulo": "Freelancer · Freelance",
+      "subtitulo": "Autônomo",
       "periodo": "Ago de 2023 - o momento",
       "descricao": [
         "Desenvolvimento de aplicações frontend usando React, Next.js ou Angular",
@@ -215,7 +215,7 @@
     },
     "card3": {
       "titulo": "Desenvolvedor Mobile",
-      "subtitulo": "Freelancer · Praia Cheia",
+      "subtitulo": "Co-fundador · Praia Cheia",
       "periodo": "Nov de 2025 - o momento",
       "descricao": [
         "Desenvolvimento do aplicativo Praia Cheia usando Dart e Flutter.",
