@@ -1,4 +1,3 @@
-import Flag from "react-world-flags";
 import { Sun, Moon } from "react-feather";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { Menu, X } from "lucide-react";
@@ -22,6 +21,8 @@ const HeaderMobile = (props) => {
 
   const lang = i18n?.language || "pt-BR";
 
+  const isPortuguese = lang.startsWith("pt");
+
   const menuItems = [
     { id: "#sobre-mim", label: "about" },
     { id: "#formacao", label: "education" },
@@ -32,38 +33,39 @@ const HeaderMobile = (props) => {
 
   return (
     <div className="lg:hidden flex items-center">
-
       {/* 🌍 IDIOMA */}
       <div className="relative" ref={langRefMobile}>
         <button
-          onClick={() => setShowLangOptionsMobile(prev => !prev)}
-          className="w-6 h-6 rounded-full overflow-hidden border border-zinc-500 hover:scale-110 transition"
+          onClick={() => setShowLangOptionsMobile((prev) => !prev)}
+          className={`w-8 h-8 rounded-full overflow-hidden hover:scale-110 transition flex items-center justify-center text-xs font-bold border border-zinc-500 shadow-md ${
+            isPortuguese
+              ? "bg-gradient-to-br from-green-600 via-yellow-400 to-green-800 text-black"
+              : "bg-gradient-to-br from-blue-700 via-blue-500 to-red-600 text-white"
+          }`}
         >
-          <Flag
-            code={lang.startsWith("pt") ? "BR" : "US"}
-            className="w-full h-full object-cover"
-          />
+          <span>{isPortuguese ? "BR" : "US"}</span>
         </button>
 
         {showLangOptionsMobile && (
-          <div className="absolute top-10 right-0 bg-black border border-zinc-600 rounded-lg p-2 flex gap-2 z-50">
+          <div className="absolute top-10 right-0 bg-zinc-900/95 backdrop-blur-md border border-zinc-600 rounded-lg p-2 flex gap-2 z-50 shadow-lg">
             <button
               onClick={() => {
                 changeLanguage("pt");
                 setShowLangOptionsMobile(false);
               }}
-              className="w-6 h-6 rounded-full overflow-hidden"
+              className="w-8 h-8 rounded-full overflow-hidden hover:scale-110 transition flex items-center justify-center text-xs font-bold border border-zinc-500 shadow-md bg-gradient-to-br from-green-600 via-yellow-400 to-green-800 text-black"
             >
-              <Flag code="BR" className="w-full h-full object-cover" />
+              <span>BR</span>
             </button>
+
             <button
               onClick={() => {
                 changeLanguage("en");
                 setShowLangOptionsMobile(false);
               }}
-              className="w-6 h-6 rounded-full overflow-hidden"
+              className="w-8 h-8 rounded-full overflow-hidden hover:scale-110 transition flex items-center justify-center text-xs font-bold border border-zinc-500 shadow-md bg-gradient-to-br from-blue-700 via-blue-500 to-red-600 text-white"
             >
-              <Flag code="US" className="w-full h-full object-cover" />
+              <span>US</span>
             </button>
           </div>
         )}
@@ -90,7 +92,7 @@ const HeaderMobile = (props) => {
         )}
       </button>
 
-      {/* 🌑 OVERLAY (escurece fundo) */}
+      {/* 🌑 OVERLAY */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm z-40"
@@ -101,12 +103,12 @@ const HeaderMobile = (props) => {
       {/* 📱 MENU LATERAL */}
       <div
         ref={menuRef}
-        className={`fixed top-0 right-0 h-screen w-[50%] bg-zinc-900 text-white border-l border-zinc-400 z-50 shadow-2xl transform transition-transform duration-500 ease-in-out
-        ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 h-screen w-[50%] bg-zinc-900 text-white border-l border-zinc-400 z-50 shadow-2xl transform transition-transform duration-500 ease-in-out ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex flex-col h-full justify-between p-6">
-
-          {/* ❌ botão fechar */}
+          {/* ❌ FECHAR */}
           <div className="flex justify-end">
             <button
               onClick={toggleMenu}
@@ -147,7 +149,6 @@ const HeaderMobile = (props) => {
             </HoverBorderGradient>
           </ul>
 
-          {/* 👇 espaço vazio pra equilibrar layout */}
           <div />
         </div>
       </div>
