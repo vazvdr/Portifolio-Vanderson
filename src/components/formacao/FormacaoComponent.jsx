@@ -41,7 +41,7 @@ const FormacaoComponent = ({
     <section
       id="formacao"
       className={`relative py-16 w-full flex flex-col items-center transition-all duration-1000 ${
-        animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        animate ? "opacity-100 translate-y-0" : "opacity-100 translate-y-0"
       }`}
     >
       <h1
