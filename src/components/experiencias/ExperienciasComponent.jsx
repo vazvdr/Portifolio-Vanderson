@@ -16,7 +16,7 @@ const ExperienciasComponent = ({
 
   return (
     <section id="experiencias" className="py-3">
-      <div className="mx-auto w-full px-4 relative">
+      <div className="mx-auto w-screen px-4 relative">
         <h1
           className={`text-3xl font-bold text-center mb-4 md:mb-12 mt-12 ${
             animate ? "animate-slide-down" : ""
@@ -26,7 +26,7 @@ const ExperienciasComponent = ({
           {t("experiencias.titulo")}
         </h1>
 
-        <div className="relative w-full flex justify-center overflow-hidden">
+        <div className="relative w-screen flex justify-center overflow-hidden">
           <div className="relative w-full h-[435px] md:h-[420px] flex items-center justify-center perspective-[1200px]">
             {experiences.map((card, index) => {
               const offset = index - currentIndex;
