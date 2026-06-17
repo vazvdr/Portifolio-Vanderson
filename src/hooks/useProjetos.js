@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import Weather from "../assets/Weather.png";
-import BarbaBrutal from "../assets/BarbaBrutal.png";
-import GamerStore from "../assets/GamerStore.png";
-import ClassScheduling from '../assets/ClassScheduling.jpg';
-import PraiaCheia from '../assets/PraiaCheia.png';
-import GamerExplorer from '../assets/GamerExplorer.png';
+import Weather from "../assets/Weather.webp";
+import BarbaBrutal from "../assets/BarbaBrutal.webp";
+import GamerStore from "../assets/GamerStore.webp";
+import ClassScheduling from '../assets/ClassScheduling.webp';
+import PraiaCheia from '../assets/PraiaCheia.webp';
+import GamerExplorer from '../assets/GamerExplorer.webp';
 
 export const useProjetos = (icons = []) => {
     const [animate, setAnimate] = useState(false);

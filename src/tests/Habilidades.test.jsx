@@ -10,12 +10,12 @@ vi.mock("react-i18next", () => ({
 }));
 
 // 🔥 mock das imagens
-vi.mock("../assets/LandingPage.png", () => ({ default: "landing.png" }));
-vi.mock("../assets/CreateConsumeAPI.png", () => ({ default: "api.png" }));
-vi.mock("../assets/Fullstack.png", () => ({ default: "fullstack.png" }));
-vi.mock("../assets/Mobile2.png", () => ({ default: "mobile.png" }));
-vi.mock("../assets/Test.png", () => ({ default: "test.png" }));
-vi.mock("../assets/Deployment.png", () => ({ default: "deploy.png" }));
+vi.mock("../assets/LandingPage.webp", () => ({ default: "landing.webp" }));
+vi.mock("../assets/CreateConsumeAPI.webp", () => ({ default: "api.webp" }));
+vi.mock("../assets/Fullstack.webp", () => ({ default: "fullstack.webp" }));
+vi.mock("../assets/Mobile2.webp", () => ({ default: "mobile.webp" }));
+vi.mock("../assets/Test.webp", () => ({ default: "test.webp" }));
+vi.mock("../assets/Deployment.webp", () => ({ default: "deploy.webp" }));
 
 describe("Habilidades Component", () => {
     it("deve renderizar todos os cards duplicados (loop infinito)", () => {

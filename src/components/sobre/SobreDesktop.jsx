@@ -1,4 +1,4 @@
-import Foto from "../../assets/Foto3.jpg";
+import Foto from "../../assets/Foto3.webp";
 import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { Cover } from "../ui/cover";

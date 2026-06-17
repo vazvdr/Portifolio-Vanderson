@@ -1,4 +1,4 @@
-import { Sun, Moon } from "react-feather";
+import { Sun, Moon } from "lucide-react";
 import { HoverBorderGradient } from "../ui/hover-border-gradient";
 import { Menu, X } from "lucide-react";
 

@@ -1,27 +1,38 @@
-import path from "path"
-import react from "@vitejs/plugin-react"
-import { defineConfig } from "vite"
+import path from "path";
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import { visualizer } from "rollup-plugin-visualizer";
 
-// @ts-ignore - necessário se você estiver usando TypeScript estrito e ainda não tiver tipos do vitest
-import { configDefaults } from "vitest/config"
+// @ts-ignore
+import { configDefaults } from "vitest/config";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    visualizer({
+      filename: "./dist/stats.html",
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
   test: {
     globals: true,
     environment: "jsdom",
-    setupFiles: './vitest-setup.js',
+    setupFiles: "./vitest-setup.js",
     include: [
-      'src/**/*.{test,spec}.{js,ts,jsx,tsx}'
+      "src/**/*.{test,spec}.{js,ts,jsx,tsx}",
     ],
     exclude: [...configDefaults.exclude, "e2e"],
     coverage: {
       reporter: ["text", "json", "html"],
     },
   },
-})
+});

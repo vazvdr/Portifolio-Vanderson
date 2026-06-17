@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
-import LandingPage from '../assets/LandingPage.png';
-import API from '../assets/CreateConsumeAPI.png';
-import Fullstack from '../assets/Fullstack.png';
-import Mobile from '../assets/Mobile2.png';
-import Test from '../assets/Test.png';
-import Deploy from '../assets/Deployment.png';
+import LandingPage from '../assets/LandingPage.webp';
+import API from '../assets/CreateConsumeAPI.webp';
+import Fullstack from '../assets/Fullstack.webp';
+import Mobile from '../assets/Mobile2.webp';
+import Test from '../assets/Test.webp';
+import Deploy from '../assets/Deployment.webp';
 
 export const useHabilidades = () => {
   const cards = [LandingPage, API, Fullstack, Mobile, Test, Deploy];

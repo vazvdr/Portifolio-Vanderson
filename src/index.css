@@ -457,7 +457,7 @@ body {
 
 @font-face {
   font-family: "DoctorGlitch";
-  src: url("/src/assets/doctor-glitch.otf") format("opentype");
+  src: url("/src/assets/doctor-glitch.woff2") format("opentype");
 }
 
 .perspective {
