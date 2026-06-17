@@ -61,7 +61,8 @@ export const useTecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original-wordmark.svg",
     "https://www.svgrepo.com/show/448236/linux.svg",
     "https://www.svgrepo.com/show/448266/aws.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg"
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/railway/railway-original-wordmark.svg"
   ];
 
   const totalStages = Math.ceil(icons.length / iconsPerStage);

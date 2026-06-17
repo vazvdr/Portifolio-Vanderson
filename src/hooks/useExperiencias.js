@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 export const useExperiencias = () => {
   const [animate, setAnimate] = useState(false);
   const [showStacks, setShowStacks] = useState({});
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const imagesCard1 = [
     "https://www.svgrepo.com/show/452228/html-5.svg",
@@ -57,7 +57,8 @@ export const useExperiencias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
-    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg"
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/railway/railway-original.svg"
   ];
 
   const imagesCard3 = [

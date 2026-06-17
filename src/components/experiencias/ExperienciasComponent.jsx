@@ -16,8 +16,7 @@ const ExperienciasComponent = ({
 
   return (
     <section id="experiencias" className="py-3">
-      <div className="mx-auto w-screen px-4 relative">
-
+      <div className="mx-auto w-full px-4 relative">
         <h1
           className={`text-3xl font-bold text-center mb-4 md:mb-12 mt-12 ${
             animate ? "animate-slide-down" : ""
@@ -29,12 +28,12 @@ const ExperienciasComponent = ({
 
         <div className="relative w-full flex justify-center overflow-hidden">
           <div className="relative w-full h-[435px] md:h-[420px] flex items-center justify-center perspective-[1200px]">
-
             {experiences.map((card, index) => {
-              let offset = index - currentIndex;
+              const offset = index - currentIndex;
 
-              if (offset > total / 2) offset -= total;
-              if (offset < -total / 2) offset += total;
+              if (offset < -1 || offset > 1) {
+                return null;
+              }
 
               return (
                 <div
@@ -47,8 +46,9 @@ const ExperienciasComponent = ({
                       rotateY(${offset * -25}deg)
                       translateZ(${offset === 0 ? 0 : -100}px)
                     `,
-                    opacity: Math.abs(offset) > 1 ? 0 : 1,
-                    filter: offset === 0 ? "blur(0px)" : "blur(1.5px)",
+                    opacity: 1,
+                    filter:
+                      offset === 0 ? "blur(0px)" : "blur(1.5px)",
                     zIndex: 20 - Math.abs(offset),
                     width: "380px",
                   }}
@@ -59,9 +59,7 @@ const ExperienciasComponent = ({
                         showStacks[index] ? "rotate-y-180" : ""
                       }`}
                     >
-
                       <div className="relative w-full h-full backface-hidden rounded-xl p-1 flex flex-col justify-between">
-
                         {card.link && (
                           <a
                             href={card.link}
@@ -75,11 +73,21 @@ const ExperienciasComponent = ({
 
                         <div>
                           <h2 className="text-xl font-bold">
-                            {t(`experiencias.card${card.cardIndex}.titulo`)}
+                            {t(
+                              `experiencias.card${card.cardIndex}.titulo`
+                            )}
                           </h2>
-                          <h3>{t(`experiencias.card${card.cardIndex}.subtitulo`)}</h3>
+
+                          <h3>
+                            {t(
+                              `experiencias.card${card.cardIndex}.subtitulo`
+                            )}
+                          </h3>
+
                           <p className="text-sm">
-                            {t(`experiencias.card${card.cardIndex}.periodo`)}
+                            {t(
+                              `experiencias.card${card.cardIndex}.periodo`
+                            )}
                           </p>
 
                           <div className="mt-4 text-sm space-y-2">
@@ -101,7 +109,6 @@ const ExperienciasComponent = ({
                       </div>
 
                       <div className="absolute top-0 left-0 w-full h-full backface-hidden rotate-y-180 rounded-xl p-1 flex flex-col justify-between">
-
                         <div>
                           <h2 className="text-xl text-center mb-4 font-orbitron tracking-wider">
                             {t("experiencias.stackTitulo")}
@@ -109,7 +116,11 @@ const ExperienciasComponent = ({
 
                           <div className="flex flex-wrap gap-3 justify-center">
                             {card.images.map((src, i) => (
-                              <img key={i} src={src} className="w-10 h-10" />
+                              <img
+                                key={i}
+                                src={src}
+                                className="w-10 h-10"
+                              />
                             ))}
                           </div>
                         </div>
@@ -121,22 +132,19 @@ const ExperienciasComponent = ({
                           {t("experiencias.voltar")}
                         </button>
                       </div>
-
                     </div>
                   </div>
                 </div>
               );
             })}
-
           </div>
         </div>
 
         <div className="flex items-center justify-center mt-0 gap-4">
-
           <button
             onClick={() =>
               setCurrentIndex((prev) =>
-                (prev - 1 + total) % total
+                Math.max(prev - 1, 0)
               )
             }
             className="hover:scale-110 rounded-lg border border-zinc-500"
@@ -161,16 +169,14 @@ const ExperienciasComponent = ({
           <button
             onClick={() =>
               setCurrentIndex((prev) =>
-                (prev + 1) % total
+                Math.min(prev + 1, total - 1)
               )
             }
             className="hover:scale-110 rounded-lg border border-zinc-500"
           >
             <ArrowRight size={32} />
           </button>
-
         </div>
-
       </div>
     </section>
   );
