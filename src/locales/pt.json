@@ -219,8 +219,9 @@
       "periodo": "Nov de 2025 - o momento",
       "descricao": [
         "Desenvolvimento do aplicativo Praia Cheia usando Dart e Flutter.",
-        "Arquitetura do backend do aplicativo usando Nest.js, Redis e Firebase.",
-        "Desenvolvimento da Landing Page de divulgação usando React, TailwindCSS e Firebase."
+        "Arquitetura do backend orientada a eventos com microsserviços usando Nest.js, Rabbitmq e várias tecnologias.",
+        "Desenvolvimento de testes unitários e de integração com Jest",
+        "Observalidade com Grafana e Prometheus e testes de carga com k6"
       ]
     }
   },
