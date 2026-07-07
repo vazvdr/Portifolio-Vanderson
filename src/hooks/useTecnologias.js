@@ -59,6 +59,7 @@ export const useTecnologias = () => {
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-plain-wordmark.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original-wordmark.svg",
+    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/k6/k6-original.svg",
     "https://www.svgrepo.com/show/448236/linux.svg",
     "https://www.svgrepo.com/show/448266/aws.svg",
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg",
