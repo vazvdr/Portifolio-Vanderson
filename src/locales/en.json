@@ -53,6 +53,17 @@
         "Writing of documents and formal emails"
       ]
     },
+    "cardHacker": {
+      "titulo": "Ethical Hacking",
+      "subtitulo": "Udemy - 2026",
+      "periodo": "24.5 hours",
+      "descricao": [
+        "Exploiting vulnerabilities in websites",
+        "Server-side and client-side exploitation with Metasploit",
+        "Identifying systems and vulnerabilities",
+        "Using the Swiss Army knife of TCP/IP - Netcat"
+      ]
+    },
     "cardDevOps": {
       "titulo": "DevOps",
       "subtitulo": "Udemy - 2026",

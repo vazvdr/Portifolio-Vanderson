@@ -12,6 +12,7 @@ import ReactCourse from "../../assets/React.webp";
 import Angular from "../../assets/Angular.webp";
 import Nestjs from "../../assets/Nestjs.webp";
 import DevOps from "../../assets/DevOps.webp";
+import Hacker from "../../assets/EthicalHacking.webp"
 
 const FormacaoComponent = ({
   t,
@@ -23,6 +24,7 @@ const FormacaoComponent = ({
   const cursos = [
     { img: Estacio, titulo: "formacao.cardCollege.titulo", instituicao: "formacao.cardCollege.subtitulo", periodo: "formacao.cardCollege.periodo", descricao: "formacao.cardCollege.descricao" },
     { img: English, titulo: "formacao.cardEnglish.titulo", instituicao: "formacao.cardEnglish.subtitulo", periodo: "formacao.cardEnglish.periodo", descricao: "formacao.cardEnglish.descricao" },
+    { img: Hacker, titulo: "formacao.cardHacker.titulo", instituicao: "formacao.cardHacker.subtitulo", periodo: "formacao.cardHacker.periodo", descricao: "formacao.cardHacker.descricao" },
     { img: DevOps, titulo: "formacao.cardDevOps.titulo", instituicao: "formacao.cardDevOps.subtitulo", periodo: "formacao.cardDevOps.periodo", descricao: "formacao.cardDevOps.descricao" },
     { img: Nestjs, titulo: "formacao.cardNest.titulo", instituicao: "formacao.cardNest.subtitulo", periodo: "formacao.cardNest.periodo", descricao: "formacao.cardNest.descricao" },
     { img: Angular, titulo: "formacao.cardAngular.titulo", instituicao: "formacao.cardAngular.subtitulo", periodo: "formacao.cardAngular.periodo", descricao: "formacao.cardAngular.descricao" },
