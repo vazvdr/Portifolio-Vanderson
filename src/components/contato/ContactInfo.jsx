@@ -13,7 +13,7 @@ const ContactInfo = ({ isMdOrLarger }) => {
         className="flex flex-col items-start cursor-pointer contact-info hover:bg-black hover:text-white hover:scale-105 transition-all"
         onClick={() => window.open("https://www.linkedin.com/in/vanderson-de-azevedo/", "_blank")}
       >
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-1">
           <FaLinkedin className="text-3xl" />
           <span>Linkedin</span>
         </div>
@@ -37,7 +37,7 @@ const ContactInfo = ({ isMdOrLarger }) => {
         className="flex flex-col items-start cursor-pointer contact-info hover:bg-black hover:text-white hover:scale-105 transition-all"
         onClick={() => window.open("mailto:vanderson.azevedo.rocha@gmail.com")}
       >
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-1">
           <FaEnvelope className="text-3xl" />
           <span>Email</span>
         </div>

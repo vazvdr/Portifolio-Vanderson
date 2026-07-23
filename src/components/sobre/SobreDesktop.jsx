@@ -1,5 +1,5 @@
-import Foto from "../../assets/Foto3.webp";
-import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
+import Foto from "../../assets/Foto.webp";
+import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { Cover } from "../ui/cover";
 
@@ -10,9 +10,8 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
         <div className="flex flex-colum max-w-[100%]">
           <div
             className={`mt-[10%] w-[40%] ml-[10%]
-            lg:w-[50%] animate-fade-in-right ${
-              animate ? "animate-slide-in-left" : "opacity-0"
-            }`}
+            lg:w-[50%] animate-fade-in-right ${animate ? "animate-slide-in-left" : "opacity-0"
+              }`}
           >
             <h1 className="text-sobre text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
               <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
@@ -32,7 +31,6 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
                       "Software Engineer",
                       "FullStack Developer",
                       "Mobile Developer",
-                      "Java Developer",
                       "Javascript Developer",
                       "Flutter Developer",
                     ]}
@@ -61,7 +59,7 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
           <div
             id="foto-container"
             className={`w-[30%] mt-[15%] ml-[15%] mr-[2%] opacity-0 
-            lg:w-[27%] lg:mt-[8.5%] lg:ml-[15%] lg:mr-[10%] transition-opacity duration-1000 
+            lg:w-[27%] lg:mt-[8.5%] lg:ml-[15%] lg:mr-[15%] transition-opacity duration-1000 
             ${isVisible ? "opacity-100 scale-100" : "scale-90"}`}
           >
             <div className="relative p-[2px] rounded-md bg-gradient-to-r from-gray-400 via-gray-600 to-gray-700">
@@ -133,10 +131,22 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
           href="https://github.com/vazvdr"
           target="_blank"
           rel="noopener noreferrer"
-          className="h-10 flex items-center justify-center transition-all transform hover:scale-110"
+          className="h-10 flex items-center justify-center transition-all transform hover:scale-110 hover:text-gray-400"
         >
           <FaGithub size={30} />
           <span className="sr-only">{t("sobre.github")}</span>
+        </a>
+        <a
+          href="https://www.instagram.com/vanderson.tech"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="h-10 flex items-center justify-center transition-all transform hover:scale-110"
+        >
+          <FaInstagram
+            size={32}
+            className="hover:text-pink-500 transition-colors duration-300"
+          />
+          <span className="sr-only">Instagram</span>
         </a>
       </div>
     </>

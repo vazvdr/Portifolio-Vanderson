@@ -1,5 +1,5 @@
-import Foto from "../../assets/Foto3.webp";
-import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp } from "react-icons/fa";
+import Foto from "../../assets/Foto.webp";
+import { FaLinkedin, FaGithub, FaArrowDown, FaWhatsapp, FaInstagram } from "react-icons/fa";
 import { Typewriter } from "react-simple-typewriter";
 import { Cover } from "../ui/cover";
 
@@ -30,7 +30,6 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
                     "Software Engineer",
                     "FullStack Developer",
                     "Mobile Developer",
-                    "Java Developer",
                     "Javascript Developer",
                     "Flutter Developer",
                   ]}
@@ -93,6 +92,14 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
               className="hover:text-gray-400 transition-all transform hover:scale-110"
             >
               <FaGithub size={32} />
+            </a>
+            <a
+              href="https://www.instagram.com/vanderson.tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-500 transition-all transform hover:scale-110"
+            >
+              <FaInstagram size={34} />
             </a>
           </div>
 
