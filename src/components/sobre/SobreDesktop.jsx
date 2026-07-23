@@ -97,7 +97,7 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
         </a>
 
         <a
-          href="/Curriculo-Atualizado-05-2026.pdf"
+          href="/Curriculo-Fullstack-React-Nestjs.pdf"
           download
           className="buttons-sobre h-9 py-1 px-4 rounded-md font-semibold 
           shadow-lg border border-black hover:bg-black hover:text-white transition-all 
