@@ -228,7 +228,7 @@
       "subtitulo": "Co-founder · Praia Cheia",
       "periodo": "Nov 2025 - Present",
       "descricao": [
-        "Development of the Praia Cheia application using Dart and Flutter.",
+        "Development of the Praia Cheia application using React Native.",
         "Event-driven backend architecture with microservices using Nest.js, Rabbitmq and various technologies.",
         "Development of unit and integration tests with Jest",
         "Observability with Grafana and Prometheus and load testing with k6"

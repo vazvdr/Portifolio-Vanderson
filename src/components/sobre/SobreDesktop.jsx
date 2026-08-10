@@ -32,7 +32,7 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
                       "FullStack Developer",
                       "Mobile Developer",
                       "Javascript Developer",
-                      "Flutter Developer",
+                      "React Native Developer",
                     ]}
                     loop={0}
                     cursor

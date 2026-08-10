@@ -31,7 +31,7 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
                     "FullStack Developer",
                     "Mobile Developer",
                     "Javascript Developer",
-                    "Flutter Developer",
+                    "React Native Developer",
                   ]}
                   loop={0}
                   cursor

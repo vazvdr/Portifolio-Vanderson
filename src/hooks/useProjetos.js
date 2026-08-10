@@ -27,6 +27,7 @@ export const useProjetos = (icons = []) => {
         nextjs: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
         tailwindcss: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
         bootstrap: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+        reactnative: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/reactnative/reactnative-original-wordmark.svg",
         dart: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg",
         flutter: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg",
         java: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
@@ -69,7 +70,7 @@ export const useProjetos = (icons = []) => {
             link: "https://praiacheia.com.br/",
             subtitleKey: "projects.praiacheia.subtitle",
             descriptionKey: "projects.praiacheia.description",
-            techs: ["react", "tailwindcss", "firebase", "flutter", "nodejs", "nestjs", "postgresql", "jest", "rabbitmq",
+            techs: ["react", "tailwindcss", "firebase", "reactnative", "nodejs", "nestjs", "postgresql", "jest", "rabbitmq",
                 "redis", "swagger", "docker", "kubernetes", "grafana", "prometheus", "k6"],
         },
         {

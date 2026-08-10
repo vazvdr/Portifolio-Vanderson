@@ -229,7 +229,7 @@
       "subtitulo": "Co-fundador · Praia Cheia",
       "periodo": "Nov de 2025 - o momento",
       "descricao": [
-        "Desenvolvimento do aplicativo Praia Cheia usando Dart e Flutter.",
+        "Desenvolvimento do aplicativo Praia Cheia usando React Native.",
         "Arquitetura do backend orientada a eventos com microsserviços usando Nest.js, Rabbitmq e várias tecnologias.",
         "Desenvolvimento de testes unitários e de integração com Jest",
         "Observalidade com Grafana e Prometheus e testes de carga com k6"
