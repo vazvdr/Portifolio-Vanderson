@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 const useSobre = () => {
   const [animate, setAnimate] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [tempo, setTempo] = useState({ anos: 0, dias: 0, segundos: 0 });
+  // Alterado para armazenar apenas anos e meses
+  const [tempo, setTempo] = useState({ anos: 0, meses: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -50,19 +51,29 @@ const useSobre = () => {
 
     const calcularExperiencia = () => {
       const agora = new Date();
-      const diff = Math.floor((agora - dataInicio) / 1000);
 
-      const diasTotais = Math.floor(diff / 86400);
-      const segundosHoje = diff % 86400;
+      // Calcula a diferença bruta em anos e meses
+      let anos = agora.getFullYear() - dataInicio.getFullYear();
+      let meses = agora.getMonth() - dataInicio.getMonth();
 
-      const anos = Math.floor(diasTotais / 365);
-      const dias = diasTotais % 365;
+      // Ajusta se o dia atual for menor que o dia de início do mês
+      if (agora.getDate() < dataInicio.getDate()) {
+        meses--;
+      }
 
-      setTempo({ anos, dias, segundos: segundosHoje });
+      // Ajusta se o mês atual for menor que o mês de início
+      if (meses < 0) {
+        anos--;
+        meses += 12;
+      }
+
+      setTempo({ anos, meses });
     };
 
     calcularExperiencia();
-    const intervalo = setInterval(calcularExperiencia, 1000);
+    
+    // Atualiza a cada 24 horas (86400000 ms), pois anos/meses não mudam a cada segundo
+    const intervalo = setInterval(calcularExperiencia, 86400000);
 
     return () => clearInterval(intervalo);
   }, []);

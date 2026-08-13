@@ -46,10 +46,11 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
 
           <p className="text-base sm:text-lg leading-snug text-center">
             {t("sobre.description")}
+            {/* BLOCO DA EXPERIÊNCIA ATUALIZADO NO MOBILE */}
             <span className="inline-block text-sobre py-0 mx-3 animate-pulse-custom font-bold tracking-wide">
-              {tempo.anos} {t("sobre.anos")}{" "}
-              {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}{" "}
-              {tempo.segundos.toLocaleString()} {t("sobre.segundos")}
+              {tempo.anos} {tempo.anos === 1 ? t("sobre.ano") : t("sobre.anos")}{" "}
+              {t("sobre.e")}{" "}
+              {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")}
             </span>
             {t("sobre.description2")}
           </p>

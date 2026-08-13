@@ -47,10 +47,11 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
 
             <p className="text-base sm:text-lg leading-snug">
               {t("sobre.description")}
+              {/* BLOCO DA EXPERIÊNCIA ATUALIZADO */}
               <span className="inline-block text-sobre py-0 mx-2 animate-pulse-custom font-bold tracking-wide">
-                {tempo.anos} {t("sobre.anos")}{" "}
-                {tempo.dias} {tempo.dias === 1 ? t("sobre.dia") : t("sobre.dias")}{" "}
-                {tempo.segundos.toLocaleString()} {t("sobre.segundos")}
+                {tempo.anos} {tempo.anos === 1 ? t("sobre.ano") : t("sobre.anos")}{" "}
+                {t("sobre.e")}{" "}
+                {tempo.meses} {tempo.meses === 1 ? t("sobre.mes") : t("sobre.meses")}
               </span>
               {t("sobre.description2")}
             </p>
@@ -82,7 +83,7 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
       <div
         className="hidden sm:hidden md:flex mt-[5%] ml-[25%] space-x-4
         md:mt-[2%] md:ml-[10%] 
-        lg:mt-[1%] lg:ml-[10%] lg:w-[50%]"
+        lg:mt-0 lg:ml-[10%] lg:w-[50%]"
       >
         <a
           href="#projetos"
