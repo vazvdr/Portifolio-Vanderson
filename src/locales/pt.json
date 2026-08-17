@@ -57,6 +57,17 @@
         "Redação de documentos e e-mails formais"
       ]
     },
+    "cardNextjs": {
+      "titulo": "Nextjs",
+      "subtitulo": "Udemy - 2026",
+      "periodo": "25.5 horas",
+      "descricao": [
+        "Por que usar Server Side Rendering",
+        "Criar sites usando todo o poder do Nextjs",
+        "Incremental Static Generation",
+        "Next Auth"
+      ]
+    },
     "cardHacker": {
       "titulo": "Ethical Hacking",
       "subtitulo": "Udemy - 2026",
