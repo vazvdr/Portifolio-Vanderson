@@ -10,12 +10,12 @@ import Formacao from "./pages/Formacao";
 
 function App() {
     return (
-        <div style={{ position: "relative", overflow: "hidden", minHeight: "100vh" }}>
+        <div style={{ background: "var(--background-color)", position: "relative", overflow: "hidden", minHeight: "100vh" }}>
             <Header />
             <Sobre />
             <Formacao />
             <Experiencias />
-            <HabilidadesPage/>
+            <HabilidadesPage />
             <Tecnologias />
             <Projetos />
             <Contact />
