@@ -8,9 +8,8 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
     <div className="md:hidden ld:hidden relative z-10 flex flex-col items-center">
       <div className="flex flex-col items-center max-w-[100%]">
         <div
-          className={`mt-[17%] w-[90%] animate-fade-in-right sm:mt-[15%] sm:mb-[4%] ${
-            animate ? "animate-slide-in-left" : "opacity-0"
-          }`}
+          className={`mt-[17%] w-[90%] animate-fade-in-right sm:mt-[15%] sm:mb-[4%] ${animate ? "animate-slide-in-left" : "opacity-0"
+            }`}
         >
           <h1 className="text-sobre text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight text-center">
             <div className="md:mt-7 pt-0 animate-moveY lg:pt-3">
@@ -120,20 +119,16 @@ const SobreMobile = ({ t, animate, tempo, handleLinkClick }) => {
         </div>
 
         <div
-          className={`relative w-[48%] sm:w-[40%] mt-10 animate-fade-in-left text-center ${
-            animate ? "animate-slide-in-right opacity-100" : "opacity-0"
-          }`}
-        >
-          <div className="relative p-[3px] rounded-md bg-gradient-to-r from-gray-400 via-gray-600 to-gray-700">
+          className={`relative w-[48%] sm:w-[40%] mt-10 animate-fade-in-left text-center ${animate ? "animate-slide-in-right opacity-100" : "opacity-0"
+            }`}
+        ><div className="photo-container">
             <img
               src={Foto}
               alt="Vanderson"
-              className="w-full object-cover rounded-md bg-white"
               draggable="false"
               onContextMenu={(e) => e.preventDefault()}
             />
-          </div>
-        </div>
+          </div>        </div>
       </div>
     </div>
   );

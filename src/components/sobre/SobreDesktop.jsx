@@ -63,11 +63,11 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
             lg:w-[27%] lg:mt-[8.5%] lg:ml-[15%] lg:mr-[15%] transition-opacity duration-1000 
             ${isVisible ? "opacity-100 scale-100" : "scale-90"}`}
           >
-            <div className="relative p-[2px] rounded-md bg-gradient-to-r from-gray-400 via-gray-600 to-gray-700">
+            <div className="relative p-[2px] rounded-md bg-transparent">
               <img
                 src={Foto}
                 alt="Vanderson"
-                className="w-full object-cover rounded-md shadow-lg transform border border-transparent transition-transform duration-1000"
+                className="photo-container"
                 draggable="false"
                 onContextMenu={(e) => e.preventDefault()}
                 style={{
