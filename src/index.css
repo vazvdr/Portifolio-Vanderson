@@ -5,7 +5,7 @@
 
 /* Dark */
 :root {
-  --background-color: radial-gradient(circle, #43434a 0%, #000000 100%, #1a1a1e 100%);
+  --background-color: linear-gradient(to right, #222121 0%, #000000 50%, #222121 100%);
   --background-color-card: rgb(32, 26, 26);
   --background-color-button: rgb(22, 22, 22);
   --background-button-scroll-top: black;
@@ -32,7 +32,7 @@
 }
 
 :root.light {
-  --background-color: radial-gradient(circle, #e6e4e4 0%, #ffffff 50%, #f1e9e9 100%);
+  --background-color: linear-gradient(to right, #e6e3e3 0%, #ffffff 50%, #e6e3e3 100%);
   --background-color-card: rgb(246, 244, 244);
   --background-color-button: rgb(235, 215, 215);
   --background-button-scroll-top: #222;

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import LandingPage from '../assets/LandingPage.webp';
 import API from '../assets/CreateConsumeAPI.webp';
 import Fullstack from '../assets/Fullstack.webp';
-import Mobile from '../assets/Mobile2.webp';
+import Mobile from '../assets/Mobile3.webp';
 import Test from '../assets/Test.webp';
 import Deploy from '../assets/Deployment.webp';
 

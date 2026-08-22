@@ -232,7 +232,7 @@
       "periodo": "Aug 2023 - Present",
       "descricao": [
         "Frontend application development using React, Next.js, or Angular",
-        "API creation using Spring Boot or Nest.js with SQL or NoSQL",
+        "API creation using Node and Nest.js with SQL or NoSQL",
         "Creation of full stack system with microservices architecture ",
         "Unit and integration testing with Vitest, Cypress, JUnit or Jest and Docker",
         "Development with CI/CD environments with GitHub Actions or GitLab",
@@ -260,7 +260,7 @@
     "fullstack_title": "Fullstack Development",
     "fullstack_description": "Complete systems development, from the front-end to the back-end with or without a database, microsservices architecture, automated tests, encryption and the latest security techniques.",
     "mobile_title": "Mobile Development",
-    "mobile_description": "Developing modern, fast, and intuitive applications for Android and iOS using Flutter. I create apps with fluid interfaces, native features, and high performance, ensuring a quality mobile experience.",
+    "mobile_description": "Developing modern, fast, and intuitive applications for Android and iOS using React Native. I create apps with fluid interfaces, native features, and high performance, ensuring a quality mobile experience.",
     "tests_title": "Unit and Integration Testing",
     "tests_description": "Development of unit and integration tests using Vitest and Cypress, and for backend using JUnit, Mockito, Jest, and Docker.",
     "deployment_title": "Deployment Websites",
