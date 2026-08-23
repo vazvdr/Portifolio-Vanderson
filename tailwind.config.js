@@ -4,6 +4,10 @@ module.exports = {
 	content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 	theme: {
 		extend: {
+			// Adicionado para resolver o aviso de ambiguidade
+			transitionTimingFunction: {
+				'custom-ease': 'cubic-bezier(0.22, 1, 0.36, 1)',
+			},
 			animation: {
 				'fade-in-left': 'fadeInLeft 1.5s ease-out forwards',
 				'fade-in-right': 'fadeInRight 1.5s ease-out forwards',

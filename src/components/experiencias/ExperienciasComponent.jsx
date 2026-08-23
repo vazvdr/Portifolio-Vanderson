@@ -38,7 +38,7 @@ const ExperienciasComponent = ({
               return (
                 <div
                   key={index}
-                  className="absolute transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="absolute transition-all duration-700 ease-custom-ease"
                   style={{
                     transform: `
                       translateX(${offset * 90}%)
