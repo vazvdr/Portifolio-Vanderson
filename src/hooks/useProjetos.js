@@ -6,6 +6,7 @@ import GamerStore from "../assets/GamerStore.webp";
 import ClassScheduling from "../assets/ClassScheduling.webp";
 import PraiaCheia from "../assets/PraiaCheia.webp";
 import GamerExplorer from "../assets/GamerExplorer.webp";
+import Github from "../assets/Github-Analyzer.webp"
 
 import { deviconUrls } from "../constants/deviconsUrls.js";
 
@@ -15,6 +16,53 @@ export const useProjetos = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const projects = [
+        {
+            title: "Github Analyzer",
+            image: Github,
+            link: "https://analisadordegithub.vercel.app/",
+            repo: "https://github.com/vazvdr/Github-Analyzer",
+            swagger: "",
+            subtitleKey: "projects.githubanalyzer.subtitle",
+            descriptionKey: "projects.githubanalyzer.description",
+            techs: [
+                "nextjs",
+                "typescript",
+                "tailwindcss",
+                "shadcn",
+                "langchain",
+                "gemini",
+                "swagger",
+                "jest",
+                "redis",
+                "railway"
+            ],
+        },
+
+        {
+            title: "Praia Cheia",
+            image: PraiaCheia,
+            link: "https://praiacheia.com.br/",
+            subtitleKey: "projects.praiacheia.subtitle",
+            descriptionKey: "projects.praiacheia.description",
+            techs: [
+                "react",
+                "tailwindcss",
+                "firebase",
+                "reactnative",
+                "nodejs",
+                "nestjs",
+                "postgresql",
+                "jest",
+                "rabbitmq",
+                "redis",
+                "swagger",
+                "docker",
+                "kubernetes",
+                "grafana",
+                "prometheus",
+                "k6",
+            ],
+        },
         {
             title: "Class Scheduling",
             image: ClassScheduling,
@@ -40,7 +88,6 @@ export const useProjetos = () => {
                 "githubactions",
             ],
         },
-
         {
             title: "Praia Cheia",
             image: PraiaCheia,

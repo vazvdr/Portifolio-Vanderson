@@ -269,6 +269,11 @@
   "projects": {
     "title": "Meus Projetos",
     "techs": "Techs usadas:",
+    "githubanalyzer": {
+      "title": "Github Analyzer",
+      "subtitle": "Analisador de repos do github",
+      "description": "Esse projeto permite o usuário colocar o link de um repositorio do github e a IA com RAG, LLM e Embeddings integrada ao projeto permite o usuário fazer perguntas sobre arquitetura e funcionalidades do código do repositório."
+    },
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Sistema de agendamentos aulas.",

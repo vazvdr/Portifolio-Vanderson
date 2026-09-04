@@ -269,6 +269,11 @@
   "projects": {
     "title": "My Projects",
     "techs": "Technologies used:",
+    "githubanalyzer": {
+      "title": "Github Analyzer",
+      "subtitle": "Analyzer of repositories of the Github",
+      "description": "This project allows the user to insert a link to a GitHub repository and integrates AI with RAG, LLM, and embedding. The project allows the user to ask questions about the architecture and functionalities of the repository's code."
+    },
     "classscheduling": {
       "title": "Class Scheduling",
       "subtitle": "Scheduling system for a school.",
