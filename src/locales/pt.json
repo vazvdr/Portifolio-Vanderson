@@ -264,7 +264,10 @@
     "tests_title": "Testes Unitários e de Integração",
     "tests_description": "Desenvolvimento de testes unitários e de integração usando Vitest e Cypress para frontend e Junit, Mockito, Jest e Docker para backend.",
     "deployment_title": "Deploy de sites",
-    "deployment_description": "Deploy tanto de frontend quanto de backend com ou sem banco de dados usando ferramentas com GitHub, Docker, Vercel e AWS."
+    "deployment_description": "Deploy tanto de frontend quanto de backend com ou sem banco de dados usando ferramentas com GitHub, Docker, Vercel e AWS.",
+    "ia_title": "Criação de sistemas com IA",
+    "ia_description": "Criação e integração de sistemas com RAG, MCP, LLM's busca vetorial e semântica, Embeddings, arquitetura, observalidade e segurança, além de boas práticas de DevOps com foco em eficiência e redução de custo de infraestrutura."
+
   },
   "projects": {
     "title": "Meus Projetos",

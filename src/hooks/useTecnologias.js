@@ -39,7 +39,6 @@ export const useTecnologias = () => {
         "vite",
         "vitest",
         "cypress",
-        "vercel",
         "tailwindcss",
         "bootstrap",
         "regex",

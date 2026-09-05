@@ -5,19 +5,23 @@ import API from '../assets/CreateConsumeAPI.webp';
 import Fullstack from '../assets/Fullstack.webp';
 import Mobile from '../assets/Mobile3.webp';
 import Test from '../assets/Test.webp';
+import IA from '../assets/IA.webp'
 import Deploy from '../assets/Deployment.webp';
 
 export const useHabilidades = () => {
-  const cards = [LandingPage, API, Fullstack, Mobile, Test, Deploy];
+  const cards = [LandingPage, API, Fullstack, IA, Mobile, Test, Deploy];
   const infiniteCards = [...cards, ...cards];
 
   const translationKeys = [
     { title: "landing_pages_title", description: "landing_pages_description" },
     { title: "api_title", description: "api_description" },
     { title: "fullstack_title", description: "fullstack_description" },
+    { title: "ia_title", description: "ia_description" },
     { title: "mobile_title", description: "mobile_description" },
     { title: "tests_title", description: "tests_description" },
-    { title: "deployment_title", description: "deployment_description" },
+    { title: "deployment_title", description: "deployment_description" },    
+        
+
   ];
 
   const speed = 2.5;
@@ -28,35 +32,26 @@ export const useHabilidades = () => {
   const handleMouseEnter = () => {
     isPaused.current = true;
   };
-
   const handleMouseLeave = () => {
     isPaused.current = false;
   };
-
   useEffect(() => {
     let frame;
-
     const animate = () => {
       if (!isPaused.current) {
         setOffset(prev => {
           const cardWidth = 350;
           const totalWidth = infiniteCards.length * cardWidth;
-
           let newX = prev - speed;
-
           if (Math.abs(newX) >= totalWidth / 2) {
             return 0;
           }
-
           return newX;
         });
       }
-
       frame = requestAnimationFrame(animate);
     };
-
     frame = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(frame);
   }, []);
 

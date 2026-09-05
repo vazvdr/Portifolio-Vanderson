@@ -14,7 +14,7 @@ export const deviconUrls = {
     vite: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg",
     vitest: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg",
     cypress: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cypressio/cypressio-original.svg",
-    vercel: "https://www.svgrepo.com/show/354512/vercel.svg",
+    vercel: "https://zonalogo.com/assets/vercel-logo-png-svg.webp?asset=1876",
     tailwindcss: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     bootstrap: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
     regex: "https://www.thedataschool.com.au/wp-content/uploads/2023/02/RegEx-1-1.png",

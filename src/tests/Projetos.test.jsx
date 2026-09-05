@@ -20,7 +20,7 @@ describe('Projetos section', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByText(/Class Scheduling/i)).toBeInTheDocument();
+    expect(screen.getByText(/Github Analyzer/i)).toBeInTheDocument();
   });
 
   it('deve renderizar um card em telas pequenas', () => {
@@ -33,7 +33,7 @@ describe('Projetos section', () => {
       </I18nextProvider>
     );
 
-    expect(screen.getByText(/Class Scheduling/i)).toBeInTheDocument();
+    expect(screen.getByText(/Github Analyzer/i)).toBeInTheDocument();
   });
 
   it('deve avançar os cards ao clicar no botão next', () => {

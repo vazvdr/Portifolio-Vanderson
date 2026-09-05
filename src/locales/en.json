@@ -264,7 +264,9 @@
     "tests_title": "Unit and Integration Testing",
     "tests_description": "Development of unit and integration tests using Vitest and Cypress, and for backend using JUnit, Mockito, Jest, and Docker.",
     "deployment_title": "Deployment Websites",
-    "deployment_description": "Deployment both frontend and backend with or without a database using tools such as GitHub, Docker, Vercel and AWS."
+    "deployment_description": "Deployment both frontend and backend with or without a database using tools such as GitHub, Docker, Vercel and AWS.",
+    "ia_title": "Creation of Systems with AI",
+    "ia_description" : "Creation and integration of systems with RAG, MCP, LLMs, vector and semantic search, embeddings, architecture, observability and security, in addition to DevOps best practices focused on efficiency and infrastructure cost reduction."
   },
   "projects": {
     "title": "My Projects",

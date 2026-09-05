@@ -13,6 +13,7 @@ vi.mock("react-i18next", () => ({
 vi.mock("../assets/LandingPage.webp", () => ({ default: "landing.webp" }));
 vi.mock("../assets/CreateConsumeAPI.webp", () => ({ default: "api.webp" }));
 vi.mock("../assets/Fullstack.webp", () => ({ default: "fullstack.webp" }));
+vi.mock("../assets/IA.webp", () => ({ default: "fullstack.webp" }));
 vi.mock("../assets/Mobile2.webp", () => ({ default: "mobile.webp" }));
 vi.mock("../assets/Test.webp", () => ({ default: "test.webp" }));
 vi.mock("../assets/Deployment.webp", () => ({ default: "deploy.webp" }));
@@ -22,7 +23,7 @@ describe("Habilidades Component", () => {
         render(<Habilidades />);
 
         const images = screen.getAllByRole("img");
-        expect(images.length).toBe(12);
+        expect(images.length).toBe(14);
     });
 
     it("deve renderizar os textos traduzidos", () => {

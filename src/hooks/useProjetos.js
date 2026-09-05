@@ -34,6 +34,7 @@ export const useProjetos = () => {
                 "swagger",
                 "jest",
                 "redis",
+                "vercel",
                 "railway"
             ],
         },

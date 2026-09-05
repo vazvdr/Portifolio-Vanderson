@@ -29,9 +29,9 @@
 
   /* Foto */
   --photo-background: linear-gradient(to bottom right,
-      #18181b 0%,
-      rgb(82, 82, 91) 50%,
-      #18181b 100%);
+      #2c2b2b 0%,
+      rgb(45, 43, 43) 50%,
+      #2d2b2b 100%);
 
   --photo-overlay: linear-gradient(to top,
       rgba(0, 0, 0, 0.3),
