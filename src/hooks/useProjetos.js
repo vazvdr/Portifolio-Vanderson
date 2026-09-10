@@ -21,7 +21,7 @@ export const useProjetos = () => {
             image: Github,
             link: "https://analisadordegithub.vercel.app/",
             repo: "https://github.com/vazvdr/Github-Analyzer",
-            swagger: "",
+            swagger: "https://analisadordegithub.vercel.app/swagger",
             subtitleKey: "projects.githubanalyzer.subtitle",
             descriptionKey: "projects.githubanalyzer.description",
             techs: [

@@ -30,9 +30,10 @@ const SobreDesktop = ({ t, animate, isVisible, tempo, handleLinkClick }) => {
                     words={[
                       "Software Engineer",
                       "FullStack Developer",
+                      "Software Architect",
+                      "AI Developer",
                       "Mobile Developer",
                       "Javascript Developer",
-                      "React Native Developer",
                     ]}
                     loop={0}
                     cursor
